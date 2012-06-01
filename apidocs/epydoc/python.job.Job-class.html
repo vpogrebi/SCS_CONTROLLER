@@ -1,0 +1,574 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>python.job.Job</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            >'SCS Controller'</th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="python-module.html">Package&nbsp;python</a> ::
+        <a href="python.job-module.html">Module&nbsp;job</a> ::
+        Class&nbsp;Job
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="python.job.Job-class.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS DESCRIPTION ==================== -->
+<h1 class="epydoc">Class Job</h1><p class="nomargin-top"><span class="codelink"><a href="python.job-pysrc.html#Job">source&nbsp;code</a></span></p>
+<center>
+<center>  <map id="uml_class_diagram_for_python_j" name="uml_class_diagram_for_python_j">
+<area shape="rect" id="node47" href="python.job.Job-class.html#__init__" title="x.__init__(...) initializes x; see x.__class__.__doc__ for signature" alt="" coords="17,39,295,57"/>
+<area shape="rect" id="node47" href="python.job.Job-class.html#init" title="Synchronous job initialization" alt="" coords="17,57,295,76"/>
+<area shape="rect" id="node47" href="python.job.Job-class.html#run" title="Start asynchronous job exection by executing first job step" alt="" coords="17,76,295,95"/>
+<area shape="rect" id="node47" href="python.job.Job-class.html#done" title="Perform JobStep&#39;s finalization tasks." alt="" coords="17,95,295,113"/>
+<area shape="rect" id="node47" href="python.job.Job-class.html#runJobStep" title="Start asynchronous job step (&lt;step_no&gt;) execution" alt="" coords="17,113,295,132"/>
+<area shape="rect" id="node47" href="python.job.Job-class.html#failureHandler" title="Handle job step failure event" alt="" coords="17,132,295,151"/>
+<area shape="rect" id="node47" href="python.job.Job-class.html#successHandler" title="Handle job step success event" alt="" coords="17,151,295,169"/>
+<area shape="rect" id="node1" href="python.job.Job-class.html" title="Implements job functionality responsible for executing and orchestrating multiple job steps." alt="" coords="5,6,307,175"/>
+</map>
+  <img src="uml_class_diagram_for_python_j.gif" alt='' usemap="#uml_class_diagram_for_python_j" ismap="ismap" class="graph-without-title" />
+</center>
+</center>
+<hr />
+<p>Implements job functionality responsible for executing and 
+  orchestrating multiple job steps.</p>
+  <p>Constructor argument(s):</p>
+
+<!-- ==================== INSTANCE METHODS ==================== -->
+<a name="section-InstanceMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Instance Methods</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-InstanceMethods"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="python.job.Job-class.html#__init__" class="summary-sig-name">__init__</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">workFlow</span>,
+        <span class="summary-sig-arg">logName</span>=<span class="summary-sig-default">None</span>)</span><br />
+      x.__init__(...) initializes x; see x.__class__.__doc__ for signature</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="python.job-pysrc.html#Job.__init__">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="__failure"></a><span class="summary-sig-name">__failure</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">nothing</span>,
+        <span class="summary-sig-arg">err_msg</span>)</span><br />
+      Last part of Job's failure handler</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="python.job-pysrc.html#Job.__failure">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="__success"></a><span class="summary-sig-name">__success</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">nothing</span>)</span><br />
+      Last part of Job's success handler</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="python.job-pysrc.html#Job.__success">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="__initJobSteps"></a><span class="summary-sig-name">__initJobSteps</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">jobID</span>)</span><br />
+      Initialize individual job steps (JobStep entities) corresponding to a
+      given job</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="python.job-pysrc.html#Job.__initJobSteps">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="__handleDBFailure"></a><span class="summary-sig-name">__handleDBFailure</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">fail</span>,
+        <span class="summary-sig-arg">stmt</span>,
+        <span class="summary-sig-arg">type</span>)</span><br />
+      Record &lt;scs.job_step&gt; insert/update failure details</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="python.job-pysrc.html#Job.__handleDBFailure">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_timeout"></a><span class="summary-sig-name">_timeout</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      Job timeout event handler</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="python.job-pysrc.html#Job._timeout">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_setTimeout"></a><span class="summary-sig-name">_setTimeout</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">timeout</span>)</span><br />
+      Set or update previously set job timeout (number of seconds) setting</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="python.job-pysrc.html#Job._setTimeout">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="python.job.Job-class.html#init" class="summary-sig-name">init</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Synchronous job initialization</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="python.job-pysrc.html#Job.init">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="python.job.Job-class.html#run" class="summary-sig-name">run</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">request</span>,
+        <span class="summary-sig-arg">ext_deferred</span>)</span><br />
+      Start asynchronous job exection by executing first job step</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="python.job-pysrc.html#Job.run">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="python.job.Job-class.html#done" class="summary-sig-name">done</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">err_msg</span>=<span class="summary-sig-default">None</span>)</span><br />
+      Perform JobStep's finalization tasks.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="python.job-pysrc.html#Job.done">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="python.job.Job-class.html#runJobStep" class="summary-sig-name">runJobStep</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">result</span>,
+        <span class="summary-sig-arg">step_no</span>=<span class="summary-sig-default">0</span>)</span><br />
+      Start asynchronous job step (&lt;step_no&gt;) execution</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="python.job-pysrc.html#Job.runJobStep">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="failureHandler"></a><span class="summary-sig-name">failureHandler</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">failure</span>)</span><br />
+      Handle job step failure event</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="python.job-pysrc.html#Job.failureHandler">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="successHandler"></a><span class="summary-sig-name">successHandler</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">result</span>)</span><br />
+      Handle job step success event</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="python.job-pysrc.html#Job.successHandler">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__delattr__</code>,
+      <code>__getattribute__</code>,
+      <code>__hash__</code>,
+      <code>__new__</code>,
+      <code>__reduce__</code>,
+      <code>__reduce_ex__</code>,
+      <code>__repr__</code>,
+      <code>__setattr__</code>,
+      <code>__str__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== PROPERTIES ==================== -->
+<a name="section-Properties"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Properties</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Properties"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__class__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== METHOD DETAILS ==================== -->
+<a name="section-MethodDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Method Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-MethodDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="__init__"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">__init__</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">workFlow</span>,
+        <span class="sig-arg">logName</span>=<span class="sig-default">None</span>)</span>
+    <br /><em class="fname">(Constructor)</em>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="python.job-pysrc.html#Job.__init__">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>x.__init__(...) initializes x; see x.__class__.__doc__ for 
+  signature</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>workFlow</code></strong> (workflow.Workflow instance) - workflow that started the job</li>
+    </ul></dd>
+    <dt>Overrides:
+        object.__init__
+        <dd><em class="note">(inherited documentation)</em></dd>
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="init"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">init</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="python.job-pysrc.html#Job.init">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Synchronous job initialization</p>
+  <dl class="fields">
+    <dt>Returns:</dt>
+        <dd>deferred - a Deferred which will fire None or a Failure when 
+          database INSERT statement is complete. Once this deferred is 
+          called back, self.__initJobSteps() gets executed that returns 
+          another deferred - which fire when all of the JobStep instances 
+          are initiated</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="run"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">run</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">request</span>,
+        <span class="sig-arg">ext_deferred</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="python.job-pysrc.html#Job.run">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Start asynchronous job exection by executing first job step</p>
+  <dl class="fields">
+    <dt>Returns:</dt>
+        <dd>deferred (twisted.internet.defer.Deferred instance) which will 
+          'fire' when first JobStep has been started</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="done"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">done</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">err_msg</span>=<span class="sig-default">None</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="python.job-pysrc.html#Job.done">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Perform JobStep's finalization tasks. Completion of this method should
+  trigger Job instance's callback() or errback() attached to 
+  &lt;self.deferred&gt;</p>
+  <dl class="fields">
+    <dt>Returns:</dt>
+        <dd>deferred which will 'fire' when job completion has been processed
+          and scs.scs_job table updated</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="runJobStep"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">runJobStep</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">result</span>,
+        <span class="sig-arg">step_no</span>=<span class="sig-default">0</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="python.job-pysrc.html#Job.runJobStep">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Start asynchronous job step (&lt;step_no&gt;) execution</p>
+  <dl class="fields">
+    <dt>Returns:</dt>
+        <dd>deferred which will 'fire' when given JobStep instance has 
+          started execution</dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            >'SCS Controller'</th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    <a href="epydoc-log.html">Generated by Epydoc
+    3.0.1 on Wed Oct  7 17:27:45 2009</a>
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

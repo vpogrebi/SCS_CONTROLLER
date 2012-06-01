@@ -1,0 +1,883 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>python.workflow.WorkflowManager</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            >'SCS Controller'</th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="python-module.html">Package&nbsp;python</a> ::
+        <a href="python.workflow-module.html">Module&nbsp;workflow</a> ::
+        Class&nbsp;WorkflowManager
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="python.workflow.WorkflowManager-class.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS DESCRIPTION ==================== -->
+<h1 class="epydoc">Class WorkflowManager</h1><p class="nomargin-top"><span class="codelink"><a href="python.workflow-pysrc.html#WorkflowManager">source&nbsp;code</a></span></p>
+<center>
+<center>  <map id="uml_class_diagram_for_python_w" name="uml_class_diagram_for_python_w">
+<area shape="rect" id="node71" href="python.workflow.WorkflowManager-class.html#__implemented__" title="python.workflow.WorkflowManager.__implemented__" alt="" coords="76,367,449,385"/>
+<area shape="rect" id="node71" href="python.workflow.WorkflowManager-class.html#__provides__" title="python.workflow.WorkflowManager.__provides__" alt="" coords="76,385,449,404"/>
+<area shape="rect" id="node71" href="python.workflow.WorkflowManager-class.html#__init__" title="Class&#39;s constructor" alt="" coords="76,407,449,425"/>
+<area shape="rect" id="node71" href="python.workflow.WorkflowManager-class.html#start" title="Create workflow instance &lt;workflowName&gt;" alt="" coords="76,425,449,444"/>
+<area shape="rect" id="node71" href="python.workflow.WorkflowManager-class.html#stop" title="Stop workflow service" alt="" coords="76,444,449,463"/>
+<area shape="rect" id="node71" href="python.workflow.WorkflowManager-class.html#enable" title="Enable workflow." alt="" coords="76,463,449,481"/>
+<area shape="rect" id="node71" href="python.workflow.WorkflowManager-class.html#disable" title="Disable workflow." alt="" coords="76,481,449,500"/>
+<area shape="rect" id="node71" href="python.workflow.WorkflowManager-class.html#startUp" title="Start all enabled SCS workflows" alt="" coords="76,500,449,519"/>
+<area shape="rect" id="node71" href="python.workflow.WorkflowManager-class.html#shutDown" title="Stop all SCS workflows" alt="" coords="76,519,449,537"/>
+<area shape="rect" id="node71" href="python.workflow.WorkflowManager-class.html#startService" title="Start WorkflowManager service" alt="" coords="76,537,449,556"/>
+<area shape="rect" id="node71" href="python.workflow.WorkflowManager-class.html#stopService" title="Stop WorkflowManager service" alt="" coords="76,556,449,575"/>
+<area shape="rect" id="node71" href="python.workflow.WorkflowManager-class.html#getResource" title="Obtain given workflow instance" alt="" coords="76,575,449,593"/>
+<area shape="rect" id="node71" href="python.workflow.WorkflowManager-class.html#addOnlineDeferred" title="Add new external deferred to workflow&#39;s &lt;extOnlineDeferreds&gt; dictionary" alt="" coords="76,593,449,612"/>
+<area shape="rect" id="node71" href="python.workflow.WorkflowManager-class.html#addOfflineDeferred" title="Add new external deferred to workflow&#39;s &lt;extOfflineDeferreds&gt; dictionary" alt="" coords="76,612,449,631"/>
+<area shape="rect" id="node1" href="python.workflow.WorkflowManager-class.html" title="Implements general SCS workflow management functionality." alt="" coords="64,342,461,637"/>
+<area shape="rect" id="node72" href="javascript:void(0);" title="Singleton class&#39;s constructor." alt="" coords="17,251,219,269"/>
+<area shape="rect" id="node72" href="javascript:void(0);" title="Object Specification Descriptor" alt="" coords="17,269,219,288"/>
+<area shape="rect" id="node2" href="javascript:void(0);" title="A Pythonic Singleton" alt="" coords="5,218,229,294"/>
+<area shape="rect" id="node73" href="javascript:void(0);" title="twisted.application.service.MultiService.privilegedStartService" alt="" coords="271,223,543,241"/>
+<area shape="rect" id="node73" href="javascript:void(0);" title="twisted.application.service.MultiService.getServiceNamed" alt="" coords="271,241,543,260"/>
+<area shape="rect" id="node73" href="javascript:void(0);" title="twisted.application.service.MultiService.__iter__" alt="" coords="271,260,543,279"/>
+<area shape="rect" id="node73" href="javascript:void(0);" title="twisted.application.service.MultiService.addService" alt="" coords="271,279,543,297"/>
+<area shape="rect" id="node73" href="javascript:void(0);" title="twisted.application.service.MultiService.removeService" alt="" coords="271,297,543,316"/>
+<area shape="rect" id="node3" href="javascript:void(0);" title="Straightforward Service Container." alt="" coords="259,190,555,322"/>
+<area shape="rect" id="node74" href="javascript:void(0);" title="twisted.application.service.Service.running" alt="" coords="287,31,525,49"/>
+<area shape="rect" id="node74" href="javascript:void(0);" title="twisted.application.service.Service.name" alt="" coords="287,49,525,68"/>
+<area shape="rect" id="node74" href="javascript:void(0);" title="twisted.application.service.Service.parent" alt="" coords="287,68,525,87"/>
+<area shape="rect" id="node74" href="javascript:void(0);" title="twisted.application.service.Service.__getstate__" alt="" coords="287,89,525,108"/>
+<area shape="rect" id="node74" href="javascript:void(0);" title="twisted.application.service.Service.setName" alt="" coords="287,108,525,127"/>
+<area shape="rect" id="node74" href="javascript:void(0);" title="twisted.application.service.Service.setServiceParent" alt="" coords="287,127,525,145"/>
+<area shape="rect" id="node74" href="javascript:void(0);" title="twisted.application.service.Service.disownServiceParent" alt="" coords="287,145,525,164"/>
+<area shape="rect" id="node4" href="javascript:void(0);" title="Base class for services." alt="" coords="275,6,536,170"/>
+</map>
+  <img src="uml_class_diagram_for_python_w.gif" alt='' usemap="#uml_class_diagram_for_python_w" ismap="ismap" class="graph-without-title" />
+</center>
+</center>
+<hr />
+<p>Implements general SCS workflow management functionality. Implemented 
+  using Singleton design pattern (extends &lt;singleton.Singleton&gt;) and 
+  ensures that class gets initialized only once - no matter how many times 
+  constructor is called (uses @singleton.uniq() decorator for its __init() 
+  constructor</p>
+  <p>Implements IResourceManager interface</p>
+
+<!-- ==================== INSTANCE METHODS ==================== -->
+<a name="section-InstanceMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Instance Methods</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-InstanceMethods"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="python.workflow.WorkflowManager-class.html#__init__" class="summary-sig-name">__init__</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">*args</span>,
+        <span class="summary-sig-arg">**kwargs</span>)</span><br />
+      Class's constructor</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="python.workflow.WorkflowManager-class.html#_loadInfo" class="summary-sig-name" onclick="show_private();">_loadInfo</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Select workflow data from scs.workflow_lookup table</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="python.workflow-pysrc.html#WorkflowManager._loadInfo">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="python.workflow.WorkflowManager-class.html#_loadStepInfo" class="summary-sig-name" onclick="show_private();">_loadStepInfo</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">result</span>)</span><br />
+      Load workflow step info from scs.workflow_step table&quot;</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="python.workflow-pysrc.html#WorkflowManager._loadStepInfo">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_loadComplete"></a><span class="summary-sig-name">_loadComplete</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">result</span>,
+        <span class="summary-sig-arg">workflowInfo</span>)</span><br />
+      Complete loading workflowInfo data (started by self._loadInfo() and 
+      self._loadStepInfo()</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="python.workflow-pysrc.html#WorkflowManager._loadComplete">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_loadInfoFailure"></a><span class="summary-sig-name">_loadInfoFailure</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">fail</span>,
+        <span class="summary-sig-arg">query</span>)</span><br />
+      Workflow load failure handler</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="python.workflow-pysrc.html#WorkflowManager._loadInfoFailure">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="python.workflow.WorkflowManager-class.html#start" class="summary-sig-name">start</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">workflowName</span>)</span><br />
+      Create workflow instance &lt;workflowName&gt;</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="python.workflow-pysrc.html#WorkflowManager.start">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="python.workflow.WorkflowManager-class.html#stop" class="summary-sig-name">stop</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">workflowName</span>)</span><br />
+      Stop workflow service</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="python.workflow-pysrc.html#WorkflowManager.stop">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="python.workflow.WorkflowManager-class.html#enable" class="summary-sig-name">enable</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">workflowName</span>)</span><br />
+      Enable workflow.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="python.workflow-pysrc.html#WorkflowManager.enable">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="python.workflow.WorkflowManager-class.html#disable" class="summary-sig-name">disable</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">workflowName</span>)</span><br />
+      Disable workflow.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="python.workflow-pysrc.html#WorkflowManager.disable">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="startUp"></a><span class="summary-sig-name">startUp</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      Start all enabled SCS workflows</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="python.workflow-pysrc.html#WorkflowManager.startUp">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="shutDown"></a><span class="summary-sig-name">shutDown</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      Stop all SCS workflows</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="python.workflow-pysrc.html#WorkflowManager.shutDown">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="python.workflow.WorkflowManager-class.html#startService" class="summary-sig-name">startService</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Start WorkflowManager service</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="python.workflow-pysrc.html#WorkflowManager.startService">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="python.workflow.WorkflowManager-class.html#stopService" class="summary-sig-name">stopService</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Stop WorkflowManager service</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="python.workflow-pysrc.html#WorkflowManager.stopService">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="python.workflow.WorkflowManager-class.html#getResource" class="summary-sig-name">getResource</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">name</span>)</span><br />
+      Obtain given workflow instance</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="python.workflow-pysrc.html#WorkflowManager.getResource">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="addOnlineDeferred"></a><span class="summary-sig-name">addOnlineDeferred</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">name</span>,
+        <span class="summary-sig-arg">deferred</span>,
+        <span class="summary-sig-arg">reset</span>=<span class="summary-sig-default">True</span>)</span><br />
+      Add new external deferred to workflow's &lt;extOnlineDeferreds&gt; 
+      dictionary</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="python.workflow-pysrc.html#WorkflowManager.addOnlineDeferred">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="addOfflineDeferred"></a><span class="summary-sig-name">addOfflineDeferred</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">name</span>,
+        <span class="summary-sig-arg">deferred</span>,
+        <span class="summary-sig-arg">reset</span>=<span class="summary-sig-default">True</span>)</span><br />
+      Add new external deferred to workflow's &lt;extOfflineDeferreds&gt; 
+      dictionary</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="python.workflow-pysrc.html#WorkflowManager.addOfflineDeferred">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>singleton.Singleton</code></b>:
+      <code>__providedBy__</code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__delattr__</code>,
+      <code>__getattribute__</code>,
+      <code>__hash__</code>,
+      <code>__reduce__</code>,
+      <code>__reduce_ex__</code>,
+      <code>__repr__</code>,
+      <code>__setattr__</code>,
+      <code>__str__</code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code>twisted.application.service.MultiService</code></b>:
+      <code>__iter__</code>,
+      <code>addService</code>,
+      <code>getServiceNamed</code>,
+      <code>privilegedStartService</code>,
+      <code>removeService</code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code>twisted.application.service.Service</code></b>:
+      <code>__getstate__</code>,
+      <code>disownServiceParent</code>,
+      <code>setName</code>,
+      <code>setServiceParent</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== STATIC METHODS ==================== -->
+<a name="section-StaticMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Static Methods</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-StaticMethods"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>singleton.Singleton</code></b>:
+      <code>__new__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS VARIABLES ==================== -->
+<a name="section-ClassVariables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Class Variables</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-ClassVariables"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="__implemented__"></a><span class="summary-name">__implemented__</span> = <code title="&lt;implementedBy python.workflow.WorkflowManager&gt;">&lt;implementedBy python.workflow.WorkflowManager&gt;</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="python.workflow.WorkflowManager-class.html#__provides__" class="summary-name">__provides__</a> = <code title="&lt;zope.interface.declarations.ClassProvides object at 0x15cfff0&gt;">&lt;zope.interface.declarations.ClassProvides obje<code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>twisted.application.service.Service</code></b>:
+      <code>name</code>,
+      <code>parent</code>,
+      <code>running</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== PROPERTIES ==================== -->
+<a name="section-Properties"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Properties</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Properties"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__class__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== METHOD DETAILS ==================== -->
+<a name="section-MethodDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Method Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-MethodDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="__init__"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">__init__</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">*args</span>,
+        <span class="sig-arg">**kwargs</span>)</span>
+    <br /><em class="fname">(Constructor)</em>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Class's constructor</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>logDir</code></strong> - folder where log and error files will be created</li>
+    </ul></dd>
+    <dt>Decorators:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code>@singleton.uniq</code></li>
+    </ul></dd>
+    <dt>Overrides:
+        twisted.application.service.MultiService.__init__
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="_loadInfo"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">_loadInfo</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="python.workflow-pysrc.html#WorkflowManager._loadInfo">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Select workflow data from scs.workflow_lookup table</p>
+  <dl class="fields">
+    <dt>Returns:</dt>
+        <dd>deferred which will 'fire' when SELECT query completes loading 
+          data</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="_loadStepInfo"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">_loadStepInfo</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">result</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="python.workflow-pysrc.html#WorkflowManager._loadStepInfo">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Load workflow step info from scs.workflow_step table&quot;</p>
+  <dl class="fields">
+    <dt>Returns:</dt>
+        <dd>deferred which will 'fire' when data is loaded</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="start"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">start</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">workflowName</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="python.workflow-pysrc.html#WorkflowManager.start">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Create workflow instance &lt;workflowName&gt;</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>workflowName</code></strong> (str) - workflow name</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="stop"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">stop</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">workflowName</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="python.workflow-pysrc.html#WorkflowManager.stop">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Stop workflow service</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>workflowName</code></strong> - workflow name</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="enable"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">enable</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">workflowName</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="python.workflow-pysrc.html#WorkflowManager.enable">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Enable workflow. SCSServer entity that 'owns' this workflow will start
+  accepting external client's job requests - provided that workflow is also
+  'online' (all SCSClient entities used by the workflow are connected to 
+  their external servers)</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="disable"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">disable</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">workflowName</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="python.workflow-pysrc.html#WorkflowManager.disable">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Disable workflow. SCSServer entity that 'owns' this workflow will 
+  start rejecting external client's job requests</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="startService"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">startService</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="python.workflow-pysrc.html#WorkflowManager.startService">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Start WorkflowManager service</p>
+  <dl class="fields">
+    <dt>Overrides:
+        twisted.application.service.Service.startService
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="stopService"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">stopService</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="python.workflow-pysrc.html#WorkflowManager.stopService">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Stop WorkflowManager service</p>
+  <dl class="fields">
+    <dt>Overrides:
+        twisted.application.service.Service.stopService
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getResource"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getResource</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">name</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="python.workflow-pysrc.html#WorkflowManager.getResource">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Obtain given workflow instance</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>name</code></strong> - workflow name</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>_Workflow instance</dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== CLASS VARIABLE DETAILS ==================== -->
+<a name="section-ClassVariableDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Class Variable Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-ClassVariableDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="__provides__"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">__provides__</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+&lt;zope.interface.declarations.ClassProvides object at 0x15cfff0&gt;
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            >'SCS Controller'</th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    <a href="epydoc-log.html">Generated by Epydoc
+    3.0.1 on Wed Oct  7 17:27:45 2009</a>
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

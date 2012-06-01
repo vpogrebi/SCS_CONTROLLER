@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>python.workflow._WorkflowService</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            >'SCS Controller'</th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="python-module.html">Package&nbsp;python</a> ::
+        <a href="python.workflow-module.html">Module&nbsp;workflow</a> ::
+        Class&nbsp;_WorkflowService
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="python.workflow._WorkflowService-class.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS DESCRIPTION ==================== -->
+<h1 class="epydoc">Class _WorkflowService</h1><p class="nomargin-top"><span class="codelink"><a href="python.workflow-pysrc.html#_WorkflowService">source&nbsp;code</a></span></p>
+<center>
+<center>  <map id="uml_class_diagram_for_python_w_3" name="uml_class_diagram_for_python_w_3">
+<area shape="rect" id="node76" href="python.workflow._WorkflowService-class.html#__init__" title="Class&#39;s constructor." alt="" coords="33,425,273,444"/>
+<area shape="rect" id="node76" href="python.workflow._WorkflowService-class.html#startService" title="Start Workflow service" alt="" coords="33,444,273,463"/>
+<area shape="rect" id="node76" href="python.workflow._WorkflowService-class.html#stopService" title="Stop Workflow service" alt="" coords="33,463,273,481"/>
+<area shape="rect" id="node1" href="python.workflow._WorkflowService-class.html" title="Wraps individual workflow functionality (_Workflow) as service." alt="" coords="21,393,285,487"/>
+<area shape="rect" id="node77" href="javascript:void(0);" title="twisted.application.service.MultiService.__implemented__" alt="" coords="17,233,289,252"/>
+<area shape="rect" id="node77" href="javascript:void(0);" title="twisted.application.service.MultiService.__provides__" alt="" coords="17,252,289,271"/>
+<area shape="rect" id="node77" href="javascript:void(0);" title="twisted.application.service.MultiService.privilegedStartService" alt="" coords="17,273,289,292"/>
+<area shape="rect" id="node77" href="javascript:void(0);" title="twisted.application.service.MultiService.getServiceNamed" alt="" coords="17,292,289,311"/>
+<area shape="rect" id="node77" href="javascript:void(0);" title="twisted.application.service.MultiService.__iter__" alt="" coords="17,311,289,329"/>
+<area shape="rect" id="node77" href="javascript:void(0);" title="twisted.application.service.MultiService.addService" alt="" coords="17,329,289,348"/>
+<area shape="rect" id="node77" href="javascript:void(0);" title="twisted.application.service.MultiService.removeService" alt="" coords="17,348,289,367"/>
+<area shape="rect" id="node2" href="javascript:void(0);" title="Straightforward Service Container." alt="" coords="5,209,301,373"/>
+<area shape="rect" id="node78" href="javascript:void(0);" title="twisted.application.service.Service.running" alt="" coords="33,31,272,49"/>
+<area shape="rect" id="node78" href="javascript:void(0);" title="twisted.application.service.Service.name" alt="" coords="33,49,272,68"/>
+<area shape="rect" id="node78" href="javascript:void(0);" title="twisted.application.service.Service.parent" alt="" coords="33,68,272,87"/>
+<area shape="rect" id="node78" href="javascript:void(0);" title="twisted.application.service.Service.__getstate__" alt="" coords="33,89,272,108"/>
+<area shape="rect" id="node78" href="javascript:void(0);" title="twisted.application.service.Service.setName" alt="" coords="33,108,272,127"/>
+<area shape="rect" id="node78" href="javascript:void(0);" title="twisted.application.service.Service.setServiceParent" alt="" coords="33,127,272,145"/>
+<area shape="rect" id="node78" href="javascript:void(0);" title="twisted.application.service.Service.disownServiceParent" alt="" coords="33,145,272,164"/>
+<area shape="rect" id="node78" href="javascript:void(0);" title="Object Specification Descriptor" alt="" coords="33,164,272,183"/>
+<area shape="rect" id="node3" href="javascript:void(0);" title="Base class for services." alt="" coords="21,6,283,189"/>
+</map>
+  <img src="uml_class_diagram_for_python_w_3.gif" alt='' usemap="#uml_class_diagram_for_python_w_3" ismap="ismap" class="graph-without-title" />
+</center>
+</center>
+<hr />
+<p>Wraps individual workflow functionality (_Workflow) as service. This 
+  class subclasses from twisted.application.service.MultiService and is 
+  responsible for starting/stopping individual workflows, as well as for 
+  initializing log and error files associated with each _Workflow 
+  entity</p>
+
+<!-- ==================== INSTANCE METHODS ==================== -->
+<a name="section-InstanceMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Instance Methods</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-InstanceMethods"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="python.workflow._WorkflowService-class.html#__init__" class="summary-sig-name">__init__</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">name</span>,
+        <span class="summary-sig-arg">info</span>,
+        <span class="summary-sig-arg">logName</span>)</span><br />
+      Class's constructor.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="python.workflow-pysrc.html#_WorkflowService.__init__">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="python.workflow._WorkflowService-class.html#startService" class="summary-sig-name">startService</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Start Workflow service</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="python.workflow-pysrc.html#_WorkflowService.startService">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="python.workflow._WorkflowService-class.html#stopService" class="summary-sig-name">stopService</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Stop Workflow service</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="python.workflow-pysrc.html#_WorkflowService.stopService">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>twisted.application.service.MultiService</code></b>:
+      <code>__iter__</code>,
+      <code>addService</code>,
+      <code>getServiceNamed</code>,
+      <code>privilegedStartService</code>,
+      <code>removeService</code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code>twisted.application.service.Service</code></b>:
+      <code>__getstate__</code>,
+      <code>__providedBy__</code>,
+      <code>disownServiceParent</code>,
+      <code>setName</code>,
+      <code>setServiceParent</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS VARIABLES ==================== -->
+<a name="section-ClassVariables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Class Variables</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-ClassVariables"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>twisted.application.service.MultiService</code></b>:
+      <code>__implemented__</code>,
+      <code>__provides__</code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code>twisted.application.service.Service</code></b>:
+      <code>name</code>,
+      <code>parent</code>,
+      <code>running</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== METHOD DETAILS ==================== -->
+<a name="section-MethodDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Method Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-MethodDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="__init__"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">__init__</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">name</span>,
+        <span class="sig-arg">info</span>,
+        <span class="sig-arg">logName</span>)</span>
+    <br /><em class="fname">(Constructor)</em>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="python.workflow-pysrc.html#_WorkflowService.__init__">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Class's constructor. Parameters:</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>name</code></strong> - workflow name</li>
+        <li><strong class="pname"><code>info</code></strong> - &lt;name&gt; - workflow name &lt;info&gt; - dictionary containing
+          workflow step info &lt;logDir&gt; - log directory</li>
+        <li><strong class="pname"><code>logName</code></strong> - unique log/error name (identifier) that will be used to write to 
+          these particular files</li>
+    </ul></dd>
+    <dt>Overrides:
+        twisted.application.service.MultiService.__init__
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="startService"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">startService</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="python.workflow-pysrc.html#_WorkflowService.startService">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Start Workflow service</p>
+  <dl class="fields">
+    <dt>Overrides:
+        twisted.application.service.Service.startService
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="stopService"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">stopService</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="python.workflow-pysrc.html#_WorkflowService.stopService">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Stop Workflow service</p>
+  <dl class="fields">
+    <dt>Overrides:
+        twisted.application.service.Service.stopService
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            >'SCS Controller'</th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    <a href="epydoc-log.html">Generated by Epydoc
+    3.0.1 on Wed Oct  7 17:27:46 2009</a>
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

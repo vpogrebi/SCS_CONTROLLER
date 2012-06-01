@@ -1,0 +1,170 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>API docs for &ldquo;python.server._SCSServerService&rdquo;</title>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+    <link href="apidocs.css" type="text/css" rel="stylesheet" />
+    
+    
+  </head>
+  <body>
+    <h1 class="class">Class p.s._SCSServerService(<span title="twisted.application.service.MultiService">service.MultiService</span>):</h1>
+    <p>
+      <span id="part">Part of <a href="python.html">python</a>.<a href="python.server.html">server</a></span>
+      
+      <a href="classIndex.html#python.server._SCSServerService">View In Hierarchy</a>
+    </p>
+    <div>
+      
+    </div>
+    <pre>Extends twisted.application.service.MultiService class
+
+This class "wraps" SCS server functionality (_SCSServerFactory/_SCSServerProtocol) as
+a service. It is responsible for starting/stopping the service (the server) and for
+initializing log and error files used by server entity.</pre>
+    
+    
+    <div id="splitTables">
+      <table class="children sortable" id="id23">
+  
+  
+  
+  
+  <tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.server._SCSServerService.html#__init__">__init__</a></td>
+    <td><tt>Class's constructor. Parameters:</tt></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.server._SCSServerService.html#_stopSuccessHandler">_stopSuccessHandler</a></td>
+    <td><tt>Server termination success handler</tt></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.server._SCSServerService.html#_stopFailureHandler">_stopFailureHandler</a></td>
+    <td><tt>Server termination failure handler</tt></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.server._SCSServerService.html#startService">startService</a></td>
+    <td><tt>Start given SCSServer service</tt></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.server._SCSServerService.html#stopService">stopService</a></td>
+    <td><tt>Stop SCSServer service</tt></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.server._SCSServerService.html#getResource">getResource</a></td>
+    <td><tt>Obtain &lt;self.listeningPort&gt; associated with the given server</tt></td>
+  </tr>
+  
+</table>
+      
+      
+    </div>
+    
+    
+    
+    <div class="function">
+        <a name="python.server._SCSServerService.__init__"></a>
+        <a name="__init__"></a>
+        <div class="functionHeader">
+        
+        def __init__(self, name, info, logName, logDir):
+        
+      </div>
+        <div class="functionBody">
+          
+          <pre>Class's constructor. Parameters:
+
+@param name:     SCS client name
+@param info:     dictionary containing following key/value pairs:
+                'workflow': &lt;wf_name&gt;
+                'max_connections': &lt;num_connections&gt;
+                'enabled': &lt;bool (True/False)&gt;
+@param logName:  unique log/error name (identifier) that will be used to write to these particular files
+@param logDir:   folder where log and error files will be created</pre>
+        </div>
+      </div><div class="function">
+        <a name="python.server._SCSServerService._stopSuccessHandler"></a>
+        <a name="_stopSuccessHandler"></a>
+        <div class="functionHeader">
+        
+        def _stopSuccessHandler(self, nothing):
+        
+      </div>
+        <div class="functionBody">
+          
+          <pre>Server termination success handler</pre>
+        </div>
+      </div><div class="function">
+        <a name="python.server._SCSServerService._stopFailureHandler"></a>
+        <a name="_stopFailureHandler"></a>
+        <div class="functionHeader">
+        
+        def _stopFailureHandler(self, failure):
+        
+      </div>
+        <div class="functionBody">
+          
+          <pre>Server termination failure handler</pre>
+        </div>
+      </div><div class="function">
+        <a name="python.server._SCSServerService.startService"></a>
+        <a name="startService"></a>
+        <div class="functionHeader">
+        
+        def startService(self):
+        
+      </div>
+        <div class="functionBody">
+          
+          <pre>Start given SCSServer service
+
+@return: deferred which will 'fire' when all of the service initialization tasks have completed</pre>
+        </div>
+      </div><div class="function">
+        <a name="python.server._SCSServerService.stopService"></a>
+        <a name="stopService"></a>
+        <div class="functionHeader">
+        
+        def stopService(self):
+        
+      </div>
+        <div class="functionBody">
+          
+          <pre>Stop SCSServer service
+
+@return: deferred which will 'fire' when all of the service termination tasks have completed</pre>
+        </div>
+      </div><div class="function">
+        <a name="python.server._SCSServerService.getResource"></a>
+        <a name="getResource"></a>
+        <div class="functionHeader">
+        
+        def getResource(self):
+        
+      </div>
+        <div class="functionBody">
+          
+          <pre>Obtain &lt;self.listeningPort&gt; associated with the given server</pre>
+        </div>
+      </div>
+    
+    <address>
+      <a href="index.html">API Documentation</a> for 'SCS Controller', generated by <a href="http://codespeak.net/~mwh/pydoctor/">pydoctor</a> at 2009-10-07 17:27:47.
+    </address>
+  </body>
+</html>

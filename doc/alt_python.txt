@@ -1,0 +1,24 @@
+Instructions for alternate python install
+-----------------------------------------
+
+Motivation: Most of our systems are RHEL/CENT and have python 2.4 installed as the default. Upgrading my break utilities such as yum. However, many of our software products are designed for python 2.5.
+
+Solution: Use the alternate install method of python to install 2.5.4 side by side with 2.4
+
+Instructions:
+
+1) become root
+
+2) cd to /usr/src
+
+3) download python 2.5.4 source, decompress, cd into python directory
+
+4) run ./configure
+
+5) run make
+
+VERY IMPORTANT
+
+6) instead of "make" type "make altinstall"
+
+7) be sure when installing libraries for use with python 2.5 that you change the location of the python executiable to point to /usr/local/bin/python2.5 vice the default python (which is normally located via the python env variable). This may require modifying the setup.py file and calling python2.5 vice python

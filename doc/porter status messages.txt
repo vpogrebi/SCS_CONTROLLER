@@ -1,0 +1,21 @@
+Porter sends when it receives seed url from controller:
+
+{ time: <unixtime>, msg_type: 1, source_id:  <porter instance id>, status: 1, data: { url_id: <id of url received> } }
+
+msg_type = 1 tells us that this is a porter related message. We have this field because in the future there may be other components communicating to the controller via its queue
+source_id = porter instance's unique identification number. 
+status = 1 tells us that porter is confirming the receipt of a url 
+data = a jason encoded array with varying members depending on the type of response. in the case of a status: 1 message from porter, the payload will be an array with a single key/value pair, url_id: <id of url received>
+
+Porter sends when it finishes processing:
+
+{ time: <unixtime>, msg_type: 1, source_id:  <porter instance id>, status: 2, data: { url_id: <id of url received>, num_results: <number of urls resulting from crawl>, results: { <json array of resulting urls>} } }
+
+status = 2 tells us that porter finished processing the url_id contained in the data field's url_id field
+data = json encoded array with url_id, num_results, and results (which is itself a json encoded array containing the resulting urls
+
+I think that putting the payload (resulting urls, etc) in the data field, and allowing the contents of the data field to vary depending on the status id, is a clean, extensible way of doing it.
+
+If anyone has a better method in mind, please share with the group. We want it to be all it can be.
+
+We can also include a human readable status_msg field in responses for convenience, but that could always easily be added later.

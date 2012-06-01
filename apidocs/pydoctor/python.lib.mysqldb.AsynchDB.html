@@ -1,0 +1,220 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>API docs for &ldquo;python.lib.mysqldb.AsynchDB&rdquo;</title>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+    <link href="apidocs.css" type="text/css" rel="stylesheet" />
+    
+    
+  </head>
+  <body>
+    <h1 class="class">Class p.l.m.AsynchDB(<a href="python.lib.mysqldb.SynchDB.html">SynchDB</a>):</h1>
+    <p>
+      <span id="part">Part of <a href="python.html">python</a>.<a href="python.lib.html">lib</a>.<a href="python.lib.mysqldb.html">mysqldb</a></span>
+      
+      <a href="classIndex.html#python.lib.mysqldb.AsynchDB">View In Hierarchy</a>
+    </p>
+    <div>
+      
+    </div>
+    <div>Implements ASYNCHRONOUS database access by wrapping blocking calls into 
+asynchronous, non-blocking calls. Extends SynchDB class<table class="fieldTable"></table></div>
+    
+    
+    <div id="splitTables">
+      <table class="children sortable" id="id28">
+  
+  
+  
+  
+  <tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.lib.mysqldb.AsynchDB.html#__init__">__init__</a></td>
+    <td><span>Class's constructor. Attempts to connect to database if all required 
+arguments are supplied</span></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.lib.mysqldb.AsynchDB.html#connect">connect</a></td>
+    <td><span>Connect to MySQL server</span></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.lib.mysqldb.AsynchDB.html#use">use</a></td>
+    <td><span>Switch to use new database schema</span></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.lib.mysqldb.AsynchDB.html#execute">execute</a></td>
+    <td><span>Execute any SQL statement and return number of rows affected</span></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.lib.mysqldb.AsynchDB.html#insert">insert</a></td>
+    <td><span>Execute INSERT SQL statement and return number of rows affected</span></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.lib.mysqldb.AsynchDB.html#query">query</a></td>
+    <td><span>Run SQL query and return its results</span></td>
+  </tr>
+  
+</table>
+      
+        <p>
+          Inherited from <a href="python.lib.singleton.Singleton.html">Singleton</a> (via <a href="python.lib.mysqldb.SynchDB.html">SynchDB</a>):
+        </p>
+        <table class="children sortable" id="id29">
+  
+  
+  
+  
+  <tr class="basemethod">
+    
+    
+    <td>Method</td>
+    <td><a href="python.lib.singleton.Singleton.html#__new__">__new__</a></td>
+    <td><span>Singleton class's constructor. Ensures that only single instance</span></td>
+  </tr>
+  
+</table>
+      
+      
+    </div>
+    
+    
+    
+    <div class="function">
+        <a name="python.lib.mysqldb.AsynchDB.__init__"></a>
+        <a name="__init__"></a>
+        <div class="functionHeader">
+        
+        def __init__(self, server=None, userid=None, passwd=None, schema=None, socket=None):
+        
+      </div>
+        <div class="functionBody">
+          <div class="interfaceinfo">overrides <a href="python.lib.mysqldb.SynchDB.html#__init__">python.lib.mysqldb.SynchDB.__init__</a></div>
+          <div>Class's constructor. Attempts to connect to database if all required 
+arguments are supplied<table class="fieldTable"></table></div>
+        </div>
+      </div><div class="function">
+        <a name="python.lib.mysqldb.AsynchDB.connect"></a>
+        <a name="connect"></a>
+        <div class="functionHeader">
+        
+        def connect(self, server, userid, passwd, socket, schema=None):
+        
+      </div>
+        <div class="functionBody">
+          <div class="interfaceinfo">overrides <a href="python.lib.mysqldb.SynchDB.html#connect">python.lib.mysqldb.SynchDB.connect</a></div>
+          <div>Connect to MySQL server<table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">server</td><td><code>str</code> - database server ('localhost' or 
+&lt;host&gt;:&lt;port&gt;)
+</td></tr><tr><td></td><td class="fieldArg">userid</td><td><code>str</code> - user id on the &lt;server&gt;
+</td></tr><tr><td></td><td class="fieldArg">passwd</td><td><code>str</code> - user's password
+</td></tr><tr><td></td><td class="fieldArg">socket</td><td><code>str</code> or None - (optional) socket used to connect to database
+</td></tr><tr><td></td><td class="fieldArg">schema</td><td><code>str</code> - (optional) schema to be used for all database operations
+(default: None)
+<p>This method connects to the database, sets &lt;self.conn&gt; attribute 
+to Connection object, opens a cursor and sets &lt;self.cursor&gt; to that 
+Cursor object. This attribute will be used for all subsequent database 
+operations. At the same time, &quot;autocommit&quot; is set to True</p>
+</td></tr></table></div>
+        </div>
+      </div><div class="function">
+        <a name="python.lib.mysqldb.AsynchDB.use"></a>
+        <a name="use"></a>
+        <div class="functionHeader">
+        @deferred<br />
+        def use(self, schema):
+        
+      </div>
+        <div class="functionBody">
+          <div class="interfaceinfo">overrides <a href="python.lib.mysqldb.SynchDB.html#use">python.lib.mysqldb.SynchDB.use</a></div>
+          <div>Switch to use new database schema<table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">schema</td><td><code>str</code> - schema to 'use' for all subsequent database operations
+</td></tr><tr class="fieldStart"><td class="fieldName">Raises</td><td class="fieldArg">RuntimeError</td><td>if @param &lt;schema&gt; does not correspond to any schema existing in the 
+database
+</td></tr><tr class="fieldStart"><td class="fieldName">Note</td><td colspan="2">This is asynchronous (non-blocking) implementation of SynchDB.use(). It 
+uses @deferred decorator (defined in deferred_lib.py module) and returns a 
+deferred that will 'fire' (execute callback) when operation is complete
+</td></tr></table></div>
+        </div>
+      </div><div class="function">
+        <a name="python.lib.mysqldb.AsynchDB.execute"></a>
+        <a name="execute"></a>
+        <div class="functionHeader">
+        @deferred<br />
+        def execute(self, stmt):
+        
+      </div>
+        <div class="functionBody">
+          <div class="interfaceinfo">overrides <a href="python.lib.mysqldb.SynchDB.html#execute">python.lib.mysqldb.SynchDB.execute</a></div>
+          <div>Execute any SQL statement and return number of rows affected<table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">stmt</td><td>SQL statement to be executed
+</td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">deferred (twisted.internet.defer.Deferred instance) which will 'fire' 
+callback and provide operation's result (number of rows returned) as an 
+argument to that callback method
+</td></tr><tr class="fieldStart"><td class="fieldName">Raises</td><td class="fieldArg">exception</td><td>an excepton raised by self.cursor.execute() (whatever that exception might 
+be)
+</td></tr><tr class="fieldStart"><td class="fieldName">Note</td><td colspan="2">This is asynchronous (non-blocking) implementation of SynchDB.execute(). It
+uses @deferred decorator (defined in deferred_lib.py module) and returns a 
+deferred that will 'fire' (execute callback) when operation is complete, 
+providing returned value (number of rows affected) as an argument to 
+callback handler
+</td></tr></table></div>
+        </div>
+      </div><div class="function">
+        <a name="python.lib.mysqldb.AsynchDB.insert"></a>
+        <a name="insert"></a>
+        <div class="functionHeader">
+        @deferred<br />
+        def insert(self, stmt):
+        
+      </div>
+        <div class="functionBody">
+          <div class="interfaceinfo">overrides <a href="python.lib.mysqldb.SynchDB.html#insert">python.lib.mysqldb.SynchDB.insert</a></div>
+          <div>Execute INSERT SQL statement and return number of rows affected<table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">stmt</td><td>'insert' SQL statement to be executed
+</td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">(numRows, insertID) (<code>tuple</code>) - number of rows and INSERT_ID of 
+the first row inserted by an operation
+</td></tr><tr class="fieldStart"><td class="fieldName">Note</td><td colspan="2">This is asynchronous (non-blocking) implementation of SynchDB.insert(). It 
+uses @deferred decorator (defined in deferred_lib.py module) and returns a 
+deferred that will 'fire' (execute callback) when operation is complete, 
+providing returned value (number of rows affected and INSERT_ID of the 
+first row inserted) as an argument to callback handler
+</td></tr></table></div>
+        </div>
+      </div><div class="function">
+        <a name="python.lib.mysqldb.AsynchDB.query"></a>
+        <a name="query"></a>
+        <div class="functionHeader">
+        @deferred<br />
+        def query(self, query):
+        
+      </div>
+        <div class="functionBody">
+          <div class="interfaceinfo">overrides <a href="python.lib.mysqldb.SynchDB.html#query">python.lib.mysqldb.SynchDB.query</a></div>
+          <div>Run SQL query and return its results<table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">query</td><td>SQL query to be executed
+</td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">res (<code>list</code>) - result set returned by the query
+</td></tr><tr class="fieldStart"><td class="fieldName">Raises</td><td class="fieldArg">exception</td><td>an excepton raised by self.cursor.execute() (whatever that exception might 
+be)
+</td></tr><tr class="fieldStart"><td class="fieldName">Note</td><td colspan="2">This is asynchronous (non-blocking) implementation of SynchDB.execute(). It
+uses @deferred decorator (defined in deferred_lib.py module) and returns a 
+deferred that will 'fire' (execute callback) when operation is complete, 
+providing returned value (result set returned by the query) as an argument 
+to callback handler
+</td></tr></table></div>
+        </div>
+      </div>
+    
+    <address>
+      <a href="index.html">API Documentation</a> for 'SCS Controller', generated by <a href="http://codespeak.net/~mwh/pydoctor/">pydoctor</a> at 2009-09-18 15:11:29.
+    </address>
+  </body>
+</html>

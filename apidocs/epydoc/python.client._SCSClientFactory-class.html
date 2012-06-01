@@ -1,0 +1,767 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>python.client._SCSClientFactory</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            >'SCS Controller'</th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="python-module.html">Package&nbsp;python</a> ::
+        <a href="python.client-module.html">Module&nbsp;client</a> ::
+        Class&nbsp;_SCSClientFactory
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="python.client._SCSClientFactory-class.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS DESCRIPTION ==================== -->
+<h1 class="epydoc">Class _SCSClientFactory</h1><p class="nomargin-top"><span class="codelink"><a href="python.client-pysrc.html#_SCSClientFactory">source&nbsp;code</a></span></p>
+<center>
+<center>  <map id="uml_class_diagram_for_python_c_2" name="uml_class_diagram_for_python_c_2">
+<area shape="rect" id="node4" href="python.client._SCSClientFactory-class.html#noisy" title="python.client._SCSClientFactory.noisy" alt="" coords="33,593,367,612"/>
+<area shape="rect" id="node4" href="python.client._SCSClientFactory-class.html#__init__" title="Class&#39;s constructor." alt="" coords="33,615,367,633"/>
+<area shape="rect" id="node4" href="python.client._SCSClientFactory-class.html#buildProtocol" title="Extends twisted.internet.protocol.Factory.buildProtocol() method" alt="" coords="33,633,367,652"/>
+<area shape="rect" id="node4" href="python.client._SCSClientFactory-class.html#startedConnecting" title="Client&#39;s connection start event" alt="" coords="33,652,367,671"/>
+<area shape="rect" id="node4" href="python.client._SCSClientFactory-class.html#clientConnectionLost" title="Process client connection lost event." alt="" coords="33,671,367,689"/>
+<area shape="rect" id="node4" href="python.client._SCSClientFactory-class.html#clientConnectionFailed" title="Process client connection failed event." alt="" coords="33,689,367,708"/>
+<area shape="rect" id="node4" href="python.client._SCSClientFactory-class.html#addOnlineDeferred" title="Add new external deferred to &lt;extOnlineDeferreds&gt; dictionary" alt="" coords="33,708,367,727"/>
+<area shape="rect" id="node4" href="python.client._SCSClientFactory-class.html#addOfflineDeferred" title="Add new external deferred to &lt;extOfflineDeferreds&gt; dictionary" alt="" coords="33,727,367,745"/>
+<area shape="rect" id="node1" href="python.client._SCSClientFactory-class.html" title="SCS client connection factory class." alt="" coords="21,569,379,751"/>
+<area shape="rect" id="node5" href="javascript:void(0);" title="Maximum number of seconds between connection attempts." alt="" coords="17,316,381,335"/>
+<area shape="rect" id="node5" href="javascript:void(0);" title="Delay for the first reconnection attempt." alt="" coords="17,335,381,353"/>
+<area shape="rect" id="node5" href="javascript:void(0);" title="a multiplicitive factor by which the delay grows" alt="" coords="17,353,381,372"/>
+<area shape="rect" id="node5" href="javascript:void(0);" title="percentage of randomness to introduce into the delay length to prevent &#160;stampeding." alt="" coords="17,372,381,391"/>
+<area shape="rect" id="node5" href="javascript:void(0);" title="twisted.internet.protocol.ReconnectingClientFactory.delay" alt="" coords="17,391,381,409"/>
+<area shape="rect" id="node5" href="javascript:void(0);" title="twisted.internet.protocol.ReconnectingClientFactory.retries" alt="" coords="17,409,381,428"/>
+<area shape="rect" id="node5" href="javascript:void(0);" title="twisted.internet.protocol.ReconnectingClientFactory.maxRetries" alt="" coords="17,428,381,447"/>
+<area shape="rect" id="node5" href="javascript:void(0);" title="twisted.internet.protocol.ReconnectingClientFactory.connector" alt="" coords="17,447,381,465"/>
+<area shape="rect" id="node5" href="javascript:void(0);" title="twisted.internet.protocol.ReconnectingClientFactory.continueTrying" alt="" coords="17,465,381,484"/>
+<area shape="rect" id="node5" href="javascript:void(0);" title="Have this connector connect again, after a suitable delay." alt="" coords="17,487,381,505"/>
+<area shape="rect" id="node5" href="javascript:void(0);" title="I put a stop to any attempt to reconnect in progress." alt="" coords="17,505,381,524"/>
+<area shape="rect" id="node5" href="javascript:void(0);" title="Call me after a successful connection to reset." alt="" coords="17,524,381,543"/>
+<area shape="rect" id="node2" href="javascript:void(0);" title="My clients auto&#45;reconnect with an exponential back&#45;off." alt="" coords="5,291,392,549"/>
+<area shape="rect" id="node3" href="javascript:void(0);" title="A Protocol factory for clients." alt="" coords="52,227,345,271"/>
+<area shape="rect" id="node7" href="javascript:void(0);" title="twisted.internet.protocol.Factory.protocol" alt="" coords="84,31,315,49"/>
+<area shape="rect" id="node7" href="javascript:void(0);" title="twisted.internet.protocol.Factory.numPorts" alt="" coords="84,49,315,68"/>
+<area shape="rect" id="node7" href="javascript:void(0);" title="twisted.internet.protocol.Factory.__implemented__" alt="" coords="84,68,315,87"/>
+<area shape="rect" id="node7" href="javascript:void(0);" title="twisted.internet.protocol.Factory.__provides__" alt="" coords="84,87,315,105"/>
+<area shape="rect" id="node7" href="javascript:void(0);" title="Make sure startFactory is called." alt="" coords="84,108,315,127"/>
+<area shape="rect" id="node7" href="javascript:void(0);" title="Make sure stopFactory is called." alt="" coords="84,127,315,145"/>
+<area shape="rect" id="node7" href="javascript:void(0);" title="This will be called before I begin listening on a Port or Connector." alt="" coords="84,145,315,164"/>
+<area shape="rect" id="node7" href="javascript:void(0);" title="This will be called before I stop listening on all Ports/Connectors." alt="" coords="84,164,315,183"/>
+<area shape="rect" id="node7" href="javascript:void(0);" title="Object Specification Descriptor" alt="" coords="84,183,315,201"/>
+<area shape="rect" id="node4" href="javascript:void(0);" title="This is a factory which produces protocols." alt="" coords="72,6,325,207"/>
+</map>
+  <img src="uml_class_diagram_for_python_c_2.gif" alt='' usemap="#uml_class_diagram_for_python_c_2" ismap="ismap" class="graph-without-title" />
+</center>
+</center>
+<hr />
+<p>SCS client connection factory class. Responsible for client's 
+  connection-related functionality. Derives from 
+  twisted.internet.protocol.ReconnectingClientFactory</p>
+
+<!-- ==================== INSTANCE METHODS ==================== -->
+<a name="section-InstanceMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Instance Methods</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-InstanceMethods"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="python.client._SCSClientFactory-class.html#__init__" class="summary-sig-name">__init__</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">name</span>,
+        <span class="summary-sig-arg">info</span>,
+        <span class="summary-sig-arg">reconnect</span>=<span class="summary-sig-default">True</span>)</span><br />
+      Class's constructor.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="python.client-pysrc.html#_SCSClientFactory.__init__">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="python.client._SCSClientFactory-class.html#__initialize" class="summary-sig-name" onclick="show_private();">__initialize</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">info</span>)</span><br />
+      Initialize given SCS client instance.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="python.client-pysrc.html#_SCSClientFactory.__initialize">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="__callbackDeferreds"></a><span class="summary-sig-name">__callbackDeferreds</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">deferreds</span>,
+        <span class="summary-sig-arg">type</span>,
+        <span class="summary-sig-arg">msg</span>=<span class="summary-sig-default">None</span>)</span><br />
+      Call back external deferreds</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="python.client-pysrc.html#_SCSClientFactory.__callbackDeferreds">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="python.client._SCSClientFactory-class.html#_checkInfo" class="summary-sig-name" onclick="show_private();">_checkInfo</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">info</span>)</span><br />
+      Verify that supplied &lt;info&gt; is a dictionary, and has all 
+      required key/value data</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="python.client-pysrc.html#_SCSClientFactory._checkInfo">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_stopJobRequests"></a><span class="summary-sig-name">_stopJobRequests</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      Stop all currently running JobRequests</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="python.client-pysrc.html#_SCSClientFactory._stopJobRequests">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_onlineStatusChange"></a><span class="summary-sig-name">_onlineStatusChange</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">online</span>,
+        <span class="summary-sig-arg">msg</span>=<span class="summary-sig-default">None</span>)</span><br />
+      Handle client's connection ('online') status change event 
+      (connect/disconnect)</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="python.client-pysrc.html#_SCSClientFactory._onlineStatusChange">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="python.client._SCSClientFactory-class.html#buildProtocol" class="summary-sig-name">buildProtocol</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">addr</span>)</span><br />
+      Extends twisted.internet.protocol.Factory.buildProtocol() method</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="python.client-pysrc.html#_SCSClientFactory.buildProtocol">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="python.client._SCSClientFactory-class.html#startedConnecting" class="summary-sig-name">startedConnecting</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">connector</span>)</span><br />
+      Client's connection start event</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="python.client-pysrc.html#_SCSClientFactory.startedConnecting">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="python.client._SCSClientFactory-class.html#clientConnectionLost" class="summary-sig-name">clientConnectionLost</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">connector</span>,
+        <span class="summary-sig-arg">reason</span>)</span><br />
+      Process client connection lost event.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="python.client-pysrc.html#_SCSClientFactory.clientConnectionLost">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="python.client._SCSClientFactory-class.html#clientConnectionFailed" class="summary-sig-name">clientConnectionFailed</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">connector</span>,
+        <span class="summary-sig-arg">reason</span>)</span><br />
+      Process client connection failed event.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="python.client-pysrc.html#_SCSClientFactory.clientConnectionFailed">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="addOnlineDeferred"></a><span class="summary-sig-name">addOnlineDeferred</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">deferred</span>,
+        <span class="summary-sig-arg">reset</span>=<span class="summary-sig-default">True</span>)</span><br />
+      Add new external deferred to &lt;extOnlineDeferreds&gt; dictionary</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="python.client-pysrc.html#_SCSClientFactory.addOnlineDeferred">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="addOfflineDeferred"></a><span class="summary-sig-name">addOfflineDeferred</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">deferred</span>,
+        <span class="summary-sig-arg">reset</span>=<span class="summary-sig-default">True</span>)</span><br />
+      Add new external deferred to &lt;extOfflineDeferreds&gt; dictionary</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="python.client-pysrc.html#_SCSClientFactory.addOfflineDeferred">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_SCSClientFactory__callbackDeferreds"></a><span class="summary-sig-name">_SCSClientFactory__callbackDeferreds</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">deferreds</span>,
+        <span class="summary-sig-arg">type</span>,
+        <span class="summary-sig-arg">msg</span>=<span class="summary-sig-default">None</span>)</span><br />
+      Call back external deferreds</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="python.client-pysrc.html#_SCSClientFactory._SCSClientFactory__callbackDeferreds">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="python.client._SCSClientFactory-class.html#_SCSClientFactory__initialize" class="summary-sig-name" onclick="show_private();">_SCSClientFactory__initialize</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">info</span>)</span><br />
+      Initialize given SCS client instance.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="python.client-pysrc.html#_SCSClientFactory._SCSClientFactory__initialize">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>twisted.internet.protocol.ReconnectingClientFactory</code></b>:
+      <code>resetDelay</code>,
+      <code>retry</code>,
+      <code>stopTrying</code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code>twisted.internet.protocol.Factory</code></b>:
+      <code>__providedBy__</code>,
+      <code>doStart</code>,
+      <code>doStop</code>,
+      <code>startFactory</code>,
+      <code>stopFactory</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS VARIABLES ==================== -->
+<a name="section-ClassVariables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Class Variables</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-ClassVariables"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="noisy"></a><span class="summary-name">noisy</span> = <code title="False">False</code>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>twisted.internet.protocol.ReconnectingClientFactory</code></b>:
+      <code>connector</code>,
+      <code>continueTrying</code>,
+      <code>delay</code>,
+      <code>maxRetries</code>,
+      <code>retries</code>
+      </p>
+    <div class="private">    <p class="indent-wrapped-lines"><b>Inherited from <code>twisted.internet.protocol.ReconnectingClientFactory</code></b> (private):
+      <code>_callID</code>
+      </p></div>
+    <p class="indent-wrapped-lines"><b>Inherited from <code>twisted.internet.protocol.Factory</code></b>:
+      <code>__implemented__</code>,
+      <code>__provides__</code>,
+      <code>numPorts</code>,
+      <code>protocol</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== INSTANCE VARIABLES ==================== -->
+<a name="section-InstanceVariables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Instance Variables</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-InstanceVariables"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>twisted.internet.protocol.ReconnectingClientFactory</code></b>:
+      <code>factor</code>,
+      <code>initialDelay</code>,
+      <code>jitter</code>,
+      <code>maxDelay</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== METHOD DETAILS ==================== -->
+<a name="section-MethodDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Method Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-MethodDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="__init__"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">__init__</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">name</span>,
+        <span class="sig-arg">info</span>,
+        <span class="sig-arg">reconnect</span>=<span class="sig-default">True</span>)</span>
+    <br /><em class="fname">(Constructor)</em>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="python.client-pysrc.html#_SCSClientFactory.__init__">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Class's constructor. Parameters:</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>name</code></strong> - SCS Client name</li>
+        <li><strong class="pname"><code>info</code></strong> - dictionary containing following key/value pairs: 'name':        
+          client name 'peer':        server (host:port) to be connected to 
+          'enabled':     True/False</li>
+        <li><strong class="pname"><code>reconnect</code></strong> - Reconnect to server (True/False) flag. Default: True</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="__initialize"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">__initialize</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">info</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="python.client-pysrc.html#_SCSClientFactory.__initialize">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Initialize given SCS client instance. Params:</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>info</code></strong> - dictionary containing following key/value pairs: 'name':        
+          client name 'peer':        server (host:port) to be connected to 
+          'enabled':     True/False</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="_checkInfo"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">_checkInfo</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">info</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="python.client-pysrc.html#_SCSClientFactory._checkInfo">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Verify that supplied &lt;info&gt; is a dictionary, and has all 
+  required key/value data</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>info</code></strong> - dictionary containing following key/value pairs: 'name':        
+          client name 'peer':        server (host:port) to be connected to 
+          'enabled':     True/False</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="buildProtocol"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">buildProtocol</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">addr</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="python.client-pysrc.html#_SCSClientFactory.buildProtocol">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Extends twisted.internet.protocol.Factory.buildProtocol() method</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>addr</code></strong> - an object implementing <code 
+          class="link">twisted.internet.interfaces.IAddress</code></li>
+    </ul></dd>
+    <dt>Overrides:
+        twisted.internet.protocol.Factory.buildProtocol
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="startedConnecting"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">startedConnecting</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">connector</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="python.client-pysrc.html#_SCSClientFactory.startedConnecting">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Client's connection start event</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>connector</code></strong> - a Connector object.</li>
+    </ul></dd>
+    <dt>Overrides:
+        twisted.internet.protocol.ClientFactory.startedConnecting
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="clientConnectionLost"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">clientConnectionLost</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">connector</span>,
+        <span class="sig-arg">reason</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="python.client-pysrc.html#_SCSClientFactory.clientConnectionLost">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Process client connection lost event. Extends 
+  protocol.ReconnectingClientFactory.clientConnectionLost() method</p>
+  <dl class="fields">
+    <dt>Overrides:
+        twisted.internet.protocol.ClientFactory.clientConnectionLost
+    </dt>
+  </dl>
+<div class="fields">      <p><strong>Note:</strong>
+        This method should not be called from user's code. Instead - it is 
+        being executed when given event occurs&quot;
+      </p>
+</div></td></tr></table>
+</div>
+<a name="clientConnectionFailed"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">clientConnectionFailed</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">connector</span>,
+        <span class="sig-arg">reason</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="python.client-pysrc.html#_SCSClientFactory.clientConnectionFailed">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Process client connection failed event. Extends 
+  protocol.ReconnectingClientFactory.clientConnectionFailed() method</p>
+  <dl class="fields">
+    <dt>Overrides:
+        twisted.internet.protocol.ClientFactory.clientConnectionFailed
+    </dt>
+  </dl>
+<div class="fields">      <p><strong>Note:</strong>
+        This method should not be called from user's code. Instead - it is 
+        being executed when given event occurs&quot;
+      </p>
+</div></td></tr></table>
+</div>
+<a name="_SCSClientFactory__initialize"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">_SCSClientFactory__initialize</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">info</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="python.client-pysrc.html#_SCSClientFactory._SCSClientFactory__initialize">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Initialize given SCS client instance. Params:</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>info</code></strong> - dictionary containing following key/value pairs: 'name':        
+          client name 'peer':        server (host:port) to be connected to 
+          'enabled':     True/False</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            >'SCS Controller'</th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    <a href="epydoc-log.html">Generated by Epydoc
+    3.0.1 on Fri Sep 18 15:11:25 2009</a>
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

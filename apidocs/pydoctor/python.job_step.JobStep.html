@@ -1,0 +1,230 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>API docs for &ldquo;python.job_step.JobStep&rdquo;</title>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+    <link href="apidocs.css" type="text/css" rel="stylesheet" />
+    
+    
+  </head>
+  <body>
+    <h1 class="class">Class p.j.JobStep(<span title="object">object</span>):</h1>
+    <p>
+      <span id="part">Part of <a href="python.html">python</a>.<a href="python.job_step.html">job_step</a></span>
+      
+      <a href="classIndex.html#python.job_step.JobStep">View In Hierarchy</a>
+    </p>
+    <div>
+      
+    </div>
+    <pre>JobStep class - implements individual job step's functionality. Multiple (potentially) instances of this class
+belong to a single job. JobStep instances are initialized and orchestrated by a job.Job class.</pre>
+    
+    
+    <div id="splitTables">
+      <table class="children sortable" id="id16">
+  
+  
+  
+  
+  <tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.job_step.JobStep.html#__init__">__init__</a></td>
+    <td><tt>Class's contructor. Parameters:</tt></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.job_step.JobStep.html#__failure">__failure</a></td>
+    <td><tt>Last part of JobStep's failure handler</tt></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.job_step.JobStep.html#__success">__success</a></td>
+    <td><tt>Last part of JobStep's success handler</tt></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.job_step.JobStep.html#__handleDBFailure">__handleDBFailure</a></td>
+    <td><tt>Record &lt;scs.job_step&gt; insert/update failure details</tt></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.job_step.JobStep.html#init">init</a></td>
+    <td><tt>Initialization: Insert new record into &lt;scs.job_step&gt; table</tt></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.job_step.JobStep.html#run">run</a></td>
+    <td><tt>Start current job step's execution by sending request (&lt;input&gt;) to remote server</tt></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.job_step.JobStep.html#done">done</a></td>
+    <td><tt>Perform JobStep's finalization tasks. Completion of this method should trigger Job </tt></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.job_step.JobStep.html#failureHandler">failureHandler</a></td>
+    <td><tt>Handle job step failure event</tt></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.job_step.JobStep.html#successHandler">successHandler</a></td>
+    <td><tt>Handle job step success event</tt></td>
+  </tr>
+  
+</table>
+      
+      
+    </div>
+    
+    
+    
+    <div class="function">
+        <a name="python.job_step.JobStep.__init__"></a>
+        <a name="__init__"></a>
+        <div class="functionHeader">
+        
+        def __init__(self, workflow, jobID, info, logName=None):
+        
+      </div>
+        <div class="functionBody">
+          
+          <pre>Class's contructor. Parameters:
+
+@param workflow: Workflow instance
+@type workflow: C{workflow.Workflow} instance
+@param jobID: jobid
+@type jobID: int
+@param info: Dictionary containing job step's information  
+@type info: C{dict} containing following keys: {'stepID', 'stepNo', 'client', 'input_src', 'out_flag'}
+@param logName: name used to identify log/error files being used by given JobStep instance  </pre>
+        </div>
+      </div><div class="function">
+        <a name="python.job_step.JobStep.__failure"></a>
+        <a name="__failure"></a>
+        <div class="functionHeader">
+        
+        def __failure(self, nothing, err_msg):
+        
+      </div>
+        <div class="functionBody">
+          
+          <pre>Last part of JobStep's failure handler</pre>
+        </div>
+      </div><div class="function">
+        <a name="python.job_step.JobStep.__success"></a>
+        <a name="__success"></a>
+        <div class="functionHeader">
+        
+        def __success(self, nothing):
+        
+      </div>
+        <div class="functionBody">
+          
+          <pre>Last part of JobStep's success handler</pre>
+        </div>
+      </div><div class="function">
+        <a name="python.job_step.JobStep.__handleDBFailure"></a>
+        <a name="__handleDBFailure"></a>
+        <div class="functionHeader">
+        
+        def __handleDBFailure(self, fail, stmt, type):
+        
+      </div>
+        <div class="functionBody">
+          
+          <pre>Record &lt;scs.job_step&gt; insert/update failure details</pre>
+        </div>
+      </div><div class="function">
+        <a name="python.job_step.JobStep.init"></a>
+        <a name="init"></a>
+        <div class="functionHeader">
+        
+        def init(self):
+        
+      </div>
+        <div class="functionBody">
+          
+          <pre>Initialization: Insert new record into &lt;scs.job_step&gt; table</pre>
+        </div>
+      </div><div class="function">
+        <a name="python.job_step.JobStep.run"></a>
+        <a name="run"></a>
+        <div class="functionHeader">
+        
+        def run(self, request):
+        
+      </div>
+        <div class="functionBody">
+          
+          <pre>Start current job step's execution by sending request (&lt;input&gt;) to remote server
+
+@param request: request to be sent to external server
+@type request: dict {'scs_jobid': &lt;jobid&gt;, 'request': &lt;request_data (text)&gt;}
+
+@return: deferred - a Deferred which will fire None or a Failure when database UPDATE statement is complete</pre>
+        </div>
+      </div><div class="function">
+        <a name="python.job_step.JobStep.done"></a>
+        <a name="done"></a>
+        <div class="functionHeader">
+        
+        def done(self, err_msg=None):
+        
+      </div>
+        <div class="functionBody">
+          
+          <pre>Perform JobStep's finalization tasks. Completion of this method should trigger Job 
+instance's callback() or errback() attached to &lt;self.deferred&gt;
+
+@attention: This method should either throw RuntimeError exception, or return some (any)
+            value indicating success. This should trigger Job instance's  
+            errback() or callback() method  - if one was added to &lt;self.deferred&gt; 
+            by the Job instance before JobStep's run() is executed 
+
+@return: deferred - a Deferred which will fire None or a Failure upon UPDATE database completion</pre>
+        </div>
+      </div><div class="function">
+        <a name="python.job_step.JobStep.failureHandler"></a>
+        <a name="failureHandler"></a>
+        <div class="functionHeader">
+        
+        def failureHandler(self, failure):
+        
+      </div>
+        <div class="functionBody">
+          
+          <pre>Handle job step failure event</pre>
+        </div>
+      </div><div class="function">
+        <a name="python.job_step.JobStep.successHandler"></a>
+        <a name="successHandler"></a>
+        <div class="functionHeader">
+        
+        def successHandler(self, result):
+        
+      </div>
+        <div class="functionBody">
+          
+          <pre>Handle job step success event</pre>
+        </div>
+      </div>
+    
+    <address>
+      <a href="index.html">API Documentation</a> for 'SCS Controller', generated by <a href="http://codespeak.net/~mwh/pydoctor/">pydoctor</a> at 2009-10-07 17:27:47.
+    </address>
+  </body>
+</html>

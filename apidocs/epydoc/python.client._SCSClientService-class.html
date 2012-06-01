@@ -1,0 +1,756 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>python.client._SCSClientService</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            >'SCS Controller'</th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="python-module.html">Package&nbsp;python</a> ::
+        <a href="python.client-module.html">Module&nbsp;client</a> ::
+        Class&nbsp;_SCSClientService
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="python.client._SCSClientService-class.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS DESCRIPTION ==================== -->
+<h1 class="epydoc">Class _SCSClientService</h1><p class="nomargin-top"><span class="codelink"><a href="python.client-pysrc.html#_SCSClientService">source&nbsp;code</a></span></p>
+<center>
+  <div class="private"><center>  <map id="uml_class_diagram_for_python_c_3" name="uml_class_diagram_for_python_c_3">
+<area shape="rect" id="node31" href="python.client._SCSClientService-class.html#__init__" title="Class&#39;s constructor." alt="" coords="17,425,347,444"/>
+<area shape="rect" id="node31" href="python.client._SCSClientService-class.html#startClient" title="Start new client connection" alt="" coords="17,444,347,463"/>
+<area shape="rect" id="node31" href="python.client._SCSClientService-class.html#stopClient" title="Stop client connection" alt="" coords="17,463,347,481"/>
+<area shape="rect" id="node31" href="python.client._SCSClientService-class.html#startService" title="Start SCSClient service" alt="" coords="17,481,347,500"/>
+<area shape="rect" id="node31" href="python.client._SCSClientService-class.html#stopService" title="Stop SCSClient service" alt="" coords="17,500,347,519"/>
+<area shape="rect" id="node31" href="python.client._SCSClientService-class.html#sendRequest" title="Send request to external server" alt="" coords="17,519,347,537"/>
+<area shape="rect" id="node31" href="python.client._SCSClientService-class.html#addOnlineDeferred" title="python.client._SCSClientService.addOnlineDeferred" alt="" coords="17,537,347,556"/>
+<area shape="rect" id="node31" href="python.client._SCSClientService-class.html#addOfflineDeferred" title="python.client._SCSClientService.addOfflineDeferred" alt="" coords="17,556,347,575"/>
+<area shape="rect" id="node1" href="python.client._SCSClientService-class.html" title="Extends twisted.application.service.MultiService class" alt="" coords="5,393,357,581"/>
+<area shape="rect" id="node3" href="python.client._SCSServerMonitor-class.html" title="python.client._SCSServerMonitor" alt="" coords="99,601,267,639"/>
+<area shape="rect" id="node32" href="javascript:void(0);" title="twisted.application.service.MultiService.__implemented__" alt="" coords="47,233,319,252"/>
+<area shape="rect" id="node32" href="javascript:void(0);" title="twisted.application.service.MultiService.__provides__" alt="" coords="47,252,319,271"/>
+<area shape="rect" id="node32" href="javascript:void(0);" title="twisted.application.service.MultiService.privilegedStartService" alt="" coords="47,273,319,292"/>
+<area shape="rect" id="node32" href="javascript:void(0);" title="twisted.application.service.MultiService.getServiceNamed" alt="" coords="47,292,319,311"/>
+<area shape="rect" id="node32" href="javascript:void(0);" title="twisted.application.service.MultiService.__iter__" alt="" coords="47,311,319,329"/>
+<area shape="rect" id="node32" href="javascript:void(0);" title="twisted.application.service.MultiService.addService" alt="" coords="47,329,319,348"/>
+<area shape="rect" id="node32" href="javascript:void(0);" title="twisted.application.service.MultiService.removeService" alt="" coords="47,348,319,367"/>
+<area shape="rect" id="node2" href="javascript:void(0);" title="Straightforward Service Container." alt="" coords="35,209,331,373"/>
+<area shape="rect" id="node33" href="javascript:void(0);" title="twisted.application.service.Service.running" alt="" coords="63,31,301,49"/>
+<area shape="rect" id="node33" href="javascript:void(0);" title="twisted.application.service.Service.name" alt="" coords="63,49,301,68"/>
+<area shape="rect" id="node33" href="javascript:void(0);" title="twisted.application.service.Service.parent" alt="" coords="63,68,301,87"/>
+<area shape="rect" id="node33" href="javascript:void(0);" title="twisted.application.service.Service.__getstate__" alt="" coords="63,89,301,108"/>
+<area shape="rect" id="node33" href="javascript:void(0);" title="twisted.application.service.Service.setName" alt="" coords="63,108,301,127"/>
+<area shape="rect" id="node33" href="javascript:void(0);" title="twisted.application.service.Service.setServiceParent" alt="" coords="63,127,301,145"/>
+<area shape="rect" id="node33" href="javascript:void(0);" title="twisted.application.service.Service.disownServiceParent" alt="" coords="63,145,301,164"/>
+<area shape="rect" id="node33" href="javascript:void(0);" title="Object Specification Descriptor" alt="" coords="63,164,301,183"/>
+<area shape="rect" id="node4" href="javascript:void(0);" title="Base class for services." alt="" coords="51,6,312,189"/>
+</map>
+  <img src="uml_class_diagram_for_python_c_3.gif" alt='' usemap="#uml_class_diagram_for_python_c_3" ismap="ismap" class="graph-without-title" />
+</center></div>
+  <div class="public" style="display:none"><center>  <map id="uml_class_diagram_for_python_c_4" name="uml_class_diagram_for_python_c_4">
+<area shape="rect" id="node35" href="python.client._SCSClientService-class.html#__init__" title="Class&#39;s constructor." alt="" coords="17,425,347,444"/>
+<area shape="rect" id="node35" href="python.client._SCSClientService-class.html#startClient" title="Start new client connection" alt="" coords="17,444,347,463"/>
+<area shape="rect" id="node35" href="python.client._SCSClientService-class.html#stopClient" title="Stop client connection" alt="" coords="17,463,347,481"/>
+<area shape="rect" id="node35" href="python.client._SCSClientService-class.html#startService" title="Start SCSClient service" alt="" coords="17,481,347,500"/>
+<area shape="rect" id="node35" href="python.client._SCSClientService-class.html#stopService" title="Stop SCSClient service" alt="" coords="17,500,347,519"/>
+<area shape="rect" id="node35" href="python.client._SCSClientService-class.html#sendRequest" title="Send request to external server" alt="" coords="17,519,347,537"/>
+<area shape="rect" id="node35" href="python.client._SCSClientService-class.html#addOnlineDeferred" title="python.client._SCSClientService.addOnlineDeferred" alt="" coords="17,537,347,556"/>
+<area shape="rect" id="node35" href="python.client._SCSClientService-class.html#addOfflineDeferred" title="python.client._SCSClientService.addOfflineDeferred" alt="" coords="17,556,347,575"/>
+<area shape="rect" id="node1" href="python.client._SCSClientService-class.html" title="Extends twisted.application.service.MultiService class" alt="" coords="5,393,357,581"/>
+<area shape="rect" id="node36" href="javascript:void(0);" title="twisted.application.service.MultiService.__implemented__" alt="" coords="47,233,319,252"/>
+<area shape="rect" id="node36" href="javascript:void(0);" title="twisted.application.service.MultiService.__provides__" alt="" coords="47,252,319,271"/>
+<area shape="rect" id="node36" href="javascript:void(0);" title="twisted.application.service.MultiService.privilegedStartService" alt="" coords="47,273,319,292"/>
+<area shape="rect" id="node36" href="javascript:void(0);" title="twisted.application.service.MultiService.getServiceNamed" alt="" coords="47,292,319,311"/>
+<area shape="rect" id="node36" href="javascript:void(0);" title="twisted.application.service.MultiService.__iter__" alt="" coords="47,311,319,329"/>
+<area shape="rect" id="node36" href="javascript:void(0);" title="twisted.application.service.MultiService.addService" alt="" coords="47,329,319,348"/>
+<area shape="rect" id="node36" href="javascript:void(0);" title="twisted.application.service.MultiService.removeService" alt="" coords="47,348,319,367"/>
+<area shape="rect" id="node2" href="javascript:void(0);" title="Straightforward Service Container." alt="" coords="35,209,331,373"/>
+<area shape="rect" id="node37" href="javascript:void(0);" title="twisted.application.service.Service.running" alt="" coords="63,31,301,49"/>
+<area shape="rect" id="node37" href="javascript:void(0);" title="twisted.application.service.Service.name" alt="" coords="63,49,301,68"/>
+<area shape="rect" id="node37" href="javascript:void(0);" title="twisted.application.service.Service.parent" alt="" coords="63,68,301,87"/>
+<area shape="rect" id="node37" href="javascript:void(0);" title="twisted.application.service.Service.__getstate__" alt="" coords="63,89,301,108"/>
+<area shape="rect" id="node37" href="javascript:void(0);" title="twisted.application.service.Service.setName" alt="" coords="63,108,301,127"/>
+<area shape="rect" id="node37" href="javascript:void(0);" title="twisted.application.service.Service.setServiceParent" alt="" coords="63,127,301,145"/>
+<area shape="rect" id="node37" href="javascript:void(0);" title="twisted.application.service.Service.disownServiceParent" alt="" coords="63,145,301,164"/>
+<area shape="rect" id="node37" href="javascript:void(0);" title="Object Specification Descriptor" alt="" coords="63,164,301,183"/>
+<area shape="rect" id="node3" href="javascript:void(0);" title="Base class for services." alt="" coords="51,6,312,189"/>
+</map>
+  <img src="uml_class_diagram_for_python_c_4.gif" alt='' usemap="#uml_class_diagram_for_python_c_4" ismap="ismap" class="graph-without-title" />
+</center></div>
+</center>
+<hr />
+<p>Extends twisted.application.service.MultiService class</p>
+  <p>This class &quot;wraps&quot; SCS client functionality 
+  (_SCSClientProtocol) as a service. It is responsible for 
+  starting/stopping the service (initializing log and error files, as well 
+  as starting subordinate server monitoring service) used by client entity.
+  It has method(s) for starting &quot;one-off&quot; client connections to 
+  external server and sending job request to the server</p>
+
+<!-- ==================== INSTANCE METHODS ==================== -->
+<a name="section-InstanceMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Instance Methods</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-InstanceMethods"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="python.client._SCSClientService-class.html#__init__" class="summary-sig-name">__init__</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">name</span>,
+        <span class="summary-sig-arg">clientInfo</span>,
+        <span class="summary-sig-arg">logName</span>,
+        <span class="summary-sig-arg">logDir</span>)</span><br />
+      Class's constructor.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="python.client-pysrc.html#_SCSClientService.__init__">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="python.client._SCSClientService-class.html#_checkInfo" class="summary-sig-name" onclick="show_private();">_checkInfo</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">info</span>)</span><br />
+      Verify that supplied client info contains all required data</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="python.client-pysrc.html#_SCSClientService._checkInfo">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="python.client._SCSClientService-class.html#_sendRequest" class="summary-sig-name" onclick="show_private();">_sendRequest</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">protocol</span>,
+        <span class="summary-sig-arg">request</span>,
+        <span class="summary-sig-arg">deferred</span>)</span><br />
+      Send request to external server</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="python.client-pysrc.html#_SCSClientService._sendRequest">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_connSuccessHandler"></a><span class="summary-sig-name">_connSuccessHandler</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">protocol</span>)</span><br />
+      Client connection's success handler</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="python.client-pysrc.html#_SCSClientService._connSuccessHandler">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_connFailureHandler"></a><span class="summary-sig-name">_connFailureHandler</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">fail</span>)</span><br />
+      Client connection's failure handler</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="python.client-pysrc.html#_SCSClientService._connFailureHandler">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_disconnSuccessHandler"></a><span class="summary-sig-name">_disconnSuccessHandler</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">protocol</span>)</span><br />
+      Client disconnect success handler</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="python.client-pysrc.html#_SCSClientService._disconnSuccessHandler">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_disconnFailureHandler"></a><span class="summary-sig-name">_disconnFailureHandler</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">failure</span>,
+        <span class="summary-sig-arg">protocol</span>)</span><br />
+      Client disconnect failure handler</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="python.client-pysrc.html#_SCSClientService._disconnFailureHandler">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="python.client._SCSClientService-class.html#startClient" class="summary-sig-name">startClient</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Start new client connection</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="python.client-pysrc.html#_SCSClientService.startClient">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="python.client._SCSClientService-class.html#stopClient" class="summary-sig-name">stopClient</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">protocol</span>)</span><br />
+      Stop client connection</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="python.client-pysrc.html#_SCSClientService.stopClient">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="python.client._SCSClientService-class.html#startService" class="summary-sig-name">startService</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Start SCSClient service</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="python.client-pysrc.html#_SCSClientService.startService">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="python.client._SCSClientService-class.html#stopService" class="summary-sig-name">stopService</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Stop SCSClient service</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="python.client-pysrc.html#_SCSClientService.stopService">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="python.client._SCSClientService-class.html#sendRequest" class="summary-sig-name">sendRequest</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">request</span>,
+        <span class="summary-sig-arg">deferred</span>)</span><br />
+      Send request to external server</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="python.client-pysrc.html#_SCSClientService.sendRequest">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="addOnlineDeferred"></a><span class="summary-sig-name">addOnlineDeferred</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">deferred</span>,
+        <span class="summary-sig-arg">reset</span>=<span class="summary-sig-default">True</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="python.client-pysrc.html#_SCSClientService.addOnlineDeferred">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="addOfflineDeferred"></a><span class="summary-sig-name">addOfflineDeferred</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">deferred</span>,
+        <span class="summary-sig-arg">reset</span>=<span class="summary-sig-default">True</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="python.client-pysrc.html#_SCSClientService.addOfflineDeferred">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>twisted.application.service.MultiService</code></b>:
+      <code>__iter__</code>,
+      <code>addService</code>,
+      <code>getServiceNamed</code>,
+      <code>privilegedStartService</code>,
+      <code>removeService</code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code>twisted.application.service.Service</code></b>:
+      <code>__getstate__</code>,
+      <code>__providedBy__</code>,
+      <code>disownServiceParent</code>,
+      <code>setName</code>,
+      <code>setServiceParent</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS VARIABLES ==================== -->
+<a name="section-ClassVariables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Class Variables</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-ClassVariables"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>twisted.application.service.MultiService</code></b>:
+      <code>__implemented__</code>,
+      <code>__provides__</code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code>twisted.application.service.Service</code></b>:
+      <code>name</code>,
+      <code>parent</code>,
+      <code>running</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== METHOD DETAILS ==================== -->
+<a name="section-MethodDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Method Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-MethodDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="__init__"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">__init__</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">name</span>,
+        <span class="sig-arg">clientInfo</span>,
+        <span class="sig-arg">logName</span>,
+        <span class="sig-arg">logDir</span>)</span>
+    <br /><em class="fname">(Constructor)</em>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="python.client-pysrc.html#_SCSClientService.__init__">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Class's constructor. Parameters:</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>name</code></strong> - SCS client name</li>
+        <li><strong class="pname"><code>clientInfo</code></strong> - dictionary containing following key/value pairs:
+          <ul>
+            <li>
+              'host':        server's hostname
+            </li>
+            <li>
+              'port':        port on which server is listening
+            </li>
+          </ul></li>
+        <li><strong class="pname"><code>logName</code></strong> - unique log/error name (identifier) that will be used to write to 
+          these particular files</li>
+        <li><strong class="pname"><code>logDir</code></strong> - folder where log and error files will be created</li>
+    </ul></dd>
+    <dt>Overrides:
+        twisted.application.service.MultiService.__init__
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="_checkInfo"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">_checkInfo</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">info</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="python.client-pysrc.html#_SCSClientService._checkInfo">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Verify that supplied client info contains all required data</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>info</code></strong> - dictionary (<code>dict</code>) containing following required 
+          data: 'host':     hostname where server is running 'port':     
+          port on which server is listening 'enabled':  True/False flag 
+          indicating if given client is enabled or not</li>
+    </ul></dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'>RuntimeError</strong></code> - if &lt;info&gt; is not a dictionary, or any of the required data is
+        missing</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="_sendRequest"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">_sendRequest</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">protocol</span>,
+        <span class="sig-arg">request</span>,
+        <span class="sig-arg">deferred</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="python.client-pysrc.html#_SCSClientService._sendRequest">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Send request to external server</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>protocol</code></strong> - _SCSClientProtocol instance which is being used to send request 
+          to server</li>
+        <li><strong class="pname"><code>request</code></strong> - Request data (whatever it might be) to be sent to external server</li>
+        <li><strong class="pname"><code>deferred</code></strong> - deferred (<code>defer.Deferred</code>) to be used by client 
+          protocol to signal job completion or failure</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>protocol - client protocol instance 
+          (<code>_SCSClientProtocol</code>) that sent request to the server</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="startClient"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">startClient</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="python.client-pysrc.html#_SCSClientService.startClient">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Start new client connection</p>
+  <dl class="fields">
+    <dt>Returns:</dt>
+        <dd>deferred (<code>defer.Deferred</code>) - deferred that will 
+          'fire' when client connection is made (or fails)</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="stopClient"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">stopClient</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">protocol</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="python.client-pysrc.html#_SCSClientService.stopClient">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Stop client connection</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>protocol</code></strong> - client protocol entity (<code>_SCSClientProtocol</code>) being 
+          disconnected from the server</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>deferred (<code>defer.Deferred</code>) - deferred that will 
+          'fire' when client has disconnected from server (or fails)</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="startService"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">startService</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="python.client-pysrc.html#_SCSClientService.startService">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Start SCSClient service</p>
+  <dl class="fields">
+    <dt>Overrides:
+        twisted.application.service.Service.startService
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="stopService"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">stopService</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="python.client-pysrc.html#_SCSClientService.stopService">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Stop SCSClient service</p>
+  <dl class="fields">
+    <dt>Overrides:
+        twisted.application.service.Service.stopService
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="sendRequest"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">sendRequest</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">request</span>,
+        <span class="sig-arg">deferred</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="python.client-pysrc.html#_SCSClientService.sendRequest">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Send request to external server</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>request</code></strong> - Request data (whatever it might be) to be sent to external server</li>
+        <li><strong class="pname"><code>deferred</code></strong> - job step deferred (<code>defer.Deferred</code>) to be used by 
+          client protocol to signal job completion or failure</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>deferred (<code>defer.Deferred</code>) that will fire callback or
+          errback method when request is sent to the server</dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            >'SCS Controller'</th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    <a href="epydoc-log.html">Generated by Epydoc
+    3.0.1 on Wed Oct  7 17:27:44 2009</a>
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

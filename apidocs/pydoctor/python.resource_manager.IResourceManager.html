@@ -1,0 +1,205 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>API docs for &ldquo;python.resource_manager.IResourceManager&rdquo;</title>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+    <link href="apidocs.css" type="text/css" rel="stylesheet" />
+    
+    
+  </head>
+  <body>
+    <h1 class="class">Class p.r.IResourceManager(<span title="zope.interface.Interface">Interface</span>):</h1>
+    <p>
+      <span id="part">Part of <a href="python.html">python</a>.<a href="python.resource_manager.html">resource_manager</a></span>
+      
+      <a href="classIndex.html#python.resource_manager.IResourceManager">View In Hierarchy</a>
+    </p>
+    <div>
+      
+    </div>
+    <pre>Defines general request interface
+
+Each class implementing IRequest interface defines functionality to verify and 
+process requests of a given (specialized) type
+Implementations: 
+    - server.JobRequest, server.JobStatusRequest, 
+    - client.JobRequest, client.JobStatusRequest
+                     
+@ivar request: original request
+@ivar response: response data obtained in response to a given request
+@ivar scs_jobid: jobid - ID of the job to which request is related
+@ivar deferred: external deferred that will be called back when request completes successfully, or fails   </pre>
+    
+    
+    <div id="splitTables">
+      <table class="children sortable" id="id18">
+  
+  
+  
+  
+  <tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.resource_manager.IResourceManager.html#_loadInfo">_loadInfo</a></td>
+    <td><tt>Loads given resource's information from the database</tt></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.resource_manager.IResourceManager.html#start">start</a></td>
+    <td><tt>Instantiates and starts one instance of a given resource type </tt></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.resource_manager.IResourceManager.html#stop">stop</a></td>
+    <td><tt>Stops execution of one running instance of a given resource type </tt></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.resource_manager.IResourceManager.html#startUp">startUp</a></td>
+    <td><tt>Instantiates and starts all enabled instances of a given resource type</tt></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.resource_manager.IResourceManager.html#shutDown">shutDown</a></td>
+    <td><tt>Stops execution of all instances of a given resource type</tt></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.resource_manager.IResourceManager.html#startService">startService</a></td>
+    <td><tt>Start resource manager's service</tt></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.resource_manager.IResourceManager.html#stopService">stopService</a></td>
+    <td><tt>Stop resource manager's service</tt></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.resource_manager.IResourceManager.html#getResource">getResource</a></td>
+    <td><tt>Obtain given resource instance</tt></td>
+  </tr>
+  
+</table>
+      
+      
+    </div>
+    
+    
+    
+    <div class="function">
+        <a name="python.resource_manager.IResourceManager._loadInfo"></a>
+        <a name="_loadInfo"></a>
+        <div class="functionHeader">
+        
+        def _loadInfo():
+        
+      </div>
+        <div class="functionBody">
+          
+          <pre>Loads given resource's information from the database</pre>
+        </div>
+      </div><div class="function">
+        <a name="python.resource_manager.IResourceManager.start"></a>
+        <a name="start"></a>
+        <div class="functionHeader">
+        
+        def start(name):
+        
+      </div>
+        <div class="functionBody">
+          
+          <pre>Instantiates and starts one instance of a given resource type 
+
+@param name: unique instance name</pre>
+        </div>
+      </div><div class="function">
+        <a name="python.resource_manager.IResourceManager.stop"></a>
+        <a name="stop"></a>
+        <div class="functionHeader">
+        
+        def stop(name):
+        
+      </div>
+        <div class="functionBody">
+          
+          <pre>Stops execution of one running instance of a given resource type 
+
+@param name: unique instance name</pre>
+        </div>
+      </div><div class="function">
+        <a name="python.resource_manager.IResourceManager.startUp"></a>
+        <a name="startUp"></a>
+        <div class="functionHeader">
+        
+        def startUp():
+        
+      </div>
+        <div class="functionBody">
+          
+          <pre>Instantiates and starts all enabled instances of a given resource type</pre>
+        </div>
+      </div><div class="function">
+        <a name="python.resource_manager.IResourceManager.shutDown"></a>
+        <a name="shutDown"></a>
+        <div class="functionHeader">
+        
+        def shutDown():
+        
+      </div>
+        <div class="functionBody">
+          
+          <pre>Stops execution of all instances of a given resource type</pre>
+        </div>
+      </div><div class="function">
+        <a name="python.resource_manager.IResourceManager.startService"></a>
+        <a name="startService"></a>
+        <div class="functionHeader">
+        
+        def startService():
+        
+      </div>
+        <div class="functionBody">
+          
+          <pre>Start resource manager's service</pre>
+        </div>
+      </div><div class="function">
+        <a name="python.resource_manager.IResourceManager.stopService"></a>
+        <a name="stopService"></a>
+        <div class="functionHeader">
+        
+        def stopService():
+        
+      </div>
+        <div class="functionBody">
+          
+          <pre>Stop resource manager's service</pre>
+        </div>
+      </div><div class="function">
+        <a name="python.resource_manager.IResourceManager.getResource"></a>
+        <a name="getResource"></a>
+        <div class="functionHeader">
+        
+        def getResource(name):
+        
+      </div>
+        <div class="functionBody">
+          
+          <pre>Obtain given resource instance</pre>
+        </div>
+      </div>
+    
+    <address>
+      <a href="index.html">API Documentation</a> for 'SCS Controller', generated by <a href="http://codespeak.net/~mwh/pydoctor/">pydoctor</a> at 2009-10-07 17:27:47.
+    </address>
+  </body>
+</html>

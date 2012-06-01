@@ -1,0 +1,296 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>API docs for &ldquo;python.job.Job&rdquo;</title>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+    <link href="apidocs.css" type="text/css" rel="stylesheet" />
+    
+    
+  </head>
+  <body>
+    <h1 class="class">Class p.j.Job(<span title="object">object</span>):</h1>
+    <p>
+      <span id="part">Part of <a href="python.html">python</a>.<a href="python.job.html">job</a></span>
+      
+      <a href="classIndex.html#python.job.Job">View In Hierarchy</a>
+    </p>
+    <div>
+      
+    </div>
+    <pre>Implements job functionality responsible for executing and orchestrating multiple job steps.
+
+Constructor argument(s):
+
+@param workFlow: workflow that started the job
+@type workFlow: workflow.Workflow instance</pre>
+    
+    
+    <div id="splitTables">
+      <table class="children sortable" id="id14">
+  
+  
+  
+  
+  <tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.job.Job.html#__init__">__init__</a></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.job.Job.html#__failure">__failure</a></td>
+    <td><tt>Last part of Job's failure handler</tt></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.job.Job.html#__success">__success</a></td>
+    <td><tt>Last part of Job's success handler</tt></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.job.Job.html#__initJobSteps">__initJobSteps</a></td>
+    <td><tt>Initialize individual job steps (JobStep entities) corresponding to a given job</tt></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.job.Job.html#__handleDBFailure">__handleDBFailure</a></td>
+    <td><tt>Record &lt;scs.job_step&gt; insert/update failure details</tt></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.job.Job.html#_timeout">_timeout</a></td>
+    <td><tt>Job timeout event handler</tt></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.job.Job.html#_setTimeout">_setTimeout</a></td>
+    <td><tt>Set or update previously set job timeout (number of seconds) setting</tt></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.job.Job.html#init">init</a></td>
+    <td><tt>Synchronous job initialization</tt></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.job.Job.html#run">run</a></td>
+    <td><tt>Start asynchronous job exection by executing first job step</tt></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.job.Job.html#done">done</a></td>
+    <td><tt>Perform JobStep's finalization tasks. Completion of this method should trigger Job </tt></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.job.Job.html#runJobStep">runJobStep</a></td>
+    <td><tt>Start asynchronous job step (&lt;step_no&gt;) execution</tt></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.job.Job.html#failureHandler">failureHandler</a></td>
+    <td><tt>Handle job step failure event</tt></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.job.Job.html#successHandler">successHandler</a></td>
+    <td><tt>Handle job step success event</tt></td>
+  </tr>
+  
+</table>
+      
+      
+    </div>
+    
+    
+    
+    <div class="function">
+        <a name="python.job.Job.__init__"></a>
+        <a name="__init__"></a>
+        <div class="functionHeader">
+        
+        def __init__(self, workFlow, logName=None):
+        
+      </div>
+        <div class="functionBody">
+          
+          <div class="undocumented">Undocumented</div>
+        </div>
+      </div><div class="function">
+        <a name="python.job.Job.__failure"></a>
+        <a name="__failure"></a>
+        <div class="functionHeader">
+        
+        def __failure(self, nothing, err_msg):
+        
+      </div>
+        <div class="functionBody">
+          
+          <pre>Last part of Job's failure handler</pre>
+        </div>
+      </div><div class="function">
+        <a name="python.job.Job.__success"></a>
+        <a name="__success"></a>
+        <div class="functionHeader">
+        
+        def __success(self, nothing):
+        
+      </div>
+        <div class="functionBody">
+          
+          <pre>Last part of Job's success handler</pre>
+        </div>
+      </div><div class="function">
+        <a name="python.job.Job.__initJobSteps"></a>
+        <a name="__initJobSteps"></a>
+        <div class="functionHeader">
+        
+        def __initJobSteps(self, jobID):
+        
+      </div>
+        <div class="functionBody">
+          
+          <pre>Initialize individual job steps (JobStep entities) corresponding to a given job</pre>
+        </div>
+      </div><div class="function">
+        <a name="python.job.Job.__handleDBFailure"></a>
+        <a name="__handleDBFailure"></a>
+        <div class="functionHeader">
+        
+        def __handleDBFailure(self, fail, stmt, type):
+        
+      </div>
+        <div class="functionBody">
+          
+          <pre>Record &lt;scs.job_step&gt; insert/update failure details</pre>
+        </div>
+      </div><div class="function">
+        <a name="python.job.Job._timeout"></a>
+        <a name="_timeout"></a>
+        <div class="functionHeader">
+        
+        def _timeout(self):
+        
+      </div>
+        <div class="functionBody">
+          
+          <pre>Job timeout event handler</pre>
+        </div>
+      </div><div class="function">
+        <a name="python.job.Job._setTimeout"></a>
+        <a name="_setTimeout"></a>
+        <div class="functionHeader">
+        
+        def _setTimeout(self, timeout):
+        
+      </div>
+        <div class="functionBody">
+          
+          <pre>Set or update previously set job timeout (number of seconds) setting</pre>
+        </div>
+      </div><div class="function">
+        <a name="python.job.Job.init"></a>
+        <a name="init"></a>
+        <div class="functionHeader">
+        
+        def init(self):
+        
+      </div>
+        <div class="functionBody">
+          
+          <pre>Synchronous job initialization
+
+@return: deferred - a Deferred which will fire None or a Failure when database INSERT statement is complete.
+                    Once this deferred is called back, self.__initJobSteps() gets executed that returns
+                    another deferred - which fire when all of the JobStep instances are initiated</pre>
+        </div>
+      </div><div class="function">
+        <a name="python.job.Job.run"></a>
+        <a name="run"></a>
+        <div class="functionHeader">
+        
+        def run(self, request, ext_deferred):
+        
+      </div>
+        <div class="functionBody">
+          
+          <pre>Start asynchronous job exection by executing first job step
+
+@return: deferred (twisted.internet.defer.Deferred instance) which will 'fire' when first JobStep has been started</pre>
+        </div>
+      </div><div class="function">
+        <a name="python.job.Job.done"></a>
+        <a name="done"></a>
+        <div class="functionHeader">
+        
+        def done(self, err_msg=None):
+        
+      </div>
+        <div class="functionBody">
+          
+          <pre>Perform JobStep's finalization tasks. Completion of this method should trigger Job 
+instance's callback() or errback() attached to &lt;self.deferred&gt;
+
+@return: deferred which will 'fire' when job completion has been processed and scs.scs_job table updated</pre>
+        </div>
+      </div><div class="function">
+        <a name="python.job.Job.runJobStep"></a>
+        <a name="runJobStep"></a>
+        <div class="functionHeader">
+        
+        def runJobStep(self, result, step_no=0):
+        
+      </div>
+        <div class="functionBody">
+          
+          <pre>Start asynchronous job step (&lt;step_no&gt;) execution
+
+@return: deferred which will 'fire' when given JobStep instance has started execution</pre>
+        </div>
+      </div><div class="function">
+        <a name="python.job.Job.failureHandler"></a>
+        <a name="failureHandler"></a>
+        <div class="functionHeader">
+        
+        def failureHandler(self, failure):
+        
+      </div>
+        <div class="functionBody">
+          
+          <pre>Handle job step failure event</pre>
+        </div>
+      </div><div class="function">
+        <a name="python.job.Job.successHandler"></a>
+        <a name="successHandler"></a>
+        <div class="functionHeader">
+        
+        def successHandler(self, result):
+        
+      </div>
+        <div class="functionBody">
+          
+          <pre>Handle job step success event</pre>
+        </div>
+      </div>
+    
+    <address>
+      <a href="index.html">API Documentation</a> for 'SCS Controller', generated by <a href="http://codespeak.net/~mwh/pydoctor/">pydoctor</a> at 2009-10-07 17:27:47.
+    </address>
+  </body>
+</html>

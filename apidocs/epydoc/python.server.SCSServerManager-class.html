@@ -1,0 +1,801 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>python.server.SCSServerManager</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            >'SCS Controller'</th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="python-module.html">Package&nbsp;python</a> ::
+        <a href="python.server-module.html">Module&nbsp;server</a> ::
+        Class&nbsp;SCSServerManager
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="python.server.SCSServerManager-class.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS DESCRIPTION ==================== -->
+<h1 class="epydoc">Class SCSServerManager</h1><p class="nomargin-top"><span class="codelink"><a href="python.server-pysrc.html#SCSServerManager">source&nbsp;code</a></span></p>
+<center>
+<center>  <map id="uml_class_diagram_for_python_s" name="uml_class_diagram_for_python_s">
+<area shape="rect" id="node51" href="python.server.SCSServerManager-class.html#__implemented__" title="python.server.SCSServerManager.__implemented__" alt="" coords="160,367,364,385"/>
+<area shape="rect" id="node51" href="python.server.SCSServerManager-class.html#__provides__" title="python.server.SCSServerManager.__provides__" alt="" coords="160,385,364,404"/>
+<area shape="rect" id="node51" href="python.server.SCSServerManager-class.html#__init__" title="Class&#39;s constructor." alt="" coords="160,407,364,425"/>
+<area shape="rect" id="node51" href="python.server.SCSServerManager-class.html#start" title="Start SCS server service &lt;name&gt;" alt="" coords="160,425,364,444"/>
+<area shape="rect" id="node51" href="python.server.SCSServerManager-class.html#stop" title="Stop SCS server service &lt;name&gt;" alt="" coords="160,444,364,463"/>
+<area shape="rect" id="node51" href="python.server.SCSServerManager-class.html#startUp" title="Start all enabled SCS server services." alt="" coords="160,463,364,481"/>
+<area shape="rect" id="node51" href="python.server.SCSServerManager-class.html#shutDown" title="Stop all SCS server services." alt="" coords="160,481,364,500"/>
+<area shape="rect" id="node51" href="python.server.SCSServerManager-class.html#startService" title="Start ServerManager service." alt="" coords="160,500,364,519"/>
+<area shape="rect" id="node51" href="python.server.SCSServerManager-class.html#stopService" title="Stop ServerManager service." alt="" coords="160,519,364,537"/>
+<area shape="rect" id="node51" href="python.server.SCSServerManager-class.html#getResource" title="Obtain &lt;listeningPort&gt; instance associated with the given SCS server" alt="" coords="160,537,364,556"/>
+<area shape="rect" id="node51" href="python.server.SCSServerManager-class.html#setWorkflow" title="Set server&#39;s workflow attribute" alt="" coords="160,556,364,575"/>
+<area shape="rect" id="node1" href="python.server.SCSServerManager-class.html" title="SCSServer&#39;s main (public) class." alt="" coords="148,342,375,581"/>
+<area shape="rect" id="node52" href="javascript:void(0);" title="Singleton class&#39;s constructor." alt="" coords="17,251,219,269"/>
+<area shape="rect" id="node52" href="javascript:void(0);" title="Object Specification Descriptor" alt="" coords="17,269,219,288"/>
+<area shape="rect" id="node2" href="javascript:void(0);" title="A Pythonic Singleton" alt="" coords="5,218,229,294"/>
+<area shape="rect" id="node53" href="javascript:void(0);" title="twisted.application.service.MultiService.privilegedStartService" alt="" coords="271,223,543,241"/>
+<area shape="rect" id="node53" href="javascript:void(0);" title="twisted.application.service.MultiService.getServiceNamed" alt="" coords="271,241,543,260"/>
+<area shape="rect" id="node53" href="javascript:void(0);" title="twisted.application.service.MultiService.__iter__" alt="" coords="271,260,543,279"/>
+<area shape="rect" id="node53" href="javascript:void(0);" title="twisted.application.service.MultiService.addService" alt="" coords="271,279,543,297"/>
+<area shape="rect" id="node53" href="javascript:void(0);" title="twisted.application.service.MultiService.removeService" alt="" coords="271,297,543,316"/>
+<area shape="rect" id="node3" href="javascript:void(0);" title="Straightforward Service Container." alt="" coords="259,190,555,322"/>
+<area shape="rect" id="node54" href="javascript:void(0);" title="twisted.application.service.Service.running" alt="" coords="287,31,525,49"/>
+<area shape="rect" id="node54" href="javascript:void(0);" title="twisted.application.service.Service.name" alt="" coords="287,49,525,68"/>
+<area shape="rect" id="node54" href="javascript:void(0);" title="twisted.application.service.Service.parent" alt="" coords="287,68,525,87"/>
+<area shape="rect" id="node54" href="javascript:void(0);" title="twisted.application.service.Service.__getstate__" alt="" coords="287,89,525,108"/>
+<area shape="rect" id="node54" href="javascript:void(0);" title="twisted.application.service.Service.setName" alt="" coords="287,108,525,127"/>
+<area shape="rect" id="node54" href="javascript:void(0);" title="twisted.application.service.Service.setServiceParent" alt="" coords="287,127,525,145"/>
+<area shape="rect" id="node54" href="javascript:void(0);" title="twisted.application.service.Service.disownServiceParent" alt="" coords="287,145,525,164"/>
+<area shape="rect" id="node4" href="javascript:void(0);" title="Base class for services." alt="" coords="275,6,536,170"/>
+</map>
+  <img src="uml_class_diagram_for_python_s.gif" alt='' usemap="#uml_class_diagram_for_python_s" ismap="ismap" class="graph-without-title" />
+</center>
+</center>
+<hr />
+<p>SCSServer's main (public) class. Implements general SCS server 
+  management functionality.</p>
+  <p>Implemented using Singleton design pattern (extends 
+  &lt;singleton.Singleton&gt;) and ensures that class gets initialized only
+  once - no matter how many times constructor is called (uses 
+  @singleton.uniq() decorator for its __init() constructor</p>
+  <p>Implements IResourceManager interface</p>
+  <p>Extends twisted.application.service.MultiService class. This 
+  (MultiService) functionality allows it to &quot;wrap&quot; (and expose to
+  user) SCS servers as services that can be started and stopped alltogether
+  when SCSServerManager service itself is being stopped</p>
+
+<!-- ==================== INSTANCE METHODS ==================== -->
+<a name="section-InstanceMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Instance Methods</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-InstanceMethods"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="python.server.SCSServerManager-class.html#__init__" class="summary-sig-name">__init__</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">*args</span>,
+        <span class="summary-sig-arg">**kwargs</span>)</span><br />
+      Class's constructor.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_loadInfo"></a><span class="summary-sig-name">_loadInfo</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      Load &lt;self.resourceInfo&gt; dictionary with server configuration 
+      data (from scs.scs_server table) for all SCS servers</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="python.server-pysrc.html#SCSServerManager._loadInfo">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_loadInfoFailure"></a><span class="summary-sig-name">_loadInfoFailure</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">fail</span>,
+        <span class="summary-sig-arg">query</span>)</span><br />
+      Server data load failure handler</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="python.server-pysrc.html#SCSServerManager._loadInfoFailure">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="python.server.SCSServerManager-class.html#_loadInfoComplete" class="summary-sig-name" onclick="show_private();">_loadInfoComplete</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">result</span>)</span><br />
+      Server data load success handler.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="python.server-pysrc.html#SCSServerManager._loadInfoComplete">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="python.server.SCSServerManager-class.html#start" class="summary-sig-name">start</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">name</span>)</span><br />
+      Start SCS server service &lt;name&gt;</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="python.server-pysrc.html#SCSServerManager.start">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="python.server.SCSServerManager-class.html#stop" class="summary-sig-name">stop</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">name</span>)</span><br />
+      Stop SCS server service &lt;name&gt;</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="python.server-pysrc.html#SCSServerManager.stop">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="python.server.SCSServerManager-class.html#startUp" class="summary-sig-name">startUp</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Start all enabled SCS server services.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="python.server-pysrc.html#SCSServerManager.startUp">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="python.server.SCSServerManager-class.html#shutDown" class="summary-sig-name">shutDown</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Stop all SCS server services.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="python.server-pysrc.html#SCSServerManager.shutDown">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="python.server.SCSServerManager-class.html#startService" class="summary-sig-name">startService</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Start ServerManager service.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="python.server-pysrc.html#SCSServerManager.startService">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="python.server.SCSServerManager-class.html#stopService" class="summary-sig-name">stopService</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Stop ServerManager service.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="python.server-pysrc.html#SCSServerManager.stopService">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="python.server.SCSServerManager-class.html#getResource" class="summary-sig-name">getResource</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">name</span>)</span><br />
+      Obtain &lt;listeningPort&gt; instance associated with the given SCS 
+      server</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="python.server-pysrc.html#SCSServerManager.getResource">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="setWorkflow"></a><span class="summary-sig-name">setWorkflow</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">name</span>)</span><br />
+      Set server's workflow attribute</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="python.server-pysrc.html#SCSServerManager.setWorkflow">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>singleton.Singleton</code></b>:
+      <code>__providedBy__</code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__delattr__</code>,
+      <code>__getattribute__</code>,
+      <code>__hash__</code>,
+      <code>__reduce__</code>,
+      <code>__reduce_ex__</code>,
+      <code>__repr__</code>,
+      <code>__setattr__</code>,
+      <code>__str__</code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code>twisted.application.service.MultiService</code></b>:
+      <code>__iter__</code>,
+      <code>addService</code>,
+      <code>getServiceNamed</code>,
+      <code>privilegedStartService</code>,
+      <code>removeService</code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code>twisted.application.service.Service</code></b>:
+      <code>__getstate__</code>,
+      <code>disownServiceParent</code>,
+      <code>setName</code>,
+      <code>setServiceParent</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== STATIC METHODS ==================== -->
+<a name="section-StaticMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Static Methods</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-StaticMethods"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>singleton.Singleton</code></b>:
+      <code>__new__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS VARIABLES ==================== -->
+<a name="section-ClassVariables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Class Variables</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-ClassVariables"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="__implemented__"></a><span class="summary-name">__implemented__</span> = <code title="&lt;implementedBy python.server.SCSServerManager&gt;">&lt;implementedBy python.server.SCSServerManager&gt;</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="python.server.SCSServerManager-class.html#__provides__" class="summary-name">__provides__</a> = <code title="&lt;zope.interface.declarations.ClassProvides object at 0x176b0f0&gt;">&lt;zope.interface.declarations.ClassProvides obje<code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>twisted.application.service.Service</code></b>:
+      <code>name</code>,
+      <code>parent</code>,
+      <code>running</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== PROPERTIES ==================== -->
+<a name="section-Properties"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Properties</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Properties"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__class__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== METHOD DETAILS ==================== -->
+<a name="section-MethodDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Method Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-MethodDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="__init__"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">__init__</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">*args</span>,
+        <span class="sig-arg">**kwargs</span>)</span>
+    <br /><em class="fname">(Constructor)</em>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Class's constructor. Parameters:</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>logDir</code></strong> - folder where log and error files maintained by SCSServerManager 
+          and individual server services should be created. Optional. 
+          Default: current working directory</li>
+    </ul></dd>
+    <dt>Decorators:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code>@singleton.uniq</code></li>
+    </ul></dd>
+    <dt>Overrides:
+        twisted.application.service.MultiService.__init__
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="_loadInfoComplete"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">_loadInfoComplete</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">result</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="python.server-pysrc.html#SCSServerManager._loadInfoComplete">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Server data load success handler. Completes load of self.serverInfo 
+  dictionary</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="start"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">start</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">name</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="python.server-pysrc.html#SCSServerManager.start">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Start SCS server service &lt;name&gt;</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>name</code></strong> - SCS server name</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>deferred which will 'fire' when given server (service) has 
+          started</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="stop"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">stop</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">name</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="python.server-pysrc.html#SCSServerManager.stop">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Stop SCS server service &lt;name&gt;</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>name</code></strong> - SCS server name</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>deferred which will 'fire' when given service has stopped</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="startUp"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">startUp</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="python.server-pysrc.html#SCSServerManager.startUp">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Start all enabled SCS server services. Returns deferred that can be 
+  used (externally) to signal successful startup of all enabled servers</p>
+  <dl class="fields">
+    <dt>Returns:</dt>
+        <dd>deferred which will 'fire' when all SCS server services have 
+          started</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="shutDown"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">shutDown</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="python.server-pysrc.html#SCSServerManager.shutDown">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Stop all SCS server services. Returns deferred that can be used 
+  (externally) to signal successful shutdown of all server services</p>
+  <dl class="fields">
+    <dt>Returns:</dt>
+        <dd>deferred which will 'fire' when all SCS server services have 
+          stopped</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="startService"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">startService</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="python.server-pysrc.html#SCSServerManager.startService">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Start ServerManager service. Automatically starts services for all 
+  'enabled' servers</p>
+  <dl class="fields">
+    <dt>Returns:</dt>
+        <dd>deferred which will 'fire' when all enabled SCS server services 
+          have started</dd>
+    <dt>Overrides:
+        twisted.application.service.Service.startService
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="stopService"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">stopService</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="python.server-pysrc.html#SCSServerManager.stopService">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Stop ServerManager service. Automatically stops all running SCS server
+  services</p>
+  <dl class="fields">
+    <dt>Returns:</dt>
+        <dd>deferred which will 'fire' when all client services have stopped</dd>
+    <dt>Overrides:
+        twisted.application.service.Service.stopService
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getResource"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getResource</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">name</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="python.server-pysrc.html#SCSServerManager.getResource">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Obtain &lt;listeningPort&gt; instance associated with the given SCS 
+  server</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>name</code></strong> - SCS server name</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>&lt;listeningPort&gt; associated with the given server</dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== CLASS VARIABLE DETAILS ==================== -->
+<a name="section-ClassVariableDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Class Variable Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-ClassVariableDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="__provides__"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">__provides__</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+&lt;zope.interface.declarations.ClassProvides object at 0x176b0f0&gt;
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            >'SCS Controller'</th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    <a href="epydoc-log.html">Generated by Epydoc
+    3.0.1 on Wed Oct  7 17:27:45 2009</a>
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

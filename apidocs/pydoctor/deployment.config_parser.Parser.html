@@ -1,0 +1,184 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>API docs for &ldquo;deployment.config_parser.Parser&rdquo;</title>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+    <link href="apidocs.css" type="text/css" rel="stylesheet" />
+    
+    
+  </head>
+  <body>
+    <h1 class="class">Class d.c.Parser(<span title="ConfigParser.ConfigParser">ConfigParser.ConfigParser</span>):</h1>
+    <p>
+      <span id="part">Part of <a href="deployment.html">deployment</a>.<a href="deployment.config_parser.html">config_parser</a></span>
+      
+      <a href="classIndex.html#deployment.config_parser.Parser">View In Hierarchy</a>
+    </p>
+    <div>
+      
+    </div>
+    <pre>Parser class "wraps" (extends) standard Python's ConfigParser.ConfigParser
+class. Its main purpose - is to simplify use of ConfigParser to load 
+configuration data</pre>
+    
+    
+    <div id="splitTables">
+      <table class="children sortable" id="id31">
+  
+  
+  
+  
+  <tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="deployment.config_parser.Parser.html#__init__">__init__</a></td>
+    <td><tt>Class's constructor</tt></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="deployment.config_parser.Parser.html#parse">parse</a></td>
+    <td><tt>Parse single file or a list of files</tt></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="deployment.config_parser.Parser.html#loadSection">loadSection</a></td>
+    <td><tt>Load configuration parameters from a single section</tt></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="deployment.config_parser.Parser.html#loadSections">loadSections</a></td>
+    <td><tt>Load configuration parameters from multiple sections</tt></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="deployment.config_parser.Parser.html#loadAllSections">loadAllSections</a></td>
+    <td><tt>Load configuration parameters from ALL available sections, including DEFAULT</tt></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="deployment.config_parser.Parser.html#getParams">getParams</a></td>
+    <td><tt>Obtain configuration parameter dictionary {&lt;param_name&gt;: &lt;param_value&gt;}</tt></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="deployment.config_parser.Parser.html#clean">clean</a></td>
+    <td><tt>Cleanup internal &lt;self.__params&gt; data</tt></td>
+  </tr>
+  
+</table>
+      
+      
+    </div>
+    
+    
+    
+    <div class="function">
+        <a name="deployment.config_parser.Parser.__init__"></a>
+        <a name="__init__"></a>
+        <div class="functionHeader">
+        
+        def __init__(self):
+        
+      </div>
+        <div class="functionBody">
+          
+          <pre>Class's constructor</pre>
+        </div>
+      </div><div class="function">
+        <a name="deployment.config_parser.Parser.parse"></a>
+        <a name="parse"></a>
+        <div class="functionHeader">
+        
+        def parse(self, file_or_filelist):
+        
+      </div>
+        <div class="functionBody">
+          
+          <pre>Parse single file or a list of files
+
+@param file_or_filelist: C{str} or C{list} or C{tuple} - single configuration file (complete path/file),
+                         or list (or tuple) of configuration files</pre>
+        </div>
+      </div><div class="function">
+        <a name="deployment.config_parser.Parser.loadSection"></a>
+        <a name="loadSection"></a>
+        <div class="functionHeader">
+        
+        def loadSection(self, section):
+        
+      </div>
+        <div class="functionBody">
+          
+          <pre>Load configuration parameters from a single section
+
+@param section: C{str} - configuration section's name</pre>
+        </div>
+      </div><div class="function">
+        <a name="deployment.config_parser.Parser.loadSections"></a>
+        <a name="loadSections"></a>
+        <div class="functionHeader">
+        
+        def loadSections(self, section_list):
+        
+      </div>
+        <div class="functionBody">
+          
+          <pre>Load configuration parameters from multiple sections
+        
+@param section_list: C{list} or C{tuple} - list (or tuple) of configuration section names
+@raise RuntimeError: when @param &lt;section_list&gt; is not C{list} or C{tuple}</pre>
+        </div>
+      </div><div class="function">
+        <a name="deployment.config_parser.Parser.loadAllSections"></a>
+        <a name="loadAllSections"></a>
+        <div class="functionHeader">
+        
+        def loadAllSections(self):
+        
+      </div>
+        <div class="functionBody">
+          
+          <pre>Load configuration parameters from ALL available sections, including DEFAULT</pre>
+        </div>
+      </div><div class="function">
+        <a name="deployment.config_parser.Parser.getParams"></a>
+        <a name="getParams"></a>
+        <div class="functionHeader">
+        
+        def getParams(self):
+        
+      </div>
+        <div class="functionBody">
+          
+          <pre>Obtain configuration parameter dictionary {&lt;param_name&gt;: &lt;param_value&gt;}
+
+@return: C{dict} - dictionary {&lt;param_name&gt;: &lt;param_value&gt;}</pre>
+        </div>
+      </div><div class="function">
+        <a name="deployment.config_parser.Parser.clean"></a>
+        <a name="clean"></a>
+        <div class="functionHeader">
+        
+        def clean(self):
+        
+      </div>
+        <div class="functionBody">
+          
+          <pre>Cleanup internal &lt;self.__params&gt; data</pre>
+        </div>
+      </div>
+    
+    <address>
+      <a href="index.html">API Documentation</a> for 'SCS Controller', generated by <a href="http://codespeak.net/~mwh/pydoctor/">pydoctor</a> at 2009-10-07 17:27:47.
+    </address>
+  </body>
+</html>

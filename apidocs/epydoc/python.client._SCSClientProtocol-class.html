@@ -1,0 +1,604 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>python.client._SCSClientProtocol</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            >'SCS Controller'</th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="python-module.html">Package&nbsp;python</a> ::
+        <a href="python.client-module.html">Module&nbsp;client</a> ::
+        Class&nbsp;_SCSClientProtocol
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="python.client._SCSClientProtocol-class.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS DESCRIPTION ==================== -->
+<h1 class="epydoc">Class _SCSClientProtocol</h1><p class="nomargin-top"><span class="codelink"><a href="python.client-pysrc.html#_SCSClientProtocol">source&nbsp;code</a></span></p>
+<center>
+<center>  <map id="uml_class_diagram_for_python_c_2" name="uml_class_diagram_for_python_c_2">
+<area shape="rect" id="node26" href="python.client._SCSClientProtocol-class.html#__init__" title="python.client._SCSClientProtocol.__init__" alt="" coords="17,516,657,535"/>
+<area shape="rect" id="node26" href="python.client._SCSClientProtocol-class.html#__del__" title="python.client._SCSClientProtocol.__del__" alt="" coords="17,535,657,553"/>
+<area shape="rect" id="node26" href="python.client._SCSClientProtocol-class.html#sendLine" title="Send data to remote server" alt="" coords="17,553,657,572"/>
+<area shape="rect" id="node26" href="python.client._SCSClientProtocol-class.html#lineReceived" title="Process response received from the server" alt="" coords="17,572,657,591"/>
+<area shape="rect" id="node26" href="python.client._SCSClientProtocol-class.html#sendRequest" title="Send request to external server" alt="" coords="17,591,657,609"/>
+<area shape="rect" id="node26" href="python.client._SCSClientProtocol-class.html#connectionMade" title="Client&#39;s connection event handler" alt="" coords="17,609,657,628"/>
+<area shape="rect" id="node26" href="python.client._SCSClientProtocol-class.html#connectionLost" title="Called when the connection is shut down." alt="" coords="17,628,657,647"/>
+<area shape="rect" id="node1" href="python.client._SCSClientProtocol-class.html" title="Implements client&#39;s protocol functionality." alt="" coords="5,483,669,653"/>
+<area shape="rect" id="node27" href="javascript:void(0);" title="twisted.protocols.basic.LineReceiver.line_mode" alt="" coords="209,287,465,305"/>
+<area shape="rect" id="node27" href="javascript:void(0);" title="The line&#45;ending delimiter to use." alt="" coords="209,305,465,324"/>
+<area shape="rect" id="node27" href="javascript:void(0);" title="The maximum length of a line to allow (If a sent line is longer than this, &#160;the connection is dropped)." alt="" coords="209,324,465,343"/>
+<area shape="rect" id="node27" href="javascript:void(0);" title="Clear buffered data." alt="" coords="209,345,465,364"/>
+<area shape="rect" id="node27" href="javascript:void(0);" title="Protocol.dataReceived." alt="" coords="209,364,465,383"/>
+<area shape="rect" id="node27" href="javascript:void(0);" title="Sets the line&#45;mode of this receiver." alt="" coords="209,383,465,401"/>
+<area shape="rect" id="node27" href="javascript:void(0);" title="Sets the raw mode of this receiver." alt="" coords="209,401,465,420"/>
+<area shape="rect" id="node27" href="javascript:void(0);" title="Override this for when raw data is received." alt="" coords="209,420,465,439"/>
+<area shape="rect" id="node27" href="javascript:void(0);" title="Called when the maximum line length has been reached." alt="" coords="209,439,465,457"/>
+<area shape="rect" id="node2" href="javascript:void(0);" title="A protocol that receives lines and/or raw data, depending on mode." alt="" coords="197,262,477,463"/>
+<area shape="rect" id="node30" href="javascript:void(0);" title="twisted.protocols.basic._PauseableMixin.paused" alt="" coords="44,159,321,177"/>
+<area shape="rect" id="node30" href="javascript:void(0);" title="twisted.protocols.basic._PauseableMixin.pauseProducing" alt="" coords="44,180,321,199"/>
+<area shape="rect" id="node30" href="javascript:void(0);" title="twisted.protocols.basic._PauseableMixin.resumeProducing" alt="" coords="44,199,321,217"/>
+<area shape="rect" id="node30" href="javascript:void(0);" title="twisted.protocols.basic._PauseableMixin.stopProducing" alt="" coords="44,217,321,236"/>
+<area shape="rect" id="node3" href="javascript:void(0);" title="twisted.protocols.basic._PauseableMixin" alt="" coords="32,134,333,242"/>
+<area shape="rect" id="node29" href="javascript:void(0);" title="twisted.internet.protocol.BaseProtocol.connected" alt="" coords="357,31,629,49"/>
+<area shape="rect" id="node29" href="javascript:void(0);" title="twisted.internet.protocol.BaseProtocol.transport" alt="" coords="357,49,629,68"/>
+<area shape="rect" id="node29" href="javascript:void(0);" title="Make a connection to a transport and a server." alt="" coords="357,71,629,89"/>
+<area shape="rect" id="node29" href="javascript:void(0);" title="Object Specification Descriptor" alt="" coords="357,89,629,108"/>
+<area shape="rect" id="node4" href="javascript:void(0);" title="This is the abstract superclass of all protocols." alt="" coords="345,6,641,114"/>
+<area shape="rect" id="node28" href="javascript:void(0);" title="twisted.internet.protocol.Protocol.__implemented__" alt="" coords="375,175,612,193"/>
+<area shape="rect" id="node28" href="javascript:void(0);" title="twisted.internet.protocol.Protocol.__provides__" alt="" coords="375,193,612,212"/>
+<area shape="rect" id="node5" href="javascript:void(0);" title="twisted.internet.protocol.Protocol" alt="" coords="363,150,624,226"/>
+</map>
+  <img src="uml_class_diagram_for_python_c_2.gif" alt='' usemap="#uml_class_diagram_for_python_c_2" ismap="ismap" class="graph-without-title" />
+</center>
+</center>
+<hr />
+<p>Implements client's protocol functionality. Extends 
+  twisted.protocols.basic.LineReceiver protocol class This class is 
+  responsible for sending requests to, and processing responses received 
+  from external server</p>
+
+<!-- ==================== INSTANCE METHODS ==================== -->
+<a name="section-InstanceMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Instance Methods</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-InstanceMethods"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="__init__"></a><span class="summary-sig-name">__init__</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">name</span>,
+        <span class="summary-sig-arg">peer</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="python.client-pysrc.html#_SCSClientProtocol.__init__">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="__del__"></a><span class="summary-sig-name">__del__</span>(<span class="summary-sig-arg">self</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="python.client-pysrc.html#_SCSClientProtocol.__del__">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="python.client._SCSClientProtocol-class.html#__checkResponse" class="summary-sig-name" onclick="show_private();">__checkResponse</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">response</span>)</span><br />
+      Verify that supplied data is a valid response message</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="python.client-pysrc.html#_SCSClientProtocol.__checkResponse">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_stopJobRequest"></a><span class="summary-sig-name">_stopJobRequest</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      Stop currently running JobRequest</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="python.client-pysrc.html#_SCSClientProtocol._stopJobRequest">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="python.client._SCSClientProtocol-class.html#sendLine" class="summary-sig-name">sendLine</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">data</span>)</span><br />
+      Send data to remote server</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="python.client-pysrc.html#_SCSClientProtocol.sendLine">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="python.client._SCSClientProtocol-class.html#lineReceived" class="summary-sig-name">lineReceived</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">response</span>)</span><br />
+      Process response received from the server</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="python.client-pysrc.html#_SCSClientProtocol.lineReceived">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="python.client._SCSClientProtocol-class.html#sendRequest" class="summary-sig-name">sendRequest</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">request</span>,
+        <span class="summary-sig-arg">deferred</span>=<span class="summary-sig-default">None</span>)</span><br />
+      Send request to external server</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="python.client-pysrc.html#_SCSClientProtocol.sendRequest">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="python.client._SCSClientProtocol-class.html#connectionMade" class="summary-sig-name">connectionMade</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Client's connection event handler</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="python.client-pysrc.html#_SCSClientProtocol.connectionMade">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="python.client._SCSClientProtocol-class.html#connectionLost" class="summary-sig-name">connectionLost</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">reason</span>=<span class="summary-sig-default">&lt;twisted.python.failure.Failure &lt;class 'twisted.internet.error<code class="variable-ellipsis">...</code></span>)</span><br />
+      Called when the connection is shut down.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="python.client-pysrc.html#_SCSClientProtocol.connectionLost">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="python.client._SCSClientProtocol-class.html#_SCSClientProtocol__checkResponse" class="summary-sig-name" onclick="show_private();">_SCSClientProtocol__checkResponse</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">response</span>)</span><br />
+      Verify that supplied data is a valid response message</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="python.client-pysrc.html#_SCSClientProtocol._SCSClientProtocol__checkResponse">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>twisted.protocols.basic.LineReceiver</code></b>:
+      <code>clearLineBuffer</code>,
+      <code>dataReceived</code>,
+      <code>lineLengthExceeded</code>,
+      <code>rawDataReceived</code>,
+      <code>setLineMode</code>,
+      <code>setRawMode</code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code>twisted.internet.protocol.BaseProtocol</code></b>:
+      <code>__providedBy__</code>,
+      <code>makeConnection</code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code>twisted.protocols.basic._PauseableMixin</code></b>:
+      <code>pauseProducing</code>,
+      <code>resumeProducing</code>,
+      <code>stopProducing</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS VARIABLES ==================== -->
+<a name="section-ClassVariables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Class Variables</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-ClassVariables"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>twisted.protocols.basic.LineReceiver</code></b>:
+      <code>MAX_LENGTH</code>,
+      <code>delimiter</code>,
+      <code>line_mode</code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code>twisted.internet.protocol.Protocol</code></b>:
+      <code>__implemented__</code>,
+      <code>__provides__</code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code>twisted.internet.protocol.BaseProtocol</code></b>:
+      <code>connected</code>,
+      <code>transport</code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code>twisted.protocols.basic._PauseableMixin</code></b>:
+      <code>paused</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== METHOD DETAILS ==================== -->
+<a name="section-MethodDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Method Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-MethodDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="__checkResponse"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">__checkResponse</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">response</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="python.client-pysrc.html#_SCSClientProtocol.__checkResponse">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Verify that supplied data is a valid response message</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>response</code></strong> - RESPONSE message (dictionary) received from the server</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="sendLine"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">sendLine</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">data</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="python.client-pysrc.html#_SCSClientProtocol.sendLine">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Send data to remote server</p>
+  <dl class="fields">
+    <dt>Overrides:
+        twisted.protocols.basic.LineReceiver.sendLine
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="lineReceived"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">lineReceived</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">response</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="python.client-pysrc.html#_SCSClientProtocol.lineReceived">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Process response received from the server</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>response</code></strong> (dictionary) - data received from external server</li>
+    </ul></dd>
+    <dt>Overrides:
+        twisted.protocols.basic.LineReceiver.lineReceived
+    </dt>
+  </dl>
+<div class="fields">      <p><strong>Attention:</strong>
+        &lt;response&gt; message should be in the following form: {'type': 
+        &lt;response type&gt;, 'scs_jobid': &lt;jobid&gt;, ...}
+      </p>
+</div></td></tr></table>
+</div>
+<a name="sendRequest"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">sendRequest</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">request</span>,
+        <span class="sig-arg">deferred</span>=<span class="sig-default">None</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="python.client-pysrc.html#_SCSClientProtocol.sendRequest">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Send request to external server</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>request</code></strong> (dictionary containing {'scs_jobid': &lt;jobid&gt;, 'request': 
+          &lt;request - text&gt;}) - request message (dictionary) to be sent to external server</li>
+        <li><strong class="pname"><code>deferred</code></strong> (defer.Deferred instance) - deferred to be associated with the given job (for job request 
+          only)</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="connectionMade"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">connectionMade</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="python.client-pysrc.html#_SCSClientProtocol.connectionMade">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Client's connection event handler</p>
+  <dl class="fields">
+    <dt>Overrides:
+        twisted.internet.protocol.BaseProtocol.connectionMade
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="connectionLost"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">connectionLost</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">reason</span>=<span class="sig-default">&lt;twisted.python.failure.Failure &lt;class 'twisted.internet.error<code class="variable-ellipsis">...</code></span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="python.client-pysrc.html#_SCSClientProtocol.connectionLost">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Called when the connection is shut down.</p>
+  <p>Clear any circular references here, and any external references to 
+  this Protocol.  The connection has been closed.</p>
+  <dl class="fields">
+    <dt>Overrides:
+        twisted.internet.protocol.Protocol.connectionLost
+        <dd><em class="note">(inherited documentation)</em></dd>
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="_SCSClientProtocol__checkResponse"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">_SCSClientProtocol__checkResponse</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">response</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="python.client-pysrc.html#_SCSClientProtocol._SCSClientProtocol__checkResponse">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Verify that supplied data is a valid response message</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>response</code></strong> - RESPONSE message (dictionary) received from the server</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            >'SCS Controller'</th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    <a href="epydoc-log.html">Generated by Epydoc
+    3.0.1 on Wed Oct  7 17:27:44 2009</a>
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

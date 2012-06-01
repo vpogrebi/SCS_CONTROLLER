@@ -1,0 +1,223 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>API docs for &ldquo;python.client._SCSClientProtocol&rdquo;</title>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+    <link href="apidocs.css" type="text/css" rel="stylesheet" />
+    
+    
+  </head>
+  <body>
+    <h1 class="class">Class p.c._SCSClientProtocol(<span title="twisted.protocols.basic.LineReceiver">LineReceiver</span>):</h1>
+    <p>
+      <span id="part">Part of <a href="python.html">python</a>.<a href="python.client.html">client</a></span>
+      
+      <a href="classIndex.html#python.client._SCSClientProtocol">View In Hierarchy</a>
+    </p>
+    <div>
+      
+    </div>
+    <pre>Implements client's protocol functionality. Extends twisted.protocols.basic.LineReceiver protocol class
+This class is responsible for sending requests to, and processing responses received from external server</pre>
+    
+    
+    <div id="splitTables">
+      <table class="children sortable" id="id3">
+  
+  
+  
+  
+  <tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.client._SCSClientProtocol.html#__init__">__init__</a></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.client._SCSClientProtocol.html#__del__">__del__</a></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.client._SCSClientProtocol.html#__checkResponse">__checkResponse</a></td>
+    <td><tt>Verify that supplied data is a valid response message</tt></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.client._SCSClientProtocol.html#_stopJobRequest">_stopJobRequest</a></td>
+    <td><tt>Stop currently running JobRequest</tt></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.client._SCSClientProtocol.html#sendLine">sendLine</a></td>
+    <td><tt>Send data to remote server</tt></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.client._SCSClientProtocol.html#lineReceived">lineReceived</a></td>
+    <td><tt>Process response received from the server</tt></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.client._SCSClientProtocol.html#sendRequest">sendRequest</a></td>
+    <td><tt>Send request to external server</tt></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.client._SCSClientProtocol.html#connectionMade">connectionMade</a></td>
+    <td><tt>Client's connection event handler</tt></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.client._SCSClientProtocol.html#connectionLost">connectionLost</a></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+  
+</table>
+      
+      
+    </div>
+    
+    
+    
+    <div class="function">
+        <a name="python.client._SCSClientProtocol.__init__"></a>
+        <a name="__init__"></a>
+        <div class="functionHeader">
+        
+        def __init__(self, name, peer):
+        
+      </div>
+        <div class="functionBody">
+          
+          <div class="undocumented">Undocumented</div>
+        </div>
+      </div><div class="function">
+        <a name="python.client._SCSClientProtocol.__del__"></a>
+        <a name="__del__"></a>
+        <div class="functionHeader">
+        
+        def __del__(self):
+        
+      </div>
+        <div class="functionBody">
+          
+          <div class="undocumented">Undocumented</div>
+        </div>
+      </div><div class="function">
+        <a name="python.client._SCSClientProtocol.__checkResponse"></a>
+        <a name="__checkResponse"></a>
+        <div class="functionHeader">
+        
+        def __checkResponse(self, response):
+        
+      </div>
+        <div class="functionBody">
+          
+          <pre>Verify that supplied data is a valid response message
+
+@param response: RESPONSE message (dictionary) received from the server</pre>
+        </div>
+      </div><div class="function">
+        <a name="python.client._SCSClientProtocol._stopJobRequest"></a>
+        <a name="_stopJobRequest"></a>
+        <div class="functionHeader">
+        
+        def _stopJobRequest(self):
+        
+      </div>
+        <div class="functionBody">
+          
+          <pre>Stop currently running JobRequest</pre>
+        </div>
+      </div><div class="function">
+        <a name="python.client._SCSClientProtocol.sendLine"></a>
+        <a name="sendLine"></a>
+        <div class="functionHeader">
+        
+        def sendLine(self, data):
+        
+      </div>
+        <div class="functionBody">
+          
+          <pre>Send data to remote server</pre>
+        </div>
+      </div><div class="function">
+        <a name="python.client._SCSClientProtocol.lineReceived"></a>
+        <a name="lineReceived"></a>
+        <div class="functionHeader">
+        
+        def lineReceived(self, response):
+        
+      </div>
+        <div class="functionBody">
+          
+          <pre>Process response received from the server
+
+@param response: data received from external server
+@type response: dictionary
+
+@attention: &lt;response&gt; message should be in the following form:
+            {'type': &lt;response type&gt;, 'scs_jobid': &lt;jobid&gt;, ...}</pre>
+        </div>
+      </div><div class="function">
+        <a name="python.client._SCSClientProtocol.sendRequest"></a>
+        <a name="sendRequest"></a>
+        <div class="functionHeader">
+        
+        def sendRequest(self, request, deferred=None):
+        
+      </div>
+        <div class="functionBody">
+          
+          <pre>Send request to external server
+
+@param request: request message (dictionary) to be sent to external server
+@param deferred: deferred to be associated with the given job (for job request only)
+@type request: dictionary containing {'scs_jobid': &lt;jobid&gt;, 
+                                      'request': &lt;request - text&gt;}
+@type deferred: defer.Deferred instance </pre>
+        </div>
+      </div><div class="function">
+        <a name="python.client._SCSClientProtocol.connectionMade"></a>
+        <a name="connectionMade"></a>
+        <div class="functionHeader">
+        
+        def connectionMade(self):
+        
+      </div>
+        <div class="functionBody">
+          
+          <pre>Client's connection event handler</pre>
+        </div>
+      </div><div class="function">
+        <a name="python.client._SCSClientProtocol.connectionLost"></a>
+        <a name="connectionLost"></a>
+        <div class="functionHeader">
+        
+        def connectionLost(self, reason=protocol.connectionDone):
+        
+      </div>
+        <div class="functionBody">
+          
+          <div class="undocumented">Undocumented</div>
+        </div>
+      </div>
+    
+    <address>
+      <a href="index.html">API Documentation</a> for 'SCS Controller', generated by <a href="http://codespeak.net/~mwh/pydoctor/">pydoctor</a> at 2009-10-07 17:27:47.
+    </address>
+  </body>
+</html>

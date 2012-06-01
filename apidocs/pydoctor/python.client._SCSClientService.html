@@ -1,0 +1,331 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>API docs for &ldquo;python.client._SCSClientService&rdquo;</title>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+    <link href="apidocs.css" type="text/css" rel="stylesheet" />
+    
+    
+  </head>
+  <body>
+    <h1 class="class">Class p.c._SCSClientService(<span title="twisted.application.service.MultiService">service.MultiService</span>):</h1>
+    <p>
+      <span id="part">Part of <a href="python.html">python</a>.<a href="python.client.html">client</a></span>
+      
+      <a href="classIndex.html#python.client._SCSClientService">View In Hierarchy</a>
+    </p>
+    <div>
+      <p>Known subclasses: <a href="python.client._SCSServerMonitor.html">python.client._SCSServerMonitor</a></p>
+    </div>
+    <pre>Extends twisted.application.service.MultiService class
+
+This class "wraps" SCS client functionality (_SCSClientProtocol) as
+a service. It is responsible for starting/stopping the service (initializing 
+log and error files, as well as starting subordinate server monitoring service) 
+used by client entity. It has method(s) for starting "one-off" client connections
+to external server and sending job request to the server</pre>
+    
+    
+    <div id="splitTables">
+      <table class="children sortable" id="id4">
+  
+  
+  
+  
+  <tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.client._SCSClientService.html#__init__">__init__</a></td>
+    <td><tt>Class's constructor. Parameters:</tt></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.client._SCSClientService.html#_checkInfo">_checkInfo</a></td>
+    <td><tt>Verify that supplied client info contains all required data</tt></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.client._SCSClientService.html#_sendRequest">_sendRequest</a></td>
+    <td><tt>Send request to external server</tt></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.client._SCSClientService.html#_connSuccessHandler">_connSuccessHandler</a></td>
+    <td><tt>Client connection's success handler</tt></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.client._SCSClientService.html#_connFailureHandler">_connFailureHandler</a></td>
+    <td><tt>Client connection's failure handler</tt></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.client._SCSClientService.html#_disconnSuccessHandler">_disconnSuccessHandler</a></td>
+    <td><tt>Client disconnect success handler</tt></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.client._SCSClientService.html#_disconnFailureHandler">_disconnFailureHandler</a></td>
+    <td><tt>Client disconnect failure handler</tt></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.client._SCSClientService.html#startClient">startClient</a></td>
+    <td><tt>Start new client connection</tt></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.client._SCSClientService.html#stopClient">stopClient</a></td>
+    <td><tt>Stop client connection</tt></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.client._SCSClientService.html#startService">startService</a></td>
+    <td><tt>Start SCSClient service</tt></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.client._SCSClientService.html#stopService">stopService</a></td>
+    <td><tt>Stop SCSClient service</tt></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.client._SCSClientService.html#sendRequest">sendRequest</a></td>
+    <td><tt>Send request to external server</tt></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.client._SCSClientService.html#addOnlineDeferred">addOnlineDeferred</a></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.client._SCSClientService.html#addOfflineDeferred">addOfflineDeferred</a></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+  
+</table>
+      
+      
+    </div>
+    
+    
+    
+    <div class="function">
+        <a name="python.client._SCSClientService.__init__"></a>
+        <a name="__init__"></a>
+        <div class="functionHeader">
+        
+        def __init__(self, name, clientInfo, logName, logDir):
+        
+      </div>
+        <div class="functionBody">
+          <div class="interfaceinfo">overridden in <a href="python.client._SCSServerMonitor.html">python.client._SCSServerMonitor</a></div>
+          <pre>Class's constructor. Parameters:
+
+@param name:         SCS client name
+@param clientInfo:   dictionary containing following key/value pairs:
+                     - 'host':        server's hostname
+                     - 'port':        port on which server is listening
+@param logName:      unique log/error name (identifier) that will be used to write to these particular files
+@param logDir:       folder where log and error files will be created</pre>
+        </div>
+      </div><div class="function">
+        <a name="python.client._SCSClientService._checkInfo"></a>
+        <a name="_checkInfo"></a>
+        <div class="functionHeader">
+        
+        def _checkInfo(self, info):
+        
+      </div>
+        <div class="functionBody">
+          
+          <pre>Verify that supplied client info contains all required data
+
+@param info: dictionary (C{dict}) containing following required data:
+             'host':     hostname where server is running
+             'port':     port on which server is listening
+             'enabled':  True/False flag indicating if given client is enabled or not
+@raise RuntimeError: if &lt;info&gt; is not a dictionary, or any of the required data is missing</pre>
+        </div>
+      </div><div class="function">
+        <a name="python.client._SCSClientService._sendRequest"></a>
+        <a name="_sendRequest"></a>
+        <div class="functionHeader">
+        
+        def _sendRequest(self, protocol, request, deferred):
+        
+      </div>
+        <div class="functionBody">
+          
+          <pre>Send request to external server
+
+@param protocol: _SCSClientProtocol instance which is being used to send request to server
+@param request: Request data (whatever it might be) to be sent to external server
+@param deferred: deferred (C{defer.Deferred}) to be used by client protocol to signal job completion or failure
+@return: protocol - client protocol instance (C{_SCSClientProtocol}) that sent request to the server</pre>
+        </div>
+      </div><div class="function">
+        <a name="python.client._SCSClientService._connSuccessHandler"></a>
+        <a name="_connSuccessHandler"></a>
+        <div class="functionHeader">
+        
+        def _connSuccessHandler(self, protocol):
+        
+      </div>
+        <div class="functionBody">
+          <div class="interfaceinfo">overridden in <a href="python.client._SCSServerMonitor.html">python.client._SCSServerMonitor</a></div>
+          <pre>Client connection's success handler</pre>
+        </div>
+      </div><div class="function">
+        <a name="python.client._SCSClientService._connFailureHandler"></a>
+        <a name="_connFailureHandler"></a>
+        <div class="functionHeader">
+        
+        def _connFailureHandler(self, fail):
+        
+      </div>
+        <div class="functionBody">
+          <div class="interfaceinfo">overridden in <a href="python.client._SCSServerMonitor.html">python.client._SCSServerMonitor</a></div>
+          <pre>Client connection's failure handler</pre>
+        </div>
+      </div><div class="function">
+        <a name="python.client._SCSClientService._disconnSuccessHandler"></a>
+        <a name="_disconnSuccessHandler"></a>
+        <div class="functionHeader">
+        
+        def _disconnSuccessHandler(self, protocol):
+        
+      </div>
+        <div class="functionBody">
+          
+          <pre>Client disconnect success handler</pre>
+        </div>
+      </div><div class="function">
+        <a name="python.client._SCSClientService._disconnFailureHandler"></a>
+        <a name="_disconnFailureHandler"></a>
+        <div class="functionHeader">
+        
+        def _disconnFailureHandler(self, failure, protocol):
+        
+      </div>
+        <div class="functionBody">
+          
+          <pre>Client disconnect failure handler</pre>
+        </div>
+      </div><div class="function">
+        <a name="python.client._SCSClientService.startClient"></a>
+        <a name="startClient"></a>
+        <div class="functionHeader">
+        
+        def startClient(self):
+        
+      </div>
+        <div class="functionBody">
+          <div class="interfaceinfo">overridden in <a href="python.client._SCSServerMonitor.html">python.client._SCSServerMonitor</a></div>
+          <pre>Start new client connection
+
+@return: deferred (C{defer.Deferred}) - deferred that will 'fire' when client connection is made (or fails)</pre>
+        </div>
+      </div><div class="function">
+        <a name="python.client._SCSClientService.stopClient"></a>
+        <a name="stopClient"></a>
+        <div class="functionHeader">
+        
+        def stopClient(self, protocol):
+        
+      </div>
+        <div class="functionBody">
+          
+          <pre>Stop client connection
+
+@param protocol: client protocol entity (C{_SCSClientProtocol}) being disconnected from the server
+@return: deferred (C{defer.Deferred}) - deferred that will 'fire' when client has disconnected from server (or fails)</pre>
+        </div>
+      </div><div class="function">
+        <a name="python.client._SCSClientService.startService"></a>
+        <a name="startService"></a>
+        <div class="functionHeader">
+        
+        def startService(self):
+        
+      </div>
+        <div class="functionBody">
+          <div class="interfaceinfo">overridden in <a href="python.client._SCSServerMonitor.html">python.client._SCSServerMonitor</a></div>
+          <pre>Start SCSClient service</pre>
+        </div>
+      </div><div class="function">
+        <a name="python.client._SCSClientService.stopService"></a>
+        <a name="stopService"></a>
+        <div class="functionHeader">
+        
+        def stopService(self):
+        
+      </div>
+        <div class="functionBody">
+          <div class="interfaceinfo">overridden in <a href="python.client._SCSServerMonitor.html">python.client._SCSServerMonitor</a></div>
+          <pre>Stop SCSClient service</pre>
+        </div>
+      </div><div class="function">
+        <a name="python.client._SCSClientService.sendRequest"></a>
+        <a name="sendRequest"></a>
+        <div class="functionHeader">
+        
+        def sendRequest(self, request, deferred):
+        
+      </div>
+        <div class="functionBody">
+          
+          <pre>Send request to external server
+
+@param request: Request data (whatever it might be) to be sent to external server
+@param deferred: job step deferred (C{defer.Deferred}) to be used by client protocol to signal job completion or failure
+@return: deferred (C{defer.Deferred}) that will fire callback or errback method when request is sent to the server</pre>
+        </div>
+      </div><div class="function">
+        <a name="python.client._SCSClientService.addOnlineDeferred"></a>
+        <a name="addOnlineDeferred"></a>
+        <div class="functionHeader">
+        
+        def addOnlineDeferred(self, deferred, reset=True):
+        
+      </div>
+        <div class="functionBody">
+          
+          <div class="undocumented">Undocumented</div>
+        </div>
+      </div><div class="function">
+        <a name="python.client._SCSClientService.addOfflineDeferred"></a>
+        <a name="addOfflineDeferred"></a>
+        <div class="functionHeader">
+        
+        def addOfflineDeferred(self, deferred, reset=True):
+        
+      </div>
+        <div class="functionBody">
+          
+          <div class="undocumented">Undocumented</div>
+        </div>
+      </div>
+    
+    <address>
+      <a href="index.html">API Documentation</a> for 'SCS Controller', generated by <a href="http://codespeak.net/~mwh/pydoctor/">pydoctor</a> at 2009-10-07 17:27:47.
+    </address>
+  </body>
+</html>

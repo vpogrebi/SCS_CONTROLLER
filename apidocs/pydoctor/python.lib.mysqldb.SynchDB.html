@@ -1,0 +1,212 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>API docs for &ldquo;python.lib.mysqldb.SynchDB&rdquo;</title>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+    <link href="apidocs.css" type="text/css" rel="stylesheet" />
+    
+    
+  </head>
+  <body>
+    <h1 class="class">Class p.l.m.SynchDB(<a href="python.lib.singleton.Singleton.html">singleton.Singleton</a>):</h1>
+    <p>
+      <span id="part">Part of <a href="python.html">python</a>.<a href="python.lib.html">lib</a>.<a href="python.lib.mysqldb.html">mysqldb</a></span>
+      
+      <a href="classIndex.html#python.lib.mysqldb.SynchDB">View In Hierarchy</a>
+    </p>
+    <div>
+      <p>Known subclasses: <a href="python.lib.mysqldb.AsynchDB.html">python.lib.mysqldb.AsynchDB</a></p>
+    </div>
+    <div>Implements SYNCHRONOUS database access using MySQLdb module. Inherits 
+from &lt;Singleton&gt; class to ensure that only single instance of SynchDB
+is used<table class="fieldTable"></table></div>
+    
+    
+    <div id="splitTables">
+      <table class="children sortable" id="id26">
+  
+  
+  
+  
+  <tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.lib.mysqldb.SynchDB.html#__init__">__init__</a></td>
+    <td><span>Class's constructor. Attempts to connect to database if all required 
+arguments are supplied</span></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.lib.mysqldb.SynchDB.html#connect">connect</a></td>
+    <td><span>Connect to MySQL server</span></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.lib.mysqldb.SynchDB.html#use">use</a></td>
+    <td><span>Switch to use new database schema</span></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.lib.mysqldb.SynchDB.html#execute">execute</a></td>
+    <td><span>Execute any SQL statement and return number of rows affected</span></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.lib.mysqldb.SynchDB.html#insert">insert</a></td>
+    <td><span>Execute INSERT SQL statement and return number of rows affected and 
+first insert_id</span></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.lib.mysqldb.SynchDB.html#query">query</a></td>
+    <td><span>Run SQL query and return its results</span></td>
+  </tr>
+  
+</table>
+      
+        <p>
+          Inherited from <a href="python.lib.singleton.Singleton.html">Singleton</a>:
+        </p>
+        <table class="children sortable" id="id27">
+  
+  
+  
+  
+  <tr class="basemethod">
+    
+    
+    <td>Method</td>
+    <td><a href="python.lib.singleton.Singleton.html#__new__">__new__</a></td>
+    <td><span>Singleton class's constructor. Ensures that only single instance</span></td>
+  </tr>
+  
+</table>
+      
+      
+    </div>
+    
+    
+    
+    <div class="function">
+        <a name="python.lib.mysqldb.SynchDB.__init__"></a>
+        <a name="__init__"></a>
+        <div class="functionHeader">
+        @singleton.uniq<br />
+        def __init__(self, server=None, userid=None, passwd=None, schema=None, socket=None):
+        
+      </div>
+        <div class="functionBody">
+          <div class="interfaceinfo">overridden in <a href="python.lib.mysqldb.AsynchDB.html">python.lib.mysqldb.AsynchDB</a></div>
+          <div>Class's constructor. Attempts to connect to database if all required 
+arguments are supplied<table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">server</td><td><code>str</code> - (optional) database server ('localhost' or 
+&lt;host&gt;:&lt;port&gt;)
+</td></tr><tr><td></td><td class="fieldArg">userid</td><td><code>str</code> - (optional) user id on the &lt;server&gt;
+</td></tr><tr><td></td><td class="fieldArg">passwd</td><td><code>str</code> - (optional) user's password
+</td></tr><tr><td></td><td class="fieldArg">schema</td><td><code>str</code> - (optional) schema to be used for all database operations
+(default: None)
+</td></tr><tr><td></td><td class="fieldArg">socket</td><td><code>str</code> or None - (optional) socket used to connect to database
+</td></tr></table></div>
+        </div>
+      </div><div class="function">
+        <a name="python.lib.mysqldb.SynchDB.connect"></a>
+        <a name="connect"></a>
+        <div class="functionHeader">
+        
+        def connect(self, server, userid, passwd, socket, schema=None):
+        
+      </div>
+        <div class="functionBody">
+          <div class="interfaceinfo">overridden in <a href="python.lib.mysqldb.AsynchDB.html">python.lib.mysqldb.AsynchDB</a></div>
+          <div>Connect to MySQL server<table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">server</td><td><code>str</code> - database server ('localhost' or 
+&lt;host&gt;:&lt;port&gt;)
+</td></tr><tr><td></td><td class="fieldArg">userid</td><td><code>str</code> - user id on the &lt;server&gt;
+</td></tr><tr><td></td><td class="fieldArg">passwd</td><td><code>str</code> - user's password
+</td></tr><tr><td></td><td class="fieldArg">socket</td><td><code>str</code> or None - (optional) socket used to connect to database
+</td></tr><tr><td></td><td class="fieldArg">schema</td><td><code>str</code> - (optional) schema to be used for all database operations
+(default: None)
+<p>This method connects to the database, sets &lt;self.conn&gt; attribute 
+to Connection object, opens a cursor and sets &lt;self.cursor&gt; to that 
+Cursor object. This attribute will be used for all subsequent database 
+operations. At the same time, &quot;autocommit&quot; is set to True</p>
+</td></tr></table></div>
+        </div>
+      </div><div class="function">
+        <a name="python.lib.mysqldb.SynchDB.use"></a>
+        <a name="use"></a>
+        <div class="functionHeader">
+        
+        def use(self, schema):
+        
+      </div>
+        <div class="functionBody">
+          <div class="interfaceinfo">overridden in <a href="python.lib.mysqldb.AsynchDB.html">python.lib.mysqldb.AsynchDB</a></div>
+          <div>Switch to use new database schema<table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">schema</td><td><code>str</code> - schema to 'use' for all subsequent database operations
+</td></tr><tr class="fieldStart"><td class="fieldName">Raises</td><td class="fieldArg">RuntimeError</td><td>if @param &lt;schema&gt; does not correspond to any schema existing in the 
+database
+</td></tr></table></div>
+        </div>
+      </div><div class="function">
+        <a name="python.lib.mysqldb.SynchDB.execute"></a>
+        <a name="execute"></a>
+        <div class="functionHeader">
+        
+        def execute(self, stmt):
+        
+      </div>
+        <div class="functionBody">
+          <div class="interfaceinfo">overridden in <a href="python.lib.mysqldb.AsynchDB.html">python.lib.mysqldb.AsynchDB</a></div>
+          <div>Execute any SQL statement and return number of rows affected<table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">stmt</td><td>SQL statement to be executed
+</td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">num (<code>int</code>) - number of rows affected by the operation
+</td></tr><tr class="fieldStart"><td class="fieldName">Raises</td><td class="fieldArg">exception</td><td>an excepton raised by self.cursor.execute() (whatever that exception might 
+be)
+</td></tr></table></div>
+        </div>
+      </div><div class="function">
+        <a name="python.lib.mysqldb.SynchDB.insert"></a>
+        <a name="insert"></a>
+        <div class="functionHeader">
+        
+        def insert(self, stmt):
+        
+      </div>
+        <div class="functionBody">
+          <div class="interfaceinfo">overridden in <a href="python.lib.mysqldb.AsynchDB.html">python.lib.mysqldb.AsynchDB</a></div>
+          <div>Execute INSERT SQL statement and return number of rows affected and 
+first insert_id<table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">stmt</td><td><code>str</code> - 'select' SQL statement
+</td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">(numRows, insertID) (<code>tuple</code>) - number of rows and INSERT_ID of 
+the first row inserted by an operation
+</td></tr><tr class="fieldStart"><td class="fieldName">Raises</td><td class="fieldArg">exception</td><td>an excepton raised by self.cursor.execute() (whatever that exception might 
+be)
+</td></tr></table></div>
+        </div>
+      </div><div class="function">
+        <a name="python.lib.mysqldb.SynchDB.query"></a>
+        <a name="query"></a>
+        <div class="functionHeader">
+        
+        def query(self, query):
+        
+      </div>
+        <div class="functionBody">
+          <div class="interfaceinfo">overridden in <a href="python.lib.mysqldb.AsynchDB.html">python.lib.mysqldb.AsynchDB</a></div>
+          <div>Run SQL query and return its results<table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">query</td><td>SQL query to be executed
+</td></tr><tr class="fieldStart"><td class="fieldName">Returns</td><td colspan="2">res (<code>list</code>) - result set returned by a query
+</td></tr><tr class="fieldStart"><td class="fieldName">Raises</td><td class="fieldArg">exception</td><td>an excepton raised by self.cursor.execute() (whatever that exception might 
+be)
+</td></tr></table></div>
+        </div>
+      </div>
+    
+    <address>
+      <a href="index.html">API Documentation</a> for 'SCS Controller', generated by <a href="http://codespeak.net/~mwh/pydoctor/">pydoctor</a> at 2009-09-18 15:11:29.
+    </address>
+  </body>
+</html>

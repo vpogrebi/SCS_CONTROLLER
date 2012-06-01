@@ -1,0 +1,489 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>python.server._SCSServerFactory</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            >'SCS Controller'</th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="python-module.html">Package&nbsp;python</a> ::
+        <a href="python.server-module.html">Module&nbsp;server</a> ::
+        Class&nbsp;_SCSServerFactory
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="python.server._SCSServerFactory-class.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS DESCRIPTION ==================== -->
+<h1 class="epydoc">Class _SCSServerFactory</h1><p class="nomargin-top"><span class="codelink"><a href="python.server-pysrc.html#_SCSServerFactory">source&nbsp;code</a></span></p>
+<center>
+<center>  <map id="uml_class_diagram_for_python_s_2" name="uml_class_diagram_for_python_s_2">
+<area shape="rect" id="node55" href="python.server._SCSServerFactory-class.html#noisy" title="python.server._SCSServerFactory.noisy" alt="" coords="17,388,637,407"/>
+<area shape="rect" id="node55" href="python.server._SCSServerProtocol-class.html" title="Implements server&#39;s protocol functionality." alt="" coords="17,407,637,425"/>
+<area shape="rect" id="node55" href="python.server._SCSServerFactory-class.html#__init__" title="python.server._SCSServerFactory.__init__" alt="" coords="17,428,637,447"/>
+<area shape="rect" id="node55" href="python.server._SCSServerFactory-class.html#stopFactory" title="Close all client connections and stop listening on a given port" alt="" coords="17,447,637,465"/>
+<area shape="rect" id="node55" href="python.server._SCSServerFactory-class.html#buildProtocol" title="Create an instance of a subclass of Protocol." alt="" coords="17,465,637,484"/>
+<area shape="rect" id="node1" href="python.server._SCSServerFactory-class.html" title="Factory for HTTP server." alt="" coords="5,363,648,490"/>
+<area shape="rect" id="node56" href="javascript:void(0);" title="twisted.web.http.HTTPFactory.logPath" alt="" coords="223,260,433,279"/>
+<area shape="rect" id="node56" href="javascript:void(0);" title="twisted.web.http.HTTPFactory.timeOut" alt="" coords="223,279,433,297"/>
+<area shape="rect" id="node56" href="javascript:void(0);" title="This will be called before I begin listening on a Port or Connector." alt="" coords="223,300,433,319"/>
+<area shape="rect" id="node56" href="javascript:void(0);" title="Log a request&#39;s result to the logfile, by default in combined log format." alt="" coords="223,319,433,337"/>
+<area shape="rect" id="node2" href="javascript:void(0);" title="Factory for HTTP server." alt="" coords="211,235,445,343"/>
+<area shape="rect" id="node58" href="javascript:void(0);" title="twisted.internet.protocol.Factory.numPorts" alt="" coords="212,31,443,49"/>
+<area shape="rect" id="node58" href="javascript:void(0);" title="twisted.internet.protocol.Factory.__implemented__" alt="" coords="212,49,443,68"/>
+<area shape="rect" id="node58" href="javascript:void(0);" title="twisted.internet.protocol.Factory.__provides__" alt="" coords="212,68,443,87"/>
+<area shape="rect" id="node58" href="javascript:void(0);" title="Make sure startFactory is called." alt="" coords="212,89,443,108"/>
+<area shape="rect" id="node58" href="javascript:void(0);" title="Make sure stopFactory is called." alt="" coords="212,108,443,127"/>
+<area shape="rect" id="node58" href="javascript:void(0);" title="Object Specification Descriptor" alt="" coords="212,127,443,145"/>
+<area shape="rect" id="node3" href="javascript:void(0);" title="This is a factory which produces protocols." alt="" coords="200,6,453,151"/>
+<area shape="rect" id="node4" href="javascript:void(0);" title="Subclass this to indicate that your protocol.Factory is only usable for servers." alt="" coords="179,171,477,215"/>
+</map>
+  <img src="uml_class_diagram_for_python_s_2.gif" alt='' usemap="#uml_class_diagram_for_python_s_2" ismap="ismap" class="graph-without-title" />
+</center>
+</center>
+<hr />
+<p>Factory for HTTP server. Derives from twisted.web.http.HTTPFactory 
+  class</p>
+
+<!-- ==================== NESTED CLASSES ==================== -->
+<a name="section-NestedClasses"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Nested Classes</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-NestedClasses"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="python.server._SCSServerProtocol-class.html" class="summary-name">protocol</a><br />
+      Implements server's protocol functionality.
+    </td>
+  </tr>
+</table>
+<!-- ==================== INSTANCE METHODS ==================== -->
+<a name="section-InstanceMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Instance Methods</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-InstanceMethods"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="python.server._SCSServerFactory-class.html#__init__" class="summary-sig-name">__init__</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">name</span>,
+        <span class="summary-sig-arg">info</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">logDir</span>=<span class="summary-sig-default"><code class="variable-quote">'</code><code class="variable-string">/Users/valeriypogrebitskiy/EclipseWorkSpace/SCS</code><code class="variable-quote">'</code></span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="python.server-pysrc.html#_SCSServerFactory.__init__">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="__initialize"></a><span class="summary-sig-name">__initialize</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">info</span>)</span><br />
+      Initialize given SCS server instance</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="python.server-pysrc.html#_SCSServerFactory.__initialize">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="python.server._SCSServerFactory-class.html#_checkInfo" class="summary-sig-name" onclick="show_private();">_checkInfo</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">info</span>)</span><br />
+      Verify that supplied &lt;info&gt; is a dictionary</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="python.server-pysrc.html#_SCSServerFactory._checkInfo">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_setWorkflow"></a><span class="summary-sig-name">_setWorkflow</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      Set workflow to be used by the server</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="python.server-pysrc.html#_SCSServerFactory._setWorkflow">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="python.server._SCSServerFactory-class.html#stopFactory" class="summary-sig-name">stopFactory</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Close all client connections and stop listening on a given port</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="python.server-pysrc.html#_SCSServerFactory.stopFactory">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="python.server._SCSServerFactory-class.html#buildProtocol" class="summary-sig-name">buildProtocol</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">addr</span>)</span><br />
+      Create an instance of a subclass of Protocol.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="python.server-pysrc.html#_SCSServerFactory.buildProtocol">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_SCSServerFactory__initialize"></a><span class="summary-sig-name">_SCSServerFactory__initialize</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">info</span>)</span><br />
+      Initialize given SCS server instance</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="python.server-pysrc.html#_SCSServerFactory._SCSServerFactory__initialize">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>twisted.web.http.HTTPFactory</code></b>:
+      <code>log</code>,
+      <code>startFactory</code>
+      </p>
+    <div class="private">    <p class="indent-wrapped-lines"><b>Inherited from <code>twisted.web.http.HTTPFactory</code></b> (private):
+      <code>_escape</code>,
+      <code>_openLogFile</code>
+      </p></div>
+    <p class="indent-wrapped-lines"><b>Inherited from <code>twisted.internet.protocol.Factory</code></b>:
+      <code>__providedBy__</code>,
+      <code>doStart</code>,
+      <code>doStop</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS VARIABLES ==================== -->
+<a name="section-ClassVariables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Class Variables</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-ClassVariables"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="noisy"></a><span class="summary-name">noisy</span> = <code title="False">False</code>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>twisted.web.http.HTTPFactory</code></b>:
+      <code>logPath</code>,
+      <code>timeOut</code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code>twisted.internet.protocol.Factory</code></b>:
+      <code>__implemented__</code>,
+      <code>__provides__</code>,
+      <code>numPorts</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== METHOD DETAILS ==================== -->
+<a name="section-MethodDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Method Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-MethodDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="__init__"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">__init__</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">name</span>,
+        <span class="sig-arg">info</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">logDir</span>=<span class="sig-default"><code class="variable-quote">'</code><code class="variable-string">/Users/valeriypogrebitskiy/EclipseWorkSpace/SCS</code><code class="variable-quote">'</code></span>)</span>
+    <br /><em class="fname">(Constructor)</em>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="python.server-pysrc.html#_SCSServerFactory.__init__">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  
+  <dl class="fields">
+    <dt>Overrides:
+        twisted.web.http.HTTPFactory.__init__
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="_checkInfo"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">_checkInfo</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">info</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="python.server-pysrc.html#_SCSServerFactory._checkInfo">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Verify that supplied &lt;info&gt; is a dictionary</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>info</code></strong> - dictionary containing following key/value pairs: 'workflow': 
+          &lt;wf_name&gt; 'max_connections': &lt;num_connections&gt; 
+          'enabled': &lt;bool (True/False)&gt;</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="stopFactory"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">stopFactory</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="python.server-pysrc.html#_SCSServerFactory.stopFactory">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Close all client connections and stop listening on a given port</p>
+  <dl class="fields">
+    <dt>Overrides:
+        twisted.internet.protocol.Factory.stopFactory
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="buildProtocol"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">buildProtocol</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">addr</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="python.server-pysrc.html#_SCSServerFactory.buildProtocol">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Create an instance of a subclass of Protocol.</p>
+  <p>The returned instance will handle input on an incoming server 
+  connection, and an attribute &quot;factory&quot; pointing to the creating
+  factory.</p>
+  <p>Override this method to alter how Protocol instances get created.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>addr</code></strong> - an object implementing <code 
+          class="link">twisted.internet.interfaces.IAddress</code></li>
+    </ul></dd>
+    <dt>Overrides:
+        twisted.internet.protocol.Factory.buildProtocol
+        <dd><em class="note">(inherited documentation)</em></dd>
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            >'SCS Controller'</th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    <a href="epydoc-log.html">Generated by Epydoc
+    3.0.1 on Wed Oct  7 17:27:45 2009</a>
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

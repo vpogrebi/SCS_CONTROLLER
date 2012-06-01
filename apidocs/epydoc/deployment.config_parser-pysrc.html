@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>deployment.config_parser</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            >'SCS Controller'</th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="deployment-module.html">Package&nbsp;deployment</a> ::
+        Module&nbsp;config_parser
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="deployment.config_parser-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="deployment.config_parser-module.html">Module deployment.config_parser</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno">  1</tt>  <tt class="py-line"><tt class="py-docstring">'''</tt> </tt>
+<a name="L2"></a><tt class="py-lineno">  2</tt>  <tt class="py-line"><tt class="py-docstring">Created on Jul 2, 2009</tt> </tt>
+<a name="L3"></a><tt class="py-lineno">  3</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L4"></a><tt class="py-lineno">  4</tt>  <tt class="py-line"><tt class="py-docstring">@author: valeriypogrebitskiy</tt> </tt>
+<a name="L5"></a><tt class="py-lineno">  5</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L6"></a><tt class="py-lineno">  6</tt>  <tt class="py-line"><tt class="py-docstring">config_parser.py is a a "wrapper" for standard Python's ConfigParser.ConfigParser class.</tt> </tt>
+<a name="L7"></a><tt class="py-lineno">  7</tt>  <tt class="py-line"><tt class="py-docstring">Its main goal - is to simplify use of ConfigParser and provide a single-line way of </tt> </tt>
+<a name="L8"></a><tt class="py-lineno">  8</tt>  <tt class="py-line"><tt class="py-docstring">loading configuration data from config. file</tt> </tt>
+<a name="L9"></a><tt class="py-lineno">  9</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L10"></a><tt class="py-lineno"> 10</tt>  <tt class="py-line"><tt class="py-docstring">This functionality is implemented by Parser class, and simplified use of it</tt> </tt>
+<a name="L11"></a><tt class="py-lineno"> 11</tt>  <tt class="py-line"><tt class="py-docstring">is exposed to users via single method getParams()</tt> </tt>
+<a name="L12"></a><tt class="py-lineno"> 12</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L13"></a><tt class="py-lineno"> 13</tt>  <tt class="py-line"><tt class="py-docstring">Examples:</tt> </tt>
+<a name="L14"></a><tt class="py-lineno"> 14</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L15"></a><tt class="py-lineno"> 15</tt>  <tt class="py-line"><tt class="py-docstring">        a. "config_parser.getParams(&lt;path/file.cfg&gt;)" - load config. parameters from ALL the sections in &lt;path/file.cfg&gt;</tt> </tt>
+<a name="L16"></a><tt class="py-lineno"> 16</tt>  <tt class="py-line"><tt class="py-docstring">        b. "config_parser.getParams(&lt;path/file.cfg&gt;, 'SECTION1')" - load config. parameters from single section of &lt;path/file.cfg&gt;</tt> </tt>
+<a name="L17"></a><tt class="py-lineno"> 17</tt>  <tt class="py-line"><tt class="py-docstring">        c. "config_parser.getParams(&lt;path/file.cfg&gt;, ('SECTION1', 'SECTION2')" - load config. parameters from multiple sections of &lt;path/file.cfg&gt;</tt> </tt>
+<a name="L18"></a><tt class="py-lineno"> 18</tt>  <tt class="py-line"><tt class="py-docstring">'''</tt> </tt>
+<a name="L19"></a><tt class="py-lineno"> 19</tt>  <tt class="py-line"><tt class="py-name">__docformat__</tt> <tt class="py-op">=</tt> <tt class="py-string">'epytext'</tt> </tt>
+<a name="L20"></a><tt class="py-lineno"> 20</tt>  <tt class="py-line"> </tt>
+<a name="L21"></a><tt class="py-lineno"> 21</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">os</tt> </tt>
+<a name="L22"></a><tt class="py-lineno"> 22</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">types</tt> </tt>
+<a name="L23"></a><tt class="py-lineno"> 23</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">ConfigParser</tt> </tt>
+<a name="L24"></a><tt class="py-lineno"> 24</tt>  <tt class="py-line"> </tt>
+<a name="Parser"></a><div id="Parser-def"><a name="L25"></a><tt class="py-lineno"> 25</tt> <a class="py-toggle" href="#" id="Parser-toggle" onclick="return toggle('Parser');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="deployment.config_parser.Parser-class.html">Parser</a><tt class="py-op">(</tt><tt class="py-base-class">ConfigParser</tt><tt class="py-op">.</tt><tt class="py-base-class">ConfigParser</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Parser-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="Parser-expanded"><a name="L26"></a><tt class="py-lineno"> 26</tt>  <tt class="py-line">    <tt class="py-docstring">"""Parser class "wraps" (extends) standard Python's ConfigParser.ConfigParser</tt> </tt>
+<a name="L27"></a><tt class="py-lineno"> 27</tt>  <tt class="py-line"><tt class="py-docstring">    class. Its main purpose - is to simplify use of ConfigParser to load </tt> </tt>
+<a name="L28"></a><tt class="py-lineno"> 28</tt>  <tt class="py-line"><tt class="py-docstring">    configuration data</tt> </tt>
+<a name="L29"></a><tt class="py-lineno"> 29</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="Parser.__init__"></a><div id="Parser.__init__-def"><a name="L30"></a><tt class="py-lineno"> 30</tt> <a class="py-toggle" href="#" id="Parser.__init__-toggle" onclick="return toggle('Parser.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="deployment.config_parser.Parser-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Parser.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Parser.__init__-expanded"><a name="L31"></a><tt class="py-lineno"> 31</tt>  <tt class="py-line">        <tt class="py-docstring">"Class's constructor"</tt> </tt>
+<a name="L32"></a><tt class="py-lineno"> 32</tt>  <tt class="py-line">        <tt class="py-name">ConfigParser</tt><tt class="py-op">.</tt><tt class="py-name">ConfigParser</tt><tt class="py-op">.</tt><tt id="link-0" class="py-name" targets="Method deployment.config_parser.Parser.__init__()=deployment.config_parser.Parser-class.html#__init__,Method deployment.executor.IRequestHandler.__init__()=deployment.executor.IRequestHandler-class.html#__init__,Method deployment.mysqldb.AsynchDB.__init__()=deployment.mysqldb.AsynchDB-class.html#__init__,Method deployment.mysqldb.SynchDB.__init__()=deployment.mysqldb.SynchDB-class.html#__init__,Method deployment.mysqldb.TwistedMySQLdb.__init__()=deployment.mysqldb.TwistedMySQLdb-class.html#__init__,Method deployment.twisted_logger.DailyLogFile.__init__()=deployment.twisted_logger.DailyLogFile-class.html#__init__,Method deployment.twisted_logger.ErrorLog.__init__()=deployment.twisted_logger.ErrorLog-class.html#__init__,Method deployment.twisted_logger.Log.__init__()=deployment.twisted_logger.Log-class.html#__init__,Method deployment.twisted_logger.LogService.__init__()=deployment.twisted_logger.LogService-class.html#__init__,Method python.client.SCSClientManager.__init__()=python.client.SCSClientManager-class.html#__init__,Method python.client._SCSClientProtocol.__init__()=python.client._SCSClientProtocol-class.html#__init__,Method python.client._SCSClientService.__init__()=python.client._SCSClientService-class.html#__init__,Method python.client._SCSServerMonitor.__init__()=python.client._SCSServerMonitor-class.html#__init__,Method python.client_request.JobRequest.__init__()=python.client_request.JobRequest-class.html#__init__,Method python.client_request.JobStatusRequest.__init__()=python.client_request.JobStatusRequest-class.html#__init__,Method python.controller.SCSController.__init__()=python.controller.SCSController-class.html#__init__,Method python.job.Job.__init__()=python.job.Job-class.html#__init__,Method python.job_step.JobStep.__init__()=python.job_step.JobStep-class.html#__init__,Method python.server.SCSServerManager.__init__()=python.server.SCSServerManager-class.html#__init__,Method python.server._SCSServerFactory.__init__()=python.server._SCSServerFactory-class.html#__init__,Method python.server._SCSServerHTTPRequest.__init__()=python.server._SCSServerHTTPRequest-class.html#__init__,Method python.server._SCSServerProtocol.__init__()=python.server._SCSServerProtocol-class.html#__init__,Method python.server._SCSServerService.__init__()=python.server._SCSServerService-class.html#__init__,Method python.workflow.WorkflowManager.__init__()=python.workflow.WorkflowManager-class.html#__init__,Method python.workflow._Workflow.__init__()=python.workflow._Workflow-class.html#__init__,Method python.workflow._WorkflowService.__init__()=python.workflow._WorkflowService-class.html#__init__"><a title="deployment.config_parser.Parser.__init__
+deployment.executor.IRequestHandler.__init__
+deployment.mysqldb.AsynchDB.__init__
+deployment.mysqldb.SynchDB.__init__
+deployment.mysqldb.TwistedMySQLdb.__init__
+deployment.twisted_logger.DailyLogFile.__init__
+deployment.twisted_logger.ErrorLog.__init__
+deployment.twisted_logger.Log.__init__
+deployment.twisted_logger.LogService.__init__
+python.client.SCSClientManager.__init__
+python.client._SCSClientProtocol.__init__
+python.client._SCSClientService.__init__
+python.client._SCSServerMonitor.__init__
+python.client_request.JobRequest.__init__
+python.client_request.JobStatusRequest.__init__
+python.controller.SCSController.__init__
+python.job.Job.__init__
+python.job_step.JobStep.__init__
+python.server.SCSServerManager.__init__
+python.server._SCSServerFactory.__init__
+python.server._SCSServerHTTPRequest.__init__
+python.server._SCSServerProtocol.__init__
+python.server._SCSServerService.__init__
+python.workflow.WorkflowManager.__init__
+python.workflow._Workflow.__init__
+python.workflow._WorkflowService.__init__" class="py-name" href="#" onclick="return doclink('link-0', '__init__', 'link-0');">__init__</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">)</tt> </tt>
+<a name="L33"></a><tt class="py-lineno"> 33</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__params</tt> <tt class="py-op">=</tt> <tt class="py-op">{</tt><tt class="py-op">}</tt> </tt>
+</div><a name="L34"></a><tt class="py-lineno"> 34</tt>  <tt class="py-line">         </tt>
+<a name="Parser.parse"></a><div id="Parser.parse-def"><a name="L35"></a><tt class="py-lineno"> 35</tt> <a class="py-toggle" href="#" id="Parser.parse-toggle" onclick="return toggle('Parser.parse');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="deployment.config_parser.Parser-class.html#parse">parse</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">file_or_filelist</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Parser.parse-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Parser.parse-expanded"><a name="L36"></a><tt class="py-lineno"> 36</tt>  <tt class="py-line">        <tt class="py-docstring">"""Parse single file or a list of files</tt> </tt>
+<a name="L37"></a><tt class="py-lineno"> 37</tt>  <tt class="py-line"><tt class="py-docstring">        </tt> </tt>
+<a name="L38"></a><tt class="py-lineno"> 38</tt>  <tt class="py-line"><tt class="py-docstring">        @param file_or_filelist: C{str} or C{list} or C{tuple} - single configuration file (complete path/file),</tt> </tt>
+<a name="L39"></a><tt class="py-lineno"> 39</tt>  <tt class="py-line"><tt class="py-docstring">                                 or list (or tuple) of configuration files</tt> </tt>
+<a name="L40"></a><tt class="py-lineno"> 40</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L41"></a><tt class="py-lineno"> 41</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">read</tt><tt class="py-op">(</tt><tt class="py-name">file_or_filelist</tt><tt class="py-op">)</tt>         </tt>
+</div><a name="L42"></a><tt class="py-lineno"> 42</tt>  <tt class="py-line">         </tt>
+<a name="Parser.loadSection"></a><div id="Parser.loadSection-def"><a name="L43"></a><tt class="py-lineno"> 43</tt> <a class="py-toggle" href="#" id="Parser.loadSection-toggle" onclick="return toggle('Parser.loadSection');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="deployment.config_parser.Parser-class.html#loadSection">loadSection</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">section</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Parser.loadSection-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Parser.loadSection-expanded"><a name="L44"></a><tt class="py-lineno"> 44</tt>  <tt class="py-line">        <tt class="py-docstring">"""Load configuration parameters from a single section</tt> </tt>
+<a name="L45"></a><tt class="py-lineno"> 45</tt>  <tt class="py-line"><tt class="py-docstring">        </tt> </tt>
+<a name="L46"></a><tt class="py-lineno"> 46</tt>  <tt class="py-line"><tt class="py-docstring">        @param section: C{str} - configuration section's name</tt> </tt>
+<a name="L47"></a><tt class="py-lineno"> 47</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L48"></a><tt class="py-lineno"> 48</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__params</tt><tt class="py-op">.</tt><tt class="py-name">has_key</tt><tt class="py-op">(</tt><tt class="py-name">section</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L49"></a><tt class="py-lineno"> 49</tt>  <tt class="py-line">            <tt class="py-keyword">del</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__params</tt><tt class="py-op">[</tt><tt class="py-name">section</tt><tt class="py-op">]</tt> </tt>
+<a name="L50"></a><tt class="py-lineno"> 50</tt>  <tt class="py-line">             </tt>
+<a name="L51"></a><tt class="py-lineno"> 51</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">has_section</tt><tt class="py-op">(</tt><tt class="py-name">section</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L52"></a><tt class="py-lineno"> 52</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__params</tt><tt class="py-op">[</tt><tt class="py-name">section</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">items</tt><tt class="py-op">(</tt><tt class="py-name">section</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L53"></a><tt class="py-lineno"> 53</tt>  <tt class="py-line">             </tt>
+<a name="Parser.loadSections"></a><div id="Parser.loadSections-def"><a name="L54"></a><tt class="py-lineno"> 54</tt> <a class="py-toggle" href="#" id="Parser.loadSections-toggle" onclick="return toggle('Parser.loadSections');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="deployment.config_parser.Parser-class.html#loadSections">loadSections</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">section_list</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Parser.loadSections-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Parser.loadSections-expanded"><a name="L55"></a><tt class="py-lineno"> 55</tt>  <tt class="py-line">        <tt class="py-docstring">"""Load configuration parameters from multiple sections</tt> </tt>
+<a name="L56"></a><tt class="py-lineno"> 56</tt>  <tt class="py-line"><tt class="py-docstring">                </tt> </tt>
+<a name="L57"></a><tt class="py-lineno"> 57</tt>  <tt class="py-line"><tt class="py-docstring">        @param section_list: C{list} or C{tuple} - list (or tuple) of configuration section names</tt> </tt>
+<a name="L58"></a><tt class="py-lineno"> 58</tt>  <tt class="py-line"><tt class="py-docstring">        @raise RuntimeError: when @param &lt;section_list&gt; is not C{list} or C{tuple}</tt> </tt>
+<a name="L59"></a><tt class="py-lineno"> 59</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L60"></a><tt class="py-lineno"> 60</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-keyword">not</tt> <tt class="py-name">type</tt><tt class="py-op">(</tt><tt class="py-name">section_list</tt><tt class="py-op">)</tt> <tt class="py-keyword">in</tt> <tt class="py-op">(</tt><tt class="py-name">types</tt><tt class="py-op">.</tt><tt class="py-name">ListType</tt><tt class="py-op">,</tt> <tt class="py-name">types</tt><tt class="py-op">.</tt><tt class="py-name">TupleType</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L61"></a><tt class="py-lineno"> 61</tt>  <tt class="py-line">            <tt class="py-name">err__msg</tt> <tt class="py-op">=</tt> <tt class="py-string">"Section list (List or Tuple) is expected (%s) is supplied"</tt> <tt class="py-op">%</tt> \ </tt>
+<a name="L62"></a><tt class="py-lineno"> 62</tt>  <tt class="py-line">                        <tt class="py-name">type</tt><tt class="py-op">(</tt><tt class="py-name">section_list</tt><tt class="py-op">)</tt> </tt>
+<a name="L63"></a><tt class="py-lineno"> 63</tt>  <tt class="py-line">            <tt class="py-keyword">raise</tt> <tt class="py-name">RuntimeError</tt><tt class="py-op">,</tt> <tt class="py-name">err__msg</tt> </tt>
+<a name="L64"></a><tt class="py-lineno"> 64</tt>  <tt class="py-line">         </tt>
+<a name="L65"></a><tt class="py-lineno"> 65</tt>  <tt class="py-line">        <tt class="py-keyword">for</tt> <tt class="py-name">section</tt> <tt class="py-keyword">in</tt> <tt class="py-name">section_list</tt><tt class="py-op">:</tt> </tt>
+<a name="L66"></a><tt class="py-lineno"> 66</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-1" class="py-name" targets="Method deployment.config_parser.Parser.loadSection()=deployment.config_parser.Parser-class.html#loadSection"><a title="deployment.config_parser.Parser.loadSection" class="py-name" href="#" onclick="return doclink('link-1', 'loadSection', 'link-1');">loadSection</a></tt><tt class="py-op">(</tt><tt class="py-name">section</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L67"></a><tt class="py-lineno"> 67</tt>  <tt class="py-line">             </tt>
+<a name="Parser.loadAllSections"></a><div id="Parser.loadAllSections-def"><a name="L68"></a><tt class="py-lineno"> 68</tt> <a class="py-toggle" href="#" id="Parser.loadAllSections-toggle" onclick="return toggle('Parser.loadAllSections');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="deployment.config_parser.Parser-class.html#loadAllSections">loadAllSections</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Parser.loadAllSections-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Parser.loadAllSections-expanded"><a name="L69"></a><tt class="py-lineno"> 69</tt>  <tt class="py-line">        <tt class="py-docstring">"Load configuration parameters from ALL available sections, including DEFAULT"</tt> </tt>
+<a name="L70"></a><tt class="py-lineno"> 70</tt>  <tt class="py-line">        <tt class="py-name">all_sections</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">sections</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L71"></a><tt class="py-lineno"> 71</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-2" class="py-name" targets="Method deployment.config_parser.Parser.loadSections()=deployment.config_parser.Parser-class.html#loadSections"><a title="deployment.config_parser.Parser.loadSections" class="py-name" href="#" onclick="return doclink('link-2', 'loadSections', 'link-2');">loadSections</a></tt><tt class="py-op">(</tt><tt class="py-name">all_sections</tt><tt class="py-op">)</tt> </tt>
+<a name="L72"></a><tt class="py-lineno"> 72</tt>  <tt class="py-line">        <tt class="py-comment"># Load DEFAULT params</tt> </tt>
+<a name="L73"></a><tt class="py-lineno"> 73</tt>  <tt class="py-line"><tt class="py-comment"></tt>        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__params</tt><tt class="py-op">[</tt><tt class="py-string">'DEFAULT'</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">defaults</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L74"></a><tt class="py-lineno"> 74</tt>  <tt class="py-line"> </tt>
+<a name="Parser.getParams"></a><div id="Parser.getParams-def"><a name="L75"></a><tt class="py-lineno"> 75</tt> <a class="py-toggle" href="#" id="Parser.getParams-toggle" onclick="return toggle('Parser.getParams');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="deployment.config_parser.Parser-class.html#getParams">getParams</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Parser.getParams-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Parser.getParams-expanded"><a name="L76"></a><tt class="py-lineno"> 76</tt>  <tt class="py-line">        <tt class="py-docstring">"""Obtain configuration parameter dictionary {&lt;param_name&gt;: &lt;param_value&gt;}</tt> </tt>
+<a name="L77"></a><tt class="py-lineno"> 77</tt>  <tt class="py-line"><tt class="py-docstring">        </tt> </tt>
+<a name="L78"></a><tt class="py-lineno"> 78</tt>  <tt class="py-line"><tt class="py-docstring">        @return: C{dict} - dictionary {&lt;param_name&gt;: &lt;param_value&gt;}</tt> </tt>
+<a name="L79"></a><tt class="py-lineno"> 79</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L80"></a><tt class="py-lineno"> 80</tt>  <tt class="py-line">        <tt class="py-name">params</tt> <tt class="py-op">=</tt> <tt class="py-op">{</tt><tt class="py-op">}</tt> </tt>
+<a name="L81"></a><tt class="py-lineno"> 81</tt>  <tt class="py-line">        <tt class="py-keyword">for</tt> <tt class="py-name">section</tt> <tt class="py-keyword">in</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__params</tt><tt class="py-op">.</tt><tt class="py-name">keys</tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L82"></a><tt class="py-lineno"> 82</tt>  <tt class="py-line">            <tt class="py-name">section_data</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__params</tt><tt class="py-op">[</tt><tt class="py-name">section</tt><tt class="py-op">]</tt> </tt>
+<a name="L83"></a><tt class="py-lineno"> 83</tt>  <tt class="py-line">            <tt class="py-name">data_type</tt> <tt class="py-op">=</tt> <tt class="py-name">type</tt><tt class="py-op">(</tt><tt class="py-name">section_data</tt><tt class="py-op">)</tt> </tt>
+<a name="L84"></a><tt class="py-lineno"> 84</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-name">data_type</tt> <tt class="py-keyword">is</tt> <tt class="py-name">types</tt><tt class="py-op">.</tt><tt class="py-name">ListType</tt><tt class="py-op">:</tt> </tt>
+<a name="L85"></a><tt class="py-lineno"> 85</tt>  <tt class="py-line">                <tt class="py-comment"># Add individual section's data that's stored as a List of (key, value) pairs</tt> </tt>
+<a name="L86"></a><tt class="py-lineno"> 86</tt>  <tt class="py-line"><tt class="py-comment"></tt>                <tt class="py-keyword">for</tt> <tt class="py-op">(</tt><tt class="py-name">param</tt><tt class="py-op">,</tt> <tt class="py-name">value</tt><tt class="py-op">)</tt> <tt class="py-keyword">in</tt> <tt class="py-name">section_data</tt><tt class="py-op">:</tt> </tt>
+<a name="L87"></a><tt class="py-lineno"> 87</tt>  <tt class="py-line">                    <tt class="py-name">params</tt><tt class="py-op">[</tt><tt class="py-name">param</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-name">value</tt> </tt>
+<a name="L88"></a><tt class="py-lineno"> 88</tt>  <tt class="py-line">            <tt class="py-keyword">elif</tt> <tt class="py-name">data_type</tt> <tt class="py-keyword">is</tt> <tt class="py-name">types</tt><tt class="py-op">.</tt><tt class="py-name">DictionaryType</tt><tt class="py-op">:</tt> </tt>
+<a name="L89"></a><tt class="py-lineno"> 89</tt>  <tt class="py-line">                <tt class="py-comment"># Add individual section's data that's stored as a Dictionary</tt> </tt>
+<a name="L90"></a><tt class="py-lineno"> 90</tt>  <tt class="py-line"><tt class="py-comment"></tt>                 <tt class="py-name">params</tt><tt class="py-op">.</tt><tt class="py-name">update</tt><tt class="py-op">(</tt><tt class="py-name">section_data</tt><tt class="py-op">)</tt> </tt>
+<a name="L91"></a><tt class="py-lineno"> 91</tt>  <tt class="py-line"> </tt>
+<a name="L92"></a><tt class="py-lineno"> 92</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">params</tt> </tt>
+</div><a name="L93"></a><tt class="py-lineno"> 93</tt>  <tt class="py-line">     </tt>
+<a name="Parser.clean"></a><div id="Parser.clean-def"><a name="L94"></a><tt class="py-lineno"> 94</tt> <a class="py-toggle" href="#" id="Parser.clean-toggle" onclick="return toggle('Parser.clean');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="deployment.config_parser.Parser-class.html#clean">clean</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Parser.clean-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Parser.clean-expanded"><a name="L95"></a><tt class="py-lineno"> 95</tt>  <tt class="py-line">        <tt class="py-docstring">"Cleanup internal &lt;self.__params&gt; data"</tt> </tt>
+<a name="L96"></a><tt class="py-lineno"> 96</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__params</tt> <tt class="py-op">=</tt> <tt class="py-op">{</tt><tt class="py-op">}</tt> </tt>
+</div></div><a name="L97"></a><tt class="py-lineno"> 97</tt>  <tt class="py-line">     </tt>
+<a name="getParams"></a><div id="getParams-def"><a name="L98"></a><tt class="py-lineno"> 98</tt> <a class="py-toggle" href="#" id="getParams-toggle" onclick="return toggle('getParams');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="deployment.config_parser-module.html#getParams">getParams</a><tt class="py-op">(</tt><tt class="py-param">config_file_or_filelist</tt><tt class="py-op">,</tt> <tt class="py-param">section_or_sectionlist</tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="getParams-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="getParams-expanded"><a name="L99"></a><tt class="py-lineno"> 99</tt>  <tt class="py-line">    <tt class="py-docstring">"""Obtain configuration parameters from a single file or a list of </tt> </tt>
+<a name="L100"></a><tt class="py-lineno">100</tt>  <tt class="py-line"><tt class="py-docstring">    files - either for all sections, single section, or for a list </tt> </tt>
+<a name="L101"></a><tt class="py-lineno">101</tt>  <tt class="py-line"><tt class="py-docstring">    of sections (&lt;section_or_section_list&gt;)</tt> </tt>
+<a name="L102"></a><tt class="py-lineno">102</tt>  <tt class="py-line"><tt class="py-docstring">    </tt> </tt>
+<a name="L103"></a><tt class="py-lineno">103</tt>  <tt class="py-line"><tt class="py-docstring">    @param config_file_or_filelist: C{str} or C{list} or C{tuple} - single configuration file (complete path/file),</tt> </tt>
+<a name="L104"></a><tt class="py-lineno">104</tt>  <tt class="py-line"><tt class="py-docstring">                                    or list (or tuple) of configuration files</tt> </tt>
+<a name="L105"></a><tt class="py-lineno">105</tt>  <tt class="py-line"><tt class="py-docstring">    @param section_or_sectionlist: C{str} or C{list} or C{tuple} - single section name, or list (or tuple) of section names</tt> </tt>
+<a name="L106"></a><tt class="py-lineno">106</tt>  <tt class="py-line"><tt class="py-docstring">    </tt> </tt>
+<a name="L107"></a><tt class="py-lineno">107</tt>  <tt class="py-line"><tt class="py-docstring">    </tt> </tt>
+<a name="L108"></a><tt class="py-lineno">108</tt>  <tt class="py-line"><tt class="py-docstring">    @return: C{dict} - dictionary {&lt;param_name&gt;: &lt;param_value&gt;} containing </tt> </tt>
+<a name="L109"></a><tt class="py-lineno">109</tt>  <tt class="py-line"><tt class="py-docstring">                       configuration data for all the files specified in</tt> </tt>
+<a name="L110"></a><tt class="py-lineno">110</tt>  <tt class="py-line"><tt class="py-docstring">                       @param config_file_or_filelist</tt> </tt>
+<a name="L111"></a><tt class="py-lineno">111</tt>  <tt class="py-line"><tt class="py-docstring">    @raise RuntimeError: if @param section_or_sectionlist is not C{str}, C{list} or C{tuple}  </tt> </tt>
+<a name="L112"></a><tt class="py-lineno">112</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="L113"></a><tt class="py-lineno">113</tt>  <tt class="py-line">    <tt class="py-name">parser</tt> <tt class="py-op">=</tt> <tt id="link-3" class="py-name" targets="Class deployment.config_parser.Parser=deployment.config_parser.Parser-class.html"><a title="deployment.config_parser.Parser" class="py-name" href="#" onclick="return doclink('link-3', 'Parser', 'link-3');">Parser</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L114"></a><tt class="py-lineno">114</tt>  <tt class="py-line">    <tt class="py-name">parser</tt><tt class="py-op">.</tt><tt id="link-4" class="py-name" targets="Method deployment.config_parser.Parser.parse()=deployment.config_parser.Parser-class.html#parse"><a title="deployment.config_parser.Parser.parse" class="py-name" href="#" onclick="return doclink('link-4', 'parse', 'link-4');">parse</a></tt><tt class="py-op">(</tt><tt class="py-name">config_file_or_filelist</tt><tt class="py-op">)</tt> </tt>
+<a name="L115"></a><tt class="py-lineno">115</tt>  <tt class="py-line">    <tt class="py-keyword">if</tt> <tt class="py-name">section_or_sectionlist</tt> <tt class="py-keyword">is</tt> <tt class="py-name">None</tt><tt class="py-op">:</tt> </tt>
+<a name="L116"></a><tt class="py-lineno">116</tt>  <tt class="py-line">        <tt class="py-name">parser</tt><tt class="py-op">.</tt><tt id="link-5" class="py-name" targets="Method deployment.config_parser.Parser.loadAllSections()=deployment.config_parser.Parser-class.html#loadAllSections"><a title="deployment.config_parser.Parser.loadAllSections" class="py-name" href="#" onclick="return doclink('link-5', 'loadAllSections', 'link-5');">loadAllSections</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L117"></a><tt class="py-lineno">117</tt>  <tt class="py-line">    <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L118"></a><tt class="py-lineno">118</tt>  <tt class="py-line">        <tt class="py-name">section_type</tt> <tt class="py-op">=</tt> <tt class="py-name">type</tt><tt class="py-op">(</tt><tt class="py-name">section_or_sectionlist</tt><tt class="py-op">)</tt> </tt>
+<a name="L119"></a><tt class="py-lineno">119</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-keyword">not</tt> <tt class="py-name">section_type</tt> <tt class="py-keyword">in</tt> <tt class="py-op">(</tt><tt class="py-name">types</tt><tt class="py-op">.</tt><tt class="py-name">StringType</tt><tt class="py-op">,</tt> <tt class="py-name">types</tt><tt class="py-op">.</tt><tt class="py-name">ListType</tt><tt class="py-op">,</tt> <tt class="py-name">types</tt><tt class="py-op">.</tt><tt class="py-name">TupleType</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L120"></a><tt class="py-lineno">120</tt>  <tt class="py-line">            <tt class="py-name">err_msg</tt> <tt class="py-op">=</tt> <tt class="py-string">"Invalid &lt;section_or_section_list&gt; argument (%s)"</tt> <tt class="py-op">%</tt> <tt class="py-name">section_type</tt> </tt>
+<a name="L121"></a><tt class="py-lineno">121</tt>  <tt class="py-line">            <tt class="py-keyword">raise</tt> <tt class="py-name">RuntimeError</tt><tt class="py-op">,</tt> <tt class="py-name">err_msg</tt> </tt>
+<a name="L122"></a><tt class="py-lineno">122</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">section_type</tt> <tt class="py-keyword">is</tt> <tt class="py-name">types</tt><tt class="py-op">.</tt><tt class="py-name">StringType</tt><tt class="py-op">:</tt> </tt>
+<a name="L123"></a><tt class="py-lineno">123</tt>  <tt class="py-line">            <tt class="py-name">parser</tt><tt class="py-op">.</tt><tt id="link-6" class="py-name"><a title="deployment.config_parser.Parser.loadSection" class="py-name" href="#" onclick="return doclink('link-6', 'loadSection', 'link-1');">loadSection</a></tt><tt class="py-op">(</tt><tt class="py-name">section_or_sectionlist</tt><tt class="py-op">)</tt> </tt>
+<a name="L124"></a><tt class="py-lineno">124</tt>  <tt class="py-line">        <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L125"></a><tt class="py-lineno">125</tt>  <tt class="py-line">            <tt class="py-name">parser</tt><tt class="py-op">.</tt><tt id="link-7" class="py-name"><a title="deployment.config_parser.Parser.loadSections" class="py-name" href="#" onclick="return doclink('link-7', 'loadSections', 'link-2');">loadSections</a></tt><tt class="py-op">(</tt><tt class="py-name">section_or_sectionlist</tt><tt class="py-op">)</tt> </tt>
+<a name="L126"></a><tt class="py-lineno">126</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-name">parser</tt><tt class="py-op">.</tt><tt id="link-8" class="py-name" targets="Method deployment.config_parser.Parser.getParams()=deployment.config_parser.Parser-class.html#getParams,Function deployment.config_parser.getParams()=deployment.config_parser-module.html#getParams"><a title="deployment.config_parser.Parser.getParams
+deployment.config_parser.getParams" class="py-name" href="#" onclick="return doclink('link-8', 'getParams', 'link-8');">getParams</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L127"></a><tt class="py-lineno">127</tt>  <tt class="py-line">     </tt>
+<a name="getConfigParams"></a><div id="getConfigParams-def"><a name="L128"></a><tt class="py-lineno">128</tt> <a class="py-toggle" href="#" id="getConfigParams-toggle" onclick="return toggle('getConfigParams');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="deployment.config_parser-module.html#getConfigParams">getConfigParams</a><tt class="py-op">(</tt><tt class="py-op">*</tt><tt class="py-param">sections</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="getConfigParams-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="getConfigParams-expanded"><a name="L129"></a><tt class="py-lineno">129</tt>  <tt class="py-line">    <tt class="py-docstring">"""Read system configuration parameters from config file defined by $CONFIG_FILE environment variable</tt> </tt>
+<a name="L130"></a><tt class="py-lineno">130</tt>  <tt class="py-line"><tt class="py-docstring">    </tt> </tt>
+<a name="L131"></a><tt class="py-lineno">131</tt>  <tt class="py-line"><tt class="py-docstring">    @param sections: list of configuration sections to load from config file. </tt> </tt>
+<a name="L132"></a><tt class="py-lineno">132</tt>  <tt class="py-line"><tt class="py-docstring">                      If None is passed - all sections will be loaded</tt> </tt>
+<a name="L133"></a><tt class="py-lineno">133</tt>  <tt class="py-line"><tt class="py-docstring">    @return: params - configuration parameter dictionary {&lt;param&gt;: &lt;value&gt;}</tt> </tt>
+<a name="L134"></a><tt class="py-lineno">134</tt>  <tt class="py-line"><tt class="py-docstring">    @raise RuntimeError: if $CONFIG_FILE environment variable is not defined</tt> </tt>
+<a name="L135"></a><tt class="py-lineno">135</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="L136"></a><tt class="py-lineno">136</tt>  <tt class="py-line">    <tt class="py-keyword">if</tt> <tt class="py-keyword">not</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">environ</tt><tt class="py-op">.</tt><tt class="py-name">has_key</tt><tt class="py-op">(</tt><tt class="py-string">'CONFIG_FILE'</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L137"></a><tt class="py-lineno">137</tt>  <tt class="py-line">        <tt class="py-name">err_msg</tt> <tt class="py-op">=</tt> <tt class="py-string">"'CONFIG_FILE' environment variable is not defined"</tt> </tt>
+<a name="L138"></a><tt class="py-lineno">138</tt>  <tt class="py-line">        <tt class="py-keyword">raise</tt> <tt class="py-name">RuntimeError</tt><tt class="py-op">,</tt> <tt class="py-name">err_msg</tt> </tt>
+<a name="L139"></a><tt class="py-lineno">139</tt>  <tt class="py-line">         </tt>
+<a name="L140"></a><tt class="py-lineno">140</tt>  <tt class="py-line">    <tt class="py-name">configFile</tt> <tt class="py-op">=</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">environ</tt><tt class="py-op">[</tt><tt class="py-string">'CONFIG_FILE'</tt><tt class="py-op">]</tt> </tt>
+<a name="L141"></a><tt class="py-lineno">141</tt>  <tt class="py-line">    <tt class="py-name">params</tt> <tt class="py-op">=</tt> <tt id="link-9" class="py-name"><a title="deployment.config_parser.Parser.getParams
+deployment.config_parser.getParams" class="py-name" href="#" onclick="return doclink('link-9', 'getParams', 'link-8');">getParams</a></tt><tt class="py-op">(</tt><tt class="py-name">configFile</tt><tt class="py-op">,</tt> <tt class="py-name">list</tt><tt class="py-op">(</tt><tt class="py-name">sections</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L142"></a><tt class="py-lineno">142</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-name">params</tt> </tt>
+</div><a name="L143"></a><tt class="py-lineno">143</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            >'SCS Controller'</th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    <a href="epydoc-log.html">Generated by Epydoc
+    3.0.1 on Wed Oct  7 17:27:46 2009</a>
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

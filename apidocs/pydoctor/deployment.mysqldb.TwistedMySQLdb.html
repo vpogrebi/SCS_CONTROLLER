@@ -1,0 +1,299 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>API docs for &ldquo;deployment.mysqldb.TwistedMySQLdb&rdquo;</title>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+    <link href="apidocs.css" type="text/css" rel="stylesheet" />
+    
+    
+  </head>
+  <body>
+    <h1 class="class">Class d.m.TwistedMySQLdb(<a href="deployment.singleton.Singleton.html">singleton.Singleton</a>):</h1>
+    <p>
+      <span id="part">Part of <a href="deployment.html">deployment</a>.<a href="deployment.mysqldb.html">mysqldb</a></span>
+      
+      <a href="classIndex.html#deployment.mysqldb.TwistedMySQLdb">View In Hierarchy</a>
+    </p>
+    <div>
+      
+    </div>
+    <pre>Implements ASYNCHRONOUS database access using Twisted's 'adbapi' module and 
+Python's MySQLdb module. Inherits from &lt;Singleton&gt; class to ensure that only 
+single instance of TwistedMySQLdb is used</pre>
+    
+    
+    <div id="splitTables">
+      <table class="children sortable" id="id40">
+  
+  
+  
+  
+  <tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="deployment.mysqldb.TwistedMySQLdb.html#__init__">__init__</a></td>
+    <td><tt>Class's constructor. Attempts to connect to database if all required arguments are supplied</tt></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="deployment.mysqldb.TwistedMySQLdb.html#_getOne">_getOne</a></td>
+    <td><tt>Process sql result returning first record</tt></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="deployment.mysqldb.TwistedMySQLdb.html#_insert">_insert</a></td>
+    <td><tt>Execute insert statement and return last insert id</tt></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="deployment.mysqldb.TwistedMySQLdb.html#connect">connect</a></td>
+    <td><tt>Connect to MySQL server</tt></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="deployment.mysqldb.TwistedMySQLdb.html#execute">execute</a></td>
+    <td><tt>Execute an SQL query and return None.</tt></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="deployment.mysqldb.TwistedMySQLdb.html#query">query</a></td>
+    <td><tt>Execute an SQL query and return the result.</tt></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="deployment.mysqldb.TwistedMySQLdb.html#insert">insert</a></td>
+    <td><tt>Execute an INSERT sql statement and return ID of the first row inserted.</tt></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="deployment.mysqldb.TwistedMySQLdb.html#start">start</a></td>
+    <td><tt>Start the connection pool.</tt></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="deployment.mysqldb.TwistedMySQLdb.html#close">close</a></td>
+    <td><tt>Close all pool connections and shutdown the pool.</tt></td>
+  </tr>
+  
+</table>
+      
+        <p>
+          Inherited from <a href="deployment.singleton.Singleton.html">Singleton</a>:
+        </p>
+        <table class="children sortable" id="id41">
+  
+  
+  
+  
+  <tr class="basemethod">
+    
+    
+    <td>Method</td>
+    <td><a href="deployment.singleton.Singleton.html#__new__">__new__</a></td>
+    <td><tt>Singleton class's constructor. Ensures that only single instance</tt></td>
+  </tr>
+  
+</table>
+      
+      
+    </div>
+    
+    
+    
+    <div class="function">
+        <a name="deployment.mysqldb.TwistedMySQLdb.__init__"></a>
+        <a name="__init__"></a>
+        <div class="functionHeader">
+        @singleton.uniq<br />
+        def __init__(self, server=None, userid=None, passwd=None, schema=None, socket=None):
+        
+      </div>
+        <div class="functionBody">
+          
+          <pre>Class's constructor. Attempts to connect to database if all required arguments are supplied
+        
+@param server: C{str} - (optional) database server ('localhost' or &lt;host&gt;:&lt;port&gt;)
+@param userid: C{str} - (optional) user id on the &lt;server&gt;
+@param passwd: C{str} - (optional) user's password
+@param schema: C{str} - (optional) schema to be used for all database operations (default: None)
+@param socket: C{str} or None - (optional) socket used to connect to database
+
+By default, sets 'cp_reconnect' argument used by adbapi.ConnectionPool constructor to True - 
+to enforce reconnection when database connection is lost</pre>
+        </div>
+      </div><div class="function">
+        <a name="deployment.mysqldb.TwistedMySQLdb._getOne"></a>
+        <a name="_getOne"></a>
+        <div class="functionHeader">
+        
+        def _getOne(self, result):
+        
+      </div>
+        <div class="functionBody">
+          
+          <pre>Process sql result returning first record
+
+@param result: result set returned by database operation
+@return: result[0] (C{list}) - first row from the result set (which also MUST have only one row)
+@raise RuntimeError: if @param &lt;result&gt; contains no data, or more than one record</pre>
+        </div>
+      </div><div class="function">
+        <a name="deployment.mysqldb.TwistedMySQLdb._insert"></a>
+        <a name="_insert"></a>
+        <div class="functionHeader">
+        
+        def _insert(self, trans, stmt, *stmt_args):
+        
+      </div>
+        <div class="functionBody">
+          
+          <pre>Execute insert statement and return last insert id
+
+@param trans: database transaction object
+@param stmt: INSERT sql statement
+@param stmt_args: INSERT statement arguments (optional)</pre>
+        </div>
+      </div><div class="function">
+        <a name="deployment.mysqldb.TwistedMySQLdb.connect"></a>
+        <a name="connect"></a>
+        <div class="functionHeader">
+        
+        def connect(self, server, userid, passwd, socket, schema=None):
+        
+      </div>
+        <div class="functionBody">
+          
+          <pre>Connect to MySQL server
+
+@param server: C{str} - database server ('localhost' or &lt;host&gt;:&lt;port&gt;)
+@param userid: C{str} - user id on the &lt;server&gt;
+@param passwd: C{str} - user's password
+@param socket: C{str} or None - (optional) socket used to connect to database
+@param schema: C{str} - (optional) schema to be used for all database operations (default: None)
+
+Sets &lt;self.db&gt; attribute to adbapi.ConnectionPool object. At the same time, "autocommit" is set to True</pre>
+        </div>
+      </div><div class="function">
+        <a name="deployment.mysqldb.TwistedMySQLdb.execute"></a>
+        <a name="execute"></a>
+        <div class="functionHeader">
+        
+        def execute(self, *args, **kwargs):
+        
+      </div>
+        <div class="functionBody">
+          
+          <pre>Execute an SQL query and return None.
+
+A DB-API cursor will will be invoked with cursor.execute(*args, **kwargs).
+The exact nature of the arguments will depend on the specific flavor
+of DB-API being used, but the first argument in *args will be an SQL
+statement. This method will not attempt to fetch any results from the
+query and is thus suitable for INSERT, DELETE, and other SQL statements
+which do not return values. If the 'execute' method raises an
+exception, the transaction will be rolled back and a Failure returned.
+
+The args and kw arguments will be passed to the DB-API cursor's
+'execute' method.
+
+@return: a Deferred which will fire None or a Failure.</pre>
+        </div>
+      </div><div class="function">
+        <a name="deployment.mysqldb.TwistedMySQLdb.query"></a>
+        <a name="query"></a>
+        <div class="functionHeader">
+        
+        def query(self, *args, **kwargs):
+        
+      </div>
+        <div class="functionBody">
+          
+          <pre>Execute an SQL query and return the result.
+
+A DB-API cursor will will be invoked with cursor.execute(*args, **kwargs).
+The exact nature of the arguments will depend on the specific flavor
+of DB-API being used, but the first argument in *args be an SQL
+statement. The result of a subsequent cursor.fetchall() will be
+fired to the Deferred which is returned. If either the 'execute' or
+'fetchall' methods raise an exception, the transaction will be rolled
+back and a Failure returned.
+
+The  *args and **kwargs arguments will be passed to the DB-API cursor's
+'execute' method.
+
+@return: a Deferred which will fire the return value of a DB-API
+cursor's 'fetchall' method, or a Failure.</pre>
+        </div>
+      </div><div class="function">
+        <a name="deployment.mysqldb.TwistedMySQLdb.insert"></a>
+        <a name="insert"></a>
+        <div class="functionHeader">
+        
+        def insert(self, stmt, *stmt_args):
+        
+      </div>
+        <div class="functionBody">
+          
+          <pre>Execute an INSERT sql statement and return ID of the first row inserted.
+
+A DB-API cursor will will be invoked with cursor.execute(stmt, *stmt_args).
+
+@param stmt: INSERT sql statement
+@param stmt_args: INSERT statement kword arguments (optional)
+
+The result of a subsequent cursor.fetchall() containing INSERT_ID of the
+first row inserted will be fired to the Deferred which is returned. 
+If 'execute' method raises an exception, the transaction will be rolled 
+back and a Failure returned.
+
+The  stmt and *stmt_args arguments will be passed to the DB-API cursor's
+'execute' method.
+
+@return: a Deferred which will fire INSERT_ID value of the first row
+inserted, or a Failure.</pre>
+        </div>
+      </div><div class="function">
+        <a name="deployment.mysqldb.TwistedMySQLdb.start"></a>
+        <a name="start"></a>
+        <div class="functionHeader">
+        
+        def start(self):
+        
+      </div>
+        <div class="functionBody">
+          
+          <pre>Start the connection pool.
+
+If you are using the reactor normally, this function does *not*
+need to be called.</pre>
+        </div>
+      </div><div class="function">
+        <a name="deployment.mysqldb.TwistedMySQLdb.close"></a>
+        <a name="close"></a>
+        <div class="functionHeader">
+        
+        def close(self):
+        
+      </div>
+        <div class="functionBody">
+          
+          <pre>Close all pool connections and shutdown the pool.</pre>
+        </div>
+      </div>
+    
+    <address>
+      <a href="index.html">API Documentation</a> for 'SCS Controller', generated by <a href="http://codespeak.net/~mwh/pydoctor/">pydoctor</a> at 2009-10-07 17:27:47.
+    </address>
+  </body>
+</html>

@@ -1,0 +1,689 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>deployment.mysqldb.TwistedMySQLdb</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            >'SCS Controller'</th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="deployment-module.html">Package&nbsp;deployment</a> ::
+        <a href="deployment.mysqldb-module.html">Module&nbsp;mysqldb</a> ::
+        Class&nbsp;TwistedMySQLdb
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="deployment.mysqldb.TwistedMySQLdb-class.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS DESCRIPTION ==================== -->
+<h1 class="epydoc">Class TwistedMySQLdb</h1><p class="nomargin-top"><span class="codelink"><a href="deployment.mysqldb-pysrc.html#TwistedMySQLdb">source&nbsp;code</a></span></p>
+<center>
+<center>  <map id="uml_class_diagram_for_deployme_5" name="uml_class_diagram_for_deployme_5">
+<area shape="rect" id="node10" href="deployment.mysqldb.TwistedMySQLdb-class.html#__init__" title="Class&#39;s constructor." alt="" coords="17,116,607,135"/>
+<area shape="rect" id="node10" href="deployment.mysqldb.TwistedMySQLdb-class.html#connect" title="Connect to MySQL server" alt="" coords="17,135,607,153"/>
+<area shape="rect" id="node10" href="deployment.mysqldb.TwistedMySQLdb-class.html#execute" title="Execute an SQL query and return None." alt="" coords="17,153,607,172"/>
+<area shape="rect" id="node10" href="deployment.mysqldb.TwistedMySQLdb-class.html#query" title="Execute an SQL query and return the result." alt="" coords="17,172,607,191"/>
+<area shape="rect" id="node10" href="deployment.mysqldb.TwistedMySQLdb-class.html#insert" title="Execute an INSERT sql statement and return ID of the first row inserted." alt="" coords="17,191,607,209"/>
+<area shape="rect" id="node10" href="deployment.mysqldb.TwistedMySQLdb-class.html#start" title="Start the connection pool." alt="" coords="17,209,607,228"/>
+<area shape="rect" id="node10" href="deployment.mysqldb.TwistedMySQLdb-class.html#close" title="Close all pool connections and shutdown the pool." alt="" coords="17,228,607,247"/>
+<area shape="rect" id="node1" href="deployment.mysqldb.TwistedMySQLdb-class.html" title="Implements ASYNCHRONOUS database access using Twisted&#39;s &#39;adbapi&#39; module and Python&#39;s MySQLdb module." alt="" coords="5,83,619,253"/>
+<area shape="rect" id="node11" href="deployment.singleton.Singleton-class.html#__new__" title="Singleton class&#39;s constructor." alt="" coords="211,39,412,57"/>
+<area shape="rect" id="node2" href="deployment.singleton.Singleton-class.html" title="A Pythonic Singleton" alt="" coords="199,6,423,63"/>
+</map>
+  <img src="uml_class_diagram_for_deployme_5.gif" alt='' usemap="#uml_class_diagram_for_deployme_5" ismap="ismap" class="graph-without-title" />
+</center>
+</center>
+<hr />
+<p>Implements ASYNCHRONOUS database access using Twisted's 'adbapi' 
+  module and Python's MySQLdb module. Inherits from &lt;Singleton&gt; class
+  to ensure that only single instance of TwistedMySQLdb is used</p>
+
+<!-- ==================== INSTANCE METHODS ==================== -->
+<a name="section-InstanceMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Instance Methods</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-InstanceMethods"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="deployment.mysqldb.TwistedMySQLdb-class.html#__init__" class="summary-sig-name">__init__</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">server</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">userid</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">passwd</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">schema</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">socket</span>=<span class="summary-sig-default">None</span>)</span><br />
+      Class's constructor.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="deployment.mysqldb-pysrc.html#TwistedMySQLdb.__init__">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="deployment.mysqldb.TwistedMySQLdb-class.html#_getOne" class="summary-sig-name" onclick="show_private();">_getOne</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">result</span>)</span><br />
+      Process sql result returning first record</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="deployment.mysqldb-pysrc.html#TwistedMySQLdb._getOne">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="deployment.mysqldb.TwistedMySQLdb-class.html#_insert" class="summary-sig-name" onclick="show_private();">_insert</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">trans</span>,
+        <span class="summary-sig-arg">stmt</span>,
+        <span class="summary-sig-arg">*stmt_args</span>)</span><br />
+      Execute insert statement and return last insert id</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="deployment.mysqldb-pysrc.html#TwistedMySQLdb._insert">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="deployment.mysqldb.TwistedMySQLdb-class.html#connect" class="summary-sig-name">connect</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">server</span>,
+        <span class="summary-sig-arg">userid</span>,
+        <span class="summary-sig-arg">passwd</span>,
+        <span class="summary-sig-arg">socket</span>,
+        <span class="summary-sig-arg">schema</span>=<span class="summary-sig-default">None</span>)</span><br />
+      Connect to MySQL server</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="deployment.mysqldb-pysrc.html#TwistedMySQLdb.connect">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="deployment.mysqldb.TwistedMySQLdb-class.html#execute" class="summary-sig-name">execute</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">*args</span>,
+        <span class="summary-sig-arg">**kwargs</span>)</span><br />
+      Execute an SQL query and return None.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="deployment.mysqldb-pysrc.html#TwistedMySQLdb.execute">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="deployment.mysqldb.TwistedMySQLdb-class.html#query" class="summary-sig-name">query</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">*args</span>,
+        <span class="summary-sig-arg">**kwargs</span>)</span><br />
+      Execute an SQL query and return the result.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="deployment.mysqldb-pysrc.html#TwistedMySQLdb.query">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="deployment.mysqldb.TwistedMySQLdb-class.html#insert" class="summary-sig-name">insert</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">stmt</span>,
+        <span class="summary-sig-arg">*stmt_args</span>)</span><br />
+      Execute an INSERT sql statement and return ID of the first row 
+      inserted.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="deployment.mysqldb-pysrc.html#TwistedMySQLdb.insert">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="deployment.mysqldb.TwistedMySQLdb-class.html#start" class="summary-sig-name">start</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Start the connection pool.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="deployment.mysqldb-pysrc.html#TwistedMySQLdb.start">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="close"></a><span class="summary-sig-name">close</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      Close all pool connections and shutdown the pool.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="deployment.mysqldb-pysrc.html#TwistedMySQLdb.close">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__delattr__</code>,
+      <code>__getattribute__</code>,
+      <code>__hash__</code>,
+      <code>__reduce__</code>,
+      <code>__reduce_ex__</code>,
+      <code>__repr__</code>,
+      <code>__setattr__</code>,
+      <code>__str__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== STATIC METHODS ==================== -->
+<a name="section-StaticMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Static Methods</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-StaticMethods"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr bgcolor="#e8f0f8" >
+  <th colspan="2" class="group-header"
+    >&nbsp;&nbsp;&nbsp;&nbsp;Inherited from <a href="deployment.singleton.Singleton-class.html">singleton.Singleton</a></th></tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">a new object with type S, a subtype of T</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="deployment.singleton.Singleton-class.html#__new__" class="summary-sig-name">__new__</a>(<span class="summary-sig-arg">cls</span>,
+        <span class="summary-sig-arg">*args</span>,
+        <span class="summary-sig-arg">**kwargs</span>)</span><br />
+      Singleton class's constructor.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="deployment.singleton-pysrc.html#Singleton.__new__">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+</table>
+<!-- ==================== PROPERTIES ==================== -->
+<a name="section-Properties"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Properties</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Properties"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__class__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== METHOD DETAILS ==================== -->
+<a name="section-MethodDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Method Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-MethodDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="__init__"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">__init__</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">server</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">userid</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">passwd</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">schema</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">socket</span>=<span class="sig-default">None</span>)</span>
+    <br /><em class="fname">(Constructor)</em>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="deployment.mysqldb-pysrc.html#TwistedMySQLdb.__init__">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Class's constructor. Attempts to connect to database if all required 
+  arguments are supplied</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>server</code></strong> - <code>str</code> - (optional) database server ('localhost' or 
+          &lt;host&gt;:&lt;port&gt;)</li>
+        <li><strong class="pname"><code>userid</code></strong> - <code>str</code> - (optional) user id on the &lt;server&gt;</li>
+        <li><strong class="pname"><code>passwd</code></strong> - <code>str</code> - (optional) user's password</li>
+        <li><strong class="pname"><code>schema</code></strong> - <code>str</code> - (optional) schema to be used for all database 
+          operations (default: None)</li>
+        <li><strong class="pname"><code>socket</code></strong> - <code>str</code> or None - (optional) socket used to connect to 
+          database
+          <p>By default, sets 'cp_reconnect' argument used by 
+          adbapi.ConnectionPool constructor to True - to enforce 
+          reconnection when database connection is lost</p></li>
+    </ul></dd>
+    <dt>Decorators:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code>@singleton.uniq</code></li>
+    </ul></dd>
+    <dt>Overrides:
+        object.__init__
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="_getOne"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">_getOne</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">result</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="deployment.mysqldb-pysrc.html#TwistedMySQLdb._getOne">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Process sql result returning first record</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>result</code></strong> - result set returned by database operation</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>result[0] (<code>list</code>) - first row from the result set 
+          (which also MUST have only one row)</dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'>RuntimeError</strong></code> - if @param &lt;result&gt; contains no data, or more than one record</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="_insert"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">_insert</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">trans</span>,
+        <span class="sig-arg">stmt</span>,
+        <span class="sig-arg">*stmt_args</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="deployment.mysqldb-pysrc.html#TwistedMySQLdb._insert">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Execute insert statement and return last insert id</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>trans</code></strong> - database transaction object</li>
+        <li><strong class="pname"><code>stmt</code></strong> - INSERT sql statement</li>
+        <li><strong class="pname"><code>stmt_args</code></strong> - INSERT statement arguments (optional)</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="connect"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">connect</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">server</span>,
+        <span class="sig-arg">userid</span>,
+        <span class="sig-arg">passwd</span>,
+        <span class="sig-arg">socket</span>,
+        <span class="sig-arg">schema</span>=<span class="sig-default">None</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="deployment.mysqldb-pysrc.html#TwistedMySQLdb.connect">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Connect to MySQL server</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>server</code></strong> - <code>str</code> - database server ('localhost' or 
+          &lt;host&gt;:&lt;port&gt;)</li>
+        <li><strong class="pname"><code>userid</code></strong> - <code>str</code> - user id on the &lt;server&gt;</li>
+        <li><strong class="pname"><code>passwd</code></strong> - <code>str</code> - user's password</li>
+        <li><strong class="pname"><code>socket</code></strong> - <code>str</code> or None - (optional) socket used to connect to 
+          database</li>
+        <li><strong class="pname"><code>schema</code></strong> - <code>str</code> - (optional) schema to be used for all database 
+          operations (default: None)
+          <p>Sets &lt;self.db&gt; attribute to adbapi.ConnectionPool 
+          object. At the same time, &quot;autocommit&quot; is set to 
+          True</p></li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="execute"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">execute</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">*args</span>,
+        <span class="sig-arg">**kwargs</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="deployment.mysqldb-pysrc.html#TwistedMySQLdb.execute">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Execute an SQL query and return None.</p>
+  <p>A DB-API cursor will will be invoked with cursor.execute(*args, 
+  **kwargs). The exact nature of the arguments will depend on the specific 
+  flavor of DB-API being used, but the first argument in *args will be an 
+  SQL statement. This method will not attempt to fetch any results from the
+  query and is thus suitable for INSERT, DELETE, and other SQL statements 
+  which do not return values. If the 'execute' method raises an exception, 
+  the transaction will be rolled back and a Failure returned.</p>
+  <p>The args and kw arguments will be passed to the DB-API cursor's 
+  'execute' method.</p>
+  <dl class="fields">
+    <dt>Returns:</dt>
+        <dd>a Deferred which will fire None or a Failure.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="query"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">query</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">*args</span>,
+        <span class="sig-arg">**kwargs</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="deployment.mysqldb-pysrc.html#TwistedMySQLdb.query">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Execute an SQL query and return the result.</p>
+  <p>A DB-API cursor will will be invoked with cursor.execute(*args, 
+  **kwargs). The exact nature of the arguments will depend on the specific 
+  flavor of DB-API being used, but the first argument in *args be an SQL 
+  statement. The result of a subsequent cursor.fetchall() will be fired to 
+  the Deferred which is returned. If either the 'execute' or 'fetchall' 
+  methods raise an exception, the transaction will be rolled back and a 
+  Failure returned.</p>
+  <p>The  *args and **kwargs arguments will be passed to the DB-API 
+  cursor's 'execute' method.</p>
+  <dl class="fields">
+    <dt>Returns:</dt>
+        <dd>a Deferred which will fire the return value of a DB-API cursor's 
+          'fetchall' method, or a Failure.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="insert"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">insert</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">stmt</span>,
+        <span class="sig-arg">*stmt_args</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="deployment.mysqldb-pysrc.html#TwistedMySQLdb.insert">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Execute an INSERT sql statement and return ID of the first row 
+  inserted.</p>
+  <p>A DB-API cursor will will be invoked with cursor.execute(stmt, 
+  *stmt_args).</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>stmt</code></strong> - INSERT sql statement</li>
+        <li><strong class="pname"><code>stmt_args</code></strong> - INSERT statement kword arguments (optional)
+          <p>The result of a subsequent cursor.fetchall() containing 
+          INSERT_ID of the first row inserted will be fired to the Deferred
+          which is returned. If 'execute' method raises an exception, the 
+          transaction will be rolled back and a Failure returned.</p>
+          <p>The  stmt and *stmt_args arguments will be passed to the 
+          DB-API cursor's 'execute' method.</p></li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>a Deferred which will fire INSERT_ID value of the first row 
+          inserted, or a Failure.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="start"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">start</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="deployment.mysqldb-pysrc.html#TwistedMySQLdb.start">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Start the connection pool.</p>
+  <p>If you are using the reactor normally, this function does *not* need 
+  to be called.</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            >'SCS Controller'</th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    <a href="epydoc-log.html">Generated by Epydoc
+    3.0.1 on Wed Oct  7 17:27:44 2009</a>
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>deployment.deferred_lib</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            >'SCS Controller'</th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="deployment-module.html">Package&nbsp;deployment</a> ::
+        Module&nbsp;deferred_lib
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="deployment.deferred_lib-module.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== MODULE DESCRIPTION ==================== -->
+<h1 class="epydoc">Module deferred_lib</h1><p class="nomargin-top"><span class="codelink"><a href="deployment.deferred_lib-pysrc.html">source&nbsp;code</a></span></p>
+<p>Created on Jul 17, 2009</p>
+
+<hr />
+<div class="fields">      <p><strong>Author:</strong>
+        valeriypogrebitskiy
+        <p>Main purpose of deferred_lib.py - is to provide a simple 
+        decorator (@deferred) that can be used to turn any blocking methods
+        into non-blocking, asynchronous methods. By using this decorator, 
+        decorated (blocking) methods are forced to return a deferred 
+        (instance of twisted.internet.defer.Deferred class) that 'fires' 
+        when method completes its execution. Thus, calling Python code will
+        not have to block, waiting for the method to complete.</p>
+        <p>This functionality is essential to any implementation that uses 
+        Twisted framework</p>
+        <p>'@deferred' decorator is simply a reference to 
+        twisted.internet.threads.deferToThread() method's getter:</p>
+        <p>deferred = deferToThread.__get__</p>
+        <p>In addition to providing @deferred decorator, this module offers
+        two &quot;convenience&quot; methods:</p>
+        <p>sleep() - Asynchronous (non-blocking) wrapper for standard 
+        Python's time.sleep() sleep_fail() - Same as sleep(), but intended 
+        to raise RuntimeError exception after sleeping</p>
+        <p>Both sleep() and sleep_fail() are designed as deferred callback 
+        handler methods (take extra first argument &lt;nothing&gt;), and 
+        are convenient to be used for Twisted code's unit testing</p>
+      </p>
+</div><!-- ==================== FUNCTIONS ==================== -->
+<a name="section-Functions"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Functions</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Functions"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="deployment.deferred_lib-module.html#sleep" class="summary-sig-name">sleep</a>(<span class="summary-sig-arg">nothing</span>,
+        <span class="summary-sig-arg">secs</span>)</span><br />
+      Sleep for &lt;secs&gt; number of seconds.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="deployment.deferred_lib-pysrc.html#sleep">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="deployment.deferred_lib-module.html#sleep_fail" class="summary-sig-name">sleep_fail</a>(<span class="summary-sig-arg">nothing</span>,
+        <span class="summary-sig-arg">secs</span>,
+        <span class="summary-sig-arg">err_msg</span>)</span><br />
+      Raise 'RuntimeError, &lt;err_msg&gt;' exception after 'sleeping' for 
+      &lt;secs&gt; number of seconds This is an asynchronous (non-blocking)
+      wrapper for standard Python's time.sleep().</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="deployment.deferred_lib-pysrc.html#sleep_fail">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+</table>
+<!-- ==================== VARIABLES ==================== -->
+<a name="section-Variables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Variables</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Variables"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="deferred"></a><span class="summary-name">deferred</span> = <code title="deferToThread.__get__">deferToThread.__get__</code>
+    </td>
+  </tr>
+</table>
+<!-- ==================== FUNCTION DETAILS ==================== -->
+<a name="section-FunctionDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Function Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-FunctionDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="sleep"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">sleep</span>(<span class="sig-arg">nothing</span>,
+        <span class="sig-arg">secs</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="deployment.deferred_lib-pysrc.html#sleep">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Sleep for &lt;secs&gt; number of seconds. This is an asynchronous 
+  (non-blocking) wrapper for standard Python's time.sleep(). It is designed
+  as a deferred's callback handler (takes extra &lt;nothing&gt; argument 
+  that is provided by deferred)</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>nothing</code></strong> - non-important argument (provided by deferred that has 'fired' 
+          this callback)</li>
+        <li><strong class="pname"><code>secs</code></strong> - number of seconds to sleep</li>
+    </ul></dd>
+    <dt>Decorators:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code>@deferred</code></li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="sleep_fail"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">sleep_fail</span>(<span class="sig-arg">nothing</span>,
+        <span class="sig-arg">secs</span>,
+        <span class="sig-arg">err_msg</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="deployment.deferred_lib-pysrc.html#sleep_fail">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Raise 'RuntimeError, &lt;err_msg&gt;' exception after 'sleeping' for 
+  &lt;secs&gt; number of seconds This is an asynchronous (non-blocking) 
+  wrapper for standard Python's time.sleep(). It is designed as a 
+  deferred's callback handler (takes extra &lt;nothing&gt; argument that is
+  provided by deferred)</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>nothing</code></strong> - non-important argument (provided by deferred that has 'fired' 
+          this callback)</li>
+        <li><strong class="pname"><code>secs</code></strong> - number of seconds to sleep</li>
+        <li><strong class="pname"><code>err_msg</code></strong> - error message to be added to RuntimeError exception</li>
+    </ul></dd>
+    <dt>Decorators:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code>@deferred</code></li>
+    </ul></dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'>RuntimeError</strong></code> - unconditionally raises exception - this is main purpose of this 
+        method</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            >'SCS Controller'</th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    <a href="epydoc-log.html">Generated by Epydoc
+    3.0.1 on Wed Oct  7 17:27:42 2009</a>
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>API docs for &ldquo;python.lib.twisted_logger&rdquo;</title>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+    <link href="apidocs.css" type="text/css" rel="stylesheet" />
+    
+    
+  </head>
+  <body>
+    <h1 class="module">Module p.l.twisted_logger</h1>
+    <p>
+      <span id="part">Part of <a href="python.html">python</a>.<a href="python.lib.html">lib</a></span>
+      
+      
+    </p>
+    <div>
+      
+    </div>
+    <div>Created on Jul 29, 2009<table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Author</td><td colspan="2">valeriypogrebitskiy
+<p>twisted_logger.py is intended to customize Twisted framework's logging 
+functionality, as well as to simplify its use.</p>
+<p>This module customizes logging format (prefix prepending actual log 
+message) - which is set to: '%Y-%m-%d %H:%M:%S'. This format string get 
+supplied to time.strftime() Python method:</p>
+<p>prefix = time.strftime(self.timeFormat, time.localtime())</p>
+<p>NOTE: ILogObeserver interface defined in this module really 
+&quot;belongs&quot; to Twisted framework itself: it should have been 
+defined within twisted.python.log module, but for some reason it is not 
+there. Since I do not have permissions to write to twisted framework's 
+files, I simply include this interface here</p>
+</td></tr></table></div>
+    
+    
+    <div id="splitTables">
+      <table class="children sortable" id="id35">
+  
+  
+  
+  
+  <tr class="function">
+    
+    
+    <td>Function</td>
+    <td><a href="python.lib.twisted_logger.html#writeLog">writeLog</a></td>
+    <td><span>Write to a log file</span></td>
+  </tr><tr class="function">
+    
+    
+    <td>Function</td>
+    <td><a href="python.lib.twisted_logger.html#writeErr">writeErr</a></td>
+    <td><span>Write to an error log file</span></td>
+  </tr><tr class="function">
+    
+    
+    <td>Function</td>
+    <td><a href="python.lib.twisted_logger.html#initLogging">initLogging</a></td>
+    <td><span>Initialize log service that includes two files: LOG and ERROR file</span></td>
+  </tr><tr class="class">
+    
+    
+    <td>Class</td>
+    <td><a href="python.lib.twisted_logger.Log.html">Log</a></td>
+    <td><span>Customizes twisted.python.log.FileLogObserver class's implementation</span></td>
+  </tr><tr class="class">
+    
+    
+    <td>Class</td>
+    <td><a href="python.lib.twisted_logger.ErrorLog.html">ErrorLog</a></td>
+    <td><span>Customizes twisted.python.log.FileLogObserver class's implementation</span></td>
+  </tr><tr class="class">
+    
+    
+    <td>Class</td>
+    <td><a href="python.lib.twisted_logger.LogService.html">LogService</a></td>
+    <td><span>Implements functionality to expose twisted logging in a form of 
+services.</span></td>
+  </tr><tr class="class">
+    
+    
+    <td>Class</td>
+    <td><a href="python.lib.twisted_logger.DailyLogFile.html">DailyLogFile</a></td>
+    <td><span>Customised version of twisted.python.logfile.DailyLogFile class.</span></td>
+  </tr>
+  
+</table>
+      
+      
+    </div>
+    
+    
+    
+    <div class="function">
+        <a name="python.lib.twisted_logger.writeLog"></a>
+        <a name="writeLog"></a>
+        <div class="functionHeader">
+        
+        def writeLog(logPrefix, logName, logMsg):
+        
+      </div>
+        <div class="functionBody">
+          
+          <div>Write to a log file<table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">logPrefix</td><td>'system' prefix that will follow date/time prefix
+</td></tr><tr><td></td><td class="fieldArg">logName</td><td>unique name (ID) identifying given log file
+</td></tr><tr><td></td><td class="fieldArg">logMsg</td><td>main message to be written to a file
+</td></tr><tr class="fieldStart"><td class="fieldName">Note</td><td colspan="2">logName log file identifier is used by observers (log.FileLogObserver 
+instances) that &quot;pick up&quot; log messages designated for this 
+particular log file from among all log messages produced by log.msg()
+</td></tr></table></div>
+        </div>
+      </div><div class="function">
+        <a name="python.lib.twisted_logger.writeErr"></a>
+        <a name="writeErr"></a>
+        <div class="functionHeader">
+        
+        def writeErr(logPrefix, logName, error, why=None):
+        
+      </div>
+        <div class="functionBody">
+          
+          <div>Write to an error log file<table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">logPrefix</td><td>'system' prefix that will follow date/time prefix
+</td></tr><tr><td></td><td class="fieldArg">logName</td><td>unique name (ID) identifying given log file
+</td></tr><tr><td></td><td class="fieldArg">error</td><td>main message (error description) to be written to a file
+</td></tr><tr class="fieldStart"><td class="fieldName">Note</td><td colspan="2">logName log file identifier is used by observers (log.FileLogObserver 
+instances) that &quot;pick up&quot; log messages designated for this 
+particular log file from among all log messages produced by log.msg()
+</td></tr></table></div>
+        </div>
+      </div><div class="function">
+        <a name="python.lib.twisted_logger.initLogging"></a>
+        <a name="initLogging"></a>
+        <div class="functionHeader">
+        
+        def initLogging(name, logFile, logDir, parent=None):
+        
+      </div>
+        <div class="functionBody">
+          
+          <div>Initialize log service that includes two files: LOG and ERROR file<table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">name</td><td>unique log service name
+</td></tr><tr><td></td><td class="fieldArg">logFile</td><td>base log file name shared between LOG and ERROR files
+</td></tr><tr><td></td><td class="fieldArg">logDir</td><td>folder where LOG and ERROR files will be created (None can be provided to 
+indicate that no files should be created)
+</td></tr><tr><td></td><td class="fieldArg">parent</td><td>parent service (MultiService instance) to which this service should be 
+added as subordinate service
+</td></tr><tr class="fieldStart"><td class="fieldName">Note</td><td colspan="2">None should be provided as @param &lt;logDir&gt; to avoid creation of log 
+files and service initialization alltogether
+</td></tr></table></div>
+        </div>
+      </div>
+    
+    <address>
+      <a href="index.html">API Documentation</a> for 'SCS Controller', generated by <a href="http://codespeak.net/~mwh/pydoctor/">pydoctor</a> at 2009-09-18 15:11:29.
+    </address>
+  </body>
+</html>

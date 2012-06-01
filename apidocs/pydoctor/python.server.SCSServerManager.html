@@ -1,0 +1,294 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>API docs for &ldquo;python.server.SCSServerManager&rdquo;</title>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+    <link href="apidocs.css" type="text/css" rel="stylesheet" />
+    
+    
+  </head>
+  <body>
+    <h1 class="class">Class p.s.SCSServerManager(<span title="singleton.Singleton">singleton.Singleton</span>, <span title="twisted.application.service.MultiService">service.MultiService</span>):</h1>
+    <p>
+      <span id="part">Part of <a href="python.html">python</a>.<a href="python.server.html">server</a></span>
+      
+      <a href="classIndex.html#python.server.SCSServerManager">View In Hierarchy</a>
+    </p>
+    <div>
+      
+    </div>
+    <pre>SCSServer's main (public) class. Implements general SCS server management functionality.  
+
+Implemented using Singleton design pattern (extends &lt;singleton.Singleton&gt;) and ensures that 
+class gets initialized only once - no matter how many times constructor is called 
+(uses @singleton.uniq() decorator for its __init() constructor
+
+Implements IResourceManager interface
+
+Extends twisted.application.service.MultiService class. This (MultiService) functionality allows it to
+"wrap" (and expose to user) SCS servers as services that can be started and stopped alltogether when 
+SCSServerManager service itself is being stopped</pre>
+    
+    
+    <div id="splitTables">
+      <table class="children sortable" id="id24">
+  
+  
+  
+  
+  <tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.server.SCSServerManager.html#__init__">__init__</a></td>
+    <td><tt>Class's constructor. Parameters:</tt></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.server.SCSServerManager.html#_loadInfo">_loadInfo</a></td>
+    <td><tt>Load &lt;self.resourceInfo&gt; dictionary with server configuration data (from scs.scs_server table) for all SCS servers</tt></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.server.SCSServerManager.html#_loadInfoFailure">_loadInfoFailure</a></td>
+    <td><tt>Server data load failure handler</tt></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.server.SCSServerManager.html#_loadInfoComplete">_loadInfoComplete</a></td>
+    <td><tt>Server data load success handler. Completes load of self.serverInfo dictionary</tt></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.server.SCSServerManager.html#start">start</a></td>
+    <td><tt>Start SCS server service &lt;name&gt;</tt></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.server.SCSServerManager.html#stop">stop</a></td>
+    <td><tt>Stop SCS server service &lt;name&gt;</tt></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.server.SCSServerManager.html#startUp">startUp</a></td>
+    <td><tt>Start all enabled SCS server services. Returns deferred that can be used (externally) to </tt></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.server.SCSServerManager.html#shutDown">shutDown</a></td>
+    <td><tt>Stop all SCS server services. Returns deferred that can be used (externally) to </tt></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.server.SCSServerManager.html#startService">startService</a></td>
+    <td><tt>Start ServerManager service. Automatically starts services for all 'enabled' servers</tt></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.server.SCSServerManager.html#stopService">stopService</a></td>
+    <td><tt>Stop ServerManager service. Automatically stops all running SCS server services</tt></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.server.SCSServerManager.html#getResource">getResource</a></td>
+    <td><tt>Obtain &lt;listeningPort&gt; instance associated with the given SCS server</tt></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.server.SCSServerManager.html#setWorkflow">setWorkflow</a></td>
+    <td><tt>Set server's workflow attribute</tt></td>
+  </tr>
+  
+</table>
+      
+      
+    </div>
+    
+    
+    
+    <div class="function">
+        <a name="python.server.SCSServerManager.__init__"></a>
+        <a name="__init__"></a>
+        <div class="functionHeader">
+        @singleton.uniq<br />
+        def __init__(self, logDir=None):
+        
+      </div>
+        <div class="functionBody">
+          
+          <pre>Class's constructor. Parameters:
+
+@param logDir: folder where log and error files maintained by SCSServerManager and individual 
+               server services should be created. Optional. Default: current working directory</pre>
+        </div>
+      </div><div class="function">
+        <a name="python.server.SCSServerManager._loadInfo"></a>
+        <a name="_loadInfo"></a>
+        <div class="functionHeader">
+        
+        def _loadInfo(self):
+        
+      </div>
+        <div class="functionBody">
+          
+          <pre>Load &lt;self.resourceInfo&gt; dictionary with server configuration data (from scs.scs_server table) for all SCS servers</pre>
+        </div>
+      </div><div class="function">
+        <a name="python.server.SCSServerManager._loadInfoFailure"></a>
+        <a name="_loadInfoFailure"></a>
+        <div class="functionHeader">
+        
+        def _loadInfoFailure(self, fail, query):
+        
+      </div>
+        <div class="functionBody">
+          
+          <pre>Server data load failure handler</pre>
+        </div>
+      </div><div class="function">
+        <a name="python.server.SCSServerManager._loadInfoComplete"></a>
+        <a name="_loadInfoComplete"></a>
+        <div class="functionHeader">
+        
+        def _loadInfoComplete(self, result):
+        
+      </div>
+        <div class="functionBody">
+          
+          <pre>Server data load success handler. Completes load of self.serverInfo dictionary</pre>
+        </div>
+      </div><div class="function">
+        <a name="python.server.SCSServerManager.start"></a>
+        <a name="start"></a>
+        <div class="functionHeader">
+        
+        def start(self, name):
+        
+      </div>
+        <div class="functionBody">
+          
+          <pre>Start SCS server service &lt;name&gt;
+
+@param name: SCS server name
+@return: deferred which will 'fire' when given server (service) has started</pre>
+        </div>
+      </div><div class="function">
+        <a name="python.server.SCSServerManager.stop"></a>
+        <a name="stop"></a>
+        <div class="functionHeader">
+        
+        def stop(self, name):
+        
+      </div>
+        <div class="functionBody">
+          
+          <pre>Stop SCS server service &lt;name&gt;
+
+@param name: SCS server name
+@return: deferred which will 'fire' when given service has stopped</pre>
+        </div>
+      </div><div class="function">
+        <a name="python.server.SCSServerManager.startUp"></a>
+        <a name="startUp"></a>
+        <div class="functionHeader">
+        
+        def startUp(self):
+        
+      </div>
+        <div class="functionBody">
+          
+          <pre>Start all enabled SCS server services. Returns deferred that can be used (externally) to 
+signal successful startup of all enabled servers
+
+@return: deferred which will 'fire' when all SCS server services have started</pre>
+        </div>
+      </div><div class="function">
+        <a name="python.server.SCSServerManager.shutDown"></a>
+        <a name="shutDown"></a>
+        <div class="functionHeader">
+        
+        def shutDown(self):
+        
+      </div>
+        <div class="functionBody">
+          
+          <pre>Stop all SCS server services. Returns deferred that can be used (externally) to 
+signal successful shutdown of all server services
+
+@return: deferred which will 'fire' when all SCS server services have stopped</pre>
+        </div>
+      </div><div class="function">
+        <a name="python.server.SCSServerManager.startService"></a>
+        <a name="startService"></a>
+        <div class="functionHeader">
+        
+        def startService(self):
+        
+      </div>
+        <div class="functionBody">
+          
+          <pre>Start ServerManager service. Automatically starts services for all 'enabled' servers
+
+@return: deferred which will 'fire' when all enabled SCS server services have started</pre>
+        </div>
+      </div><div class="function">
+        <a name="python.server.SCSServerManager.stopService"></a>
+        <a name="stopService"></a>
+        <div class="functionHeader">
+        
+        def stopService(self):
+        
+      </div>
+        <div class="functionBody">
+          
+          <pre>Stop ServerManager service. Automatically stops all running SCS server services
+
+@return: deferred which will 'fire' when all client services have stopped</pre>
+        </div>
+      </div><div class="function">
+        <a name="python.server.SCSServerManager.getResource"></a>
+        <a name="getResource"></a>
+        <div class="functionHeader">
+        
+        def getResource(self, name):
+        
+      </div>
+        <div class="functionBody">
+          
+          <pre>Obtain &lt;listeningPort&gt; instance associated with the given SCS server
+
+@param name: SCS server name
+@return: &lt;listeningPort&gt; associated with the given server</pre>
+        </div>
+      </div><div class="function">
+        <a name="python.server.SCSServerManager.setWorkflow"></a>
+        <a name="setWorkflow"></a>
+        <div class="functionHeader">
+        
+        def setWorkflow(self, name):
+        
+      </div>
+        <div class="functionBody">
+          
+          <pre>Set server's workflow attribute</pre>
+        </div>
+      </div>
+    
+    <address>
+      <a href="index.html">API Documentation</a> for 'SCS Controller', generated by <a href="http://codespeak.net/~mwh/pydoctor/">pydoctor</a> at 2009-10-07 17:27:47.
+    </address>
+  </body>
+</html>

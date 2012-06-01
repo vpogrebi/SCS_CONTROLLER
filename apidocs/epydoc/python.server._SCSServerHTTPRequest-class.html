@@ -1,0 +1,635 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>python.server._SCSServerHTTPRequest</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            >'SCS Controller'</th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="python-module.html">Package&nbsp;python</a> ::
+        <a href="python.server-module.html">Module&nbsp;server</a> ::
+        Class&nbsp;_SCSServerHTTPRequest
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="python.server._SCSServerHTTPRequest-class.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS DESCRIPTION ==================== -->
+<h1 class="epydoc">Class _SCSServerHTTPRequest</h1><p class="nomargin-top"><span class="codelink"><a href="python.server-pysrc.html#_SCSServerHTTPRequest">source&nbsp;code</a></span></p>
+<center>
+<center>  <map id="uml_class_diagram_for_python_s_3" name="uml_class_diagram_for_python_s_3">
+<area shape="rect" id="node59" href="python.server._SCSServerHTTPRequest-class.html#__init__" title="_SCSServerHTTPRequest class&#39;s constructor" alt="" coords="17,652,379,671"/>
+<area shape="rect" id="node59" href="python.server._SCSServerHTTPRequest-class.html#process" title="Process job request &#45; start job (job.Job instance) to execute a set of job &#160;steps associated with the server&#39;s workflow" alt="" coords="17,671,379,689"/>
+<area shape="rect" id="node59" href="python.server._SCSServerHTTPRequest-class.html#processResponse" title="Process job completion, timeout or failure event" alt="" coords="17,689,379,708"/>
+<area shape="rect" id="node1" href="python.server._SCSServerHTTPRequest-class.html" title="_SCSServerHTTPRequest class &#45; responsible for processing HTTP requests that come from external clients" alt="" coords="5,619,389,714"/>
+<area shape="rect" id="node60" href="javascript:void(0);" title="twisted.web.http.Request.producer" alt="" coords="35,31,363,49"/>
+<area shape="rect" id="node60" href="javascript:void(0);" title="twisted.web.http.Request.finished" alt="" coords="35,49,363,68"/>
+<area shape="rect" id="node60" href="javascript:void(0);" title="twisted.web.http.Request.code" alt="" coords="35,68,363,87"/>
+<area shape="rect" id="node60" href="javascript:void(0);" title="twisted.web.http.Request.code_message" alt="" coords="35,87,363,105"/>
+<area shape="rect" id="node60" href="javascript:void(0);" title="The HTTP method that was used." alt="" coords="35,105,363,124"/>
+<area shape="rect" id="node60" href="javascript:void(0);" title="twisted.web.http.Request.clientproto" alt="" coords="35,124,363,143"/>
+<area shape="rect" id="node60" href="javascript:void(0);" title="The full URI that was requested (includes arguments)." alt="" coords="35,143,363,161"/>
+<area shape="rect" id="node60" href="javascript:void(0);" title="twisted.web.http.Request.startedWriting" alt="" coords="35,161,363,180"/>
+<area shape="rect" id="node60" href="javascript:void(0);" title="twisted.web.http.Request.chunked" alt="" coords="35,180,363,199"/>
+<area shape="rect" id="node60" href="javascript:void(0);" title="twisted.web.http.Request.sentLength" alt="" coords="35,199,363,217"/>
+<area shape="rect" id="node60" href="javascript:void(0);" title="twisted.web.http.Request.etag" alt="" coords="35,217,363,236"/>
+<area shape="rect" id="node60" href="javascript:void(0);" title="twisted.web.http.Request.lastModified" alt="" coords="35,236,363,255"/>
+<area shape="rect" id="node60" href="javascript:void(0);" title="twisted.web.http.Request.__implemented__" alt="" coords="35,255,363,273"/>
+<area shape="rect" id="node60" href="javascript:void(0);" title="All HTTP response headers to be sent." alt="" coords="35,292,363,311"/>
+<area shape="rect" id="node60" href="javascript:void(0);" title="Support assignment of dict instances to received_headers for &#160;backwards&#45;compatibility." alt="" coords="35,313,363,332"/>
+<area shape="rect" id="node60" href="javascript:void(0);" title="Notify the object that it is no longer queued." alt="" coords="35,332,363,351"/>
+<area shape="rect" id="node60" href="javascript:void(0);" title="Called when HTTP channel got length of content in this request." alt="" coords="35,351,363,369"/>
+<area shape="rect" id="node60" href="javascript:void(0);" title="Parse cookie headers." alt="" coords="35,369,363,388"/>
+<area shape="rect" id="node60" href="javascript:void(0);" title="Write a chunk of data." alt="" coords="35,388,363,407"/>
+<area shape="rect" id="node60" href="javascript:void(0);" title="Called by channel when all data has been received." alt="" coords="35,407,363,425"/>
+<area shape="rect" id="node60" href="javascript:void(0);" title="twisted.web.http.Request.__repr__" alt="" coords="35,425,363,444"/>
+<area shape="rect" id="node60" href="javascript:void(0);" title="Register a producer." alt="" coords="35,444,363,463"/>
+<area shape="rect" id="node60" href="javascript:void(0);" title="Unregister the producer." alt="" coords="35,463,363,481"/>
+<area shape="rect" id="node60" href="javascript:void(0);" title="Get an HTTP request header." alt="" coords="35,481,363,500"/>
+<area shape="rect" id="node60" href="javascript:void(0);" title="Get a cookie that was sent from the network." alt="" coords="35,500,363,519"/>
+<area shape="rect" id="node60" href="javascript:void(0);" title="We are finished writing data." alt="" coords="35,519,363,537"/>
+<area shape="rect" id="node60" href="javascript:void(0);" title="Write some data as a result of an HTTP request." alt="" coords="35,537,363,556"/>
+<area shape="rect" id="node60" href="javascript:void(0);" title="Object Specification Descriptor" alt="" coords="35,575,363,593"/>
+<area shape="rect" id="node2" href="javascript:void(0);" title="A HTTP request." alt="" coords="23,6,375,599"/>
+</map>
+  <img src="uml_class_diagram_for_python_s_3.gif" alt='' usemap="#uml_class_diagram_for_python_s_3" ismap="ismap" class="graph-without-title" />
+</center>
+</center>
+<hr />
+<p>_SCSServerHTTPRequest class - responsible for processing HTTP requests
+  that come from external clients</p>
+  <p>Inherits from twisted.web.http.Request. This class is responsible for 
+  following functionality related to client's job request management:</p>
+  <ol start="1">
+    <li>
+      Processing HTTP job request (starting Job instance that's responsible
+      for executing a sequence of job steps that belong to workflow 
+      associated with this server)
+    </li>
+    <li>
+      Responding to job 'STATUS' requests that can be submitted by external
+      client
+    </li>
+    <li>
+      Handling job completion event and reporting its result back to 
+      external client
+    </li>
+  </ol>
+  <p>Constructor parameters and failure conditions:</p>
+
+<!-- ==================== INSTANCE METHODS ==================== -->
+<a name="section-InstanceMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Instance Methods</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-InstanceMethods"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="python.server._SCSServerHTTPRequest-class.html#__init__" class="summary-sig-name">__init__</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">channel</span>,
+        <span class="summary-sig-arg">queued</span>)</span><br />
+      _SCSServerHTTPRequest class's constructor</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="python.server-pysrc.html#_SCSServerHTTPRequest.__init__">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="__jobStartHandler"></a><span class="summary-sig-name">__jobStartHandler</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">result</span>)</span><br />
+      Report job start success or failure to the client that sent this job 
+      request</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="python.server-pysrc.html#_SCSServerHTTPRequest.__jobStartHandler">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="python.server._SCSServerHTTPRequest-class.html#_runJob" class="summary-sig-name" onclick="show_private();">_runJob</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">nothing</span>)</span><br />
+      Execute (start) Job associated with the given request</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="python.server-pysrc.html#_SCSServerHTTPRequest._runJob">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="python.server._SCSServerHTTPRequest-class.html#_sendError" class="summary-sig-name" onclick="show_private();">_sendError</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">code</span>,
+        <span class="summary-sig-arg">resp</span>=<span class="summary-sig-default">None</span>)</span><br />
+      Send error notification to the client</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="python.server-pysrc.html#_SCSServerHTTPRequest._sendError">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="python.server._SCSServerHTTPRequest-class.html#_checkRequest" class="summary-sig-name" onclick="show_private();">_checkRequest</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Verify that supplied request has correct format and required data</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="python.server-pysrc.html#_SCSServerHTTPRequest._checkRequest">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_sendResponse"></a><span class="summary-sig-name">_sendResponse</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">response</span>,
+        <span class="summary-sig-arg">code</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">code_message</span>=<span class="summary-sig-default">None</span>)</span><br />
+      Send response to the client</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="python.server-pysrc.html#_SCSServerHTTPRequest._sendResponse">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_checkWorkflowStatus"></a><span class="summary-sig-name">_checkWorkflowStatus</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      Check if workflow associated with the server is offline or disabled</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="python.server-pysrc.html#_SCSServerHTTPRequest._checkWorkflowStatus">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="python.server._SCSServerHTTPRequest-class.html#process" class="summary-sig-name">process</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Process job request - start job (job.Job instance) to execute a set 
+      of job steps associated with the server's workflow</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="python.server-pysrc.html#_SCSServerHTTPRequest.process">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="processResponse"></a><span class="summary-sig-name">processResponse</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">result</span>,
+        <span class="summary-sig-arg">sendResponse</span>=<span class="summary-sig-default">True</span>)</span><br />
+      Process job completion, timeout or failure event</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="python.server-pysrc.html#_SCSServerHTTPRequest.processResponse">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_SCSServerHTTPRequest__jobStartHandler"></a><span class="summary-sig-name">_SCSServerHTTPRequest__jobStartHandler</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">result</span>)</span><br />
+      Report job start success or failure to the client that sent this job 
+      request</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="python.server-pysrc.html#_SCSServerHTTPRequest._SCSServerHTTPRequest__jobStartHandler">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>twisted.web.http.Request</code></b>:
+      <code>__providedBy__</code>,
+      <code>__repr__</code>,
+      <code>__setattr__</code>,
+      <code>addCookie</code>,
+      <code>connectionLost</code>,
+      <code>finish</code>,
+      <code>getAllHeaders</code>,
+      <code>getClient</code>,
+      <code>getClientIP</code>,
+      <code>getCookie</code>,
+      <code>getHeader</code>,
+      <code>getHost</code>,
+      <code>getPassword</code>,
+      <code>getRequestHostname</code>,
+      <code>getUser</code>,
+      <code>gotLength</code>,
+      <code>handleContentChunk</code>,
+      <code>isSecure</code>,
+      <code>noLongerQueued</code>,
+      <code>parseCookies</code>,
+      <code>redirect</code>,
+      <code>registerProducer</code>,
+      <code>requestReceived</code>,
+      <code>setETag</code>,
+      <code>setHeader</code>,
+      <code>setHost</code>,
+      <code>setLastModified</code>,
+      <code>setResponseCode</code>,
+      <code>unregisterProducer</code>,
+      <code>write</code>
+      </p>
+    <div class="private">    <p class="indent-wrapped-lines"><b>Inherited from <code>twisted.web.http.Request</code></b> (private):
+      <code>_authorize</code>,
+      <code>_cleanup</code>
+      </p></div>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS VARIABLES ==================== -->
+<a name="section-ClassVariables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Class Variables</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-ClassVariables"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>twisted.web.http.Request</code></b>:
+      <code>__implemented__</code>,
+      <code>__provides__</code>,
+      <code>chunked</code>,
+      <code>clientproto</code>,
+      <code>code</code>,
+      <code>code_message</code>,
+      <code>etag</code>,
+      <code>finished</code>,
+      <code>lastModified</code>,
+      <code>producer</code>,
+      <code>sentLength</code>,
+      <code>startedWriting</code>
+      </p>
+    <div class="private">    <p class="indent-wrapped-lines"><b>Inherited from <code>twisted.web.http.Request</code></b> (private):
+      <code>_forceSSL</code>
+      </p></div>
+    </td>
+  </tr>
+</table>
+<!-- ==================== INSTANCE VARIABLES ==================== -->
+<a name="section-InstanceVariables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Instance Variables</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-InstanceVariables"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>twisted.web.http.Request</code></b>:
+      <code>args</code>,
+      <code>headers</code>,
+      <code>method</code>,
+      <code>path</code>,
+      <code>received_headers</code>,
+      <code>requestHeaders</code>,
+      <code>responseHeaders</code>,
+      <code>uri</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== METHOD DETAILS ==================== -->
+<a name="section-MethodDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Method Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-MethodDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="__init__"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">__init__</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">channel</span>,
+        <span class="sig-arg">queued</span>)</span>
+    <br /><em class="fname">(Constructor)</em>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="python.server-pysrc.html#_SCSServerHTTPRequest.__init__">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>_SCSServerHTTPRequest class's constructor</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>channel</code></strong> - the channel we're connected to.</li>
+        <li><strong class="pname"><code>queued</code></strong> - are we in the request queue, or can we start writing to the 
+          transport?</li>
+        <li><strong class="pname"><code>channel</code></strong> - the channel we're connected to.</li>
+        <li><strong class="pname"><code>queued</code></strong> - are we in the request queue, or can we start writing to the 
+          transport?</li>
+    </ul></dd>
+    <dt>Overrides:
+        twisted.web.http.Request.__init__
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="_runJob"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">_runJob</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">nothing</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="python.server-pysrc.html#_SCSServerHTTPRequest._runJob">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Execute (start) Job associated with the given request</p>
+  <dl class="fields">
+    <dt>Returns:</dt>
+        <dd>deferred which will 'fire' when Job has started execution</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="_sendError"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">_sendError</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">code</span>,
+        <span class="sig-arg">resp</span>=<span class="sig-default">None</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="python.server-pysrc.html#_SCSServerHTTPRequest._sendError">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Send error notification to the client</p>
+  <dl class="fields">
+    <dt>Overrides:
+        twisted.web.http.Request._sendError
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="_checkRequest"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">_checkRequest</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="python.server-pysrc.html#_SCSServerHTTPRequest._checkRequest">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Verify that supplied request has correct format and required data</p>
+  <p>This method verifies that supplied request (stored as 
+  &lt;self.args&gt;) contains actual request data (self.args['request'] 
+  dictionary item)</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="process"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">process</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="python.server-pysrc.html#_SCSServerHTTPRequest.process">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Process job request - start job (job.Job instance) to execute a set of
+  job steps associated with the server's workflow</p>
+  <dl class="fields">
+    <dt>Returns:</dt>
+        <dd>deferred which will 'fire' when Job instance is initialized and 
+          first JobStep has started execution</dd>
+    <dt>Overrides:
+        twisted.web.http.Request.process
+    </dt>
+  </dl>
+<div class="fields">      <p><strong>Note:</strong>
+        This method simply creates Job instance and starts its execution
+      </p>
+</div></td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            >'SCS Controller'</th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    <a href="epydoc-log.html">Generated by Epydoc
+    3.0.1 on Wed Oct  7 17:27:45 2009</a>
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>API docs for &ldquo;python.controller.SCSController&rdquo;</title>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+    <link href="apidocs.css" type="text/css" rel="stylesheet" />
+    
+    
+  </head>
+  <body>
+    <h1 class="class">Class p.c.SCSController(<span title="twisted.application.service.MultiService">service.MultiService</span>):</h1>
+    <p>
+      <span id="part">Part of <a href="python.html">python</a>.<a href="python.controller.html">controller</a></span>
+      
+      <a href="classIndex.html#python.controller.SCSController">View In Hierarchy</a>
+    </p>
+    <div>
+      
+    </div>
+    <pre>Main "entry" to SCS controller system. Responsible for initializing, starting and 
+stopping all of the SCS controller system's components.
+
+Main system's components: 
+
+SCSServerManager
+SCSClientManager
+WorkflowManager
+
+Extends twisted.application.service.MultiService class. Using this class's functionality,
+exposes main system's components as services that are being started and stopped alltogether</pre>
+    
+    
+    <div id="splitTables">
+      <table class="children sortable" id="id12">
+  
+  
+  
+  
+  <tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.controller.SCSController.html#__init__">__init__</a></td>
+    <td><tt>Class's constructor. Initialises ServerManager, ClientManager and </tt></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.controller.SCSController.html#_setServerWorkflows">_setServerWorkflows</a></td>
+    <td><tt>Sets workflow associated with each SCS server - after SCS servers and clients have been started</tt></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.controller.SCSController.html#_startService">_startService</a></td>
+    <td><tt>Deferred's callback handler designated to starting particular service - </tt></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.controller.SCSController.html#_failureHandler">_failureHandler</a></td>
+    <td><tt>Service startup failure handler</tt></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.controller.SCSController.html#startService">startService</a></td>
+    <td><tt>Start main SCS controller services. </tt></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.controller.SCSController.html#stopService">stopService</a></td>
+    <td><tt>Stop all main SCS controller services</tt></td>
+  </tr>
+  
+</table>
+      
+      
+    </div>
+    
+    
+    
+    <div class="function">
+        <a name="python.controller.SCSController.__init__"></a>
+        <a name="__init__"></a>
+        <div class="functionHeader">
+        
+        def __init__(self, logDir):
+        
+      </div>
+        <div class="functionBody">
+          
+          <pre>Class's constructor. Initialises ServerManager, ClientManager and 
+WorkflowManager services and sets them as 'children', subordinate to 
+this (self) SCSController instance 
+
+@param logDir: folder where system log and error files will be created</pre>
+        </div>
+      </div><div class="function">
+        <a name="python.controller.SCSController._setServerWorkflows"></a>
+        <a name="_setServerWorkflows"></a>
+        <div class="functionHeader">
+        
+        def _setServerWorkflows(self, nothing):
+        
+      </div>
+        <div class="functionBody">
+          
+          <pre>Sets workflow associated with each SCS server - after SCS servers and clients have been started</pre>
+        </div>
+      </div><div class="function">
+        <a name="python.controller.SCSController._startService"></a>
+        <a name="_startService"></a>
+        <div class="functionHeader">
+        
+        def _startService(self, nothing, serviceName):
+        
+      </div>
+        <div class="functionBody">
+          
+          <pre>Deferred's callback handler designated to starting particular service - 
+after some other service (or any method that returns deferred) have completed
+
+@param nothing: value returned ('fired') by deferred - inessential for this method
+@param serviceName: name of the service that is being started
+
+@note: self.namedServices dictionary must have record corresponding to given serviceName
+@raise RuntimeError: if self.namedServices dictionary  does not have &lt;serviceName&gt; key
+@return: deferred which will be fired (callback or errback) when service has started         </pre>
+        </div>
+      </div><div class="function">
+        <a name="python.controller.SCSController._failureHandler"></a>
+        <a name="_failureHandler"></a>
+        <div class="functionHeader">
+        
+        def _failureHandler(self, fail):
+        
+      </div>
+        <div class="functionBody">
+          
+          <pre>Service startup failure handler
+
+@param fail: twisted.python.failure.Failure instance representing error</pre>
+        </div>
+      </div><div class="function">
+        <a name="python.controller.SCSController.startService"></a>
+        <a name="startService"></a>
+        <div class="functionHeader">
+        
+        def startService(self):
+        
+      </div>
+        <div class="functionBody">
+          
+          <pre>Start main SCS controller services. 
+Extends twisted.application.service.Service.startService()        </pre>
+        </div>
+      </div><div class="function">
+        <a name="python.controller.SCSController.stopService"></a>
+        <a name="stopService"></a>
+        <div class="functionHeader">
+        
+        def stopService(self):
+        
+      </div>
+        <div class="functionBody">
+          
+          <pre>Stop all main SCS controller services</pre>
+        </div>
+      </div>
+    
+    <address>
+      <a href="index.html">API Documentation</a> for 'SCS Controller', generated by <a href="http://codespeak.net/~mwh/pydoctor/">pydoctor</a> at 2009-10-07 17:27:47.
+    </address>
+  </body>
+</html>

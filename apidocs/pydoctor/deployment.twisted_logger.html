@@ -1,0 +1,165 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>API docs for &ldquo;deployment.twisted_logger&rdquo;</title>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+    <link href="apidocs.css" type="text/css" rel="stylesheet" />
+    
+    
+  </head>
+  <body>
+    <h1 class="module">Module d.twisted_logger</h1>
+    <p>
+      <span id="part">Part of <a href="deployment.html">deployment</a></span>
+      
+      
+    </p>
+    <div>
+      
+    </div>
+    <pre>Created on Jul 29, 2009
+
+@author: valeriypogrebitskiy
+
+twisted_logger.py is intended to customize Twisted framework's logging functionality,
+as well as to simplify its use. 
+
+This module customizes logging format (prefix prepending actual log message) - 
+which is set to: '%Y-%m-%d %H:%M:%S'. This format string get supplied to
+time.strftime() Python method:
+
+prefix = time.strftime(self.timeFormat, time.localtime())
+
+NOTE: ILogObeserver interface defined in this module really "belongs" to Twisted 
+framework itself: it should have been defined within twisted.python.log module, 
+but for some reason it is not there. Since I do not have permissions to write to 
+twisted framework's files, I simply include this interface here  </pre>
+    
+    
+    <div id="splitTables">
+      <table class="children sortable" id="id45">
+  
+  
+  
+  
+  <tr class="function">
+    
+    
+    <td>Function</td>
+    <td><a href="deployment.twisted_logger.html#writeLog">writeLog</a></td>
+    <td><tt>Write to a log file</tt></td>
+  </tr><tr class="function">
+    
+    
+    <td>Function</td>
+    <td><a href="deployment.twisted_logger.html#writeErr">writeErr</a></td>
+    <td><tt>Write to an error log file</tt></td>
+  </tr><tr class="function">
+    
+    
+    <td>Function</td>
+    <td><a href="deployment.twisted_logger.html#initLogging">initLogging</a></td>
+    <td><tt>Initialize log service that includes two files: LOG and ERROR file</tt></td>
+  </tr><tr class="class">
+    
+    
+    <td>Class</td>
+    <td><a href="deployment.twisted_logger.Log.html">Log</a></td>
+    <td><tt>Customizes twisted.python.log.FileLogObserver class's implementation</tt></td>
+  </tr><tr class="class">
+    
+    
+    <td>Class</td>
+    <td><a href="deployment.twisted_logger.ErrorLog.html">ErrorLog</a></td>
+    <td><tt>Customizes twisted.python.log.FileLogObserver class's implementation</tt></td>
+  </tr><tr class="class">
+    
+    
+    <td>Class</td>
+    <td><a href="deployment.twisted_logger.LogService.html">LogService</a></td>
+    <td><tt>Implements functionality to expose twisted logging in a form of services.</tt></td>
+  </tr><tr class="class">
+    
+    
+    <td>Class</td>
+    <td><a href="deployment.twisted_logger.DailyLogFile.html">DailyLogFile</a></td>
+    <td><tt>Customised version of twisted.python.logfile.DailyLogFile class.</tt></td>
+  </tr>
+  
+</table>
+      
+      
+    </div>
+    
+    
+    
+    <div class="function">
+        <a name="deployment.twisted_logger.writeLog"></a>
+        <a name="writeLog"></a>
+        <div class="functionHeader">
+        
+        def writeLog(logPrefix, logName, logMsg):
+        
+      </div>
+        <div class="functionBody">
+          
+          <pre>Write to a log file
+
+@param logPrefix: 'system' prefix that will follow date/time prefix
+@param logName: unique name (ID) identifying given log file
+@param logMsg: main message to be written to a file
+
+@note: logName log file identifier is used by observers (log.FileLogObserver instances)
+       that "pick up" log messages designated for this particular log file from among
+       all log messages produced by log.msg()</pre>
+        </div>
+      </div><div class="function">
+        <a name="deployment.twisted_logger.writeErr"></a>
+        <a name="writeErr"></a>
+        <div class="functionHeader">
+        
+        def writeErr(logPrefix, logName, error, why=None):
+        
+      </div>
+        <div class="functionBody">
+          
+          <pre>Write to an error log file
+
+@param logPrefix: 'system' prefix that will follow date/time prefix
+@param logName: unique name (ID) identifying given log file
+@param error: main message (error description) to be written to a file
+
+@note: logName log file identifier is used by observers (log.FileLogObserver instances)
+       that "pick up" log messages designated for this particular log file from among
+       all log messages produced by log.msg()           </pre>
+        </div>
+      </div><div class="function">
+        <a name="deployment.twisted_logger.initLogging"></a>
+        <a name="initLogging"></a>
+        <div class="functionHeader">
+        
+        def initLogging(name, logFile, logDir, parent=None):
+        
+      </div>
+        <div class="functionBody">
+          
+          <pre>Initialize log service that includes two files: LOG and ERROR file
+
+@param name: unique log service name
+@param logFile: base log file name shared between LOG and ERROR files
+@param logDir: folder where LOG and ERROR files will be created 
+              (None can be provided to indicate that no files should be created)
+@param parent: parent service (MultiService instance) to which this service should 
+               be added as subordinate service
+
+@note: None should be provided as @param &lt;logDir&gt; to avoid creation of log files and service initialization alltogether</pre>
+        </div>
+      </div>
+    
+    <address>
+      <a href="index.html">API Documentation</a> for 'SCS Controller', generated by <a href="http://codespeak.net/~mwh/pydoctor/">pydoctor</a> at 2009-10-07 17:27:47.
+    </address>
+  </body>
+</html>

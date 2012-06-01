@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>deployment.deferred_lib</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            >'SCS Controller'</th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="deployment-module.html">Package&nbsp;deployment</a> ::
+        Module&nbsp;deferred_lib
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="deployment.deferred_lib-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="deployment.deferred_lib-module.html">Module deployment.deferred_lib</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno"> 1</tt>  <tt class="py-line"><tt class="py-docstring">'''</tt> </tt>
+<a name="L2"></a><tt class="py-lineno"> 2</tt>  <tt class="py-line"><tt class="py-docstring">Created on Jul 17, 2009</tt> </tt>
+<a name="L3"></a><tt class="py-lineno"> 3</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L4"></a><tt class="py-lineno"> 4</tt>  <tt class="py-line"><tt class="py-docstring">@author: valeriypogrebitskiy</tt> </tt>
+<a name="L5"></a><tt class="py-lineno"> 5</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L6"></a><tt class="py-lineno"> 6</tt>  <tt class="py-line"><tt class="py-docstring">Main purpose of deferred_lib.py - is to provide a simple decorator (@deferred) that can be used</tt> </tt>
+<a name="L7"></a><tt class="py-lineno"> 7</tt>  <tt class="py-line"><tt class="py-docstring">to turn any blocking methods into non-blocking, asynchronous methods. By using this decorator,</tt> </tt>
+<a name="L8"></a><tt class="py-lineno"> 8</tt>  <tt class="py-line"><tt class="py-docstring">decorated (blocking) methods are forced to return a deferred (instance of twisted.internet.defer.Deferred class)</tt> </tt>
+<a name="L9"></a><tt class="py-lineno"> 9</tt>  <tt class="py-line"><tt class="py-docstring">that 'fires' when method completes its execution. Thus, calling Python code will not have to block, </tt> </tt>
+<a name="L10"></a><tt class="py-lineno">10</tt>  <tt class="py-line"><tt class="py-docstring">waiting for the method to complete.</tt> </tt>
+<a name="L11"></a><tt class="py-lineno">11</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L12"></a><tt class="py-lineno">12</tt>  <tt class="py-line"><tt class="py-docstring">This functionality is essential to any implementation that uses Twisted framework</tt> </tt>
+<a name="L13"></a><tt class="py-lineno">13</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L14"></a><tt class="py-lineno">14</tt>  <tt class="py-line"><tt class="py-docstring">'@deferred' decorator is simply a reference to twisted.internet.threads.deferToThread() method's getter:</tt> </tt>
+<a name="L15"></a><tt class="py-lineno">15</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L16"></a><tt class="py-lineno">16</tt>  <tt class="py-line"><tt class="py-docstring">deferred = deferToThread.__get__</tt> </tt>
+<a name="L17"></a><tt class="py-lineno">17</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L18"></a><tt class="py-lineno">18</tt>  <tt class="py-line"><tt class="py-docstring">In addition to providing @deferred decorator, this module offers two "convenience" methods:</tt> </tt>
+<a name="L19"></a><tt class="py-lineno">19</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L20"></a><tt class="py-lineno">20</tt>  <tt class="py-line"><tt class="py-docstring">sleep() - Asynchronous (non-blocking) wrapper for standard Python's time.sleep()</tt> </tt>
+<a name="L21"></a><tt class="py-lineno">21</tt>  <tt class="py-line"><tt class="py-docstring">sleep_fail() - Same as sleep(), but intended to raise RuntimeError exception after sleeping</tt> </tt>
+<a name="L22"></a><tt class="py-lineno">22</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L23"></a><tt class="py-lineno">23</tt>  <tt class="py-line"><tt class="py-docstring">Both sleep() and sleep_fail() are designed as deferred callback handler methods (take extra </tt> </tt>
+<a name="L24"></a><tt class="py-lineno">24</tt>  <tt class="py-line"><tt class="py-docstring">first argument &lt;nothing&gt;), and are convenient to be used for Twisted code's unit testing</tt> </tt>
+<a name="L25"></a><tt class="py-lineno">25</tt>  <tt class="py-line"><tt class="py-docstring">'''</tt> </tt>
+<a name="L26"></a><tt class="py-lineno">26</tt>  <tt class="py-line"><tt class="py-name">__docformat__</tt> <tt class="py-op">=</tt> <tt class="py-string">'epytext'</tt> </tt>
+<a name="L27"></a><tt class="py-lineno">27</tt>  <tt class="py-line"> </tt>
+<a name="L28"></a><tt class="py-lineno">28</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">time</tt> </tt>
+<a name="L29"></a><tt class="py-lineno">29</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">twisted</tt><tt class="py-op">.</tt><tt class="py-name">internet</tt><tt class="py-op">.</tt><tt class="py-name">threads</tt> <tt class="py-keyword">import</tt> <tt class="py-name">deferToThread</tt> </tt>
+<a name="L30"></a><tt class="py-lineno">30</tt>  <tt class="py-line"><tt id="link-0" class="py-name" targets="Variable deployment.deferred_lib.deferred=deployment.deferred_lib-module.html#deferred"><a title="deployment.deferred_lib.deferred" class="py-name" href="#" onclick="return doclink('link-0', 'deferred', 'link-0');">deferred</a></tt> <tt class="py-op">=</tt> <tt class="py-name">deferToThread</tt><tt class="py-op">.</tt><tt class="py-name">__get__</tt> </tt>
+<a name="sleep"></a><div id="sleep-def"><a name="L31"></a><tt class="py-lineno">31</tt>  <tt class="py-line"> </tt>
+<a name="L32"></a><tt class="py-lineno">32</tt>  <tt class="py-line"><tt class="py-decorator">@</tt><tt class="py-decorator">deferred</tt> </tt>
+<a name="L33"></a><tt class="py-lineno">33</tt> <a class="py-toggle" href="#" id="sleep-toggle" onclick="return toggle('sleep');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="deployment.deferred_lib-module.html#sleep">sleep</a><tt class="py-op">(</tt><tt class="py-param">nothing</tt><tt class="py-op">,</tt> <tt class="py-param">secs</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="sleep-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="sleep-expanded"><a name="L34"></a><tt class="py-lineno">34</tt>  <tt class="py-line">    <tt class="py-docstring">"""Sleep for &lt;secs&gt; number of seconds. This is an asynchronous (non-blocking) wrapper for </tt> </tt>
+<a name="L35"></a><tt class="py-lineno">35</tt>  <tt class="py-line"><tt class="py-docstring">    standard Python's time.sleep(). It is designed as a deferred's callback handler </tt> </tt>
+<a name="L36"></a><tt class="py-lineno">36</tt>  <tt class="py-line"><tt class="py-docstring">    (takes extra &lt;nothing&gt; argument that is provided by deferred)</tt> </tt>
+<a name="L37"></a><tt class="py-lineno">37</tt>  <tt class="py-line"><tt class="py-docstring">    </tt> </tt>
+<a name="L38"></a><tt class="py-lineno">38</tt>  <tt class="py-line"><tt class="py-docstring">    @param nothing: non-important argument (provided by deferred that has 'fired' this callback)</tt> </tt>
+<a name="L39"></a><tt class="py-lineno">39</tt>  <tt class="py-line"><tt class="py-docstring">    @param secs: number of seconds to sleep</tt> </tt>
+<a name="L40"></a><tt class="py-lineno">40</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="L41"></a><tt class="py-lineno">41</tt>  <tt class="py-line">    <tt class="py-name">time</tt><tt class="py-op">.</tt><tt id="link-1" class="py-name" targets="Function deployment.deferred_lib.sleep()=deployment.deferred_lib-module.html#sleep"><a title="deployment.deferred_lib.sleep" class="py-name" href="#" onclick="return doclink('link-1', 'sleep', 'link-1');">sleep</a></tt><tt class="py-op">(</tt><tt class="py-name">secs</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L42"></a><tt class="py-lineno">42</tt>  <tt class="py-line">  </tt>
+<a name="sleep_fail"></a><div id="sleep_fail-def"><a name="L43"></a><tt class="py-lineno">43</tt>  <tt class="py-line"><tt class="py-decorator">@</tt><tt class="py-decorator">deferred</tt> </tt>
+<a name="L44"></a><tt class="py-lineno">44</tt> <a class="py-toggle" href="#" id="sleep_fail-toggle" onclick="return toggle('sleep_fail');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="deployment.deferred_lib-module.html#sleep_fail">sleep_fail</a><tt class="py-op">(</tt><tt class="py-param">nothing</tt><tt class="py-op">,</tt> <tt class="py-param">secs</tt><tt class="py-op">,</tt> <tt class="py-param">err_msg</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="sleep_fail-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="sleep_fail-expanded"><a name="L45"></a><tt class="py-lineno">45</tt>  <tt class="py-line">    <tt class="py-docstring">"""Raise 'RuntimeError, &lt;err_msg&gt;' exception after 'sleeping' for &lt;secs&gt; number of seconds</tt> </tt>
+<a name="L46"></a><tt class="py-lineno">46</tt>  <tt class="py-line"><tt class="py-docstring">    This is an asynchronous (non-blocking) wrapper for standard Python's time.sleep(). It is</tt> </tt>
+<a name="L47"></a><tt class="py-lineno">47</tt>  <tt class="py-line"><tt class="py-docstring">    designed as a deferred's callback handler (takes extra &lt;nothing&gt; argument that is provided by deferred)</tt> </tt>
+<a name="L48"></a><tt class="py-lineno">48</tt>  <tt class="py-line"><tt class="py-docstring">    </tt> </tt>
+<a name="L49"></a><tt class="py-lineno">49</tt>  <tt class="py-line"><tt class="py-docstring">    @param nothing: non-important argument (provided by deferred that has 'fired' this callback)</tt> </tt>
+<a name="L50"></a><tt class="py-lineno">50</tt>  <tt class="py-line"><tt class="py-docstring">    @param secs: number of seconds to sleep</tt> </tt>
+<a name="L51"></a><tt class="py-lineno">51</tt>  <tt class="py-line"><tt class="py-docstring">    @param err_msg: error message to be added to RuntimeError exception</tt> </tt>
+<a name="L52"></a><tt class="py-lineno">52</tt>  <tt class="py-line"><tt class="py-docstring">    </tt> </tt>
+<a name="L53"></a><tt class="py-lineno">53</tt>  <tt class="py-line"><tt class="py-docstring">    @raise RuntimeError: unconditionally raises exception - this is main purpose of this method</tt> </tt>
+<a name="L54"></a><tt class="py-lineno">54</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="L55"></a><tt class="py-lineno">55</tt>  <tt class="py-line">    <tt class="py-name">time</tt><tt class="py-op">.</tt><tt id="link-2" class="py-name"><a title="deployment.deferred_lib.sleep" class="py-name" href="#" onclick="return doclink('link-2', 'sleep', 'link-1');">sleep</a></tt><tt class="py-op">(</tt><tt class="py-name">secs</tt><tt class="py-op">)</tt> </tt>
+<a name="L56"></a><tt class="py-lineno">56</tt>  <tt class="py-line">    <tt class="py-keyword">raise</tt> <tt class="py-name">RuntimeError</tt><tt class="py-op">,</tt> <tt class="py-name">err_msg</tt> </tt>
+</div><a name="L57"></a><tt class="py-lineno">57</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            >'SCS Controller'</th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    <a href="epydoc-log.html">Generated by Epydoc
+    3.0.1 on Wed Oct  7 17:27:46 2009</a>
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

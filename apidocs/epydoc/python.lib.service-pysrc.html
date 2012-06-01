@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>python.lib.service</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            >'SCS Controller'</th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="python-module.html">Package&nbsp;python</a> ::
+        <a href="python.lib-module.html">Package&nbsp;lib</a> ::
+        Module&nbsp;service
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="python.lib.service-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="python.lib.service-module.html">Module python.lib.service</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno"> 1</tt>  <tt class="py-line"><tt class="py-docstring">'''</tt> </tt>
+<a name="L2"></a><tt class="py-lineno"> 2</tt>  <tt class="py-line"><tt class="py-docstring">Created on Aug 31, 2009</tt> </tt>
+<a name="L3"></a><tt class="py-lineno"> 3</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L4"></a><tt class="py-lineno"> 4</tt>  <tt class="py-line"><tt class="py-docstring">@author: valeriypogrebitskiy</tt> </tt>
+<a name="L5"></a><tt class="py-lineno"> 5</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L6"></a><tt class="py-lineno"> 6</tt>  <tt class="py-line"><tt class="py-docstring">Sole purpose of service.py - is to provide customized (overwridden) version of</tt> </tt>
+<a name="L7"></a><tt class="py-lineno"> 7</tt>  <tt class="py-line"><tt class="py-docstring">twisted.application.service.MultiService.addService() method. This customized</tt> </tt>
+<a name="L8"></a><tt class="py-lineno"> 8</tt>  <tt class="py-line"><tt class="py-docstring">variation of original Twisted's method is essential to proper functioning of</tt> </tt>
+<a name="L9"></a><tt class="py-lineno"> 9</tt>  <tt class="py-line"><tt class="py-docstring">server.SCSServerManager, client.SCSClientManager and workflow.WorkflowManager classes</tt> </tt>
+<a name="L10"></a><tt class="py-lineno">10</tt>  <tt class="py-line"><tt class="py-docstring">'''</tt> </tt>
+<a name="L11"></a><tt class="py-lineno">11</tt>  <tt class="py-line"><tt class="py-name">__docformat__</tt> <tt class="py-op">=</tt> <tt class="py-string">'epytext'</tt> </tt>
+<a name="L12"></a><tt class="py-lineno">12</tt>  <tt class="py-line"> </tt>
+<a name="L13"></a><tt class="py-lineno">13</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">twisted</tt><tt class="py-op">.</tt><tt class="py-name">internet</tt> <tt class="py-keyword">import</tt> <tt class="py-name">defer</tt> </tt>
+<a name="L14"></a><tt class="py-lineno">14</tt>  <tt class="py-line"> </tt>
+<a name="addService"></a><div id="addService-def"><a name="L15"></a><tt class="py-lineno">15</tt> <a class="py-toggle" href="#" id="addService-toggle" onclick="return toggle('addService');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="python.lib.service-module.html#addService">addService</a><tt class="py-op">(</tt><tt class="py-param">parentService</tt><tt class="py-op">,</tt> <tt class="py-param">childService</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="addService-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="addService-expanded"><a name="L16"></a><tt class="py-lineno">16</tt>  <tt class="py-line">    <tt class="py-docstring">""""Add 'child' (dependent) service to 'parent' service (MultiService instance)</tt> </tt>
+<a name="L17"></a><tt class="py-lineno">17</tt>  <tt class="py-line"><tt class="py-docstring">    </tt> </tt>
+<a name="L18"></a><tt class="py-lineno">18</tt>  <tt class="py-line"><tt class="py-docstring">    @note: This method overwrites twisted.application.service.MultiService.addService() method.</tt> </tt>
+<a name="L19"></a><tt class="py-lineno">19</tt>  <tt class="py-line"><tt class="py-docstring">           t.a.s.MultiService.addService() does NOT return deferred that can be used to 'signal'</tt> </tt>
+<a name="L20"></a><tt class="py-lineno">20</tt>  <tt class="py-line"><tt class="py-docstring">           child service's startService() completion. This method is intended to return such deferred</tt> </tt>
+<a name="L21"></a><tt class="py-lineno">21</tt>  <tt class="py-line"><tt class="py-docstring">           </tt> </tt>
+<a name="L22"></a><tt class="py-lineno">22</tt>  <tt class="py-line"><tt class="py-docstring">    @return: deferred which will 'fire' when child entity's startService() has completed </tt> </tt>
+<a name="L23"></a><tt class="py-lineno">23</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="L24"></a><tt class="py-lineno">24</tt>  <tt class="py-line">    <tt class="py-name">deferreds</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-op">]</tt> </tt>
+<a name="L25"></a><tt class="py-lineno">25</tt>  <tt class="py-line">     </tt>
+<a name="L26"></a><tt class="py-lineno">26</tt>  <tt class="py-line">    <tt class="py-keyword">if</tt> <tt class="py-name">childService</tt><tt class="py-op">.</tt><tt id="link-0" class="py-name" targets="Variable python.server._SCSServerProtocol.name=python.server._SCSServerProtocol-class.html#name"><a title="python.server._SCSServerProtocol.name" class="py-name" href="#" onclick="return doclink('link-0', 'name', 'link-0');">name</a></tt> <tt class="py-keyword">is</tt> <tt class="py-keyword">not</tt> <tt class="py-name">None</tt><tt class="py-op">:</tt> </tt>
+<a name="L27"></a><tt class="py-lineno">27</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">parentService</tt><tt class="py-op">.</tt><tt class="py-name">namedServices</tt><tt class="py-op">.</tt><tt class="py-name">has_key</tt><tt class="py-op">(</tt><tt class="py-name">childService</tt><tt class="py-op">.</tt><tt id="link-1" class="py-name"><a title="python.server._SCSServerProtocol.name" class="py-name" href="#" onclick="return doclink('link-1', 'name', 'link-0');">name</a></tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L28"></a><tt class="py-lineno">28</tt>  <tt class="py-line">            <tt class="py-keyword">raise</tt> <tt class="py-name">RuntimeError</tt><tt class="py-op">(</tt><tt class="py-string">"cannot have two services with same name"</tt> </tt>
+<a name="L29"></a><tt class="py-lineno">29</tt>  <tt class="py-line">                               <tt class="py-string">" '%s'"</tt> <tt class="py-op">%</tt> <tt class="py-name">childService</tt><tt class="py-op">.</tt><tt id="link-2" class="py-name"><a title="python.server._SCSServerProtocol.name" class="py-name" href="#" onclick="return doclink('link-2', 'name', 'link-0');">name</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L30"></a><tt class="py-lineno">30</tt>  <tt class="py-line">        <tt class="py-name">parentService</tt><tt class="py-op">.</tt><tt class="py-name">namedServices</tt><tt class="py-op">[</tt><tt class="py-name">childService</tt><tt class="py-op">.</tt><tt id="link-3" class="py-name"><a title="python.server._SCSServerProtocol.name" class="py-name" href="#" onclick="return doclink('link-3', 'name', 'link-0');">name</a></tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-name">childService</tt> </tt>
+<a name="L31"></a><tt class="py-lineno">31</tt>  <tt class="py-line">    <tt class="py-name">parentService</tt><tt class="py-op">.</tt><tt class="py-name">services</tt><tt class="py-op">.</tt><tt class="py-name">append</tt><tt class="py-op">(</tt><tt class="py-name">childService</tt><tt class="py-op">)</tt> </tt>
+<a name="L32"></a><tt class="py-lineno">32</tt>  <tt class="py-line">    <tt class="py-keyword">if</tt> <tt class="py-name">parentService</tt><tt class="py-op">.</tt><tt class="py-name">running</tt><tt class="py-op">:</tt> </tt>
+<a name="L33"></a><tt class="py-lineno">33</tt>  <tt class="py-line">        <tt class="py-comment"># It may be too late for that, but we will do our best</tt> </tt>
+<a name="L34"></a><tt class="py-lineno">34</tt>  <tt class="py-line"><tt class="py-comment"></tt>        <tt class="py-name">deferreds</tt><tt class="py-op">.</tt><tt class="py-name">append</tt><tt class="py-op">(</tt><tt class="py-name">defer</tt><tt class="py-op">.</tt><tt class="py-name">maybeDeferred</tt><tt class="py-op">(</tt><tt class="py-name">childService</tt><tt class="py-op">.</tt><tt class="py-name">privilegedStartService</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L35"></a><tt class="py-lineno">35</tt>  <tt class="py-line">        <tt class="py-name">deferreds</tt><tt class="py-op">.</tt><tt class="py-name">append</tt><tt class="py-op">(</tt><tt class="py-name">defer</tt><tt class="py-op">.</tt><tt class="py-name">maybeDeferred</tt><tt class="py-op">(</tt><tt class="py-name">childService</tt><tt class="py-op">.</tt><tt id="link-4" class="py-name" targets="Method python.client.SCSClientManager.startService()=python.client.SCSClientManager-class.html#startService,Method python.client._SCSClientService.startService()=python.client._SCSClientService-class.html#startService,Method python.controller.SCSController.startService()=python.controller.SCSController-class.html#startService,Method python.interfaces.resource_manager.IResourceManager.startService()=python.interfaces.resource_manager.IResourceManager-class.html#startService,Method python.lib.twisted_logger.LogService.startService()=python.lib.twisted_logger.LogService-class.html#startService,Method python.server.SCSServerManager.startService()=python.server.SCSServerManager-class.html#startService,Method python.server._SCSServerService.startService()=python.server._SCSServerService-class.html#startService,Method python.workflow.WorkflowManager.startService()=python.workflow.WorkflowManager-class.html#startService,Method python.workflow._WorkflowService.startService()=python.workflow._WorkflowService-class.html#startService"><a title="python.client.SCSClientManager.startService
+python.client._SCSClientService.startService
+python.controller.SCSController.startService
+python.interfaces.resource_manager.IResourceManager.startService
+python.lib.twisted_logger.LogService.startService
+python.server.SCSServerManager.startService
+python.server._SCSServerService.startService
+python.workflow.WorkflowManager.startService
+python.workflow._WorkflowService.startService" class="py-name" href="#" onclick="return doclink('link-4', 'startService', 'link-4');">startService</a></tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L36"></a><tt class="py-lineno">36</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-name">defer</tt><tt class="py-op">.</tt><tt class="py-name">DeferredList</tt><tt class="py-op">(</tt><tt class="py-name">deferreds</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L37"></a><tt class="py-lineno">37</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            >'SCS Controller'</th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    <a href="epydoc-log.html">Generated by Epydoc
+    3.0.1 on Fri Sep 18 15:11:29 2009</a>
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

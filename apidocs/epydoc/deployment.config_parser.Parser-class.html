@@ -1,0 +1,502 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>deployment.config_parser.Parser</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            >'SCS Controller'</th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="deployment-module.html">Package&nbsp;deployment</a> ::
+        <a href="deployment.config_parser-module.html">Module&nbsp;config_parser</a> ::
+        Class&nbsp;Parser
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="deployment.config_parser.Parser-class.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS DESCRIPTION ==================== -->
+<h1 class="epydoc">Class Parser</h1><p class="nomargin-top"><span class="codelink"><a href="deployment.config_parser-pysrc.html#Parser">source&nbsp;code</a></span></p>
+<center>
+<center>  <map id="uml_class_diagram_for_deployme" name="uml_class_diagram_for_deployme">
+<area shape="rect" id="node0" href="deployment.config_parser.Parser-class.html#__init__" title="Class&#39;s constructor" alt="" coords="75,505,296,524"/>
+<area shape="rect" id="node0" href="deployment.config_parser.Parser-class.html#parse" title="Parse single file or a list of files" alt="" coords="75,524,296,543"/>
+<area shape="rect" id="node0" href="deployment.config_parser.Parser-class.html#loadSection" title="Load configuration parameters from a single section" alt="" coords="75,543,296,561"/>
+<area shape="rect" id="node0" href="deployment.config_parser.Parser-class.html#loadSections" title="Load configuration parameters from multiple sections" alt="" coords="75,561,296,580"/>
+<area shape="rect" id="node0" href="deployment.config_parser.Parser-class.html#loadAllSections" title="Load configuration parameters from ALL available sections, including &#160;DEFAULT" alt="" coords="75,580,296,599"/>
+<area shape="rect" id="node0" href="deployment.config_parser.Parser-class.html#getParams" title="Obtain configuration parameter dictionary {&lt;param_name&gt;: &lt;param_value&gt;}" alt="" coords="75,599,296,617"/>
+<area shape="rect" id="node0" href="deployment.config_parser.Parser-class.html#clean" title="Cleanup internal &lt;self.__params&gt; data" alt="" coords="75,617,296,636"/>
+<area shape="rect" id="node1" href="deployment.config_parser.Parser-class.html" title="Parser class &quot;wraps&quot; (extends) standard Python&#39;s ConfigParser.ConfigParser class." alt="" coords="63,473,308,642"/>
+<area shape="rect" id="node1" href="javascript:void(0);" title="Get an option value for a given section." alt="" coords="17,409,353,428"/>
+<area shape="rect" id="node1" href="javascript:void(0);" title="Return a list of tuples with (name, value) for each option in the section." alt="" coords="17,428,353,447"/>
+<area shape="rect" id="node2" href="javascript:void(0);" title="ConfigParser.ConfigParser" alt="" coords="5,377,365,453"/>
+<area shape="rect" id="node2" href="javascript:void(0);" title="ConfigParser.RawConfigParser.SECTCRE" alt="" coords="69,31,300,49"/>
+<area shape="rect" id="node2" href="javascript:void(0);" title="ConfigParser.RawConfigParser.OPTCRE" alt="" coords="69,49,300,68"/>
+<area shape="rect" id="node2" href="javascript:void(0);" title="ConfigParser.RawConfigParser.defaults" alt="" coords="69,71,300,89"/>
+<area shape="rect" id="node2" href="javascript:void(0);" title="Return a list of section names, excluding [DEFAULT]" alt="" coords="69,89,300,108"/>
+<area shape="rect" id="node2" href="javascript:void(0);" title="Create a new section in the configuration." alt="" coords="69,108,300,127"/>
+<area shape="rect" id="node2" href="javascript:void(0);" title="Indicate whether the named section is present in the configuration." alt="" coords="69,127,300,145"/>
+<area shape="rect" id="node2" href="javascript:void(0);" title="Return a list of option names for the given section name." alt="" coords="69,145,300,164"/>
+<area shape="rect" id="node2" href="javascript:void(0);" title="Read and parse a filename or a list of filenames." alt="" coords="69,164,300,183"/>
+<area shape="rect" id="node2" href="javascript:void(0);" title="Like read() but the argument must be a file&#45;like object." alt="" coords="69,183,300,201"/>
+<area shape="rect" id="node2" href="javascript:void(0);" title="ConfigParser.RawConfigParser.getint" alt="" coords="69,201,300,220"/>
+<area shape="rect" id="node2" href="javascript:void(0);" title="ConfigParser.RawConfigParser.getfloat" alt="" coords="69,220,300,239"/>
+<area shape="rect" id="node2" href="javascript:void(0);" title="ConfigParser.RawConfigParser.getboolean" alt="" coords="69,239,300,257"/>
+<area shape="rect" id="node2" href="javascript:void(0);" title="ConfigParser.RawConfigParser.optionxform" alt="" coords="69,257,300,276"/>
+<area shape="rect" id="node2" href="javascript:void(0);" title="Check for the existence of a given option in a given section." alt="" coords="69,276,300,295"/>
+<area shape="rect" id="node2" href="javascript:void(0);" title="Set an option." alt="" coords="69,295,300,313"/>
+<area shape="rect" id="node2" href="javascript:void(0);" title="Remove a file section." alt="" coords="69,332,300,351"/>
+<area shape="rect" id="node3" href="javascript:void(0);" title="ConfigParser.RawConfigParser" alt="" coords="57,6,311,357"/>
+</map>
+  <img src="uml_class_diagram_for_deployme.gif" alt='' usemap="#uml_class_diagram_for_deployme" ismap="ismap" class="graph-without-title" />
+</center>
+</center>
+<hr />
+<p>Parser class &quot;wraps&quot; (extends) standard Python's 
+  ConfigParser.ConfigParser class. Its main purpose - is to simplify use of
+  ConfigParser to load configuration data</p>
+
+<!-- ==================== INSTANCE METHODS ==================== -->
+<a name="section-InstanceMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Instance Methods</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-InstanceMethods"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="deployment.config_parser.Parser-class.html#__init__" class="summary-sig-name">__init__</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Class's constructor</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="deployment.config_parser-pysrc.html#Parser.__init__">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="deployment.config_parser.Parser-class.html#parse" class="summary-sig-name">parse</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">file_or_filelist</span>)</span><br />
+      Parse single file or a list of files</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="deployment.config_parser-pysrc.html#Parser.parse">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="deployment.config_parser.Parser-class.html#loadSection" class="summary-sig-name">loadSection</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">section</span>)</span><br />
+      Load configuration parameters from a single section</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="deployment.config_parser-pysrc.html#Parser.loadSection">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="deployment.config_parser.Parser-class.html#loadSections" class="summary-sig-name">loadSections</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">section_list</span>)</span><br />
+      Load configuration parameters from multiple sections</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="deployment.config_parser-pysrc.html#Parser.loadSections">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="loadAllSections"></a><span class="summary-sig-name">loadAllSections</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      Load configuration parameters from ALL available sections, including 
+      DEFAULT</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="deployment.config_parser-pysrc.html#Parser.loadAllSections">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="deployment.config_parser.Parser-class.html#getParams" class="summary-sig-name">getParams</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Obtain configuration parameter dictionary {&lt;param_name&gt;: 
+      &lt;param_value&gt;}</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="deployment.config_parser-pysrc.html#Parser.getParams">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="clean"></a><span class="summary-sig-name">clean</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      Cleanup internal &lt;self.__params&gt; data</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="deployment.config_parser-pysrc.html#Parser.clean">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>ConfigParser.ConfigParser</code></b>:
+      <code>get</code>,
+      <code>items</code>
+      </p>
+    <div class="private">    <p class="indent-wrapped-lines"><b>Inherited from <code>ConfigParser.ConfigParser</code></b> (private):
+      <code>_interpolate</code>,
+      <code>_interpolation_replace</code>
+      </p></div>
+    <p class="indent-wrapped-lines"><b>Inherited from <code>ConfigParser.RawConfigParser</code></b>:
+      <code>add_section</code>,
+      <code>defaults</code>,
+      <code>getboolean</code>,
+      <code>getfloat</code>,
+      <code>getint</code>,
+      <code>has_option</code>,
+      <code>has_section</code>,
+      <code>options</code>,
+      <code>optionxform</code>,
+      <code>read</code>,
+      <code>readfp</code>,
+      <code>remove_option</code>,
+      <code>remove_section</code>,
+      <code>sections</code>,
+      <code>set</code>,
+      <code>write</code>
+      </p>
+    <div class="private">    <p class="indent-wrapped-lines"><b>Inherited from <code>ConfigParser.RawConfigParser</code></b> (private):
+      <code>_get</code>,
+      <code>_read</code>
+      </p></div>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS VARIABLES ==================== -->
+<a name="section-ClassVariables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Class Variables</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-ClassVariables"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <div class="private">    <p class="indent-wrapped-lines"><b>Inherited from <code>ConfigParser.ConfigParser</code></b> (private):
+      <code>_KEYCRE</code>
+      </p></div>
+    <p class="indent-wrapped-lines"><b>Inherited from <code>ConfigParser.RawConfigParser</code></b>:
+      <code>OPTCRE</code>,
+      <code>SECTCRE</code>
+      </p>
+    <div class="private">    <p class="indent-wrapped-lines"><b>Inherited from <code>ConfigParser.RawConfigParser</code></b> (private):
+      <code>_boolean_states</code>
+      </p></div>
+    </td>
+  </tr>
+</table>
+<!-- ==================== METHOD DETAILS ==================== -->
+<a name="section-MethodDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Method Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-MethodDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="__init__"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">__init__</span>(<span class="sig-arg">self</span>)</span>
+    <br /><em class="fname">(Constructor)</em>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="deployment.config_parser-pysrc.html#Parser.__init__">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Class's constructor</p>
+  <dl class="fields">
+    <dt>Overrides:
+        ConfigParser.RawConfigParser.__init__
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="parse"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">parse</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">file_or_filelist</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="deployment.config_parser-pysrc.html#Parser.parse">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Parse single file or a list of files</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>file_or_filelist</code></strong> - <code>str</code> or <code>list</code> or <code>tuple</code> - 
+          single configuration file (complete path/file), or list (or 
+          tuple) of configuration files</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="loadSection"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">loadSection</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">section</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="deployment.config_parser-pysrc.html#Parser.loadSection">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Load configuration parameters from a single section</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>section</code></strong> - <code>str</code> - configuration section's name</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="loadSections"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">loadSections</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">section_list</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="deployment.config_parser-pysrc.html#Parser.loadSections">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Load configuration parameters from multiple sections</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>section_list</code></strong> - <code>list</code> or <code>tuple</code> - list (or tuple) of 
+          configuration section names</li>
+    </ul></dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'>RuntimeError</strong></code> - when @param &lt;section_list&gt; is not <code>list</code> or 
+        <code>tuple</code></li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getParams"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getParams</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="deployment.config_parser-pysrc.html#Parser.getParams">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Obtain configuration parameter dictionary {&lt;param_name&gt;: 
+  &lt;param_value&gt;}</p>
+  <dl class="fields">
+    <dt>Returns:</dt>
+        <dd><code>dict</code> - dictionary {&lt;param_name&gt;: 
+          &lt;param_value&gt;}</dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            >'SCS Controller'</th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    <a href="epydoc-log.html">Generated by Epydoc
+    3.0.1 on Wed Oct  7 17:27:43 2009</a>
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

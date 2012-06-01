@@ -1,0 +1,354 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>API docs for &ldquo;python.workflow.WorkflowManager&rdquo;</title>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+    <link href="apidocs.css" type="text/css" rel="stylesheet" />
+    
+    
+  </head>
+  <body>
+    <h1 class="class">Class p.w.WorkflowManager(<span title="singleton.Singleton">singleton.Singleton</span>, <span title="twisted.application.service.MultiService">service.MultiService</span>):</h1>
+    <p>
+      <span id="part">Part of <a href="python.html">python</a>.<a href="python.workflow.html">workflow</a></span>
+      
+      <a href="classIndex.html#python.workflow.WorkflowManager">View In Hierarchy</a>
+    </p>
+    <div>
+      
+    </div>
+    <pre>Implements general SCS workflow management functionality. Implemented using Singleton design pattern 
+(extends &lt;singleton.Singleton&gt;) and ensures that class gets initialized only once - no matter how many 
+times constructor is called (uses @singleton.uniq() decorator for its __init() constructor
+
+Implements IResourceManager interface</pre>
+    
+    
+    <div id="splitTables">
+      <table class="children sortable" id="id28">
+  
+  
+  
+  
+  <tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.workflow.WorkflowManager.html#__init__">__init__</a></td>
+    <td><tt>Class's constructor</tt></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.workflow.WorkflowManager.html#_loadInfo">_loadInfo</a></td>
+    <td><tt>Select workflow data from scs.workflow_lookup table</tt></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.workflow.WorkflowManager.html#_loadStepInfo">_loadStepInfo</a></td>
+    <td><tt>Load workflow step info from scs.workflow_step table"</tt></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.workflow.WorkflowManager.html#_loadComplete">_loadComplete</a></td>
+    <td><tt>Complete loading workflowInfo data (started by self._loadInfo() and self._loadStepInfo()</tt></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.workflow.WorkflowManager.html#_loadInfoFailure">_loadInfoFailure</a></td>
+    <td><tt>Workflow load failure handler</tt></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.workflow.WorkflowManager.html#start">start</a></td>
+    <td><tt>Create workflow instance &lt;workflowName&gt;</tt></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.workflow.WorkflowManager.html#stop">stop</a></td>
+    <td><tt>Stop workflow service</tt></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.workflow.WorkflowManager.html#enable">enable</a></td>
+    <td><tt>Enable workflow. SCSServer entity that 'owns' this workflow will start accepting external client's </tt></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.workflow.WorkflowManager.html#disable">disable</a></td>
+    <td><tt>Disable workflow. SCSServer entity that 'owns' this workflow will start rejecting external client's job requests</tt></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.workflow.WorkflowManager.html#startUp">startUp</a></td>
+    <td><tt>Start all enabled SCS workflows</tt></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.workflow.WorkflowManager.html#shutDown">shutDown</a></td>
+    <td><tt>Stop all SCS workflows</tt></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.workflow.WorkflowManager.html#startService">startService</a></td>
+    <td><tt>Start WorkflowManager service</tt></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.workflow.WorkflowManager.html#stopService">stopService</a></td>
+    <td><tt>Stop WorkflowManager service</tt></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.workflow.WorkflowManager.html#getResource">getResource</a></td>
+    <td><tt>Obtain given workflow instance</tt></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.workflow.WorkflowManager.html#addOnlineDeferred">addOnlineDeferred</a></td>
+    <td><tt>Add new external deferred to workflow's &lt;extOnlineDeferreds&gt; dictionary</tt></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.workflow.WorkflowManager.html#addOfflineDeferred">addOfflineDeferred</a></td>
+    <td><tt>Add new external deferred to workflow's &lt;extOfflineDeferreds&gt; dictionary</tt></td>
+  </tr>
+  
+</table>
+      
+      
+    </div>
+    
+    
+    
+    <div class="function">
+        <a name="python.workflow.WorkflowManager.__init__"></a>
+        <a name="__init__"></a>
+        <div class="functionHeader">
+        @singleton.uniq<br />
+        def __init__(self, logDir=None):
+        
+      </div>
+        <div class="functionBody">
+          
+          <pre>Class's constructor
+
+@param logDir: folder where log and error files will be created</pre>
+        </div>
+      </div><div class="function">
+        <a name="python.workflow.WorkflowManager._loadInfo"></a>
+        <a name="_loadInfo"></a>
+        <div class="functionHeader">
+        
+        def _loadInfo(self):
+        
+      </div>
+        <div class="functionBody">
+          
+          <pre>Select workflow data from scs.workflow_lookup table
+
+@return: deferred which will 'fire' when SELECT query completes loading data</pre>
+        </div>
+      </div><div class="function">
+        <a name="python.workflow.WorkflowManager._loadStepInfo"></a>
+        <a name="_loadStepInfo"></a>
+        <div class="functionHeader">
+        
+        def _loadStepInfo(self, result):
+        
+      </div>
+        <div class="functionBody">
+          
+          <pre>Load workflow step info from scs.workflow_step table"
+
+@return: deferred which will 'fire' when data is loaded</pre>
+        </div>
+      </div><div class="function">
+        <a name="python.workflow.WorkflowManager._loadComplete"></a>
+        <a name="_loadComplete"></a>
+        <div class="functionHeader">
+        
+        def _loadComplete(self, result, workflowInfo):
+        
+      </div>
+        <div class="functionBody">
+          
+          <pre>Complete loading workflowInfo data (started by self._loadInfo() and self._loadStepInfo()</pre>
+        </div>
+      </div><div class="function">
+        <a name="python.workflow.WorkflowManager._loadInfoFailure"></a>
+        <a name="_loadInfoFailure"></a>
+        <div class="functionHeader">
+        
+        def _loadInfoFailure(self, fail, query):
+        
+      </div>
+        <div class="functionBody">
+          
+          <pre>Workflow load failure handler</pre>
+        </div>
+      </div><div class="function">
+        <a name="python.workflow.WorkflowManager.start"></a>
+        <a name="start"></a>
+        <div class="functionHeader">
+        
+        def start(self, workflowName):
+        
+      </div>
+        <div class="functionBody">
+          
+          <pre>Create workflow instance &lt;workflowName&gt;
+
+@param workflowName: workflow name 
+@type workflowName: str</pre>
+        </div>
+      </div><div class="function">
+        <a name="python.workflow.WorkflowManager.stop"></a>
+        <a name="stop"></a>
+        <div class="functionHeader">
+        
+        def stop(self, workflowName):
+        
+      </div>
+        <div class="functionBody">
+          
+          <pre>Stop workflow service
+
+@param workflowName: workflow name</pre>
+        </div>
+      </div><div class="function">
+        <a name="python.workflow.WorkflowManager.enable"></a>
+        <a name="enable"></a>
+        <div class="functionHeader">
+        
+        def enable(self, workflowName):
+        
+      </div>
+        <div class="functionBody">
+          
+          <pre>Enable workflow. SCSServer entity that 'owns' this workflow will start accepting external client's 
+job requests - provided that workflow is also 'online' (all SCSClient entities used by the workflow 
+are connected to their external servers)</pre>
+        </div>
+      </div><div class="function">
+        <a name="python.workflow.WorkflowManager.disable"></a>
+        <a name="disable"></a>
+        <div class="functionHeader">
+        
+        def disable(self, workflowName):
+        
+      </div>
+        <div class="functionBody">
+          
+          <pre>Disable workflow. SCSServer entity that 'owns' this workflow will start rejecting external client's job requests</pre>
+        </div>
+      </div><div class="function">
+        <a name="python.workflow.WorkflowManager.startUp"></a>
+        <a name="startUp"></a>
+        <div class="functionHeader">
+        
+        def startUp(self):
+        
+      </div>
+        <div class="functionBody">
+          
+          <pre>Start all enabled SCS workflows</pre>
+        </div>
+      </div><div class="function">
+        <a name="python.workflow.WorkflowManager.shutDown"></a>
+        <a name="shutDown"></a>
+        <div class="functionHeader">
+        
+        def shutDown(self):
+        
+      </div>
+        <div class="functionBody">
+          
+          <pre>Stop all SCS workflows</pre>
+        </div>
+      </div><div class="function">
+        <a name="python.workflow.WorkflowManager.startService"></a>
+        <a name="startService"></a>
+        <div class="functionHeader">
+        
+        def startService(self):
+        
+      </div>
+        <div class="functionBody">
+          
+          <pre>Start WorkflowManager service</pre>
+        </div>
+      </div><div class="function">
+        <a name="python.workflow.WorkflowManager.stopService"></a>
+        <a name="stopService"></a>
+        <div class="functionHeader">
+        
+        def stopService(self):
+        
+      </div>
+        <div class="functionBody">
+          
+          <pre>Stop WorkflowManager service</pre>
+        </div>
+      </div><div class="function">
+        <a name="python.workflow.WorkflowManager.getResource"></a>
+        <a name="getResource"></a>
+        <div class="functionHeader">
+        
+        def getResource(self, name):
+        
+      </div>
+        <div class="functionBody">
+          
+          <pre>Obtain given workflow instance
+
+@param name: workflow name
+@return: _Workflow instance</pre>
+        </div>
+      </div><div class="function">
+        <a name="python.workflow.WorkflowManager.addOnlineDeferred"></a>
+        <a name="addOnlineDeferred"></a>
+        <div class="functionHeader">
+        
+        def addOnlineDeferred(self, name, deferred, reset=True):
+        
+      </div>
+        <div class="functionBody">
+          
+          <pre>Add new external deferred to workflow's &lt;extOnlineDeferreds&gt; dictionary</pre>
+        </div>
+      </div><div class="function">
+        <a name="python.workflow.WorkflowManager.addOfflineDeferred"></a>
+        <a name="addOfflineDeferred"></a>
+        <div class="functionHeader">
+        
+        def addOfflineDeferred(self, name, deferred, reset=True):
+        
+      </div>
+        <div class="functionBody">
+          
+          <pre>Add new external deferred to workflow's &lt;extOfflineDeferreds&gt; dictionary</pre>
+        </div>
+      </div>
+    
+    <address>
+      <a href="index.html">API Documentation</a> for 'SCS Controller', generated by <a href="http://codespeak.net/~mwh/pydoctor/">pydoctor</a> at 2009-10-07 17:27:47.
+    </address>
+  </body>
+</html>

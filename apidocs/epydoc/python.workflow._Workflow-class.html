@@ -1,0 +1,894 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>python.workflow._Workflow</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            >'SCS Controller'</th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="python-module.html">Package&nbsp;python</a> ::
+        <a href="python.workflow-module.html">Module&nbsp;workflow</a> ::
+        Class&nbsp;_Workflow
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="python.workflow._Workflow-class.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS DESCRIPTION ==================== -->
+<h1 class="epydoc">Class _Workflow</h1><p class="nomargin-top"><span class="codelink"><a href="python.workflow-pysrc.html#_Workflow">source&nbsp;code</a></span></p>
+<center>
+<center>  <map id="uml_class_diagram_for_python_w_2" name="uml_class_diagram_for_python_w_2">
+<area shape="rect" id="node75" href="python.workflow._Workflow-class.html#__init__" title="WorkFlow class&#39;s constructor." alt="" coords="17,39,347,57"/>
+<area shape="rect" id="node75" href="python.workflow._Workflow-class.html#enable" title="Enable workflow." alt="" coords="17,57,347,76"/>
+<area shape="rect" id="node75" href="python.workflow._Workflow-class.html#disable" title="Disable workflow." alt="" coords="17,76,347,95"/>
+<area shape="rect" id="node75" href="python.workflow._Workflow-class.html#setClients" title="Set &lt;self.clients&gt; dictionary with the _SCSClientService entities" alt="" coords="17,95,347,113"/>
+<area shape="rect" id="node75" href="python.workflow._Workflow-class.html#addOnlineDeferred" title="Add new external deferred to &lt;extOnlineDeferreds&gt; dictionary" alt="" coords="17,113,347,132"/>
+<area shape="rect" id="node75" href="python.workflow._Workflow-class.html#addOfflineDeferred" title="Add new external deferred to &lt;extOfflineDeferreds&gt; dictionary" alt="" coords="17,132,347,151"/>
+<area shape="rect" id="node75" href="python.workflow._Workflow-class.html#handleClientReconnect" title="Deferred event handler for client connect event." alt="" coords="17,151,347,169"/>
+<area shape="rect" id="node75" href="python.workflow._Workflow-class.html#handleClientDisconnect" title="Deferred event handler for client disconnect event." alt="" coords="17,169,347,188"/>
+<area shape="rect" id="node1" href="python.workflow._Workflow-class.html" title="WorkFlow class &#45; implements general SCS workflow functionality" alt="" coords="5,6,357,194"/>
+</map>
+  <img src="uml_class_diagram_for_python_w_2.gif" alt='' usemap="#uml_class_diagram_for_python_w_2" ismap="ismap" class="graph-without-title" />
+</center>
+</center>
+<hr />
+<p>WorkFlow class - implements general SCS workflow functionality</p>
+
+<!-- ==================== INSTANCE METHODS ==================== -->
+<a name="section-InstanceMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Instance Methods</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-InstanceMethods"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="python.workflow._Workflow-class.html#__init__" class="summary-sig-name">__init__</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">name</span>,
+        <span class="summary-sig-arg">info</span>,
+        <span class="summary-sig-arg">logName</span>)</span><br />
+      WorkFlow class's constructor.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="python.workflow-pysrc.html#_Workflow.__init__">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="python.workflow._Workflow-class.html#__initialize" class="summary-sig-name" onclick="show_private();">__initialize</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Initialize given SCS client instance</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="python.workflow-pysrc.html#_Workflow.__initialize">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="python.workflow._Workflow-class.html#__callbackDeferred" class="summary-sig-name" onclick="show_private();">__callbackDeferred</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">deferred</span>,
+        <span class="summary-sig-arg">reset</span>,
+        <span class="summary-sig-arg">result</span>)</span><br />
+      Call deferred and reset its &lt;called&gt; attribute so it can be 
+      called again</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="python.workflow-pysrc.html#_Workflow.__callbackDeferred">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="python.workflow._Workflow-class.html#_setClients" class="summary-sig-name" onclick="show_private();">_setClients</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">clients</span>)</span><br />
+      Set client instances in the &lt;clients&gt; list into corresponding 
+      step's 'client' data, and add workflow's online and offline deferreds
+      to that client's &lt;extOnlineDeferreds&gt; and 
+      &lt;extOfflineDeferreds&gt; dictionaries</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="python.workflow-pysrc.html#_Workflow._setClients">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="python.workflow._Workflow-class.html#_setOnline" class="summary-sig-name" onclick="show_private();">_setOnline</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">online</span>)</span><br />
+      Set &lt;online&gt; attribute</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="python.workflow-pysrc.html#_Workflow._setOnline">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_checkOnline"></a><span class="summary-sig-name">_checkOnline</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      Check workflow's status (ONLINE/OFFLINE)</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="python.workflow-pysrc.html#_Workflow._checkOnline">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="python.workflow._Workflow-class.html#_checkEnabled" class="summary-sig-name" onclick="show_private();">_checkEnabled</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Check if workflow is enabled.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="python.workflow-pysrc.html#_Workflow._checkEnabled">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_dbFailureHandler"></a><span class="summary-sig-name">_dbFailureHandler</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">fail</span>,
+        <span class="summary-sig-arg">stmt</span>)</span><br />
+      SQL opertion failure handler</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="python.workflow-pysrc.html#_Workflow._dbFailureHandler">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_checkOnlineHandler"></a><span class="summary-sig-name">_checkOnlineHandler</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">result</span>)</span><br />
+      Set &lt;self.online&gt; attribute using SQL query result</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="python.workflow-pysrc.html#_Workflow._checkOnlineHandler">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_checkEnabledHandler"></a><span class="summary-sig-name">_checkEnabledHandler</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">result</span>)</span><br />
+      Set &lt;self.enabled&gt; attribute using SQL query result</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="python.workflow-pysrc.html#_Workflow._checkEnabledHandler">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_scheduleCheckEnabled"></a><span class="summary-sig-name">_scheduleCheckEnabled</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      Schedule regular checks of workflow's 'enabled' status</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="python.workflow-pysrc.html#_Workflow._scheduleCheckEnabled">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="python.workflow._Workflow-class.html#enable" class="summary-sig-name">enable</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Enable workflow.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="python.workflow-pysrc.html#_Workflow.enable">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="python.workflow._Workflow-class.html#disable" class="summary-sig-name">disable</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Disable workflow.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="python.workflow-pysrc.html#_Workflow.disable">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="setClients"></a><span class="summary-sig-name">setClients</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">clientsList</span>=<span class="summary-sig-default">None</span>)</span><br />
+      Set &lt;self.clients&gt; dictionary with the _SCSClientService 
+      entities</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="python.workflow-pysrc.html#_Workflow.setClients">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="addOnlineDeferred"></a><span class="summary-sig-name">addOnlineDeferred</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">deferred</span>,
+        <span class="summary-sig-arg">reset</span>=<span class="summary-sig-default">True</span>)</span><br />
+      Add new external deferred to &lt;extOnlineDeferreds&gt; dictionary</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="python.workflow-pysrc.html#_Workflow.addOnlineDeferred">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="addOfflineDeferred"></a><span class="summary-sig-name">addOfflineDeferred</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">deferred</span>,
+        <span class="summary-sig-arg">reset</span>=<span class="summary-sig-default">True</span>)</span><br />
+      Add new external deferred to &lt;extOfflineDeferreds&gt; dictionary</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="python.workflow-pysrc.html#_Workflow.addOfflineDeferred">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="python.workflow._Workflow-class.html#handleClientReconnect" class="summary-sig-name">handleClientReconnect</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">result</span>)</span><br />
+      Deferred event handler for client connect event.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="python.workflow-pysrc.html#_Workflow.handleClientReconnect">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="python.workflow._Workflow-class.html#handleClientDisconnect" class="summary-sig-name">handleClientDisconnect</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">result</span>)</span><br />
+      Deferred event handler for client disconnect event.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="python.workflow-pysrc.html#_Workflow.handleClientDisconnect">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="python.workflow._Workflow-class.html#_Workflow__callbackDeferred" class="summary-sig-name" onclick="show_private();">_Workflow__callbackDeferred</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">deferred</span>,
+        <span class="summary-sig-arg">reset</span>,
+        <span class="summary-sig-arg">result</span>)</span><br />
+      Call deferred and reset its &lt;called&gt; attribute so it can be 
+      called again</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="python.workflow-pysrc.html#_Workflow._Workflow__callbackDeferred">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="python.workflow._Workflow-class.html#_Workflow__initialize" class="summary-sig-name" onclick="show_private();">_Workflow__initialize</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Initialize given SCS client instance</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="python.workflow-pysrc.html#_Workflow._Workflow__initialize">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__delattr__</code>,
+      <code>__getattribute__</code>,
+      <code>__hash__</code>,
+      <code>__new__</code>,
+      <code>__reduce__</code>,
+      <code>__reduce_ex__</code>,
+      <code>__repr__</code>,
+      <code>__setattr__</code>,
+      <code>__str__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== PROPERTIES ==================== -->
+<a name="section-Properties"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Properties</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Properties"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__class__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== METHOD DETAILS ==================== -->
+<a name="section-MethodDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Method Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-MethodDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="__init__"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">__init__</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">name</span>,
+        <span class="sig-arg">info</span>,
+        <span class="sig-arg">logName</span>)</span>
+    <br /><em class="fname">(Constructor)</em>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="python.workflow-pysrc.html#_Workflow.__init__">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>WorkFlow class's constructor.</p>
+  <ol start="1">
+    <li>
+      Initializes essential instance attributes;
+    </li>
+    <li>
+      Sets SCS clients associated with the given workflow;
+    </li>
+    <li>
+      Verifies if all SCS clients are 'online' and sets workflow.online 
+      attribute
+    </li>
+    <li>
+      Verifies if workflow is enabled and sets workflow.enabled attribute
+    </li>
+    <li>
+      Schedules regular check of workflow's 'enabled' status
+    </li>
+  </ol>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>name</code></strong> - workflow name</li>
+        <li><strong class="pname"><code>info</code></strong> - &lt;name&gt; - workflow name &lt;info&gt; - dictionary containing
+          workflow step info &lt;logDir&gt; - log directory</li>
+        <li><strong class="pname"><code>logName</code></strong> - unique log/error name (identifier) that will be used to write to 
+          these particular files</li>
+    </ul></dd>
+    <dt>Overrides:
+        object.__init__
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="__initialize"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">__initialize</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="python.workflow-pysrc.html#_Workflow.__initialize">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Initialize given SCS client instance</p>
+  <dl class="fields">
+    <dt>Returns:</dt>
+        <dd>clients - a list of started SCSClient instances that belong to 
+          given workflow</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="__callbackDeferred"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">__callbackDeferred</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">deferred</span>,
+        <span class="sig-arg">reset</span>,
+        <span class="sig-arg">result</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="python.workflow-pysrc.html#_Workflow.__callbackDeferred">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Call deferred and reset its &lt;called&gt; attribute so it can be 
+  called again</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>deferred</code></strong> - deferred to be called back ('fired')</li>
+        <li><strong class="pname"><code>reset</code></strong> - True/False indicating if deferred's deferred.called attribute 
+          should be reset back to False so that it can be called again</li>
+        <li><strong class="pname"><code>result</code></strong> - result to be supplied (passed) to deferred's callback method</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="_setClients"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">_setClients</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">clients</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="python.workflow-pysrc.html#_Workflow._setClients">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Set client instances in the &lt;clients&gt; list into corresponding 
+  step's 'client' data, and add workflow's online and offline deferreds to 
+  that client's &lt;extOnlineDeferreds&gt; and &lt;extOfflineDeferreds&gt; 
+  dictionaries</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>clients</code></strong> - SCSClient instances to be added to job steps's 'client' data</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="_setOnline"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">_setOnline</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">online</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="python.workflow-pysrc.html#_Workflow._setOnline">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Set &lt;online&gt; attribute</p>
+  <p>If workflow's &lt;self.online&gt; changes from False 
+  (&quot;offline&quot;) to True (&quot;online&quot;), call back 'online' 
+  external deferreds (deferreds in &lt;self.extOnlineDeferreds&gt; 
+  dictionary). If on the other hand online status changes from True 
+  (&quot;online&quot; to False (&quot;offline&quot;), call back 'offline' 
+  deferreds (deferreds in &lt;self.extOfflineDeferreds&gt; dictionary)</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>online</code></strong> - True/False flag indicating if workflow is online or offline</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="_checkEnabled"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">_checkEnabled</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="python.workflow-pysrc.html#_Workflow._checkEnabled">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Check if workflow is enabled. This method should be used as a 
+  deferred's callback handler - to regularly check if workflow is enabled. 
+  This is intended for allowing dynamicly enabling/disabling workflow using
+  scs.workflow_lookup table</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="enable"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">enable</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="python.workflow-pysrc.html#_Workflow.enable">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Enable workflow. SCSServer entity that 'owns' this workflow will start
+  accepting external client's job requests - provided that workflow is also
+  'online' (all SCSClient entities used by the workflow are connected to 
+  their external servers)</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="disable"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">disable</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="python.workflow-pysrc.html#_Workflow.disable">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Disable workflow. SCSServer entity that 'owns' this workflow will 
+  start rejecting external client's job requests</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="handleClientReconnect"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">handleClientReconnect</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">result</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="python.workflow-pysrc.html#_Workflow.handleClientReconnect">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Deferred event handler for client connect event. This method should be
+  called back by SCSClientProtocol entity in the event of connectionMade() 
+  event</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="handleClientDisconnect"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">handleClientDisconnect</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">result</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="python.workflow-pysrc.html#_Workflow.handleClientDisconnect">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Deferred event handler for client disconnect event. This method should
+  be called back by SCSClientFactory entity in the event of 
+  clientConnectionLost() or clientConnectionFailed() event</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="_Workflow__callbackDeferred"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">_Workflow__callbackDeferred</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">deferred</span>,
+        <span class="sig-arg">reset</span>,
+        <span class="sig-arg">result</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="python.workflow-pysrc.html#_Workflow._Workflow__callbackDeferred">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Call deferred and reset its &lt;called&gt; attribute so it can be 
+  called again</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>deferred</code></strong> - deferred to be called back ('fired')</li>
+        <li><strong class="pname"><code>reset</code></strong> - True/False indicating if deferred's deferred.called attribute 
+          should be reset back to False so that it can be called again</li>
+        <li><strong class="pname"><code>result</code></strong> - result to be supplied (passed) to deferred's callback method</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="_Workflow__initialize"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">_Workflow__initialize</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="python.workflow-pysrc.html#_Workflow._Workflow__initialize">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Initialize given SCS client instance</p>
+  <dl class="fields">
+    <dt>Returns:</dt>
+        <dd>clients - a list of started SCSClient instances that belong to 
+          given workflow</dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            >'SCS Controller'</th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    <a href="epydoc-log.html">Generated by Epydoc
+    3.0.1 on Wed Oct  7 17:27:45 2009</a>
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

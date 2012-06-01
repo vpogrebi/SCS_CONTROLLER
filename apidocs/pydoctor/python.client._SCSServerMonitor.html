@@ -1,0 +1,241 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>API docs for &ldquo;python.client._SCSServerMonitor&rdquo;</title>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+    <link href="apidocs.css" type="text/css" rel="stylesheet" />
+    
+    
+  </head>
+  <body>
+    <h1 class="class">Class p.c._SCSServerMonitor(<a href="python.client._SCSClientService.html">_SCSClientService</a>):</h1>
+    <p>
+      <span id="part">Part of <a href="python.html">python</a>.<a href="python.client.html">client</a></span>
+      
+      <a href="classIndex.html#python.client._SCSServerMonitor">View In Hierarchy</a>
+    </p>
+    <div>
+      
+    </div>
+    <div class="undocumented">No class docstring</div>
+    
+    
+    <div id="splitTables">
+      <table class="children sortable" id="id5">
+  
+  
+  
+  
+  <tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.client._SCSServerMonitor.html#__init__">__init__</a></td>
+    <td><tt>Class's constructor. Parameters:</tt></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.client._SCSServerMonitor.html#_startServerChecks">_startServerChecks</a></td>
+    <td><tt>Schedule server connection monitoring to run in a loop with given time interval</tt></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.client._SCSServerMonitor.html#_connSuccessHandler">_connSuccessHandler</a></td>
+    <td><tt>Client connection's success handler</tt></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.client._SCSServerMonitor.html#_connFailureHandler">_connFailureHandler</a></td>
+    <td><tt>Client connection's failure handler</tt></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.client._SCSServerMonitor.html#startClient">startClient</a></td>
+    <td><tt>Start new client connection</tt></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.client._SCSServerMonitor.html#startService">startService</a></td>
+    <td><tt>Start monitoring service</tt></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.client._SCSServerMonitor.html#stopService">stopService</a></td>
+    <td><tt>Stop SCSClient service</tt></td>
+  </tr>
+  
+</table>
+      
+        <p>
+          Inherited from <a href="python.client._SCSClientService.html">_SCSClientService</a>:
+        </p>
+        <table class="children sortable" id="id6">
+  
+  
+  
+  
+  <tr class="basemethod">
+    
+    
+    <td>Method</td>
+    <td><a href="python.client._SCSClientService.html#_checkInfo">_checkInfo</a></td>
+    <td><tt>Verify that supplied client info contains all required data</tt></td>
+  </tr><tr class="basemethod">
+    
+    
+    <td>Method</td>
+    <td><a href="python.client._SCSClientService.html#_sendRequest">_sendRequest</a></td>
+    <td><tt>Send request to external server</tt></td>
+  </tr><tr class="basemethod">
+    
+    
+    <td>Method</td>
+    <td><a href="python.client._SCSClientService.html#_disconnSuccessHandler">_disconnSuccessHandler</a></td>
+    <td><tt>Client disconnect success handler</tt></td>
+  </tr><tr class="basemethod">
+    
+    
+    <td>Method</td>
+    <td><a href="python.client._SCSClientService.html#_disconnFailureHandler">_disconnFailureHandler</a></td>
+    <td><tt>Client disconnect failure handler</tt></td>
+  </tr><tr class="basemethod">
+    
+    
+    <td>Method</td>
+    <td><a href="python.client._SCSClientService.html#stopClient">stopClient</a></td>
+    <td><tt>Stop client connection</tt></td>
+  </tr><tr class="basemethod">
+    
+    
+    <td>Method</td>
+    <td><a href="python.client._SCSClientService.html#sendRequest">sendRequest</a></td>
+    <td><tt>Send request to external server</tt></td>
+  </tr><tr class="basemethod">
+    
+    
+    <td>Method</td>
+    <td><a href="python.client._SCSClientService.html#addOnlineDeferred">addOnlineDeferred</a></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="basemethod">
+    
+    
+    <td>Method</td>
+    <td><a href="python.client._SCSClientService.html#addOfflineDeferred">addOfflineDeferred</a></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+  
+</table>
+      
+      
+    </div>
+    
+    
+    
+    <div class="function">
+        <a name="python.client._SCSServerMonitor.__init__"></a>
+        <a name="__init__"></a>
+        <div class="functionHeader">
+        
+        def __init__(self, name, clientInfo, logName, logDir):
+        
+      </div>
+        <div class="functionBody">
+          <div class="interfaceinfo">overrides <a href="python.client._SCSClientService.html#__init__">python.client._SCSClientService.__init__</a></div>
+          <pre>Class's constructor. Parameters:
+
+@param name:         SCS client name
+@param clientInfo:   dictionary containing following key/value pairs:
+                     - 'host':        server's hostname
+                     - 'port':        port on which server is listening
+@param logName:      unique log/error name (identifier) that will be used to write to these particular files
+@param logDir:       folder where log and error files will be created</pre>
+        </div>
+      </div><div class="function">
+        <a name="python.client._SCSServerMonitor._startServerChecks"></a>
+        <a name="_startServerChecks"></a>
+        <div class="functionHeader">
+        
+        def _startServerChecks(self, now=True):
+        
+      </div>
+        <div class="functionBody">
+          
+          <pre>Schedule server connection monitoring to run in a loop with given time interval</pre>
+        </div>
+      </div><div class="function">
+        <a name="python.client._SCSServerMonitor._connSuccessHandler"></a>
+        <a name="_connSuccessHandler"></a>
+        <div class="functionHeader">
+        
+        def _connSuccessHandler(self, protocol):
+        
+      </div>
+        <div class="functionBody">
+          <div class="interfaceinfo">overrides <a href="python.client._SCSClientService.html#_connSuccessHandler">python.client._SCSClientService._connSuccessHandler</a></div>
+          <pre>Client connection's success handler</pre>
+        </div>
+      </div><div class="function">
+        <a name="python.client._SCSServerMonitor._connFailureHandler"></a>
+        <a name="_connFailureHandler"></a>
+        <div class="functionHeader">
+        
+        def _connFailureHandler(self, fail):
+        
+      </div>
+        <div class="functionBody">
+          <div class="interfaceinfo">overrides <a href="python.client._SCSClientService.html#_connFailureHandler">python.client._SCSClientService._connFailureHandler</a></div>
+          <pre>Client connection's failure handler</pre>
+        </div>
+      </div><div class="function">
+        <a name="python.client._SCSServerMonitor.startClient"></a>
+        <a name="startClient"></a>
+        <div class="functionHeader">
+        
+        def startClient(self):
+        
+      </div>
+        <div class="functionBody">
+          <div class="interfaceinfo">overrides <a href="python.client._SCSClientService.html#startClient">python.client._SCSClientService.startClient</a></div>
+          <pre>Start new client connection
+
+@return: deferred (C{defer.Deferred}) - deferred that will 'fire' when client connection is made (or fails)</pre>
+        </div>
+      </div><div class="function">
+        <a name="python.client._SCSServerMonitor.startService"></a>
+        <a name="startService"></a>
+        <div class="functionHeader">
+        
+        def startService(self):
+        
+      </div>
+        <div class="functionBody">
+          <div class="interfaceinfo">overrides <a href="python.client._SCSClientService.html#startService">python.client._SCSClientService.startService</a></div>
+          <pre>Start monitoring service</pre>
+        </div>
+      </div><div class="function">
+        <a name="python.client._SCSServerMonitor.stopService"></a>
+        <a name="stopService"></a>
+        <div class="functionHeader">
+        
+        def stopService(self):
+        
+      </div>
+        <div class="functionBody">
+          <div class="interfaceinfo">overrides <a href="python.client._SCSClientService.html#stopService">python.client._SCSClientService.stopService</a></div>
+          <pre>Stop SCSClient service</pre>
+        </div>
+      </div>
+    
+    <address>
+      <a href="index.html">API Documentation</a> for 'SCS Controller', generated by <a href="http://codespeak.net/~mwh/pydoctor/">pydoctor</a> at 2009-10-07 17:27:47.
+    </address>
+  </body>
+</html>

@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>deployment.twisted_logger.LogService</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            >'SCS Controller'</th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="deployment-module.html">Package&nbsp;deployment</a> ::
+        <a href="deployment.twisted_logger-module.html">Module&nbsp;twisted_logger</a> ::
+        Class&nbsp;LogService
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="deployment.twisted_logger.LogService-class.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS DESCRIPTION ==================== -->
+<h1 class="epydoc">Class LogService</h1><p class="nomargin-top"><span class="codelink"><a href="deployment.twisted_logger-pysrc.html#LogService">source&nbsp;code</a></span></p>
+<center>
+<center>  <map id="uml_class_diagram_for_deployme_10" name="uml_class_diagram_for_deployme_10">
+<area shape="rect" id="node20" href="deployment.twisted_logger.LogService-class.html#__init__" title="LogService class&#39;s constructor" alt="" coords="17,297,307,316"/>
+<area shape="rect" id="node20" href="deployment.twisted_logger.LogService-class.html#startService" title="Start logging service." alt="" coords="17,316,307,335"/>
+<area shape="rect" id="node20" href="deployment.twisted_logger.LogService-class.html#stopService" title="Stop logging service" alt="" coords="17,335,307,353"/>
+<area shape="rect" id="node1" href="deployment.twisted_logger.LogService-class.html" title="Implements functionality to expose twisted logging in a form of services." alt="" coords="5,265,317,359"/>
+<area shape="rect" id="node21" href="javascript:void(0);" title="twisted.application.service.Service.running" alt="" coords="43,31,281,49"/>
+<area shape="rect" id="node21" href="javascript:void(0);" title="twisted.application.service.Service.name" alt="" coords="43,49,281,68"/>
+<area shape="rect" id="node21" href="javascript:void(0);" title="twisted.application.service.Service.parent" alt="" coords="43,68,281,87"/>
+<area shape="rect" id="node21" href="javascript:void(0);" title="twisted.application.service.Service.__implemented__" alt="" coords="43,87,281,105"/>
+<area shape="rect" id="node21" href="javascript:void(0);" title="twisted.application.service.Service.__provides__" alt="" coords="43,105,281,124"/>
+<area shape="rect" id="node21" href="javascript:void(0);" title="twisted.application.service.Service.__getstate__" alt="" coords="43,127,281,145"/>
+<area shape="rect" id="node21" href="javascript:void(0);" title="twisted.application.service.Service.setName" alt="" coords="43,145,281,164"/>
+<area shape="rect" id="node21" href="javascript:void(0);" title="twisted.application.service.Service.setServiceParent" alt="" coords="43,164,281,183"/>
+<area shape="rect" id="node21" href="javascript:void(0);" title="twisted.application.service.Service.disownServiceParent" alt="" coords="43,183,281,201"/>
+<area shape="rect" id="node21" href="javascript:void(0);" title="twisted.application.service.Service.privilegedStartService" alt="" coords="43,201,281,220"/>
+<area shape="rect" id="node21" href="javascript:void(0);" title="Object Specification Descriptor" alt="" coords="43,220,281,239"/>
+<area shape="rect" id="node2" href="javascript:void(0);" title="Base class for services." alt="" coords="31,6,292,245"/>
+</map>
+  <img src="uml_class_diagram_for_deployme_10.gif" alt='' usemap="#uml_class_diagram_for_deployme_10" ismap="ismap" class="graph-without-title" />
+</center>
+</center>
+<hr />
+<p>Implements functionality to expose twisted logging in a form of 
+  services. Inherits from twisted.application.service.Service class</p>
+  <p>Instance of this class maintain two instances of 
+  twisted.python.logfile.DailyLogFile class: one for LOG file, another - 
+  for ERROR file</p>
+
+<!-- ==================== INSTANCE METHODS ==================== -->
+<a name="section-InstanceMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Instance Methods</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-InstanceMethods"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="deployment.twisted_logger.LogService-class.html#__init__" class="summary-sig-name">__init__</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">name</span>,
+        <span class="summary-sig-arg">baseFileName</span>,
+        <span class="summary-sig-arg">logDir</span>)</span><br />
+      LogService class's constructor</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="deployment.twisted_logger-pysrc.html#LogService.__init__">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="deployment.twisted_logger.LogService-class.html#startService" class="summary-sig-name">startService</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Start logging service.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="deployment.twisted_logger-pysrc.html#LogService.startService">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="deployment.twisted_logger.LogService-class.html#stopService" class="summary-sig-name">stopService</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Stop logging service</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="deployment.twisted_logger-pysrc.html#LogService.stopService">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>twisted.application.service.Service</code></b>:
+      <code>__getstate__</code>,
+      <code>__providedBy__</code>,
+      <code>disownServiceParent</code>,
+      <code>privilegedStartService</code>,
+      <code>setName</code>,
+      <code>setServiceParent</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS VARIABLES ==================== -->
+<a name="section-ClassVariables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Class Variables</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-ClassVariables"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>twisted.application.service.Service</code></b>:
+      <code>__implemented__</code>,
+      <code>__provides__</code>,
+      <code>name</code>,
+      <code>parent</code>,
+      <code>running</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== METHOD DETAILS ==================== -->
+<a name="section-MethodDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Method Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-MethodDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="__init__"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">__init__</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">name</span>,
+        <span class="sig-arg">baseFileName</span>,
+        <span class="sig-arg">logDir</span>)</span>
+    <br /><em class="fname">(Constructor)</em>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="deployment.twisted_logger-pysrc.html#LogService.__init__">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>LogService class's constructor</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>name</code></strong> - unique log service name</li>
+        <li><strong class="pname"><code>baseFileName</code></strong> - base file name that will be shared between LOG and ERROR files</li>
+        <li><strong class="pname"><code>logDir</code></strong> - folder where LOG and ERROR files will be created</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="startService"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">startService</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="deployment.twisted_logger-pysrc.html#LogService.startService">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Start logging service. Opens LOG and ERROR files that support daily 
+  rotation</p>
+  <dl class="fields">
+    <dt>Overrides:
+        twisted.application.service.Service.startService
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="stopService"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">stopService</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="deployment.twisted_logger-pysrc.html#LogService.stopService">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Stop logging service</p>
+  <dl class="fields">
+    <dt>Overrides:
+        twisted.application.service.Service.stopService
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            >'SCS Controller'</th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    <a href="epydoc-log.html">Generated by Epydoc
+    3.0.1 on Wed Oct  7 17:27:44 2009</a>
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

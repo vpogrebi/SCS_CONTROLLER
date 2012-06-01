@@ -1,0 +1,38 @@
+<html><head><title>Epydoc Redirect Page</title>
+<meta http-equiv="cache-control" content="no-cache" />
+<meta http-equiv="expires" content="0" />
+<meta http-equiv="pragma" content="no-cache" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+<!--
+var pages = ["python.resource_manager.IResourceManager-c", "deployment.twisted_logger.DailyLogFile-c", "python.client_request.JobStatusRequest-c", "deployment.twisted_logger.LogService-c", "deployment.executor.IRequestHandler-c", "python.server._SCSServerHTTPRequest-c", "deployment.twisted_logger.ErrorLog-c", "deployment.mysqldb.TwistedMySQLdb-c", "python.client._SCSClientProtocol-c", "python.client_request.JobRequest-c", "python.server._SCSServerProtocol-c", "python.workflow._WorkflowService-c", "deployment.config_parser.Parser-c", "python.client._SCSClientService-c", "python.client._SCSServerMonitor-c", "python.controller.SCSController-c", "python.server._SCSServerFactory-c", "python.server._SCSServerService-c", "python.workflow.WorkflowManager-c", "deployment.singleton.Singleton-c", "python.client.SCSClientManager-c", "python.server.SCSServerManager-c", "deployment.twisted_logger.Log-c", "deployment.mysqldb.AsynchDB-c", "deployment.mysqldb.SynchDB-c", "deployment.twisted_logger-m", "python.workflow._Workflow-c", "deployment.config_parser-m", "deployment.deferred_lib-m", "python.resource_manager-m", "python.job_step.JobStep-c", "python.client_request-m", "deployment.singleton-m", "deployment.executor-m", "deployment.mysqldb-m", "deployment.service-m", "python.controller-m", "python.job_step-m", "python.workflow-m", "python.job.Job-c", "python.client-m", "python.server-m", "deployment-m", "python.job-m", "python-m"];
+var dottedName = get_anchor();
+if (dottedName) {
+    var target = redirect_url(dottedName);
+    if (target) window.location.replace(target);
+}
+// -->
+</script>
+
+<h3>Epydoc Auto-redirect page</h3>
+
+<p>When javascript is enabled, this page will redirect URLs of
+the form <tt>redirect.html#<i>dotted.name</i></tt> to the
+documentation for the object with the given fully-qualified
+dotted name.</p>
+<p><a id="message"> &nbsp; </a></p>
+
+<script type="text/javascript">
+<!--
+if (dottedName) {
+    var msg = document.getElementById("message");
+    msg.innerHTML = "No documentation found for <tt>"+
+                    dottedName+"</tt>";
+}
+// -->
+</script>
+
+</body>
+</html>

@@ -1,0 +1,405 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>API docs for &ldquo;python.workflow._Workflow&rdquo;</title>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+    <link href="apidocs.css" type="text/css" rel="stylesheet" />
+    
+    
+  </head>
+  <body>
+    <h1 class="class">Class p.w._Workflow(<span title="object">object</span>):</h1>
+    <p>
+      <span id="part">Part of <a href="python.html">python</a>.<a href="python.workflow.html">workflow</a></span>
+      
+      <a href="classIndex.html#python.workflow._Workflow">View In Hierarchy</a>
+    </p>
+    <div>
+      
+    </div>
+    <pre>WorkFlow class - implements general SCS workflow functionality</pre>
+    
+    
+    <div id="splitTables">
+      <table class="children sortable" id="id26">
+  
+  
+  
+  
+  <tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.workflow._Workflow.html#__init__">__init__</a></td>
+    <td><tt>WorkFlow class's constructor. </tt></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.workflow._Workflow.html#__initialize">__initialize</a></td>
+    <td><tt>Initialize given SCS client instance</tt></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.workflow._Workflow.html#__callbackDeferred">__callbackDeferred</a></td>
+    <td><tt>Call deferred and reset its &lt;called&gt; attribute so it can be called again</tt></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.workflow._Workflow.html#_setClients">_setClients</a></td>
+    <td><tt>Set client instances in the &lt;clients&gt; list into corresponding step's 'client' data, and add workflow's  </tt></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.workflow._Workflow.html#_setOnline">_setOnline</a></td>
+    <td><tt>Set &lt;online&gt; attribute</tt></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.workflow._Workflow.html#_checkOnline">_checkOnline</a></td>
+    <td><tt>Check workflow's status (ONLINE/OFFLINE)</tt></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.workflow._Workflow.html#_checkEnabled">_checkEnabled</a></td>
+    <td><tt>Check if workflow is enabled. This method should be used as a deferred's callback handler - to </tt></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.workflow._Workflow.html#_dbFailureHandler">_dbFailureHandler</a></td>
+    <td><tt>SQL opertion failure handler</tt></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.workflow._Workflow.html#_checkOnlineHandler">_checkOnlineHandler</a></td>
+    <td><tt>Set &lt;self.online&gt; attribute using SQL query result</tt></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.workflow._Workflow.html#_checkEnabledHandler">_checkEnabledHandler</a></td>
+    <td><tt>Set &lt;self.enabled&gt; attribute using SQL query result</tt></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.workflow._Workflow.html#_scheduleCheckEnabled">_scheduleCheckEnabled</a></td>
+    <td><tt>Schedule regular checks of workflow's 'enabled' status</tt></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.workflow._Workflow.html#enable">enable</a></td>
+    <td><tt>Enable workflow. SCSServer entity that 'owns' this workflow will start accepting external client's </tt></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.workflow._Workflow.html#disable">disable</a></td>
+    <td><tt>Disable workflow. SCSServer entity that 'owns' this workflow will start rejecting external client's job requests</tt></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.workflow._Workflow.html#setClients">setClients</a></td>
+    <td><tt>Set &lt;self.clients&gt; dictionary with the _SCSClientService entities</tt></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.workflow._Workflow.html#addOnlineDeferred">addOnlineDeferred</a></td>
+    <td><tt>Add new external deferred to &lt;extOnlineDeferreds&gt; dictionary</tt></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.workflow._Workflow.html#addOfflineDeferred">addOfflineDeferred</a></td>
+    <td><tt>Add new external deferred to &lt;extOfflineDeferreds&gt; dictionary</tt></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.workflow._Workflow.html#handleClientReconnect">handleClientReconnect</a></td>
+    <td><tt>Deferred event handler for client connect event. This method should be  </tt></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.workflow._Workflow.html#handleClientDisconnect">handleClientDisconnect</a></td>
+    <td><tt>Deferred event handler for client disconnect event. This method should be called back</tt></td>
+  </tr>
+  
+</table>
+      
+      
+    </div>
+    
+    
+    
+    <div class="function">
+        <a name="python.workflow._Workflow.__init__"></a>
+        <a name="__init__"></a>
+        <div class="functionHeader">
+        
+        def __init__(self, name, info, logName):
+        
+      </div>
+        <div class="functionBody">
+          
+          <pre>WorkFlow class's constructor. 
+
+    1. Initializes essential instance attributes;
+    2. Sets SCS clients associated with the given workflow;
+    3. Verifies if all SCS clients are 'online' and sets workflow.online attribute
+    4. Verifies if workflow is enabled and sets workflow.enabled attribute
+    5. Schedules regular check of workflow's 'enabled' status
+
+@param name:    workflow name
+@param info:    &lt;name&gt; - workflow name
+                &lt;info&gt; - dictionary containing workflow step info
+                &lt;logDir&gt; - log directory
+@param logName: unique log/error name (identifier) that will be used to write to these particular files</pre>
+        </div>
+      </div><div class="function">
+        <a name="python.workflow._Workflow.__initialize"></a>
+        <a name="__initialize"></a>
+        <div class="functionHeader">
+        
+        def __initialize(self):
+        
+      </div>
+        <div class="functionBody">
+          
+          <pre>Initialize given SCS client instance
+
+@return: clients - a list of started SCSClient instances that belong to given workflow</pre>
+        </div>
+      </div><div class="function">
+        <a name="python.workflow._Workflow.__callbackDeferred"></a>
+        <a name="__callbackDeferred"></a>
+        <div class="functionHeader">
+        
+        def __callbackDeferred(self, deferred, reset, result):
+        
+      </div>
+        <div class="functionBody">
+          
+          <pre>Call deferred and reset its &lt;called&gt; attribute so it can be called again
+
+@param deferred: deferred to be called back ('fired')
+@param reset:    True/False indicating if deferred's deferred.called attribute 
+                 should be reset back to False so that it can be called again
+@param result: result to be supplied (passed) to deferred's callback method </pre>
+        </div>
+      </div><div class="function">
+        <a name="python.workflow._Workflow._setClients"></a>
+        <a name="_setClients"></a>
+        <div class="functionHeader">
+        
+        def _setClients(self, clients):
+        
+      </div>
+        <div class="functionBody">
+          
+          <pre>Set client instances in the &lt;clients&gt; list into corresponding step's 'client' data, and add workflow's  
+online and offline deferreds to that client's &lt;extOnlineDeferreds&gt; and &lt;extOfflineDeferreds&gt; dictionaries
+
+@param clients: SCSClient instances to be added to job steps's 'client' data </pre>
+        </div>
+      </div><div class="function">
+        <a name="python.workflow._Workflow._setOnline"></a>
+        <a name="_setOnline"></a>
+        <div class="functionHeader">
+        
+        def _setOnline(self, online):
+        
+      </div>
+        <div class="functionBody">
+          
+          <pre>Set &lt;online&gt; attribute
+        
+If workflow's &lt;self.online&gt; changes from False ("offline") to True ("online"), call back 'online' 
+external deferreds (deferreds in &lt;self.extOnlineDeferreds&gt; dictionary). If on the other hand online  
+status changes from True ("online" to False ("offline"), call back 'offline' deferreds (deferreds
+in &lt;self.extOfflineDeferreds&gt; dictionary)
+
+@param online: True/False flag indicating if workflow is online or offline</pre>
+        </div>
+      </div><div class="function">
+        <a name="python.workflow._Workflow._checkOnline"></a>
+        <a name="_checkOnline"></a>
+        <div class="functionHeader">
+        
+        def _checkOnline(self):
+        
+      </div>
+        <div class="functionBody">
+          
+          <pre>Check workflow's status (ONLINE/OFFLINE)</pre>
+        </div>
+      </div><div class="function">
+        <a name="python.workflow._Workflow._checkEnabled"></a>
+        <a name="_checkEnabled"></a>
+        <div class="functionHeader">
+        
+        def _checkEnabled(self):
+        
+      </div>
+        <div class="functionBody">
+          
+          <pre>Check if workflow is enabled. This method should be used as a deferred's callback handler - to 
+regularly check if workflow is enabled. This is intended for allowing dynamicly enabling/disabling 
+workflow using scs.workflow_lookup table</pre>
+        </div>
+      </div><div class="function">
+        <a name="python.workflow._Workflow._dbFailureHandler"></a>
+        <a name="_dbFailureHandler"></a>
+        <div class="functionHeader">
+        
+        def _dbFailureHandler(self, fail, stmt):
+        
+      </div>
+        <div class="functionBody">
+          
+          <pre>SQL opertion failure handler</pre>
+        </div>
+      </div><div class="function">
+        <a name="python.workflow._Workflow._checkOnlineHandler"></a>
+        <a name="_checkOnlineHandler"></a>
+        <div class="functionHeader">
+        
+        def _checkOnlineHandler(self, result):
+        
+      </div>
+        <div class="functionBody">
+          
+          <pre>Set &lt;self.online&gt; attribute using SQL query result</pre>
+        </div>
+      </div><div class="function">
+        <a name="python.workflow._Workflow._checkEnabledHandler"></a>
+        <a name="_checkEnabledHandler"></a>
+        <div class="functionHeader">
+        
+        def _checkEnabledHandler(self, result):
+        
+      </div>
+        <div class="functionBody">
+          
+          <pre>Set &lt;self.enabled&gt; attribute using SQL query result</pre>
+        </div>
+      </div><div class="function">
+        <a name="python.workflow._Workflow._scheduleCheckEnabled"></a>
+        <a name="_scheduleCheckEnabled"></a>
+        <div class="functionHeader">
+        
+        def _scheduleCheckEnabled(self):
+        
+      </div>
+        <div class="functionBody">
+          
+          <pre>Schedule regular checks of workflow's 'enabled' status</pre>
+        </div>
+      </div><div class="function">
+        <a name="python.workflow._Workflow.enable"></a>
+        <a name="enable"></a>
+        <div class="functionHeader">
+        
+        def enable(self):
+        
+      </div>
+        <div class="functionBody">
+          
+          <pre>Enable workflow. SCSServer entity that 'owns' this workflow will start accepting external client's 
+job requests - provided that workflow is also 'online' (all SCSClient entities used by the workflow 
+are connected to their external servers)</pre>
+        </div>
+      </div><div class="function">
+        <a name="python.workflow._Workflow.disable"></a>
+        <a name="disable"></a>
+        <div class="functionHeader">
+        
+        def disable(self):
+        
+      </div>
+        <div class="functionBody">
+          
+          <pre>Disable workflow. SCSServer entity that 'owns' this workflow will start rejecting external client's job requests</pre>
+        </div>
+      </div><div class="function">
+        <a name="python.workflow._Workflow.setClients"></a>
+        <a name="setClients"></a>
+        <div class="functionHeader">
+        
+        def setClients(self, clientsList=None):
+        
+      </div>
+        <div class="functionBody">
+          
+          <pre>Set &lt;self.clients&gt; dictionary with the _SCSClientService entities</pre>
+        </div>
+      </div><div class="function">
+        <a name="python.workflow._Workflow.addOnlineDeferred"></a>
+        <a name="addOnlineDeferred"></a>
+        <div class="functionHeader">
+        
+        def addOnlineDeferred(self, deferred, reset=True):
+        
+      </div>
+        <div class="functionBody">
+          
+          <pre>Add new external deferred to &lt;extOnlineDeferreds&gt; dictionary</pre>
+        </div>
+      </div><div class="function">
+        <a name="python.workflow._Workflow.addOfflineDeferred"></a>
+        <a name="addOfflineDeferred"></a>
+        <div class="functionHeader">
+        
+        def addOfflineDeferred(self, deferred, reset=True):
+        
+      </div>
+        <div class="functionBody">
+          
+          <pre>Add new external deferred to &lt;extOfflineDeferreds&gt; dictionary</pre>
+        </div>
+      </div><div class="function">
+        <a name="python.workflow._Workflow.handleClientReconnect"></a>
+        <a name="handleClientReconnect"></a>
+        <div class="functionHeader">
+        
+        def handleClientReconnect(self, result):
+        
+      </div>
+        <div class="functionBody">
+          
+          <pre>Deferred event handler for client connect event. This method should be  
+called back by SCSClientProtocol entity in the event of connectionMade() event</pre>
+        </div>
+      </div><div class="function">
+        <a name="python.workflow._Workflow.handleClientDisconnect"></a>
+        <a name="handleClientDisconnect"></a>
+        <div class="functionHeader">
+        
+        def handleClientDisconnect(self, result):
+        
+      </div>
+        <div class="functionBody">
+          
+          <pre>Deferred event handler for client disconnect event. This method should be called back
+by SCSClientFactory entity in the event of clientConnectionLost() or clientConnectionFailed() event</pre>
+        </div>
+      </div>
+    
+    <address>
+      <a href="index.html">API Documentation</a> for 'SCS Controller', generated by <a href="http://codespeak.net/~mwh/pydoctor/">pydoctor</a> at 2009-10-07 17:27:47.
+    </address>
+  </body>
+</html>

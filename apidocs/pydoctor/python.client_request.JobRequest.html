@@ -1,0 +1,236 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>API docs for &ldquo;python.client_request.JobRequest&rdquo;</title>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+    <link href="apidocs.css" type="text/css" rel="stylesheet" />
+    
+    
+  </head>
+  <body>
+    <h1 class="class">Class p.c.JobRequest(<span title="object">object</span>):</h1>
+    <p>
+      <span id="part">Part of <a href="python.html">python</a>.<a href="python.client_request.html">client_request</a></span>
+      
+      <a href="classIndex.html#python.client_request.JobRequest">View In Hierarchy</a>
+    </p>
+    <div>
+      
+    </div>
+    <pre>JobRequest class - responsible for processing JOB STEP requests that come from JobStep  
+instances when a job is being executed by SCSServer instance that handles external client's requests
+
+This class is responsible for following functionality related to job request management:
+    1. Processing job request (sending request to external server)
+    2. Scheduling regular job 'STATUS' requests (in a loop) with regular time intervals
+    3. Handling job response - when it comes from the server</pre>
+    
+    
+    <div id="splitTables">
+      <table class="children sortable" id="id9">
+  
+  
+  
+  
+  <tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.client_request.JobRequest.html#__init__">__init__</a></td>
+    <td><tt>JobRequest class's constructor</tt></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.client_request.JobRequest.html#_stop">_stop</a></td>
+    <td><tt>JobRequest termination: </tt></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.client_request.JobRequest.html#_failure">_failure</a></td>
+    <td><tt>Process job failure event. Executes self._stop() that fires self.deferred.errback()</tt></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.client_request.JobRequest.html#_success">_success</a></td>
+    <td><tt>Process job success event. Executes self._stop() that fires self.deferred.callback()</tt></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.client_request.JobRequest.html#_checkRequest">_checkRequest</a></td>
+    <td><tt>Verify that supplied request is a valid JOB STEP request</tt></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.client_request.JobRequest.html#_checkResponse">_checkResponse</a></td>
+    <td><tt>Verify that supplied response is a valid job response</tt></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.client_request.JobRequest.html#processRequest">processRequest</a></td>
+    <td><tt>Process job request - send request to external server</tt></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.client_request.JobRequest.html#processResponse">processResponse</a></td>
+    <td><tt>Process job response</tt></td>
+  </tr>
+  
+</table>
+      
+      
+    </div>
+    
+    
+    
+    <div class="function">
+        <a name="python.client_request.JobRequest.__init__"></a>
+        <a name="__init__"></a>
+        <div class="functionHeader">
+        
+        def __init__(self, request, deferred, client):
+        
+      </div>
+        <div class="functionBody">
+          
+          <pre>JobRequest class's constructor
+
+@param request: request dat supplied by JobStep instance
+@type request:  dictionary containing following required data
+                {'scs_jobid': &lt;jobid&gt;, 'request': &lt;request_data (text or YAML structure)&gt;}
+@param deferred: external job step's deferred to be associated with the given request
+@type deferred: twisted.internet.defer.Deferred instance
+@param client: SCSClientProtocol instance that created this JobRequest entity
+@type client: SCSClientProtocol
+                
+@raise RuntimeError: (1) if invalid request is supplied, or 
+                     (2) if supplied deferred is not a valid instance of defer.Deferred class</pre>
+        </div>
+      </div><div class="function">
+        <a name="python.client_request.JobRequest._stop"></a>
+        <a name="_stop"></a>
+        <div class="functionHeader">
+        
+        def _stop(self):
+        
+      </div>
+        <div class="functionBody">
+          
+          <pre>JobRequest termination: 
+1. fire callback or errback method associated with request's deferred        
+2. perform cleanup</pre>
+        </div>
+      </div><div class="function">
+        <a name="python.client_request.JobRequest._failure"></a>
+        <a name="_failure"></a>
+        <div class="functionHeader">
+        
+        def _failure(self, error):
+        
+      </div>
+        <div class="functionBody">
+          
+          <pre>Process job failure event. Executes self._stop() that fires self.deferred.errback()</pre>
+        </div>
+      </div><div class="function">
+        <a name="python.client_request.JobRequest._success"></a>
+        <a name="_success"></a>
+        <div class="functionHeader">
+        
+        def _success(self):
+        
+      </div>
+        <div class="functionBody">
+          
+          <pre>Process job success event. Executes self._stop() that fires self.deferred.callback()</pre>
+        </div>
+      </div><div class="function">
+        <a name="python.client_request.JobRequest._checkRequest"></a>
+        <a name="_checkRequest"></a>
+        <div class="functionHeader">
+        
+        def _checkRequest(self, request):
+        
+      </div>
+        <div class="functionBody">
+          
+          <pre>Verify that supplied request is a valid JOB STEP request
+
+@param request: request dat supplied by JobStep instance
+@type request:  dictionary containing following required data
+                {'scs_jobid': &lt;jobid&gt;, 'request': &lt;request_data (text or YAML structure)&gt;}
+                
+@raise RuntimeError: if invalid request is supplied </pre>
+        </div>
+      </div><div class="function">
+        <a name="python.client_request.JobRequest._checkResponse"></a>
+        <a name="_checkResponse"></a>
+        <div class="functionHeader">
+        
+        def _checkResponse(self, response):
+        
+      </div>
+        <div class="functionBody">
+          
+          <pre>Verify that supplied response is a valid job response
+
+@param response: response received from the server
+@type response: C{dict}
+
+@attention: &lt;response&gt; must be a dictionary containing following keys:
+            - 'status': &lt;job status: 0, 1 or None&gt;
+            - 'err_msg': &lt;error message, or None&gt;  
+            - 'result_set': &lt;job result set (dictionary), or None&gt;
+            Required data: 'status'
+            Optional data: 'err_msg', 'result_set'
+
+@raise RuntimeError: if invalid response is supplied </pre>
+        </div>
+      </div><div class="function">
+        <a name="python.client_request.JobRequest.processRequest"></a>
+        <a name="processRequest"></a>
+        <div class="functionHeader">
+        
+        def processRequest(self):
+        
+      </div>
+        <div class="functionBody">
+          
+          <pre>Process job request - send request to external server
+
+@attention: This method simply executes self.clientProtocol.sendLine() of an SCSClientProtocol 
+            instance that created this JobRequest entity, passing in self.request</pre>
+        </div>
+      </div><div class="function">
+        <a name="python.client_request.JobRequest.processResponse"></a>
+        <a name="processResponse"></a>
+        <div class="functionHeader">
+        
+        def processResponse(self, response):
+        
+      </div>
+        <div class="functionBody">
+          
+          <pre>Process job response
+
+@param response: response received from external server
+@type response: C{dict}
+
+@raise RuntimeError: (1) if invalid response is supplied
+                     (2) if any exception is raised during processing response</pre>
+        </div>
+      </div>
+    
+    <address>
+      <a href="index.html">API Documentation</a> for 'SCS Controller', generated by <a href="http://codespeak.net/~mwh/pydoctor/">pydoctor</a> at 2009-10-07 17:27:47.
+    </address>
+  </body>
+</html>

@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Class Hierarchy</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th bgcolor="#70b0f0" class="navbar-select"
+          >&nbsp;&nbsp;&nbsp;Trees&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            >'SCS Controller'</th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">&nbsp;</td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="class-tree.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<center><b>
+ [ <a href="module-tree.html">Module Hierarchy</a>
+ | <a href="class-tree.html">Class Hierarchy</a> ]
+</b></center><br />
+<h1 class="epydoc">Class Hierarchy</h1>
+<ul class="nomargin-top">
+    <li> <strong class="uidlink">twisted.python.logfile.BaseLogFile</strong>:
+      <em class="summary">The base class for a log file that can be rotated.</em>
+    <ul>
+    <li> <strong class="uidlink">twisted.python.logfile.DailyLogFile</strong>:
+      <em class="summary">A log file that is rotated daily (at or after midnight localtime)</em>
+    <ul>
+    <li> <strong class="uidlink"><a href="deployment.twisted_logger.DailyLogFile-class.html">deployment.twisted_logger.DailyLogFile</a></strong>:
+      <em class="summary">Customised version of twisted.python.logfile.DailyLogFile class.</em>
+    </li>
+    </ul>
+    </li>
+    </ul>
+    </li>
+    <li> <strong class="uidlink">twisted.internet.protocol.BaseProtocol</strong>:
+      <em class="summary">This is the abstract superclass of all protocols.</em>
+    <ul>
+    <li> <strong class="uidlink">twisted.internet.protocol.Protocol</strong>
+    <ul>
+    <li> <strong class="uidlink">twisted.protocols.basic.LineReceiver</strong>:
+      <em class="summary">A protocol that receives lines and/or raw data, depending on mode.</em>
+    <ul>
+    <li> <strong class="uidlink">twisted.web.http.HTTPChannel</strong>:
+      <em class="summary">A receiver for HTTP requests.</em>
+    <ul>
+    <li> <strong class="uidlink"><a href="python.server._SCSServerProtocol-class.html" onclick="show_private();">python.server._SCSServerProtocol</a></strong>:
+      <em class="summary">Implements server's protocol functionality.</em>
+    </li>
+    </ul>
+    </li>
+    <li> <strong class="uidlink"><a href="python.client._SCSClientProtocol-class.html" onclick="show_private();">python.client._SCSClientProtocol</a></strong>:
+      <em class="summary">Implements client's protocol functionality.</em>
+    </li>
+    </ul>
+    </li>
+    </ul>
+    </li>
+    </ul>
+    </li>
+    <li> <strong class="uidlink">twisted.internet.protocol.Factory</strong>:
+      <em class="summary">This is a factory which produces protocols.</em>
+    <ul>
+    <li> <strong class="uidlink">twisted.internet.protocol.ServerFactory</strong>:
+      <em class="summary">Subclass this to indicate that your protocol.Factory is only usable
+        for servers.</em>
+    <ul>
+    <li> <strong class="uidlink">twisted.web.http.HTTPFactory</strong>:
+      <em class="summary">Factory for HTTP server.</em>
+    <ul>
+    <li> <strong class="uidlink"><a href="python.server._SCSServerFactory-class.html" onclick="show_private();">python.server._SCSServerFactory</a></strong>:
+      <em class="summary">Factory for HTTP server.</em>
+    </li>
+    </ul>
+    </li>
+    </ul>
+    </li>
+    </ul>
+    </li>
+    <li> <strong class="uidlink">twisted.python.log.FileLogObserver</strong>:
+      <em class="summary">Log observer that writes to a file-like object.</em>
+    <ul>
+    <li> <strong class="uidlink"><a href="deployment.twisted_logger.ErrorLog-class.html">deployment.twisted_logger.ErrorLog</a></strong>:
+      <em class="summary">Customizes twisted.python.log.FileLogObserver class's 
+        implementation by selecting to write to specific error file based 
+        on the value of 'logName' entry in the &lt;logEntryDict&gt; 
+        dictionary that gets passed to emit() method</em>
+    </li>
+    <li> <strong class="uidlink"><a href="deployment.twisted_logger.Log-class.html">deployment.twisted_logger.Log</a></strong>:
+      <em class="summary">Customizes twisted.python.log.FileLogObserver class's 
+        implementation by selecting to write to specific log file based on 
+        the value of 'logName' entry in the &lt;logEntryDict&gt; dictionary
+        that gets passed to emit() method</em>
+    </li>
+    </ul>
+    </li>
+    <li> <strong class="uidlink">zope.interface.Interface</strong>
+    <ul>
+    <li> <strong class="uidlink"><a href="deployment.executor.IRequestHandler-class.html">deployment.executor.IRequestHandler</a></strong>:
+      <em class="summary">Defines general interface for classes responsible for handling SCS 
+        client requests</em>
+    </li>
+    <li> <strong class="uidlink"><a href="python.resource_manager.IResourceManager-class.html">python.resource_manager.IResourceManager</a></strong>:
+      <em class="summary">Defines general request interface</em>
+    </li>
+    </ul>
+    </li>
+    <li> <strong class="uidlink">ConfigParser.RawConfigParser</strong>
+    <ul>
+    <li> <strong class="uidlink">ConfigParser.ConfigParser</strong>
+    <ul>
+    <li> <strong class="uidlink"><a href="deployment.config_parser.Parser-class.html">deployment.config_parser.Parser</a></strong>:
+      <em class="summary">Parser class &quot;wraps&quot; (extends) standard Python's 
+        ConfigParser.ConfigParser class.</em>
+    </li>
+    </ul>
+    </li>
+    </ul>
+    </li>
+    <li> <strong class="uidlink">twisted.web.http.Request</strong>:
+      <em class="summary">A HTTP request.</em>
+    <ul>
+    <li> <strong class="uidlink"><a href="python.server._SCSServerHTTPRequest-class.html" onclick="show_private();">python.server._SCSServerHTTPRequest</a></strong>:
+      <em class="summary">_SCSServerHTTPRequest class - responsible for processing HTTP 
+        requests that come from external clients</em>
+    </li>
+    </ul>
+    </li>
+    <li> <strong class="uidlink">twisted.application.service.Service</strong>:
+      <em class="summary">Base class for services.</em>
+    <ul>
+    <li> <strong class="uidlink"><a href="deployment.twisted_logger.LogService-class.html">deployment.twisted_logger.LogService</a></strong>:
+      <em class="summary">Implements functionality to expose twisted logging in a form of 
+        services.</em>
+    </li>
+    <li> <strong class="uidlink">twisted.application.service.MultiService</strong>:
+      <em class="summary">Straightforward Service Container.</em>
+    <ul>
+    <li> <strong class="uidlink"><a href="python.client.SCSClientManager-class.html">python.client.SCSClientManager</a></strong>:
+      <em class="summary">SCSClient's main (public) class.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="python.server.SCSServerManager-class.html">python.server.SCSServerManager</a></strong>:
+      <em class="summary">SCSServer's main (public) class.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="python.workflow.WorkflowManager-class.html">python.workflow.WorkflowManager</a></strong>:
+      <em class="summary">Implements general SCS workflow management functionality.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="python.client._SCSClientService-class.html" onclick="show_private();">python.client._SCSClientService</a></strong>:
+      <em class="summary">Extends twisted.application.service.MultiService class</em>
+    <ul>
+    <li> <strong class="uidlink"><a href="python.client._SCSServerMonitor-class.html" onclick="show_private();">python.client._SCSServerMonitor</a></strong>
+    </li>
+    </ul>
+    </li>
+    <li> <strong class="uidlink"><a href="python.server._SCSServerService-class.html" onclick="show_private();">python.server._SCSServerService</a></strong>:
+      <em class="summary">Extends twisted.application.service.MultiService class</em>
+    </li>
+    <li> <strong class="uidlink"><a href="python.workflow._WorkflowService-class.html" onclick="show_private();">python.workflow._WorkflowService</a></strong>:
+      <em class="summary">Wraps individual workflow functionality (_Workflow) as service.</em>
+    </li>
+    </ul>
+    </li>
+    </ul>
+    </li>
+    <li> <strong class="uidlink">twisted.protocols.policies.TimeoutMixin</strong>:
+      <em class="summary">Mixin for protocols which wish to timeout connections</em>
+    <ul>
+    <li> <strong class="uidlink">twisted.web.http.HTTPChannel</strong>:
+      <em class="summary">A receiver for HTTP requests.</em>
+    <ul>
+    <li> <strong class="uidlink"><a href="python.server._SCSServerProtocol-class.html" onclick="show_private();">python.server._SCSServerProtocol</a></strong>:
+      <em class="summary">Implements server's protocol functionality.</em>
+    </li>
+    </ul>
+    </li>
+    </ul>
+    </li>
+    <li> <strong class="uidlink">twisted.protocols.basic._PauseableMixin</strong>
+    <ul>
+    <li> <strong class="uidlink">twisted.protocols.basic.LineReceiver</strong>:
+      <em class="summary">A protocol that receives lines and/or raw data, depending on mode.</em>
+    <ul>
+    <li> <strong class="uidlink">twisted.web.http.HTTPChannel</strong>:
+      <em class="summary">A receiver for HTTP requests.</em>
+    <ul>
+    <li> <strong class="uidlink"><a href="python.server._SCSServerProtocol-class.html" onclick="show_private();">python.server._SCSServerProtocol</a></strong>:
+      <em class="summary">Implements server's protocol functionality.</em>
+    </li>
+    </ul>
+    </li>
+    <li> <strong class="uidlink"><a href="python.client._SCSClientProtocol-class.html" onclick="show_private();">python.client._SCSClientProtocol</a></strong>:
+      <em class="summary">Implements client's protocol functionality.</em>
+    </li>
+    </ul>
+    </li>
+    </ul>
+    </li>
+    <li> <strong class="uidlink">object</strong>:
+      <em class="summary">The most base type</em>
+    <ul>
+    <li> <strong class="uidlink"><a href="python.job.Job-class.html">python.job.Job</a></strong>:
+      <em class="summary">Implements job functionality responsible for executing and 
+        orchestrating multiple job steps.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="python.client_request.JobRequest-class.html">python.client_request.JobRequest</a></strong>:
+      <em class="summary">JobRequest class - responsible for processing JOB STEP requests 
+        that come from JobStep instances when a job is being executed by 
+        SCSServer instance that handles external client's requests</em>
+    </li>
+    <li> <strong class="uidlink"><a href="python.client_request.JobStatusRequest-class.html">python.client_request.JobStatusRequest</a></strong>:
+      <em class="summary">JobStatusRequest class responsible for processing JOB STATUS 
+        requests that are initiated by the client with regular time 
+        intervals - to check the status of that job on a server side</em>
+    </li>
+    <li> <strong class="uidlink"><a href="python.job_step.JobStep-class.html">python.job_step.JobStep</a></strong>:
+      <em class="summary">JobStep class - implements individual job step's functionality.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="deployment.singleton.Singleton-class.html">deployment.singleton.Singleton</a></strong>:
+      <em class="summary">A Pythonic Singleton</em>
+    </li>
+    <li> <strong class="uidlink">singleton.Singleton</strong>:
+      <em class="summary">A Pythonic Singleton</em>
+    <ul>
+    <li> <strong class="uidlink"><a href="python.client.SCSClientManager-class.html">python.client.SCSClientManager</a></strong>:
+      <em class="summary">SCSClient's main (public) class.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="python.server.SCSServerManager-class.html">python.server.SCSServerManager</a></strong>:
+      <em class="summary">SCSServer's main (public) class.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="python.workflow.WorkflowManager-class.html">python.workflow.WorkflowManager</a></strong>:
+      <em class="summary">Implements general SCS workflow management functionality.</em>
+    </li>
+    </ul>
+    </li>
+    <li> <strong class="uidlink"><a href="python.workflow._Workflow-class.html" onclick="show_private();">python.workflow._Workflow</a></strong>:
+      <em class="summary">WorkFlow class - implements general SCS workflow functionality</em>
+    </li>
+    </ul>
+    </li>
+</ul>
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th bgcolor="#70b0f0" class="navbar-select"
+          >&nbsp;&nbsp;&nbsp;Trees&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            >'SCS Controller'</th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    <a href="epydoc-log.html">Generated by Epydoc
+    3.0.1 on Wed Oct  7 17:27:42 2009</a>
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

@@ -1,0 +1,235 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>API docs for &ldquo;python.server._SCSServerHTTPRequest&rdquo;</title>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+    <link href="apidocs.css" type="text/css" rel="stylesheet" />
+    
+    
+  </head>
+  <body>
+    <h1 class="class">Class p.s._SCSServerHTTPRequest(<span title="twisted.web.http.Request">http.Request</span>):</h1>
+    <p>
+      <span id="part">Part of <a href="python.html">python</a>.<a href="python.server.html">server</a></span>
+      
+      <a href="classIndex.html#python.server._SCSServerHTTPRequest">View In Hierarchy</a>
+    </p>
+    <div>
+      
+    </div>
+    <pre>_SCSServerHTTPRequest class - responsible for processing HTTP requests that come from external clients  
+
+Inherits from twisted.web.http.Request.
+This class is responsible for following functionality related to client's job request management:
+
+    1. Processing HTTP job request (starting Job instance that's responsible for executing a sequence  
+       of job steps that belong to workflow associated with this server)
+    2. Responding to job 'STATUS' requests that can be submitted by external client 
+    3. Handling job completion event and reporting its result back to external client
+
+Constructor parameters and failure conditions:
+
+@param channel: the channel we're connected to.
+@param queued:  are we in the request queue, or can we start writing to
+                the transport?</pre>
+    
+    
+    <div id="splitTables">
+      <table class="children sortable" id="id20">
+  
+  
+  
+  
+  <tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.server._SCSServerHTTPRequest.html#__init__">__init__</a></td>
+    <td><tt>_SCSServerHTTPRequest class's constructor</tt></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.server._SCSServerHTTPRequest.html#__jobStartHandler">__jobStartHandler</a></td>
+    <td><tt>Report job start success or failure to the client that sent this job request</tt></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.server._SCSServerHTTPRequest.html#_runJob">_runJob</a></td>
+    <td><tt>Execute (start) Job associated with the given request</tt></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.server._SCSServerHTTPRequest.html#_sendError">_sendError</a></td>
+    <td><tt>Send error notification to the client</tt></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.server._SCSServerHTTPRequest.html#_checkRequest">_checkRequest</a></td>
+    <td><tt>Verify that supplied request has correct format and required data</tt></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.server._SCSServerHTTPRequest.html#_sendResponse">_sendResponse</a></td>
+    <td><tt>Send response to the client</tt></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.server._SCSServerHTTPRequest.html#_checkWorkflowStatus">_checkWorkflowStatus</a></td>
+    <td><tt>Check if workflow associated with the server is offline or disabled</tt></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.server._SCSServerHTTPRequest.html#process">process</a></td>
+    <td><tt>Process job request - start job (job.Job instance) to execute a set of job steps associated with the server's workflow</tt></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.server._SCSServerHTTPRequest.html#processResponse">processResponse</a></td>
+    <td><tt>Process job completion, timeout or failure event</tt></td>
+  </tr>
+  
+</table>
+      
+      
+    </div>
+    
+    
+    
+    <div class="function">
+        <a name="python.server._SCSServerHTTPRequest.__init__"></a>
+        <a name="__init__"></a>
+        <div class="functionHeader">
+        
+        def __init__(self, channel, queued):
+        
+      </div>
+        <div class="functionBody">
+          
+          <pre>_SCSServerHTTPRequest class's constructor
+
+@param channel: the channel we're connected to.
+@param queued: are we in the request queue, or can we start writing to
+    the transport?</pre>
+        </div>
+      </div><div class="function">
+        <a name="python.server._SCSServerHTTPRequest.__jobStartHandler"></a>
+        <a name="__jobStartHandler"></a>
+        <div class="functionHeader">
+        
+        def __jobStartHandler(self, result):
+        
+      </div>
+        <div class="functionBody">
+          
+          <pre>Report job start success or failure to the client that sent this job request</pre>
+        </div>
+      </div><div class="function">
+        <a name="python.server._SCSServerHTTPRequest._runJob"></a>
+        <a name="_runJob"></a>
+        <div class="functionHeader">
+        
+        def _runJob(self, nothing):
+        
+      </div>
+        <div class="functionBody">
+          
+          <pre>Execute (start) Job associated with the given request
+
+@return: deferred which will 'fire' when Job has started execution </pre>
+        </div>
+      </div><div class="function">
+        <a name="python.server._SCSServerHTTPRequest._sendError"></a>
+        <a name="_sendError"></a>
+        <div class="functionHeader">
+        
+        def _sendError(self, code, resp=None):
+        
+      </div>
+        <div class="functionBody">
+          
+          <pre>Send error notification to the client</pre>
+        </div>
+      </div><div class="function">
+        <a name="python.server._SCSServerHTTPRequest._checkRequest"></a>
+        <a name="_checkRequest"></a>
+        <div class="functionHeader">
+        
+        def _checkRequest(self):
+        
+      </div>
+        <div class="functionBody">
+          
+          <pre>Verify that supplied request has correct format and required data
+
+This method verifies that supplied request (stored as &lt;self.args&gt;) contains
+actual request data (self.args['request'] dictionary item)</pre>
+        </div>
+      </div><div class="function">
+        <a name="python.server._SCSServerHTTPRequest._sendResponse"></a>
+        <a name="_sendResponse"></a>
+        <div class="functionHeader">
+        
+        def _sendResponse(self, response, code=None, code_message=None):
+        
+      </div>
+        <div class="functionBody">
+          
+          <pre>Send response to the client</pre>
+        </div>
+      </div><div class="function">
+        <a name="python.server._SCSServerHTTPRequest._checkWorkflowStatus"></a>
+        <a name="_checkWorkflowStatus"></a>
+        <div class="functionHeader">
+        
+        def _checkWorkflowStatus(self):
+        
+      </div>
+        <div class="functionBody">
+          
+          <pre>Check if workflow associated with the server is offline or disabled</pre>
+        </div>
+      </div><div class="function">
+        <a name="python.server._SCSServerHTTPRequest.process"></a>
+        <a name="process"></a>
+        <div class="functionHeader">
+        
+        def process(self):
+        
+      </div>
+        <div class="functionBody">
+          
+          <pre>Process job request - start job (job.Job instance) to execute a set of job steps associated with the server's workflow
+
+@note: This method simply creates Job instance and starts its execution
+@return: deferred which will 'fire' when Job instance is initialized and 
+         first JobStep has started execution</pre>
+        </div>
+      </div><div class="function">
+        <a name="python.server._SCSServerHTTPRequest.processResponse"></a>
+        <a name="processResponse"></a>
+        <div class="functionHeader">
+        
+        def processResponse(self, result, sendResponse=True):
+        
+      </div>
+        <div class="functionBody">
+          
+          <pre>Process job completion, timeout or failure event</pre>
+        </div>
+      </div>
+    
+    <address>
+      <a href="index.html">API Documentation</a> for 'SCS Controller', generated by <a href="http://codespeak.net/~mwh/pydoctor/">pydoctor</a> at 2009-10-07 17:27:47.
+    </address>
+  </body>
+</html>

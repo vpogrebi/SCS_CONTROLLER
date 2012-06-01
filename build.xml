@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="SCS Controller" default="main" basedir=".">
+	<property environment="env"/>
+	<property name="project.name" value="SCS Controller"/>
+	<property name="src.dir" value="python"/>
+	<property name="python.libs.dir" value="/Users/valeriypogrebitskiy/EclipseWorkSpace/PYTHON_LIBS/deployment"/>
+	<property name="test.dir" value="${src.dir}/test"/>
+	<property name="apidocs.dir" value="apidocs"/>
+	<property name="apidocs.pydoctor.dir" value="${apidocs.dir}/pydoctor"/>
+	<property name="apidocs.epydoc.dir" value="${apidocs.dir}/epydoc"/>
+	<property name="python.path" value="${src.dir}:${test.dir}:${python.libs.dir}"/>
+
+	<echo>PYTHONPATH: ${python.path}</echo>
+	
+	<target name="main" depends="clean, test, compile, epydoc-build, pydoctor-build">
+		<echo>SCS Controller build is complete</echo>
+	</target>
+	
+	<!-- 
+	<target name="test1" description="SCS Controller Unittest Suite Execution">
+		<echo>Running SCS Controller System's Unit Tests</echo>
+		<py-test pythonpath="${python.path}" dir=".">
+			<fileset dir="${test.dir}">
+				<include name="*_test.py"/>
+			</fileset>
+		</py-test>		
+	</target>
+	-->
+	
+	<target name="clean" description="Cleanup project folders">
+		<echo>Deleting all compiled Python files (*.pyc)</echo>
+		<delete verbose="true">
+			<fileset dir="." includes="**/*.pyc"/>
+		</delete>
+		<echo>Deleting old test output file (./test.out)</echo>
+		<delete file="./test.out" verbose="true"/>
+	</target>
+	
+	<target name="test" description="SCS Controller Unittest Script Execution">
+		<echo>Running SCS Controller System's Unit Tests...</echo>
+		<apply executable="python" output="./test.out" append="true">
+			<fileset dir="${src.dir}" includes="**/*_test.py"/>
+		</apply>
+		<echo>Done</echo>
+	</target>
+
+	<target name="compile" description="Compile Python Source Code (*.py) Files">
+		<echo>Compiling all python code (${src.dir}/*.py)...</echo>
+		<py-compile dir="${src.dir}" pythonpath="${python.path}" optimize="0"/>
+		<echo>Done</echo>
+	</target>
+	
+	<target name="epydoc-build" depends="clean, compile, test" description="Build HTML API documentation set using 'epydoc' utility">
+		<echo>Deleting original HTML API documentation created by 'epydoc' (${apidocs.epydoc.dir} folder)</echo>
+		<delete dir="${apidocs.epydoc.dir}" failonerror="false" quiet="false"/>
+		<echo>Building fresh HTML API documentation set using 'epydoc' utility...</echo>
+		<exec executable="/usr/local/bin/epydoc" dir=".">
+			<arg value="--html"/>
+			<arg value="--output=${apidocs.epydoc.dir}"/>
+			<arg value="--exclude='_test.py'"/>
+			<arg value="--exclude='*.pyc'"/>
+			<arg value="--name='${project.name}'"/>
+			<arg value="--graph=all"/>
+			<arg value="--inheritance=grouped"/>
+			<arg value="--top=controller"/>
+			<arg value="--dotpath=/usr/local/bin/dot"/>
+			<arg value="--pstat=${apidocs.epydoc.dir}/pstat.out"/>
+			<arg value="--show-frames"/>
+			<arg value="--fail-on-error"/>
+			<arg value="--exclude-introspect=deferred_lib"/>
+			<arg value="--exclude-introspect=mysqldb"/>
+			<arg value="--include-log"/>
+			<arg value="--verbose"/>
+			<arg value="--debug"/>
+			<arg value="${src.dir}/*.py"/>
+			<arg value="${python.libs.dir}/*.py"/>
+		</exec>
+		<echo>Done</echo>
+	</target>
+
+	<target name="pydoctor-build" depends="clean, compile, test" description="Build Python API Documentation Set using Twisted's 'pydoctor' utility">
+		<echo>Deleting original HTML API documentation created by Twisted's 'pydoctor' (${apidocs.pydoctor.dir} folder)</echo>
+		<delete dir="${apidocs.pydoctor.dir}" failonerror="false" quiet="true"/>
+		<echo>Building fresh HTML API documentation set using Twisted's 'pydoctor'...</echo>
+		<exec executable="/usr/local/bin/pydoctor" dir=".">
+			<arg value="--add-package=${src.dir}"/>
+			<arg value="--add-package=${python.libs.dir}"/>
+			<arg value="--project-name='${project.name}'"/>
+			<arg value="--docformat='epytext'"/>
+			<arg value="--make-html"/>			
+			<arg value="--html-output=${apidocs.pydoctor.dir}"/>			
+		</exec>
+		<echo>Done</echo>
+	</target>
+</project>

@@ -1,0 +1,573 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>python.lib.mysqldb.SynchDB</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            >'SCS Controller'</th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="python-module.html">Package&nbsp;python</a> ::
+        <a href="python.lib-module.html">Package&nbsp;lib</a> ::
+        <a href="python.lib.mysqldb-module.html">Module&nbsp;mysqldb</a> ::
+        Class&nbsp;SynchDB
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="python.lib.mysqldb.SynchDB-class.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS DESCRIPTION ==================== -->
+<h1 class="epydoc">Class SynchDB</h1><p class="nomargin-top"><span class="codelink"><a href="python.lib.mysqldb-pysrc.html#SynchDB">source&nbsp;code</a></span></p>
+<center>
+<center>  <map id="uml_class_diagram_for_python_l_3" name="uml_class_diagram_for_python_l_3">
+<area shape="rect" id="node33" href="python.lib.mysqldb.SynchDB-class.html#__init__" title="Class&#39;s constructor." alt="" coords="17,116,607,135"/>
+<area shape="rect" id="node33" href="python.lib.mysqldb.SynchDB-class.html#connect" title="Connect to MySQL server" alt="" coords="17,135,607,153"/>
+<area shape="rect" id="node33" href="python.lib.mysqldb.SynchDB-class.html#use" title="Switch to use new database schema" alt="" coords="17,153,607,172"/>
+<area shape="rect" id="node33" href="python.lib.mysqldb.SynchDB-class.html#execute" title="Execute any SQL statement and return number of rows affected" alt="" coords="17,172,607,191"/>
+<area shape="rect" id="node33" href="python.lib.mysqldb.SynchDB-class.html#insert" title="Execute INSERT SQL statement and return number of rows affected and first &#160;insert_id" alt="" coords="17,191,607,209"/>
+<area shape="rect" id="node33" href="python.lib.mysqldb.SynchDB-class.html#query" title="Run SQL query and return its results" alt="" coords="17,209,607,228"/>
+<area shape="rect" id="node1" href="python.lib.mysqldb.SynchDB-class.html" title="Implements SYNCHRONOUS database access using MySQLdb module." alt="" coords="5,83,619,234"/>
+<area shape="rect" id="node34" href="python.lib.singleton.Singleton-class.html#__new__" title="Singleton class&#39;s constructor." alt="" coords="211,39,412,57"/>
+<area shape="rect" id="node2" href="python.lib.singleton.Singleton-class.html" title="A Pythonic Singleton" alt="" coords="199,6,423,63"/>
+</map>
+  <img src="uml_class_diagram_for_python_l_3.gif" alt='' usemap="#uml_class_diagram_for_python_l_3" ismap="ismap" class="graph-without-title" />
+</center>
+</center>
+<hr />
+<p>Implements SYNCHRONOUS database access using MySQLdb module. Inherits 
+  from &lt;Singleton&gt; class to ensure that only single instance of 
+  SynchDB is used</p>
+
+<!-- ==================== INSTANCE METHODS ==================== -->
+<a name="section-InstanceMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Instance Methods</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-InstanceMethods"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="python.lib.mysqldb.SynchDB-class.html#__init__" class="summary-sig-name">__init__</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">server</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">userid</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">passwd</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">schema</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">socket</span>=<span class="summary-sig-default">None</span>)</span><br />
+      Class's constructor.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="python.lib.mysqldb-pysrc.html#SynchDB.__init__">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="python.lib.mysqldb.SynchDB-class.html#connect" class="summary-sig-name">connect</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">server</span>,
+        <span class="summary-sig-arg">userid</span>,
+        <span class="summary-sig-arg">passwd</span>,
+        <span class="summary-sig-arg">socket</span>,
+        <span class="summary-sig-arg">schema</span>=<span class="summary-sig-default">None</span>)</span><br />
+      Connect to MySQL server</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="python.lib.mysqldb-pysrc.html#SynchDB.connect">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="python.lib.mysqldb.SynchDB-class.html#use" class="summary-sig-name">use</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">schema</span>)</span><br />
+      Switch to use new database schema</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="python.lib.mysqldb-pysrc.html#SynchDB.use">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="python.lib.mysqldb.SynchDB-class.html#execute" class="summary-sig-name">execute</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">stmt</span>)</span><br />
+      Execute any SQL statement and return number of rows affected</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="python.lib.mysqldb-pysrc.html#SynchDB.execute">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="python.lib.mysqldb.SynchDB-class.html#insert" class="summary-sig-name">insert</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">stmt</span>)</span><br />
+      Execute INSERT SQL statement and return number of rows affected and 
+      first insert_id</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="python.lib.mysqldb-pysrc.html#SynchDB.insert">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="python.lib.mysqldb.SynchDB-class.html#query" class="summary-sig-name">query</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">query</span>)</span><br />
+      Run SQL query and return its results</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="python.lib.mysqldb-pysrc.html#SynchDB.query">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__delattr__</code>,
+      <code>__getattribute__</code>,
+      <code>__hash__</code>,
+      <code>__reduce__</code>,
+      <code>__reduce_ex__</code>,
+      <code>__repr__</code>,
+      <code>__setattr__</code>,
+      <code>__str__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== STATIC METHODS ==================== -->
+<a name="section-StaticMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Static Methods</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-StaticMethods"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr bgcolor="#e8f0f8" >
+  <th colspan="2" class="group-header"
+    >&nbsp;&nbsp;&nbsp;&nbsp;Inherited from <a href="python.lib.singleton.Singleton-class.html">singleton.Singleton</a></th></tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">a new object with type S, a subtype of T</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="python.lib.singleton.Singleton-class.html#__new__" class="summary-sig-name">__new__</a>(<span class="summary-sig-arg">cls</span>,
+        <span class="summary-sig-arg">*args</span>,
+        <span class="summary-sig-arg">**kwargs</span>)</span><br />
+      Singleton class's constructor.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="python.lib.singleton-pysrc.html#Singleton.__new__">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+</table>
+<!-- ==================== PROPERTIES ==================== -->
+<a name="section-Properties"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Properties</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Properties"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__class__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== METHOD DETAILS ==================== -->
+<a name="section-MethodDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Method Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-MethodDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="__init__"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">__init__</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">server</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">userid</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">passwd</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">schema</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">socket</span>=<span class="sig-default">None</span>)</span>
+    <br /><em class="fname">(Constructor)</em>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="python.lib.mysqldb-pysrc.html#SynchDB.__init__">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Class's constructor. Attempts to connect to database if all required 
+  arguments are supplied</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>server</code></strong> - <code>str</code> - (optional) database server ('localhost' or 
+          &lt;host&gt;:&lt;port&gt;)</li>
+        <li><strong class="pname"><code>userid</code></strong> - <code>str</code> - (optional) user id on the &lt;server&gt;</li>
+        <li><strong class="pname"><code>passwd</code></strong> - <code>str</code> - (optional) user's password</li>
+        <li><strong class="pname"><code>schema</code></strong> - <code>str</code> - (optional) schema to be used for all database 
+          operations (default: None)</li>
+        <li><strong class="pname"><code>socket</code></strong> - <code>str</code> or None - (optional) socket used to connect to 
+          database</li>
+    </ul></dd>
+    <dt>Decorators:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code>@singleton.uniq</code></li>
+    </ul></dd>
+    <dt>Overrides:
+        object.__init__
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="connect"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">connect</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">server</span>,
+        <span class="sig-arg">userid</span>,
+        <span class="sig-arg">passwd</span>,
+        <span class="sig-arg">socket</span>,
+        <span class="sig-arg">schema</span>=<span class="sig-default">None</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="python.lib.mysqldb-pysrc.html#SynchDB.connect">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Connect to MySQL server</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>server</code></strong> - <code>str</code> - database server ('localhost' or 
+          &lt;host&gt;:&lt;port&gt;)</li>
+        <li><strong class="pname"><code>userid</code></strong> - <code>str</code> - user id on the &lt;server&gt;</li>
+        <li><strong class="pname"><code>passwd</code></strong> - <code>str</code> - user's password</li>
+        <li><strong class="pname"><code>socket</code></strong> - <code>str</code> or None - (optional) socket used to connect to 
+          database</li>
+        <li><strong class="pname"><code>schema</code></strong> - <code>str</code> - (optional) schema to be used for all database 
+          operations (default: None)
+          <p>This method connects to the database, sets &lt;self.conn&gt; 
+          attribute to Connection object, opens a cursor and sets 
+          &lt;self.cursor&gt; to that Cursor object. This attribute will be
+          used for all subsequent database operations. At the same time, 
+          &quot;autocommit&quot; is set to True</p></li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="use"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">use</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">schema</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="python.lib.mysqldb-pysrc.html#SynchDB.use">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Switch to use new database schema</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>schema</code></strong> - <code>str</code> - schema to 'use' for all subsequent database 
+          operations</li>
+    </ul></dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'>RuntimeError</strong></code> - if @param &lt;schema&gt; does not correspond to any schema existing
+        in the database</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="execute"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">execute</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">stmt</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="python.lib.mysqldb-pysrc.html#SynchDB.execute">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Execute any SQL statement and return number of rows affected</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>stmt</code></strong> - SQL statement to be executed</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>num (<code>int</code>) - number of rows affected by the operation</dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'>exception</strong></code> - an excepton raised by self.cursor.execute() (whatever that 
+        exception might be)</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="insert"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">insert</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">stmt</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="python.lib.mysqldb-pysrc.html#SynchDB.insert">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Execute INSERT SQL statement and return number of rows affected and 
+  first insert_id</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>stmt</code></strong> - <code>str</code> - 'select' SQL statement</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>(numRows, insertID) (<code>tuple</code>) - number of rows and 
+          INSERT_ID of the first row inserted by an operation</dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'>exception</strong></code> - an excepton raised by self.cursor.execute() (whatever that 
+        exception might be)</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="query"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">query</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">query</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="python.lib.mysqldb-pysrc.html#SynchDB.query">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Run SQL query and return its results</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>query</code></strong> - SQL query to be executed</li>
+    </ul></dd>
+    <dt>Returns:</dt>
+        <dd>res (<code>list</code>) - result set returned by a query</dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'>exception</strong></code> - an excepton raised by self.cursor.execute() (whatever that 
+        exception might be)</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            >'SCS Controller'</th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    <a href="epydoc-log.html">Generated by Epydoc
+    3.0.1 on Fri Sep 18 15:11:26 2009</a>
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

@@ -1,0 +1,285 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>API docs for &ldquo;python.client._SCSClientFactory&rdquo;</title>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+    <link href="apidocs.css" type="text/css" rel="stylesheet" />
+    
+    
+  </head>
+  <body>
+    <h1 class="class">Class p.c._SCSClientFactory(<span title="twisted.internet.protocol.ReconnectingClientFactory">protocol.ReconnectingClientFactory</span>):</h1>
+    <p>
+      <span id="part">Part of <a href="python.html">python</a>.<a href="python.client.html">client</a></span>
+      
+      <a href="classIndex.html#python.client._SCSClientFactory">View In Hierarchy</a>
+    </p>
+    <div>
+      
+    </div>
+    <div>SCS client connection factory class. Responsible for client's 
+connection-related functionality. Derives from 
+twisted.internet.protocol.ReconnectingClientFactory<table class="fieldTable"></table></div>
+    
+    
+    <div id="splitTables">
+      <table class="children sortable" id="id4">
+  
+  
+  
+  
+  <tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.client._SCSClientFactory.html#__init__">__init__</a></td>
+    <td><span>Class's constructor. Parameters:</span></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.client._SCSClientFactory.html#__initialize">__initialize</a></td>
+    <td><span>Initialize given SCS client instance. Params:</span></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.client._SCSClientFactory.html#__callbackDeferreds">__callbackDeferreds</a></td>
+    <td><span>Call back external deferreds</span></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.client._SCSClientFactory.html#_checkInfo">_checkInfo</a></td>
+    <td><span>Verify that supplied &lt;info&gt; is a dictionary, and has all required 
+key/value data</span></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.client._SCSClientFactory.html#_stopJobRequests">_stopJobRequests</a></td>
+    <td><span>Stop all currently running JobRequests</span></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.client._SCSClientFactory.html#_onlineStatusChange">_onlineStatusChange</a></td>
+    <td><span>Handle client's connection ('online') status change event 
+(connect/disconnect)</span></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.client._SCSClientFactory.html#buildProtocol">buildProtocol</a></td>
+    <td><span>Extends twisted.internet.protocol.Factory.buildProtocol() method</span></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.client._SCSClientFactory.html#startedConnecting">startedConnecting</a></td>
+    <td><span>Client's connection start event</span></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.client._SCSClientFactory.html#clientConnectionLost">clientConnectionLost</a></td>
+    <td><span>Process client connection lost event.</span></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.client._SCSClientFactory.html#clientConnectionFailed">clientConnectionFailed</a></td>
+    <td><span>Process client connection failed event.</span></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.client._SCSClientFactory.html#addOnlineDeferred">addOnlineDeferred</a></td>
+    <td><span>Add new external deferred to &lt;extOnlineDeferreds&gt; dictionary</span></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.client._SCSClientFactory.html#addOfflineDeferred">addOfflineDeferred</a></td>
+    <td><span>Add new external deferred to &lt;extOfflineDeferreds&gt; dictionary</span></td>
+  </tr>
+  
+</table>
+      
+      
+    </div>
+    
+    
+    
+    <div class="function">
+        <a name="python.client._SCSClientFactory.__init__"></a>
+        <a name="__init__"></a>
+        <div class="functionHeader">
+        
+        def __init__(self, name, info, reconnect=True):
+        
+      </div>
+        <div class="functionBody">
+          
+          <div>Class's constructor. Parameters:<table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">name</td><td>SCS Client name
+</td></tr><tr><td></td><td class="fieldArg">info</td><td>dictionary containing following key/value pairs: 'name':        client name
+'peer':        server (host:port) to be connected to 'enabled':     
+True/False
+</td></tr><tr><td></td><td class="fieldArg">reconnect</td><td>Reconnect to server (True/False) flag. Default: True
+</td></tr></table></div>
+        </div>
+      </div><div class="function">
+        <a name="python.client._SCSClientFactory.__initialize"></a>
+        <a name="__initialize"></a>
+        <div class="functionHeader">
+        
+        def __initialize(self, info):
+        
+      </div>
+        <div class="functionBody">
+          
+          <div>Initialize given SCS client instance. Params:<table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">info</td><td>dictionary containing following key/value pairs: 'name':        client name
+'peer':        server (host:port) to be connected to 'enabled':     
+True/False
+</td></tr></table></div>
+        </div>
+      </div><div class="function">
+        <a name="python.client._SCSClientFactory.__callbackDeferreds"></a>
+        <a name="__callbackDeferreds"></a>
+        <div class="functionHeader">
+        
+        def __callbackDeferreds(self, deferreds, type, msg=None):
+        
+      </div>
+        <div class="functionBody">
+          
+          <div>Call back external deferreds<table class="fieldTable"></table></div>
+        </div>
+      </div><div class="function">
+        <a name="python.client._SCSClientFactory._checkInfo"></a>
+        <a name="_checkInfo"></a>
+        <div class="functionHeader">
+        
+        def _checkInfo(self, info):
+        
+      </div>
+        <div class="functionBody">
+          
+          <div>Verify that supplied &lt;info&gt; is a dictionary, and has all required 
+key/value data<table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">info</td><td>dictionary containing following key/value pairs: 'name':        client name
+'peer':        server (host:port) to be connected to 'enabled':     
+True/False
+</td></tr></table></div>
+        </div>
+      </div><div class="function">
+        <a name="python.client._SCSClientFactory._stopJobRequests"></a>
+        <a name="_stopJobRequests"></a>
+        <div class="functionHeader">
+        
+        def _stopJobRequests(self):
+        
+      </div>
+        <div class="functionBody">
+          
+          <div>Stop all currently running JobRequests<table class="fieldTable"></table></div>
+        </div>
+      </div><div class="function">
+        <a name="python.client._SCSClientFactory._onlineStatusChange"></a>
+        <a name="_onlineStatusChange"></a>
+        <div class="functionHeader">
+        
+        def _onlineStatusChange(self, online, msg=None):
+        
+      </div>
+        <div class="functionBody">
+          
+          <div>Handle client's connection ('online') status change event 
+(connect/disconnect)<table class="fieldTable"></table></div>
+        </div>
+      </div><div class="function">
+        <a name="python.client._SCSClientFactory.buildProtocol"></a>
+        <a name="buildProtocol"></a>
+        <div class="functionHeader">
+        
+        def buildProtocol(self, addr):
+        
+      </div>
+        <div class="functionBody">
+          
+          <div>Extends twisted.internet.protocol.Factory.buildProtocol() method<table class="fieldTable"></table></div>
+        </div>
+      </div><div class="function">
+        <a name="python.client._SCSClientFactory.startedConnecting"></a>
+        <a name="startedConnecting"></a>
+        <div class="functionHeader">
+        
+        def startedConnecting(self, connector):
+        
+      </div>
+        <div class="functionBody">
+          
+          <div>Client's connection start event<table class="fieldTable"></table></div>
+        </div>
+      </div><div class="function">
+        <a name="python.client._SCSClientFactory.clientConnectionLost"></a>
+        <a name="clientConnectionLost"></a>
+        <div class="functionHeader">
+        
+        def clientConnectionLost(self, connector, reason):
+        
+      </div>
+        <div class="functionBody">
+          
+          <div>Process client connection lost event. Extends 
+protocol.ReconnectingClientFactory.clientConnectionLost() method<table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Note</td><td colspan="2">This method should not be called from user's code. Instead - it is being 
+executed when given event occurs&quot;
+</td></tr></table></div>
+        </div>
+      </div><div class="function">
+        <a name="python.client._SCSClientFactory.clientConnectionFailed"></a>
+        <a name="clientConnectionFailed"></a>
+        <div class="functionHeader">
+        
+        def clientConnectionFailed(self, connector, reason):
+        
+      </div>
+        <div class="functionBody">
+          
+          <div>Process client connection failed event. Extends 
+protocol.ReconnectingClientFactory.clientConnectionFailed() method<table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Note</td><td colspan="2">This method should not be called from user's code. Instead - it is being 
+executed when given event occurs&quot;
+</td></tr></table></div>
+        </div>
+      </div><div class="function">
+        <a name="python.client._SCSClientFactory.addOnlineDeferred"></a>
+        <a name="addOnlineDeferred"></a>
+        <div class="functionHeader">
+        
+        def addOnlineDeferred(self, deferred, reset=True):
+        
+      </div>
+        <div class="functionBody">
+          
+          <div>Add new external deferred to &lt;extOnlineDeferreds&gt; dictionary<table class="fieldTable"></table></div>
+        </div>
+      </div><div class="function">
+        <a name="python.client._SCSClientFactory.addOfflineDeferred"></a>
+        <a name="addOfflineDeferred"></a>
+        <div class="functionHeader">
+        
+        def addOfflineDeferred(self, deferred, reset=True):
+        
+      </div>
+        <div class="functionBody">
+          
+          <div>Add new external deferred to &lt;extOfflineDeferreds&gt; dictionary<table class="fieldTable"></table></div>
+        </div>
+      </div>
+    
+    <address>
+      <a href="index.html">API Documentation</a> for 'SCS Controller', generated by <a href="http://codespeak.net/~mwh/pydoctor/">pydoctor</a> at 2009-09-18 15:11:29.
+    </address>
+  </body>
+</html>

@@ -1,0 +1,581 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>python.interfaces.request.IRequest</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            >'SCS Controller'</th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="python-module.html">Package&nbsp;python</a> ::
+        <a href="python.interfaces-module.html">Package&nbsp;interfaces</a> ::
+        <a href="python.interfaces.request-module.html">Module&nbsp;request</a> ::
+        Class&nbsp;IRequest
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="python.interfaces.request.IRequest-class.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS DESCRIPTION ==================== -->
+<h1 class="epydoc">Class IRequest</h1><p class="nomargin-top"><span class="codelink"><a href="python.interfaces.request-pysrc.html#IRequest">source&nbsp;code</a></span></p>
+<center>
+<center>  <map id="uml_class_diagram_for_python_i" name="uml_class_diagram_for_python_i">
+<area shape="rect" id="node21" href="python.interfaces.request.IRequest-class.html#__bases__" title="python.interfaces.request.IRequest.__bases__" alt="" coords="17,95,253,113"/>
+<area shape="rect" id="node21" href="python.interfaces.request.IRequest-class.html#__identifier__" title="python.interfaces.request.IRequest.__identifier__" alt="" coords="17,113,253,132"/>
+<area shape="rect" id="node21" href="python.interfaces.request.IRequest-class.html#__iro__" title="python.interfaces.request.IRequest.__iro__" alt="" coords="17,132,253,151"/>
+<area shape="rect" id="node21" href="python.interfaces.request.IRequest-class.html#__name__" title="python.interfaces.request.IRequest.__name__" alt="" coords="17,151,253,169"/>
+<area shape="rect" id="node21" href="python.interfaces.request.IRequest-class.html#__sro__" title="python.interfaces.request.IRequest.__sro__" alt="" coords="17,169,253,188"/>
+<area shape="rect" id="node21" href="python.interfaces.request.IRequest-class.html#deferred" title="external deferred that will be called back when request completes &#160;successfully, or fails" alt="" coords="17,188,253,207"/>
+<area shape="rect" id="node21" href="python.interfaces.request.IRequest-class.html#dependents" title="python.interfaces.request.IRequest.dependents" alt="" coords="17,207,253,225"/>
+<area shape="rect" id="node21" href="python.interfaces.request.IRequest-class.html#request" title="original request" alt="" coords="17,225,253,244"/>
+<area shape="rect" id="node21" href="python.interfaces.request.IRequest-class.html#response" title="response data obtained in response to a given request" alt="" coords="17,244,253,263"/>
+<area shape="rect" id="node21" href="python.interfaces.request.IRequest-class.html#scs_jobid" title="jobid &#45; ID of the job to which request is related" alt="" coords="17,263,253,281"/>
+<area shape="rect" id="node21" href="python.interfaces.request.IRequest-class.html#processRequest" title="Process given request" alt="" coords="17,284,253,303"/>
+<area shape="rect" id="node21" href="python.interfaces.request.IRequest-class.html#processResponse" title="Process response data obtained in response to a given request" alt="" coords="17,303,253,321"/>
+<area shape="rect" id="node1" href="python.interfaces.request.IRequest-class.html" title="Defines general request interface" alt="" coords="5,70,264,327"/>
+<area shape="rect" id="node2" href="javascript:void(0);" title="zope.interface.Interface" alt="" coords="40,6,229,50"/>
+</map>
+  <img src="uml_class_diagram_for_python_i.gif" alt='' usemap="#uml_class_diagram_for_python_i" ismap="ismap" class="graph-without-title" />
+</center>
+</center>
+<hr />
+<p>Defines general request interface</p>
+  <p>Each class implementing IRequest interface defines functionality to 
+  verify and process requests of a given (specialized) type 
+  Implementations:</p>
+  <ul>
+    <li>
+      server.JobRequest, server.JobStatusRequest,
+    </li>
+    <li>
+      client.JobRequest, client.JobStatusRequest
+    </li>
+  </ul>
+
+<!-- ==================== INSTANCE METHODS ==================== -->
+<a name="section-InstanceMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Instance Methods</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-InstanceMethods"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="python.interfaces.request.IRequest-class.html#_checkRequest" class="summary-sig-name" onclick="show_private();">_checkRequest</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">request</span>)</span><br />
+      Verify that supplied request has correct format and required data</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="python.interfaces.request-pysrc.html#IRequest._checkRequest">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="python.interfaces.request.IRequest-class.html#_checkResponse" class="summary-sig-name" onclick="show_private();">_checkResponse</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">response</span>)</span><br />
+      Verify that supplied response has correct format and required data</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="python.interfaces.request-pysrc.html#IRequest._checkResponse">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="processRequest"></a><span class="summary-sig-name">processRequest</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      Process given request</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="python.interfaces.request-pysrc.html#IRequest.processRequest">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="python.interfaces.request.IRequest-class.html#processResponse" class="summary-sig-name">processResponse</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">response</span>)</span><br />
+      Process response data obtained in response to a given request</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="python.interfaces.request-pysrc.html#IRequest.processResponse">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS VARIABLES ==================== -->
+<a name="section-ClassVariables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Class Variables</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-ClassVariables"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="python.interfaces.request.IRequest-class.html#_InterfaceClass__attrs" class="summary-name" onclick="show_private();">_InterfaceClass__attrs</a> = <code title="{'_checkRequest': &lt;zope.interface.interface.Method object at 0x18008b0\
+&gt;,
+ '_checkResponse': &lt;zope.interface.interface.Method object at 0x18008f\
+0&gt;,
+ 'processRequest': &lt;zope.interface.interface.Method object at 0x18008d\
+0&gt;,
+ 'processResponse': &lt;zope.interface.interface.Method object at 0x18008\
+90&gt;}"><code class="variable-group">{</code><code class="variable-quote">'</code><code class="variable-string">_checkRequest</code><code class="variable-quote">'</code><code class="variable-op">: </code>&lt;zope.interface.int<code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="__bases__"></a><span class="summary-name">__bases__</span> = <code title="(&lt;InterfaceClass zope.interface.Interface&gt;)"><code class="variable-group">(</code>&lt;InterfaceClass zope.interface.Interface&gt;<code class="variable-group">)</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="__identifier__"></a><span class="summary-name">__identifier__</span> = <code title="'python.interfaces.request.IRequest'"><code class="variable-quote">'</code><code class="variable-string">python.interfaces.request.IRequest</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="python.interfaces.request.IRequest-class.html#__iro__" class="summary-name">__iro__</a> = <code title="(&lt;InterfaceClass python.interfaces.request.IRequest&gt;,
+ &lt;InterfaceClass zope.interface.Interface&gt;)"><code class="variable-group">(</code>&lt;InterfaceClass python.interfaces.request.IRequest&gt;<code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="__name__"></a><span class="summary-name">__name__</span> = <code title="'IRequest'"><code class="variable-quote">'</code><code class="variable-string">IRequest</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="python.interfaces.request.IRequest-class.html#__sro__" class="summary-name">__sro__</a> = <code title="(&lt;InterfaceClass python.interfaces.request.IRequest&gt;,
+ &lt;InterfaceClass zope.interface.Interface&gt;)"><code class="variable-group">(</code>&lt;InterfaceClass python.interfaces.request.IRequest&gt;<code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="python.interfaces.request.IRequest-class.html#_implied" class="summary-name" onclick="show_private();">_implied</a> = <code title="{&lt;InterfaceClass python.interfaces.request.IRequest&gt;: (),
+ &lt;InterfaceClass zope.interface.Interface&gt;: ()}"><code class="variable-group">{</code>&lt;InterfaceClass python.interfaces.request.IRequest<code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="dependents"></a><span class="summary-name">dependents</span> = <code title="&lt;WeakKeyDictionary at 25177664&gt;">&lt;WeakKeyDictionary at 25177664&gt;</code>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <div class="private">    <p class="indent-wrapped-lines"><b>Inherited from <code>zope.interface.Interface</code></b> (private):
+      <code>_Element__tagged_values</code>
+      </p></div>
+    </td>
+  </tr>
+</table>
+<!-- ==================== INSTANCE VARIABLES ==================== -->
+<a name="section-InstanceVariables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Instance Variables</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-InstanceVariables"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="deferred"></a><span class="summary-name">deferred</span><br />
+      external deferred that will be called back when request completes 
+      successfully, or fails
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="request"></a><span class="summary-name">request</span><br />
+      original request
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="response"></a><span class="summary-name">response</span><br />
+      response data obtained in response to a given request
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="scs_jobid"></a><span class="summary-name">scs_jobid</span><br />
+      jobid - ID of the job to which request is related
+    </td>
+  </tr>
+</table>
+<!-- ==================== METHOD DETAILS ==================== -->
+<a name="section-MethodDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Method Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-MethodDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="_checkRequest"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">_checkRequest</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">request</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="python.interfaces.request-pysrc.html#IRequest._checkRequest">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Verify that supplied request has correct format and required data</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>request</code></strong> - supplied request</li>
+    </ul></dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'>RuntimeError</strong></code> - if invalid request is supplied</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="_checkResponse"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">_checkResponse</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">response</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="python.interfaces.request-pysrc.html#IRequest._checkResponse">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Verify that supplied response has correct format and required data</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>response</code></strong> - supplied response</li>
+    </ul></dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'>RuntimeError</strong></code> - if invalid response is supplied</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="processResponse"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">processResponse</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">response</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="python.interfaces.request-pysrc.html#IRequest.processResponse">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Process response data obtained in response to a given request</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>response</code></strong> (YAML data structure loaded using yaml.load()) - response</li>
+    </ul></dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'>RuntimeError</strong></code> - (1) if invalid response is supplied (2) if any exception is raised 
+        during response processing</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== CLASS VARIABLE DETAILS ==================== -->
+<a name="section-ClassVariableDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Class Variable Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-ClassVariableDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="_InterfaceClass__attrs"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">_InterfaceClass__attrs</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-group">{</code><code class="variable-quote">'</code><code class="variable-string">_checkRequest</code><code class="variable-quote">'</code><code class="variable-op">: </code>&lt;zope.interface.interface.Method object at 0x18008b0<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+&gt;<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">_checkResponse</code><code class="variable-quote">'</code><code class="variable-op">: </code>&lt;zope.interface.interface.Method object at 0x18008f<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+0&gt;<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">processRequest</code><code class="variable-quote">'</code><code class="variable-op">: </code>&lt;zope.interface.interface.Method object at 0x18008d<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+0&gt;<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">processResponse</code><code class="variable-quote">'</code><code class="variable-op">: </code>&lt;zope.interface.interface.Method object at 0x18008<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+90&gt;<code class="variable-group">}</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="__iro__"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">__iro__</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-group">(</code>&lt;InterfaceClass python.interfaces.request.IRequest&gt;<code class="variable-op">,</code>
+ &lt;InterfaceClass zope.interface.Interface&gt;<code class="variable-group">)</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="__sro__"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">__sro__</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-group">(</code>&lt;InterfaceClass python.interfaces.request.IRequest&gt;<code class="variable-op">,</code>
+ &lt;InterfaceClass zope.interface.Interface&gt;<code class="variable-group">)</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="_implied"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">_implied</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-group">{</code>&lt;InterfaceClass python.interfaces.request.IRequest&gt;<code class="variable-op">: </code><code class="variable-group">(</code><code class="variable-group">)</code><code class="variable-op">,</code>
+ &lt;InterfaceClass zope.interface.Interface&gt;<code class="variable-op">: </code><code class="variable-group">(</code><code class="variable-group">)</code><code class="variable-group">}</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            >'SCS Controller'</th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    <a href="epydoc-log.html">Generated by Epydoc
+    3.0.1 on Fri Sep 18 15:11:25 2009</a>
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

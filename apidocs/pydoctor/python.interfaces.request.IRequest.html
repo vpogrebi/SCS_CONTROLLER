@@ -1,0 +1,143 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>API docs for &ldquo;python.interfaces.request.IRequest&rdquo;</title>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+    <link href="apidocs.css" type="text/css" rel="stylesheet" />
+    
+    
+  </head>
+  <body>
+    <h1 class="class">Class p.i.r.IRequest(<span title="zope.interface.Interface">Interface</span>):</h1>
+    <p>
+      <span id="part">Part of <a href="python.html">python</a>.<a href="python.interfaces.html">interfaces</a>.<a href="python.interfaces.request.html">request</a></span>
+      
+      <a href="classIndex.html#python.interfaces.request.IRequest">View In Hierarchy</a>
+    </p>
+    <div>
+      
+    </div>
+    <div><p>Defines general request interface</p>
+<p>Each class implementing IRequest interface defines functionality to 
+verify and process requests of a given (specialized) type 
+Implementations:</p>
+<ul>
+  <li>
+    server.JobRequest, server.JobStatusRequest,
+  </li>
+  <li>
+    client.JobRequest, client.JobStatusRequest
+  </li>
+</ul>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Instance Variables</td><td class="fieldArg">request</td><td>original request
+</td></tr><tr><td></td><td class="fieldArg">response</td><td>response data obtained in response to a given request
+</td></tr><tr><td></td><td class="fieldArg">scs_jobid</td><td>jobid - ID of the job to which request is related
+</td></tr><tr><td></td><td class="fieldArg">deferred</td><td>external deferred that will be called back when request completes 
+successfully, or fails
+</td></tr></table></div>
+    
+    
+    <div id="splitTables">
+      <table class="children sortable" id="id14">
+  
+  
+  
+  
+  <tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.interfaces.request.IRequest.html#_checkRequest">_checkRequest</a></td>
+    <td><span>Verify that supplied request has correct format and required data</span></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.interfaces.request.IRequest.html#_checkResponse">_checkResponse</a></td>
+    <td><span>Verify that supplied response has correct format and required data</span></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.interfaces.request.IRequest.html#processRequest">processRequest</a></td>
+    <td><span>Process given request</span></td>
+  </tr><tr class="method">
+    
+    
+    <td>Method</td>
+    <td><a href="python.interfaces.request.IRequest.html#processResponse">processResponse</a></td>
+    <td><span>Process response data obtained in response to a given request</span></td>
+  </tr>
+  
+</table>
+      
+      
+    </div>
+    
+    
+    
+    <div class="function">
+        <a name="python.interfaces.request.IRequest._checkRequest"></a>
+        <a name="_checkRequest"></a>
+        <div class="functionHeader">
+        
+        def _checkRequest(self, request):
+        
+      </div>
+        <div class="functionBody">
+          
+          <div>Verify that supplied request has correct format and required data<table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">request</td><td>supplied request
+</td></tr><tr class="fieldStart"><td class="fieldName">Raises</td><td class="fieldArg">RuntimeError</td><td>if invalid request is supplied
+</td></tr></table></div>
+        </div>
+      </div><div class="function">
+        <a name="python.interfaces.request.IRequest._checkResponse"></a>
+        <a name="_checkResponse"></a>
+        <div class="functionHeader">
+        
+        def _checkResponse(self, response):
+        
+      </div>
+        <div class="functionBody">
+          
+          <div>Verify that supplied response has correct format and required data<table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">response</td><td>supplied response
+</td></tr><tr class="fieldStart"><td class="fieldName">Raises</td><td class="fieldArg">RuntimeError</td><td>if invalid response is supplied
+</td></tr></table></div>
+        </div>
+      </div><div class="function">
+        <a name="python.interfaces.request.IRequest.processRequest"></a>
+        <a name="processRequest"></a>
+        <div class="functionHeader">
+        
+        def processRequest(self):
+        
+      </div>
+        <div class="functionBody">
+          
+          <div>Process given request<table class="fieldTable"></table></div>
+        </div>
+      </div><div class="function">
+        <a name="python.interfaces.request.IRequest.processResponse"></a>
+        <a name="processResponse"></a>
+        <div class="functionHeader">
+        
+        def processResponse(self, response):
+        
+      </div>
+        <div class="functionBody">
+          
+          <div>Process response data obtained in response to a given request<table class="fieldTable"><tr class="fieldStart"><td class="fieldName">Parameters</td><td class="fieldArg">response</td><td>response
+ (type: YAML data structure loaded using yaml.load()
+)</td></tr><tr class="fieldStart"><td class="fieldName">Raises</td><td class="fieldArg">RuntimeError</td><td>(1) if invalid response is supplied (2) if any exception is raised during 
+response processing
+</td></tr></table></div>
+        </div>
+      </div>
+    
+    <address>
+      <a href="index.html">API Documentation</a> for 'SCS Controller', generated by <a href="http://codespeak.net/~mwh/pydoctor/">pydoctor</a> at 2009-09-18 15:11:29.
+    </address>
+  </body>
+</html>
